@@ -78,7 +78,7 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length), 5000);
+    const timer = setInterval(() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length), 10000);
     return () => clearInterval(timer);
   }, []);
 
