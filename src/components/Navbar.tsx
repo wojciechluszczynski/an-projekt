@@ -25,6 +25,11 @@ const Navbar = () => {
     setMobileOpen(false);
   }, [location]);
 
+  // Pages with light hero where navbar text should be white initially
+  const darkHeroPages = ["/", "/oferta"];
+  const hasDarkHero = darkHeroPages.includes(location.pathname) || Object.keys({ "zlota-harmonia": 1, "czarna-perla": 1, "bambusowa-oaza": 1 }).some(s => location.pathname === `/${s}`);
+  const lightText = hasDarkHero && !scrolled && !mobileOpen;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -33,38 +38,38 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 md:px-12 lg:px-20 py-5">
+      <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 md:px-12 lg:px-20 py-4">
         <Link to="/" className="z-50">
           <img
             src={logo}
-            alt="AN Projekt logo"
-            className={`h-10 md:h-12 transition-all duration-300 ${
-              scrolled || mobileOpen ? "" : "brightness-0 invert"
+            alt="AN Projekt – projektant wnętrz Krosno"
+            className={`h-9 md:h-10 transition-all duration-300 ${
+              lightText ? "brightness-0 invert" : ""
             }`}
           />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               to={link.href}
-              className={`text-sm tracking-[0.15em] uppercase font-body transition-colors duration-300 ${
-                scrolled
-                  ? "text-foreground hover:text-accent"
-                  : "text-dark-foreground hover:text-accent"
-              } ${location.pathname === link.href ? "border-b-2 border-accent pb-0.5" : ""}`}
+              className={`text-sm tracking-[0.12em] uppercase font-body transition-colors duration-300 ${
+                lightText
+                  ? "text-dark-foreground/90 hover:text-accent"
+                  : "text-foreground hover:text-accent"
+              } ${location.pathname === link.href ? "text-accent" : ""}`}
             >
               {link.label}
             </Link>
           ))}
           <Link
             to="/kontakt"
-            className={`text-sm tracking-[0.15em] uppercase font-body px-6 py-2.5 rounded-full border transition-all duration-300 ${
-              scrolled
-                ? "border-foreground text-foreground hover:bg-accent hover:border-accent"
-                : "border-dark-foreground text-dark-foreground hover:bg-accent hover:border-accent hover:text-accent-foreground"
+            className={`text-sm tracking-[0.12em] uppercase font-body px-5 py-2 rounded-full border transition-all duration-300 ${
+              lightText
+                ? "border-dark-foreground/60 text-dark-foreground hover:bg-accent hover:border-accent hover:text-accent-foreground"
+                : "border-foreground/30 text-foreground hover:bg-foreground hover:text-background"
             }`}
           >
             Napisz do mnie
@@ -75,17 +80,17 @@ const Navbar = () => {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className={`md:hidden z-50 transition-colors ${
-            scrolled || mobileOpen ? "text-foreground" : "text-dark-foreground"
+            lightText ? "text-dark-foreground" : "text-foreground"
           }`}
           aria-label="Menu"
         >
-          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+          {mobileOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
       {/* Mobile menu */}
       <div
-        className={`fixed inset-0 bg-background z-40 flex flex-col items-center justify-center gap-8 transition-all duration-500 ${
+        className={`fixed inset-0 bg-background z-40 flex flex-col items-center justify-center gap-7 transition-all duration-500 ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
@@ -93,7 +98,7 @@ const Navbar = () => {
           <Link
             key={link.href}
             to={link.href}
-            className={`text-2xl font-heading tracking-wider transition-colors hover:text-accent ${
+            className={`text-xl font-heading tracking-wider transition-colors hover:text-accent ${
               location.pathname === link.href ? "text-accent" : "text-foreground"
             }`}
           >
@@ -102,7 +107,7 @@ const Navbar = () => {
         ))}
         <Link
           to="/kontakt"
-          className="mt-4 px-8 py-3 rounded-full bg-primary text-primary-foreground text-sm tracking-[0.15em] uppercase hover:bg-accent transition-colors"
+          className="mt-3 px-7 py-2.5 rounded-full bg-primary text-primary-foreground text-sm tracking-[0.12em] uppercase hover:bg-accent hover:text-accent-foreground transition-colors"
         >
           Napisz do mnie
         </Link>

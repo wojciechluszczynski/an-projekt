@@ -2,41 +2,48 @@ import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
 import heroBathroom from "@/assets/hero-bathroom.png";
 import heroCloset from "@/assets/hero-closet.png";
+import { ArrowRight } from "lucide-react";
+
+const values = [
+  { title: "Estetyka z funkcją", desc: "Projektuję tak, żeby było pięknie i praktycznie – w równym stopniu." },
+  { title: "Bliskość i komunikacja", desc: "Pracuję bezpośrednio z klientem, bez pośredników. Słucham, pytam, proponuję." },
+  { title: "Odpowiedzialność", desc: "Biorę odpowiedzialność za każdy etap – od pomysłu po nadzór na budowie." },
+];
 
 const OMnie = () => {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
-        <img src={heroCloset} alt="Anna Nowak projektantka wnętrz" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-foreground/40" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-          <h1 className="font-heading text-4xl md:text-6xl text-dark-foreground">Cześć, jestem Anna</h1>
+      <section className="pt-32 md:pt-40 pb-10 px-6 md:px-12 lg:px-20">
+        <div className="max-w-[1200px] mx-auto">
+          <FadeIn>
+            <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">O mnie</p>
+            <h1 className="font-heading text-3xl md:text-5xl text-foreground max-w-2xl">Cześć, jestem Ania</h1>
+          </FadeIn>
         </div>
       </section>
 
       {/* Story */}
-      <section className="bg-background section-padding">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <section className="bg-background section-padding-sm">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <FadeIn>
             <div>
-              <h2 className="font-heading text-3xl md:text-4xl text-foreground mb-6">Moja historia</h2>
-              <p className="text-muted-foreground font-body text-base leading-relaxed mb-6">
-                Od zawsze fascynowały mnie przestrzenie – to, jak wpływają na nasze samopoczucie, 
-                jak organizują codzienność i&nbsp;jak mogą stać się odbiciem naszej osobowości. 
-                Projektowanie wnętrz to dla mnie nie tylko zawód, to sposób myślenia o&nbsp;życiu.
+              <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-5">Dlaczego projektuję wnętrza</h2>
+              <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
+                Od zawsze fascynowało mnie to, jak przestrzeń wpływa na nasze samopoczucie. Jak kolor ściany, układ mebli czy rodzaj światła mogą zmienić codzienność. Projektowanie wnętrz to dla mnie sposób na łączenie estetyki z&nbsp;tym, co&nbsp;naprawdę ważne&nbsp;– wygodą i&nbsp;funkcjonalnością.
+              </p>
+              <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
+                Mieszkam w Odrzykoniu na Podkarpaciu. Pracuję głównie z klientami indywidualnymi z&nbsp;regionu Krosna, Rzeszowa i&nbsp;Nowego Sącza, choć zdarza się też współpraca zdalna. Lubię pracować blisko&nbsp;– to pozwala lepiej zrozumieć potrzeby i&nbsp;naprawdę dobrze poprowadzić projekt.
               </p>
               <p className="text-muted-foreground font-body text-base leading-relaxed">
-                Mieszkam na Podkarpaciu, w&nbsp;Odrzykoniu, i&nbsp;działam głównie w&nbsp;regionie Rzeszowa 
-                oraz Nowego Sącza. Każdy projekt traktuję indywidualnie – wsłuchuję się w&nbsp;potrzeby, 
-                szukam rozwiązań i&nbsp;tworzę wnętrza, w&nbsp;których chce się żyć.
+                Każdy projekt traktuję indywidualnie. Nie mam jednego stylu, którym podpisuję każde wnętrze. Wolę wsłuchać się w&nbsp;to, czego potrzebuje klient, i&nbsp;zaproponować rozwiązanie, które jest spójne, przemyślane i&nbsp;realne do&nbsp;realizacji.
               </p>
             </div>
           </FadeIn>
-          <FadeIn delay={200}>
+          <FadeIn delay={150}>
             <img
               src={heroBathroom}
-              alt="Wnętrze zaprojektowane przez AN Projekt"
+              alt="Wnętrze zaprojektowane przez AN Projekt – projektant wnętrz Krosno"
               className="w-full aspect-[3/4] object-cover"
               loading="lazy"
             />
@@ -44,22 +51,54 @@ const OMnie = () => {
         </div>
       </section>
 
+      {/* Photo + approach */}
+      <section className="bg-secondary section-padding">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+          <FadeIn>
+            <img
+              src={heroCloset}
+              alt="Anna Nowak przy pracy – projektantka wnętrz Podkarpacie"
+              className="w-full aspect-[4/3] object-cover"
+              loading="lazy"
+            />
+          </FadeIn>
+          <FadeIn delay={150}>
+            <div>
+              <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-5">Jak pracuję</h2>
+              <p className="text-muted-foreground font-body text-base leading-relaxed mb-4">
+                Zaczynam od rozmowy – chcę wiedzieć, jak żyjesz, co lubisz, co Ci przeszkadza w obecnym wnętrzu. Potem proponuję układ, styl i materiały. Wszystko konsultuję z Tobą krok po kroku.
+              </p>
+              <p className="text-muted-foreground font-body text-base leading-relaxed">
+                Zależy mi na tym, żeby proces był spokojny i zrozumiały. Nie chcę, żebyś czuł/a się przytłoczona liczbą decyzji. Moją rolą jest uprościć ten etap i pomóc Ci podjąć dobre wybory.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Video placeholder */}
+      <section className="bg-background section-padding-sm">
+        <div className="max-w-[800px] mx-auto text-center">
+          <FadeIn>
+            <div className="bg-secondary aspect-video flex items-center justify-center mb-6">
+              <p className="text-muted-foreground font-body text-sm">Miejsce na krótkie wideo – Ania opowiada o swoim podejściu do projektów</p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Values */}
       <section className="bg-secondary section-padding">
-        <div className="max-w-[1400px] mx-auto">
+        <div className="max-w-[1000px] mx-auto">
           <FadeIn>
-            <h2 className="font-heading text-3xl md:text-4xl text-foreground mb-16 text-center">Moje wartości</h2>
+            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-12 text-center">Co jest dla mnie ważne</h2>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {[
-              { title: "Jakość", desc: "Nie idę na kompromisy. Każdy detal ma znaczenie." },
-              { title: "Funkcjonalność", desc: "Każdy centymetr ma znaczenie – projektuję z myślą o codziennym życiu." },
-              { title: "Zaufanie", desc: "Przejmuję odpowiedzialność od A do Z – możesz na mnie polegać." },
-            ].map((v, i) => (
-              <FadeIn key={v.title} delay={i * 150}>
-                <div className="text-center">
-                  <h3 className="font-heading text-2xl text-foreground mb-4">{v.title}</h3>
-                  <p className="text-muted-foreground font-body text-base">{v.desc}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {values.map((v, i) => (
+              <FadeIn key={v.title} delay={i * 100}>
+                <div>
+                  <h3 className="font-heading text-lg text-foreground mb-3">{v.title}</h3>
+                  <p className="text-muted-foreground font-body text-sm leading-relaxed">{v.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -69,18 +108,21 @@ const OMnie = () => {
 
       {/* CTA */}
       <section className="bg-background section-padding">
-        <div className="max-w-[1400px] mx-auto text-center">
+        <div className="max-w-[800px] mx-auto text-center">
           <FadeIn>
+            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-6">
+              Chcesz porozmawiać o swoim wnętrzu?
+            </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/realizacje"
-                className="px-8 py-3.5 rounded-full border border-foreground text-foreground text-sm tracking-[0.12em] uppercase font-body hover:bg-accent hover:border-accent hover:text-accent-foreground transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-foreground text-foreground text-sm tracking-[0.1em] uppercase font-body hover:bg-foreground hover:text-background transition-all duration-300"
               >
-                Poznaj moje realizacje
+                Zobacz realizacje <ArrowRight size={14} />
               </Link>
               <Link
                 to="/kontakt"
-                className="px-8 py-3.5 rounded-full bg-primary text-primary-foreground text-sm tracking-[0.12em] uppercase font-body hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+                className="px-7 py-3 rounded-full bg-primary text-primary-foreground text-sm tracking-[0.1em] uppercase font-body hover:bg-accent hover:text-accent-foreground transition-all duration-300"
               >
                 Napisz do mnie
               </Link>
