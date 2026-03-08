@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
-import heroKitchen from "@/assets/hero-kitchen.png";
+import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
 import { ArrowRight } from "lucide-react";
 
 const packages = [
@@ -70,7 +70,7 @@ const Oferta = () => {
     <main>
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[350px] overflow-hidden">
-        <img src={heroKitchen} alt="Projekt wnętrza – oferta AN Projekt" className="w-full h-full object-cover" />
+        <img src={vizKitchenRattan} alt="Projekt wnętrza – oferta AN Projekt" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-foreground/35" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <h1 className="font-heading text-3xl md:text-5xl text-dark-foreground mb-3">Oferta</h1>
@@ -105,7 +105,7 @@ const Oferta = () => {
                     </ul>
                     <Link
                       to="/kontakt"
-                      className="inline-flex items-center gap-2 text-sm font-body tracking-[0.08em] uppercase text-foreground border-b border-foreground/30 pb-0.5 hover:border-accent hover:text-accent transition-colors"
+                      className="inline-flex items-center gap-2 text-sm font-body tracking-[0.05em] uppercase text-foreground border-b border-foreground/30 pb-0.5 hover:border-accent hover:text-accent transition-colors"
                     >
                       Zapytaj o tę opcję <ArrowRight size={14} />
                     </Link>
@@ -175,9 +175,9 @@ const Oferta = () => {
             </p>
             <Link
               to="/kontakt"
-              className="inline-block px-8 py-3.5 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.1em] uppercase font-body hover:bg-accent/90 transition-all duration-300"
+              className="inline-block px-8 py-3.5 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.05em] font-body hover:bg-accent/90 transition-all duration-300"
             >
-              Napisz do mnie
+              Umów spotkanie
             </Link>
           </FadeIn>
         </div>

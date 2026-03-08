@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.svg";
 
 const navLinks = [
+  { href: "/", label: "Start" },
   { href: "/realizacje", label: "Realizacje" },
   { href: "/oferta", label: "Oferta" },
   { href: "/o-mnie", label: "O mnie" },
@@ -25,66 +26,55 @@ const Navbar = () => {
     setMobileOpen(false);
   }, [location]);
 
-  // Pages with light hero where navbar text should be white initially
-  const darkHeroPages = ["/", "/oferta"];
-  const hasDarkHero = darkHeroPages.includes(location.pathname) || Object.keys({ "zlota-harmonia": 1, "czarna-perla": 1, "bambusowa-oaza": 1 }).some(s => location.pathname === `/${s}`);
-  const lightText = hasDarkHero && !scrolled && !mobileOpen;
+  const isHome = location.pathname === "/";
+  // On home before scroll, text is white on hero image
+  const lightText = isHome && !scrolled && !mobileOpen;
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 md:px-12 lg:px-20 py-4">
-        <Link to="/" className="z-50">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-4 md:px-8 pt-4">
+      <div
+        className={`max-w-[1100px] mx-auto flex items-center justify-between px-6 md:px-8 py-3 rounded-full transition-all duration-500 ${
+          scrolled || !isHome
+            ? "bg-background/95 backdrop-blur-md shadow-md"
+            : "bg-background/80 backdrop-blur-sm"
+        }`}
+      >
+        <Link to="/" className="z-50 shrink-0">
           <img
             src={logo}
             alt="AN Projekt – projektant wnętrz Krosno"
-            className={`h-9 md:h-10 transition-all duration-300 ${
-              lightText ? "brightness-0 invert" : ""
-            }`}
+            className="h-8 md:h-9 transition-all duration-300"
           />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               to={link.href}
-              className={`text-sm tracking-[0.12em] uppercase font-body transition-colors duration-300 ${
-                lightText
-                  ? "text-dark-foreground/90 hover:text-accent"
-                  : "text-foreground hover:text-accent"
-              } ${location.pathname === link.href ? "text-accent" : ""}`}
+              className={`text-sm tracking-[0.05em] font-body transition-colors duration-300 text-foreground hover:text-accent ${
+                location.pathname === link.href ? "text-accent" : ""
+              }`}
             >
               {link.label}
             </Link>
           ))}
           <Link
             to="/kontakt"
-            className={`text-sm tracking-[0.12em] uppercase font-body px-5 py-2 rounded-full border transition-all duration-300 ${
-              lightText
-                ? "border-dark-foreground/60 text-dark-foreground hover:bg-accent hover:border-accent hover:text-accent-foreground"
-                : "border-foreground/30 text-foreground hover:bg-foreground hover:text-background"
-            }`}
+            className="text-sm tracking-[0.05em] font-body px-5 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300"
           >
-            Napisz do mnie
+            Umów spotkanie
           </Link>
         </nav>
 
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`md:hidden z-50 transition-colors ${
-            lightText ? "text-dark-foreground" : "text-foreground"
-          }`}
+          className="md:hidden z-50 text-foreground transition-colors"
           aria-label="Menu"
         >
-          {mobileOpen ? <X size={26} /> : <Menu size={26} />}
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
@@ -107,9 +97,9 @@ const Navbar = () => {
         ))}
         <Link
           to="/kontakt"
-          className="mt-3 px-7 py-2.5 rounded-full bg-primary text-primary-foreground text-sm tracking-[0.12em] uppercase hover:bg-accent hover:text-accent-foreground transition-colors"
+          className="mt-3 px-7 py-2.5 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.05em] hover:bg-accent/90 transition-colors"
         >
-          Napisz do mnie
+          Umów spotkanie
         </Link>
       </div>
     </header>

@@ -1,34 +1,38 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
-import heroKitchen from "@/assets/hero-kitchen.png";
-import heroBedroom from "@/assets/hero-bedroom.png";
-import heroBathroom from "@/assets/hero-bathroom.png";
-import heroCloset from "@/assets/hero-closet.png";
-import heroKitchenAlt from "@/assets/hero-kitchen-alt.png";
 import { ArrowRight } from "lucide-react";
 
-const heroSlides = [heroKitchenAlt, heroBedroom, heroBathroom];
+import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
+import vizLivingBeige from "@/assets/viz-living-beige.png";
+import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
+import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
+import vizBedroomMural from "@/assets/viz-bedroom-mural.png";
+import vizClosetMarble from "@/assets/viz-closet-marble.png";
+import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
+import vizDetailCeramics from "@/assets/viz-detail-ceramics.png";
+
+const heroSlides = [vizKitchenRattan, vizLivingBeige, vizBedroomMural];
 
 const projects = [
   {
     title: "Złota Harmonia",
-    desc: "Ciepłe, przytulne mieszkanie, w którym elegancja łączy się z codziennym komfortem.",
-    image: heroBedroom,
+    desc: "Ciepłe, przytulne mieszkanie z przemyślanym układem i eleganckimi detalami.",
+    image: vizLivingBeige,
     href: "/zlota-harmonia",
     meta: "Mieszkanie 85 m² · Rzeszów",
   },
   {
     title: "Czarna Perła",
     desc: "Nowoczesny dom z odważnymi materiałami i dużą ilością naturalnego światła.",
-    image: heroKitchen,
+    image: vizKitchenRattan,
     href: "/czarna-perla",
     meta: "Dom 180 m² · Podkarpacie",
   },
   {
     title: "Bambusowa Oaza",
-    desc: "Salon inspirowany naturą – rattan, ciepłe drewno i spokojne kolory.",
-    image: heroCloset,
+    desc: "Przestrzeń inspirowana naturą – rattan, drewno i spokojne kolory.",
+    image: vizDiningFireplace,
     href: "/bambusowa-oaza",
     meta: "Salon 65 m² · Małopolska",
   },
@@ -104,7 +108,7 @@ const Index = () => {
             />
           </div>
         ))}
-        <div className="absolute inset-0 bg-foreground/30" />
+        <div className="absolute inset-0 bg-foreground/40" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-dark-foreground mb-4 animate-fade-in-up">
             Wnętrza, które pasują do&nbsp;Twojego życia
@@ -112,12 +116,20 @@ const Index = () => {
           <p className="font-body text-base md:text-lg text-dark-foreground/90 mb-8 max-w-xl animate-fade-in-up-delay">
             Projektuję funkcjonalne i estetyczne wnętrza na Podkarpaciu i&nbsp;w&nbsp;Małopolsce.
           </p>
-          <Link
-            to="/realizacje"
-            className="px-7 py-3 rounded-full bg-background/95 text-foreground text-sm tracking-[0.1em] uppercase font-body hover:bg-accent hover:text-accent-foreground transition-all duration-300 animate-fade-in-up-delay-2"
-          >
-            Zobacz moje realizacje
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-3 animate-fade-in-up-delay-2">
+            <Link
+              to="/kontakt"
+              className="px-7 py-3 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.05em] font-body hover:bg-accent/90 transition-all duration-300"
+            >
+              Umów spotkanie
+            </Link>
+            <Link
+              to="/realizacje"
+              className="px-7 py-3 rounded-full bg-dark-foreground/20 backdrop-blur-sm text-dark-foreground text-sm tracking-[0.05em] font-body hover:bg-dark-foreground/30 transition-all duration-300"
+            >
+              Zadaj mi pytanie
+            </Link>
+          </div>
         </div>
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2.5">
           {heroSlides.map((_, i) => (
@@ -194,7 +206,7 @@ const Index = () => {
             <div className="text-center mt-10">
               <Link
                 to="/oferta"
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-foreground text-foreground text-sm tracking-[0.1em] uppercase font-body hover:bg-foreground hover:text-background transition-all duration-300"
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-foreground text-foreground text-sm tracking-[0.05em] font-body hover:bg-foreground hover:text-background transition-all duration-300"
               >
                 Poznaj szczegóły <ArrowRight size={16} />
               </Link>
@@ -256,7 +268,7 @@ const Index = () => {
                   <h3 className="font-heading text-xl text-foreground mb-1">{p.title}</h3>
                   <p className="text-muted-foreground font-body text-sm mb-2">{p.meta}</p>
                   <p className="text-muted-foreground font-body text-sm mb-3">{p.desc}</p>
-                  <span className="text-sm font-body tracking-[0.08em] uppercase text-foreground border-b border-foreground/30 pb-0.5 group-hover:border-accent group-hover:text-accent transition-colors">
+                  <span className="text-sm font-body tracking-[0.05em] uppercase text-foreground border-b border-foreground/30 pb-0.5 group-hover:border-accent group-hover:text-accent transition-colors">
                     Zobacz projekt
                   </span>
                 </Link>
@@ -267,7 +279,7 @@ const Index = () => {
             <div className="text-center mt-14">
               <Link
                 to="/realizacje"
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-foreground text-foreground text-sm tracking-[0.1em] uppercase font-body hover:bg-foreground hover:text-background transition-all duration-300"
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-foreground text-foreground text-sm tracking-[0.05em] font-body hover:bg-foreground hover:text-background transition-all duration-300"
               >
                 Wszystkie realizacje <ArrowRight size={16} />
               </Link>
@@ -282,7 +294,7 @@ const Index = () => {
           <FadeIn>
             <div className="overflow-hidden">
               <img
-                src={heroBathroom}
+                src={vizDetailCeramics}
                 alt="Anna Nowak – projektantka wnętrz, Odrzykoń"
                 className="w-full aspect-[3/4] object-cover"
                 loading="lazy"
@@ -303,7 +315,7 @@ const Index = () => {
               </p>
               <Link
                 to="/o-mnie"
-                className="inline-flex items-center gap-2 text-sm font-body tracking-[0.08em] uppercase text-foreground border-b border-foreground/30 pb-0.5 hover:border-accent hover:text-accent transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-body tracking-[0.05em] uppercase text-foreground border-b border-foreground/30 pb-0.5 hover:border-accent hover:text-accent transition-colors"
               >
                 Poznaj mnie lepiej <ArrowRight size={14} />
               </Link>
@@ -337,9 +349,9 @@ const Index = () => {
             </p>
             <Link
               to="/kontakt"
-              className="inline-block px-8 py-3.5 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.1em] uppercase font-body hover:bg-accent/90 transition-all duration-300"
+              className="inline-block px-8 py-3.5 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.05em] font-body hover:bg-accent/90 transition-all duration-300"
             >
-              Napisz do mnie
+              Umów spotkanie
             </Link>
           </FadeIn>
         </div>
