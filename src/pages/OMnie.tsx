@@ -73,7 +73,7 @@ const OMnie = () => {
               <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
                 Moja droga do projektowania wnętrz zaczęła się od budowy własnego domu. To właśnie wtedy zobaczyłam, jak wiele decyzji trzeba podjąć w trakcie projektowania i realizacji wnętrza, i jak łatwo w tym procesie o chaos, stres czy kosztowne pomyłki.
               </p>
-              <p className="text-foreground font-body text-base leading-relaxed font-medium mb-6">
+              <p className="text-foreground font-body text-base leading-relaxed mb-6">
                 Dziś pomagam moim klientom przejść przez ten proces spokojniej i bardziej świadomie.
               </p>
               <p className="font-heading italic text-2xl md:text-3xl text-accent/80 tracking-wide">Anna Nowak</p>
