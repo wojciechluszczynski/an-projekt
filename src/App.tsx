@@ -19,6 +19,7 @@ import BlogPost from "./pages/BlogPost";
 import ProjectPage from "./pages/ProjectPage";
 import PolitykaPrywatnosci from "./pages/PolitykaPrywatnosci";
 import Regulamin from "./pages/Regulamin";
+import Ebook from "./pages/Ebook";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
