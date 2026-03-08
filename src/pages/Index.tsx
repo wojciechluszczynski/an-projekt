@@ -62,6 +62,8 @@ const testimonials = [
   { text: "Ania przeprowadziła nas przez cały proces. Od pierwszego spotkania po odbiór kluczy. Efekt przeszedł nasze oczekiwania.", author: "Katarzyna M.", location: "Rzeszów", rating: 5 },
   { text: "Profesjonalne podejście i świetne wyczucie stylu. Nasze mieszkanie wygląda dokładnie tak, jak sobie wymarzyliśmy.", author: "Marta i Tomek K.", location: "Krosno", rating: 5 },
   { text: "Spokojnie i konkretnie. Ania pomogła nam uniknąć wielu kosztownych błędów przy wykończeniu domu.", author: "Paweł Z.", location: "Nowy Sącz", rating: 5 },
+  { text: "Niesamowite podejście do klienta. Ania słucha, doradza i proponuje rozwiązania, o których sami byśmy nie pomyśleli.", author: "Joanna W.", location: "Sanok", rating: 5 },
+  { text: "Projekt wnętrza od Ani to była najlepsza decyzja. Wszystko przemyślane, piękne i funkcjonalne na co dzień.", author: "Michał D.", location: "Jasło", rating: 5 },
 ];
 
 const Index = () => {
