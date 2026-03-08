@@ -6,7 +6,7 @@ const EbookCover = () => (
     <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 via-foreground/55 to-foreground/70" />
     <div className="relative z-10 text-center px-6 max-w-2xl">
       <span className="inline-block font-body text-[10px] md:text-xs tracking-[0.25em] uppercase text-white/60 mb-6 animate-fade-in-up">
-        Interior Design Guide 2026
+        Przewodnik 2026
       </span>
       <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-white mb-5 leading-[1.1] animate-fade-in-up-delay">
         Projekt wnętrza<br />od&nbsp;A&nbsp;do&nbsp;Z
