@@ -124,7 +124,7 @@ const Oferta = () => {
                         <h2 className="font-heading text-xl md:text-2xl text-foreground shrink-0">{pkg.name}</h2>
                         {pkg.popular && (
                           <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-accent/10 text-accent font-body text-[10px] tracking-[0.05em] uppercase shrink-0">
-                            <Star size={10} className="fill-accent" /> Najczęściej wybierana
+                            <Star size={10} className="fill-accent" /> Najpopularniejsza
                           </span>
                         )}
                       </div>
