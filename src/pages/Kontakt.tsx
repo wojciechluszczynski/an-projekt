@@ -42,7 +42,7 @@ const Kontakt = () => {
 
   return (
     <main className="bg-primary min-h-screen pt-28 md:pt-32">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20 pb-20 md:pb-28">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20 pb-12 md:pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20">
           {/* Left */}
           <FadeIn>
@@ -77,8 +77,8 @@ const Kontakt = () => {
           {/* Right - Form */}
           <FadeIn delay={150}>
             <div>
-              {/* Mobile form header */}
-              <div className="md:hidden mb-6 pt-4 border-t border-primary-foreground/10">
+              {/* Form header - always visible */}
+              <div className="mb-6 pb-4 border-b border-primary-foreground/10">
                 <h2 className="font-heading text-xl text-primary-foreground mb-1">Formularz kontaktowy</h2>
                 <p className="text-primary-foreground/50 font-body text-xs">Wypełnij poniższe pola, odezwę się najszybciej jak mogę.</p>
               </div>
@@ -128,6 +128,9 @@ const Kontakt = () => {
           </FadeIn>
         </div>
       </div>
+
+      {/* Separator before footer */}
+      <div className="border-t border-primary-foreground/10" />
     </main>
   );
 };

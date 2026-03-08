@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
 import ProjectCarousel from "@/components/ProjectCarousel";
-import { ArrowRight, Palette, ClipboardList, UserCheck, Home, Building, Building2, Trees, MessageCircle, Ruler, Monitor, Hammer, Plus, X } from "lucide-react";
+import { ArrowRight, Palette, ClipboardList, UserCheck, Home, Building, Building2, Trees, MessageCircle, Ruler, Monitor, Hammer, Plus, X, Check } from "lucide-react";
 
 import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
 import vizLivingBeige from "@/assets/viz-living-beige.png";
@@ -111,27 +111,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* REALIZACJE CAROUSEL - moved higher */}
-      <section className="bg-background section-padding snap-start">
-        <div className="max-w-[1200px] mx-auto">
-          <FadeIn>
-            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-4 text-center">Wybrane realizacje</h2>
-            <p className="text-muted-foreground font-body text-base text-center mb-14 max-w-lg mx-auto">
-              Każdy projekt to inna historia. Zobacz efekty współpracy.
-            </p>
-          </FadeIn>
-          <ProjectCarousel />
-          <FadeIn delay={200}>
-            <div className="text-center mt-10">
-              <Link to="/realizacje" className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-foreground text-foreground text-sm tracking-[0.05em] font-body hover:bg-foreground hover:text-background transition-all duration-300">
-                Wszystkie realizacje <ArrowRight size={16} />
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* INTRO */}
+      {/* INTRO - before realizacje */}
       <section className="bg-secondary section-padding-sm snap-start">
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
@@ -146,11 +126,31 @@ const Index = () => {
         </div>
       </section>
 
-      {/* PILLARS */}
+      {/* REALIZACJE - vertical tiles */}
       <section className="bg-background section-padding-sm snap-start">
         <div className="max-w-[1200px] mx-auto">
           <FadeIn>
-            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-12 text-center">Na czym opiera się moja praca</h2>
+            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-4 text-center">Wybrane realizacje</h2>
+            <p className="text-muted-foreground font-body text-base text-center mb-12 max-w-lg mx-auto">
+              Każdy projekt to inna historia. Zobacz efekty współpracy.
+            </p>
+          </FadeIn>
+          <ProjectCarousel />
+          <FadeIn delay={200}>
+            <div className="text-center mt-10">
+              <Link to="/realizacje" className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-foreground text-foreground text-sm tracking-[0.05em] font-body hover:bg-foreground hover:text-background transition-all duration-300">
+                Wszystkie realizacje <ArrowRight size={16} />
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* PILLARS */}
+      <section className="bg-secondary section-padding-sm snap-start">
+        <div className="max-w-[1200px] mx-auto">
+          <FadeIn>
+            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-12 text-center">Na czym opiera się moja praca?</h2>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
             {pillars.map((p, i) => (
@@ -168,8 +168,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* PACKAGES - Accordion style like benchmark */}
-      <section className="bg-secondary section-padding snap-start">
+      {/* PACKAGES - Accordion */}
+      <section className="bg-background section-padding snap-start">
         <div className="max-w-[1200px] mx-auto">
           <FadeIn>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
@@ -192,7 +192,7 @@ const Index = () => {
               const isOpen = expandedPkg === i;
               return (
                 <FadeIn key={pkg.name} delay={i * 60}>
-                  <div className={`border-t border-border transition-all duration-500 ${isOpen ? "bg-background rounded-xl my-2 border-transparent shadow-sm" : ""}`}>
+                  <div className={`border-t border-border transition-all duration-500 ${isOpen ? "bg-secondary rounded-xl my-2 border-transparent shadow-sm" : ""}`}>
                     <button
                       onClick={() => setExpandedPkg(isOpen ? null : i)}
                       className="w-full flex items-center gap-4 md:gap-6 py-6 px-4 md:px-6 text-left"
@@ -208,6 +208,9 @@ const Index = () => {
                       <div className="px-4 md:px-6 pb-6 flex flex-col md:flex-row gap-6">
                         <div className="flex-1">
                           <p className="text-muted-foreground font-body text-base leading-relaxed mb-4">{pkg.desc}</p>
+                          <Link to="/oferta" className="inline-flex items-center gap-2 text-sm font-body tracking-[0.05em] uppercase text-foreground border-b border-foreground/30 pb-0.5 hover:border-accent hover:text-accent transition-colors">
+                            Zapytaj o tę opcję <ArrowRight size={14} />
+                          </Link>
                         </div>
                         <div className="md:w-48 shrink-0">
                           <img src={pkg.image} alt={pkg.name} className="w-full aspect-[4/3] object-cover rounded-lg" />
@@ -232,10 +235,10 @@ const Index = () => {
       </section>
 
       {/* HORIZONTAL PROCESS TIMELINE */}
-      <section className="bg-background section-padding snap-start">
+      <section className="bg-secondary section-padding snap-start">
         <div className="max-w-[1000px] mx-auto">
           <FadeIn>
-            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-4 text-center">Jak przebiega współpraca</h2>
+            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-4 text-center">Jak przebiega współpraca?</h2>
             <p className="text-muted-foreground font-body text-base text-center mb-14 max-w-lg mx-auto">
               Przejrzysty proces, bez niespodzianek.
             </p>
@@ -268,7 +271,7 @@ const Index = () => {
       </section>
 
       {/* O MNIE */}
-      <section className="bg-secondary section-padding snap-start">
+      <section className="bg-background section-padding-sm snap-start">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
           <FadeIn>
             <div className="relative overflow-hidden rounded-lg">
@@ -295,7 +298,7 @@ const Index = () => {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="bg-background section-padding-sm snap-start">
+      <section className="bg-secondary section-padding-sm snap-start">
         <div className="max-w-[800px] mx-auto text-center">
           <FadeIn>
             <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-8">Opinie klientów</p>
@@ -316,7 +319,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* DIVIDER - CTA before footer */}
       <section className="bg-primary section-padding snap-start">
         <div className="max-w-[800px] mx-auto text-center">
           <FadeIn>
