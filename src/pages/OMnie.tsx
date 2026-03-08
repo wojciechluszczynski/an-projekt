@@ -38,9 +38,8 @@ const OMnie = () => {
   return (
     <main>
       {/* Hero - side by side */}
-      <section className="bg-background pt-28 md:pt-36 pb-16 md:pb-20 px-6 md:px-12 lg:px-20">
+      <section className="bg-background pt-28 md:pt-36 pb-14 md:pb-16 px-6 md:px-12 lg:px-20">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-          {/* Mobile: name first */}
           <div className="order-2 md:order-1">
             <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">O mnie</p>
             <h1 className="font-heading text-3xl md:text-5xl text-foreground mb-3">Anna Nowak</h1>
@@ -60,16 +59,16 @@ const OMnie = () => {
         </div>
       </section>
 
-      {/* Intro text + realization image */}
-      <section className="bg-background section-padding-sm">
+      {/* Intro text + realization image - ALTERNATE BG */}
+      <section className="bg-secondary section-padding-sm">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+          <FadeIn delay={100}>
+            <img src={vizLivingBeige} alt="Wizualizacja salonu AN Projekt" className="w-full aspect-[4/3] object-cover rounded-lg" loading="lazy" />
+          </FadeIn>
           <FadeIn>
             <div>
               <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
                 Nazywam się Anna Nowak i prowadzę pracownię AN Projekt.
-              </p>
-              <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
-                Projektuję wnętrza mieszkań i domów dla osób, które chcą stworzyć przestrzeń dopasowaną do swojego stylu życia. Funkcjonalną, estetyczną i przemyślaną w każdym detalu.
               </p>
               <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
                 Moja droga do projektowania wnętrz zaczęła się od budowy własnego domu. To właśnie wtedy zobaczyłam, jak wiele decyzji trzeba podjąć w trakcie projektowania i realizacji wnętrza, i jak łatwo w tym procesie o chaos, stres czy kosztowne pomyłki.
@@ -77,12 +76,8 @@ const OMnie = () => {
               <p className="text-foreground font-body text-base leading-relaxed font-medium mb-6">
                 Dziś pomagam moim klientom przejść przez ten proces spokojniej i bardziej świadomie.
               </p>
-              {/* Handwritten signature */}
               <p className="font-heading italic text-2xl md:text-3xl text-accent/80 tracking-wide">Anna Nowak</p>
             </div>
-          </FadeIn>
-          <FadeIn delay={150}>
-            <img src={vizLivingBeige} alt="Wizualizacja salonu AN Projekt" className="w-full aspect-[4/3] object-cover rounded-lg" loading="lazy" />
           </FadeIn>
         </div>
       </section>
