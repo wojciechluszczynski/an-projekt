@@ -147,13 +147,13 @@ const Realizacje = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {filtered.map((p, i) => (
               <FadeIn key={p.title} delay={i * 60}>
-                <button onClick={() => openLightbox(p)} className="group block text-left w-full">
+                <Link to={`/${p.slug}`} className="group block">
                   <div className="overflow-hidden rounded-lg mb-3">
                     <img src={p.image} alt={`${p.title} projekt wnętrz`} className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
                   </div>
                   <h3 className="font-heading text-base text-foreground mb-0.5">{p.title}</h3>
                   <p className="text-muted-foreground font-body text-xs">{p.type} {p.area} m² · {p.location}</p>
-                </button>
+                </Link>
               </FadeIn>
             ))}
           </div>
