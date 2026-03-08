@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
-import heroBathroom from "@/assets/hero-bathroom.png";
-import heroCloset from "@/assets/hero-closet.png";
+import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
+import vizClosetMarble from "@/assets/viz-closet-marble.png";
+import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
+import vizDetailCeramics from "@/assets/viz-detail-ceramics.png";
 import { ArrowRight } from "lucide-react";
 
 const values = [
@@ -42,7 +44,7 @@ const OMnie = () => {
           </FadeIn>
           <FadeIn delay={150}>
             <img
-              src={heroBathroom}
+              src={vizBathroomMarble}
               alt="Wnętrze zaprojektowane przez AN Projekt – projektant wnętrz Krosno"
               className="w-full aspect-[3/4] object-cover"
               loading="lazy"
@@ -56,7 +58,7 @@ const OMnie = () => {
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <FadeIn>
             <img
-              src={heroCloset}
+              src={vizClosetMarble}
               alt="Anna Nowak przy pracy – projektantka wnętrz Podkarpacie"
               className="w-full aspect-[4/3] object-cover"
               loading="lazy"
@@ -80,9 +82,10 @@ const OMnie = () => {
       <section className="bg-background section-padding-sm">
         <div className="max-w-[800px] mx-auto text-center">
           <FadeIn>
-            <div className="bg-secondary aspect-video flex items-center justify-center mb-6">
-              <p className="text-muted-foreground font-body text-sm">Miejsce na krótkie wideo – Ania opowiada o swoim podejściu do projektów</p>
+            <div className="bg-secondary aspect-video flex items-center justify-center mb-6 overflow-hidden">
+              <img src={vizBedroomDark} alt="Wizualizacja sypialni AN Projekt" className="w-full h-full object-cover" />
             </div>
+            <p className="text-muted-foreground font-body text-sm">Miejsce na krótkie wideo – Ania opowiada o swoim podejściu do projektów</p>
           </FadeIn>
         </div>
       </section>
@@ -116,15 +119,15 @@ const OMnie = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/realizacje"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-foreground text-foreground text-sm tracking-[0.1em] uppercase font-body hover:bg-foreground hover:text-background transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-foreground text-foreground text-sm tracking-[0.05em] font-body hover:bg-foreground hover:text-background transition-all duration-300"
               >
                 Zobacz realizacje <ArrowRight size={14} />
               </Link>
               <Link
                 to="/kontakt"
-                className="px-7 py-3 rounded-full bg-primary text-primary-foreground text-sm tracking-[0.1em] uppercase font-body hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+                className="px-7 py-3 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.05em] font-body hover:bg-accent/90 transition-all duration-300"
               >
-                Napisz do mnie
+                Umów spotkanie
               </Link>
             </div>
           </FadeIn>

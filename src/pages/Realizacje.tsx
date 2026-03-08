@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
-import heroKitchen from "@/assets/hero-kitchen.png";
-import heroBedroom from "@/assets/hero-bedroom.png";
-import heroCloset from "@/assets/hero-closet.png";
+import vizLivingBeige from "@/assets/viz-living-beige.png";
+import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
+import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
 
 const projects = [
   {
@@ -11,7 +11,7 @@ const projects = [
     area: "85 m²",
     location: "Rzeszów",
     desc: "Ciepłe, przytulne wnętrze z przemyślanym układem i eleganckimi detalami.",
-    image: heroBedroom,
+    image: vizLivingBeige,
     href: "/zlota-harmonia",
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     area: "180 m²",
     location: "Podkarpacie",
     desc: "Nowoczesny dom z odważnymi materiałami i dużą ilością naturalnego światła.",
-    image: heroKitchen,
+    image: vizKitchenRattan,
     href: "/czarna-perla",
   },
   {
@@ -29,7 +29,7 @@ const projects = [
     area: "65 m²",
     location: "Małopolska",
     desc: "Przestrzeń inspirowana naturą – rattan, drewno i spokojne kolory.",
-    image: heroCloset,
+    image: vizDiningFireplace,
     href: "/bambusowa-oaza",
   },
 ];
@@ -67,7 +67,7 @@ const Realizacje = () => {
                   {p.type} · {p.area} · {p.location}
                 </p>
                 <p className="text-muted-foreground font-body text-sm mb-3">{p.desc}</p>
-                <span className="text-sm font-body tracking-[0.08em] uppercase text-foreground border-b border-foreground/30 pb-0.5 group-hover:border-accent group-hover:text-accent transition-colors">
+                <span className="text-sm font-body tracking-[0.05em] uppercase text-foreground border-b border-foreground/30 pb-0.5 group-hover:border-accent group-hover:text-accent transition-colors">
                   Zobacz projekt
                 </span>
               </Link>
@@ -88,9 +88,9 @@ const Realizacje = () => {
             </p>
             <Link
               to="/kontakt"
-              className="px-7 py-3 rounded-full bg-primary text-primary-foreground text-sm tracking-[0.1em] uppercase font-body hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+              className="px-7 py-3 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.05em] font-body hover:bg-accent/90 transition-all duration-300"
             >
-              Napisz do mnie
+              Umów spotkanie
             </Link>
           </FadeIn>
         </div>

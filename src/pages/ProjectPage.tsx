@@ -1,11 +1,15 @@
 import { Link, useParams } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
-import heroKitchen from "@/assets/hero-kitchen.png";
-import heroBedroom from "@/assets/hero-bedroom.png";
-import heroCloset from "@/assets/hero-closet.png";
-import heroBathroom from "@/assets/hero-bathroom.png";
-import heroKitchenAlt from "@/assets/hero-kitchen-alt.png";
 import { ArrowRight } from "lucide-react";
+
+import vizLivingBeige from "@/assets/viz-living-beige.png";
+import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
+import vizClosetMarble from "@/assets/viz-closet-marble.png";
+import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
+import vizBedroomMural from "@/assets/viz-bedroom-mural.png";
+import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
+import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
+import vizDetailCeramics from "@/assets/viz-detail-ceramics.png";
 
 const projectsData: Record<string, {
   title: string;
@@ -31,7 +35,7 @@ const projectsData: Record<string, {
     story: "Klientom zależało na wnętrzu, które będzie ciepłe i przytulne, ale jednocześnie uporządkowane i łatwe do utrzymania. Zaproponowałam spokojną paletę barw, miękkie tkaniny i przemyślany układ, który daje dużo miejsca do przechowywania.",
     scope: ["Układ funkcjonalny", "Projekt koncepcyjny", "4 wizualizacje 3D", "Wizualizacja 360°", "Dokumentacja techniczna"],
     result: "Funkcjonalne, ciepłe wnętrze, w którym każdy ma swoją przestrzeń – a jednocześnie wspólna strefa dzienna zachęca do wspólnego spędzania czasu.",
-    images: [heroBedroom, heroBathroom, heroCloset],
+    images: [vizLivingBeige, vizBathroomMarble, vizClosetMarble, vizDetailCeramics],
   },
   "czarna-perla": {
     title: "Czarna Perła",
@@ -44,7 +48,7 @@ const projectsData: Record<string, {
     story: "Projekt obejmował cały dom od salonu po łazienkę na piętrze. Klient chciał ciemne, odważne materiały, ale bez efektu chłodu. Połączyłam czarny kamień z drewnem, ciepłym oświetleniem i dużą ilością zieleni.",
     scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Wideo wizualne", "Dokumentacja techniczna", "3 spotkania nadzorujące", "Wspólne zakupy materiałów"],
     result: "Nowoczesny dom, który robi wrażenie, ale w którym dobrze się mieszka na co dzień.",
-    images: [heroKitchen, heroKitchenAlt, heroBathroom],
+    images: [vizKitchenRattan, vizBedroomDark, vizBedroomMural, vizBathroomMarble],
   },
   "bambusowa-oaza": {
     title: "Bambusowa Oaza",
@@ -57,7 +61,7 @@ const projectsData: Record<string, {
     story: "Zaproponowałam naturalny rattan, jasne drewno i spokojną paletę beżów i zieleni. Kominek stał się centralnym punktem, a duże okna z widokiem na ogród – integralną częścią projektu.",
     scope: ["Układ funkcjonalny", "Moodboard i propozycja stylistyczna", "3 wizualizacje 3D", "Podstawowe rysunki techniczne"],
     result: "Spójna koncepcja, która dała klientom jasny punkt wyjścia do dalszej realizacji.",
-    images: [heroCloset, heroBedroom, heroKitchenAlt],
+    images: [vizDiningFireplace, vizLivingBeige, vizDetailCeramics, vizClosetMarble],
   },
 };
 
@@ -173,13 +177,13 @@ const ProjectPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/kontakt"
-                className="px-7 py-3 rounded-full bg-primary text-primary-foreground text-sm tracking-[0.1em] uppercase font-body hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+                className="px-7 py-3 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.05em] font-body hover:bg-accent/90 transition-all duration-300"
               >
-                Napisz do mnie
+                Umów spotkanie
               </Link>
               <Link
                 to="/realizacje"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-foreground text-foreground text-sm tracking-[0.1em] uppercase font-body hover:bg-foreground hover:text-background transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-foreground text-foreground text-sm tracking-[0.05em] font-body hover:bg-foreground hover:text-background transition-all duration-300"
               >
                 Inne realizacje <ArrowRight size={14} />
               </Link>
