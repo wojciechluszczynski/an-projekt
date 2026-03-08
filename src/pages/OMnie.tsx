@@ -99,7 +99,7 @@ const OMnie = () => {
       </section>
 
       {/* Extended story + realization photo */}
-      <section className="bg-background section-padding">
+      <section className="bg-secondary section-padding-sm">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <FadeIn delay={100}>
             <img src={vizBathroomMarble} alt="Wizualizacja łazienki, projekt AN Projekt" className="w-full aspect-[4/3] object-cover rounded-lg" loading="lazy" />
