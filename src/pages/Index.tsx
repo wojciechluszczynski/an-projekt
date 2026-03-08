@@ -300,6 +300,26 @@ const Index = () => {
               <p className="text-muted-foreground font-body text-base leading-relaxed mb-6">
                 Moja droga do projektowania wnętrz zaczęła się od budowy własnego domu. Dziś pomagam moim klientom przejść przez ten proces spokojniej i bardziej świadomie.
               </p>
+
+              {/* Signature */}
+              <p className="font-heading italic text-2xl text-accent mb-8" style={{ fontFamily: "'Playfair Display', serif" }}>Anna Nowak</p>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-6 mb-8">
+                <div>
+                  <p className="font-heading text-3xl md:text-4xl text-foreground">50+</p>
+                  <p className="font-body text-xs text-muted-foreground mt-1">Zrealizowanych projektów</p>
+                </div>
+                <div>
+                  <p className="font-heading text-3xl md:text-4xl text-foreground">8</p>
+                  <p className="font-body text-xs text-muted-foreground mt-1">Lat doświadczenia</p>
+                </div>
+                <div>
+                  <p className="font-heading text-3xl md:text-4xl text-foreground">100%</p>
+                  <p className="font-body text-xs text-muted-foreground mt-1">Zadowolonych klientów</p>
+                </div>
+              </div>
+
               <Link to="/o-mnie" className="inline-flex items-center gap-2 text-sm font-body tracking-[0.05em] uppercase text-foreground border-b border-foreground/30 pb-0.5 hover:border-accent hover:text-accent transition-colors">
                 Poznaj mnie lepiej <ArrowRight size={14} />
               </Link>
