@@ -6,8 +6,8 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
 import Chatbot from "@/components/Chatbot";
+import CookieBanner from "@/components/CookieBanner";
 import Index from "./pages/Index";
 import Kontakt from "./pages/Kontakt";
 import Oferta from "./pages/Oferta";
@@ -48,8 +48,8 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
-        <ScrollToTop />
         <Chatbot />
+        <CookieBanner />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
