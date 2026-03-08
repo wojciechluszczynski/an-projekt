@@ -15,9 +15,8 @@ const PinterestIcon = () => (
 
 const stats = [
   { number: "50+", label: "Zrealizowanych projektów" },
-  { number: "4", label: "Lata doświadczenia" },
+  { number: "8", label: "Lat doświadczenia" },
   { number: "100%", label: "Zadowolonych klientów" },
-  { number: "2", label: "Regiony działania" },
 ];
 
 const values = [
