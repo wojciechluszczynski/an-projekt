@@ -129,9 +129,6 @@ const Kontakt = () => {
           </FadeIn>
         </div>
       </div>
-
-      {/* Clear separator before footer */}
-      <div className="border-t border-primary-foreground/10 mt-8" />
     </main>
   );
 };
