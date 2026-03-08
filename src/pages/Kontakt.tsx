@@ -3,13 +3,32 @@ import { Instagram, Facebook } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import { toast } from "sonner";
 
+const projectTypes = [
+  "Mieszkanie",
+  "Dom jednorodzinny",
+  "Pojedyncze pomieszczenie",
+  "Lokal usługowy",
+  "Inne",
+];
+
+const stages = [
+  "Dopiero planuję",
+  "Mam projekt / pomysł",
+  "Remont w trakcie",
+  "Szukam konsultacji",
+];
+
 const Kontakt = () => {
   const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    phone: "",
+    name: "",
     email: "",
+    phone: "",
+    city: "",
+    projectType: "",
+    area: "",
+    stage: "",
     message: "",
+    consent: false,
     honeypot: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -17,8 +36,8 @@ const Kontakt = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (form.honeypot) return;
-    if (!form.firstName || !form.lastName || !form.phone || !form.email || !form.message) {
-      toast.error("Proszę wypełnić wszystkie pola.");
+    if (!form.name || !form.email || !form.message || !form.consent) {
+      toast.error("Proszę wypełnić wymagane pola i zaakceptować zgodę.");
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
@@ -26,28 +45,31 @@ const Kontakt = () => {
       return;
     }
     setSubmitted(true);
-    toast.success("Dziękuję! Ania odezwie się w ciągu 24 godzin.");
+    toast.success("Dziękuję! Odezwę się w ciągu 1–2 dni roboczych.");
   };
 
   const inputClass =
-    "w-full bg-transparent border-b border-primary-foreground/30 text-primary-foreground font-body text-base py-3 px-0 placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors";
+    "w-full bg-transparent border-b border-primary-foreground/20 text-primary-foreground font-body text-sm py-3 px-0 placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors";
+
+  const set = (key: string, value: string | boolean) =>
+    setForm((prev) => ({ ...prev, [key]: value }));
 
   return (
-    <main className="bg-primary min-h-screen pt-32">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 pb-24 md:pb-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+    <main className="bg-primary min-h-screen pt-28 md:pt-32">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20 pb-20 md:pb-28">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20">
           {/* Left */}
           <FadeIn>
             <div>
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-primary-foreground mb-6">
-                Buduję Twoją wizję
+              <h1 className="font-heading text-3xl md:text-4xl text-primary-foreground mb-4">
+                Porozmawiajmy o&nbsp;Twoim wnętrzu
               </h1>
-              <p className="text-primary-foreground/60 font-body text-lg mb-12">
-                Krok po kroku, razem. Chętnie opowiem Ci o&nbsp;Twoim projekcie.
+              <p className="text-primary-foreground/60 font-body text-base mb-10">
+                Opisz w kilku zdaniach swój projekt lub zadaj pytanie. Pierwsza rozmowa jest bezpłatna.
               </p>
 
-              <div className="flex flex-col gap-3 text-primary-foreground/70 font-body text-base mb-10">
-                <span className="text-primary-foreground font-medium">Anna Nowak · AN Projekt</span>
+              <div className="flex flex-col gap-2 text-primary-foreground/70 font-body text-sm mb-8">
+                <span className="text-primary-foreground font-medium text-base">Anna Nowak · AN Projekt</span>
                 <span>Odrzykoń, Podkarpacie</span>
                 <a href="tel:+48XXXXXXXXX" className="hover:text-accent transition-colors">
                   +48 XXX XXX XXX
@@ -57,96 +79,154 @@ const Kontakt = () => {
                 </a>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 mb-10">
                 <a
                   href="https://www.instagram.com/an_projekt/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary-foreground/50 hover:text-accent transition-colors"
+                  className="text-primary-foreground/40 hover:text-accent transition-colors"
                   aria-label="Instagram"
                 >
-                  <Instagram size={24} />
+                  <Instagram size={22} />
                 </a>
                 <a
                   href="https://www.facebook.com/anna.nowakpaprocka"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary-foreground/50 hover:text-accent transition-colors"
+                  className="text-primary-foreground/40 hover:text-accent transition-colors"
                   aria-label="Facebook"
                 >
-                  <Facebook size={24} />
+                  <Facebook size={22} />
                 </a>
+              </div>
+
+              <div className="text-primary-foreground/40 font-body text-xs leading-relaxed space-y-1">
+                <p>Możesz też napisać bezpośrednio na adres e‑mail.</p>
+                <p>Po wysłaniu formularza odezwę się w ciągu 1–2 dni roboczych.</p>
               </div>
             </div>
           </FadeIn>
 
           {/* Right - Form */}
-          <FadeIn delay={200}>
+          <FadeIn delay={150}>
             {submitted ? (
               <div className="flex items-center justify-center h-full">
                 <div className="text-center">
-                  <h2 className="font-heading text-3xl text-primary-foreground mb-4">Dziękuję!</h2>
-                  <p className="text-primary-foreground/60 font-body text-lg">
-                    Ania odezwie się do Ciebie w&nbsp;ciągu 24 godzin.
+                  <h2 className="font-heading text-2xl text-primary-foreground mb-3">Dziękuję!</h2>
+                  <p className="text-primary-foreground/60 font-body text-base mb-2">
+                    Twoja wiadomość dotarła. Odezwę się w ciągu 1–2 dni roboczych.
+                  </p>
+                  <p className="text-primary-foreground/40 font-body text-sm">
+                    Jeśli to pilne, napisz bezpośrednio na anna@anprojekt.com.pl
                   </p>
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 {/* Honeypot */}
                 <input
                   type="text"
                   name="website"
                   value={form.honeypot}
-                  onChange={(e) => setForm({ ...form, honeypot: e.target.value })}
+                  onChange={(e) => set("honeypot", e.target.value)}
                   className="hidden"
                   tabIndex={-1}
                   autoComplete="off"
                 />
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+                <input
+                  type="text"
+                  placeholder="Imię i nazwisko *"
+                  value={form.name}
+                  onChange={(e) => set("name", e.target.value)}
+                  className={inputClass}
+                  maxLength={100}
+                />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <input
-                    type="text"
-                    placeholder="Imię *"
-                    value={form.firstName}
-                    onChange={(e) => setForm({ ...form, firstName: e.target.value })}
+                    type="email"
+                    placeholder="E-mail *"
+                    value={form.email}
+                    onChange={(e) => set("email", e.target.value)}
                     className={inputClass}
-                    maxLength={100}
+                    maxLength={255}
                   />
                   <input
-                    type="text"
-                    placeholder="Nazwisko *"
-                    value={form.lastName}
-                    onChange={(e) => setForm({ ...form, lastName: e.target.value })}
+                    type="tel"
+                    placeholder="Telefon"
+                    value={form.phone}
+                    onChange={(e) => set("phone", e.target.value)}
                     className={inputClass}
-                    maxLength={100}
+                    maxLength={20}
                   />
                 </div>
+
                 <input
-                  type="tel"
-                  placeholder="Telefon *"
-                  value={form.phone}
-                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  type="text"
+                  placeholder="Miejscowość"
+                  value={form.city}
+                  onChange={(e) => set("city", e.target.value)}
                   className={inputClass}
-                  maxLength={20}
+                  maxLength={100}
                 />
-                <input
-                  type="email"
-                  placeholder="Email *"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className={inputClass}
-                  maxLength={255}
-                />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <select
+                    value={form.projectType}
+                    onChange={(e) => set("projectType", e.target.value)}
+                    className={`${inputClass} appearance-none ${!form.projectType ? "text-primary-foreground/30" : ""}`}
+                  >
+                    <option value="" disabled>Typ projektu</option>
+                    {projectTypes.map((t) => (
+                      <option key={t} value={t} className="text-foreground bg-background">{t}</option>
+                    ))}
+                  </select>
+                  <input
+                    type="text"
+                    placeholder="Przybliżony metraż"
+                    value={form.area}
+                    onChange={(e) => set("area", e.target.value)}
+                    className={inputClass}
+                    maxLength={20}
+                  />
+                </div>
+
+                <select
+                  value={form.stage}
+                  onChange={(e) => set("stage", e.target.value)}
+                  className={`${inputClass} appearance-none ${!form.stage ? "text-primary-foreground/30" : ""}`}
+                >
+                  <option value="" disabled>Na jakim etapie jesteś?</option>
+                  {stages.map((s) => (
+                    <option key={s} value={s} className="text-foreground bg-background">{s}</option>
+                  ))}
+                </select>
+
                 <textarea
-                  placeholder="Napisz kilka słów o swoim projekcie lub zadaj pytanie... *"
+                  placeholder="Opisz w kilku zdaniach swój projekt lub pytanie... *"
                   value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className={`${inputClass} resize-none min-h-[120px]`}
-                  maxLength={1000}
+                  onChange={(e) => set("message", e.target.value)}
+                  className={`${inputClass} resize-none min-h-[100px]`}
+                  maxLength={2000}
                 />
+
+                <label className="flex items-start gap-3 mt-1">
+                  <input
+                    type="checkbox"
+                    checked={form.consent}
+                    onChange={(e) => set("consent", e.target.checked)}
+                    className="mt-1 accent-accent"
+                  />
+                  <span className="text-primary-foreground/50 font-body text-xs leading-relaxed">
+                    Wyrażam zgodę na przetwarzanie moich danych osobowych w celu odpowiedzi na zapytanie, zgodnie z&nbsp;
+                    <a href="/polityka-prywatnosci" className="underline hover:text-accent">polityką prywatności</a>. *
+                  </span>
+                </label>
+
                 <button
                   type="submit"
-                  className="w-full mt-4 py-4 rounded-full bg-primary-foreground text-primary font-body text-sm tracking-[0.12em] uppercase hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+                  className="w-full mt-3 py-3.5 rounded-full bg-primary-foreground text-primary font-body text-sm tracking-[0.1em] uppercase hover:bg-accent hover:text-accent-foreground transition-all duration-300"
                 >
                   Wyślij wiadomość
                 </button>

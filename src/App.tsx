@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
-import CustomCursor from "@/components/CustomCursor";
 import Index from "./pages/Index";
 import Kontakt from "./pages/Kontakt";
 import Oferta from "./pages/Oferta";
@@ -35,7 +34,6 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollRestoration />
-        <CustomCursor />
         <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
