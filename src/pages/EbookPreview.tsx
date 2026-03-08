@@ -398,7 +398,7 @@ const EbookPreview = () => {
 
             <div className="w-full h-px bg-primary-foreground/10 mb-6" />
 
-            <p className="font-body text-xs tracking-[0.1em] uppercase text-accent mb-4">⚠️ Czerwone flagi – uważaj gdy projektant:</p>
+            <p className="font-body text-xs tracking-[0.1em] uppercase text-accent mb-4">Czerwone flagi – uważaj gdy projektant:</p>
             <div className="space-y-2">
               {[
                 "Nie ma realnego portfolio (tylko stocki)",
@@ -408,7 +408,7 @@ const EbookPreview = () => {
                 'Wszystkie ceny „do ustalenia" bez widełek',
               ].map((flag) => (
                 <div key={flag} className="flex items-start gap-2 font-body text-sm text-primary-foreground/60">
-                  <X size={12} className="text-destructive mt-1 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-destructive mt-1.5 shrink-0" />
                   <span>{flag}</span>
                 </div>
               ))}
