@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
@@ -24,7 +24,7 @@ const projects = [
   },
   {
     title: "Bambusowa Oaza",
-    desc: "Przestrzeń inspirowana naturą – rattan, drewno i spokojne kolory.",
+    desc: "Przestrzeń inspirowana naturą, rattan, drewno i spokojne kolory.",
     image: vizDiningFireplace,
     href: "/bambusowa-oaza",
     meta: "Salon 65 m² · Małopolska",
@@ -33,35 +33,53 @@ const projects = [
 
 const ProjectCarousel = () => {
   const [active, setActive] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const autoRef = useRef<ReturnType<typeof setInterval>>();
 
-  const prev = () => setActive((a) => (a === 0 ? projects.length - 1 : a - 1));
-  const next = () => setActive((a) => (a === projects.length - 1 ? 0 : a + 1));
+  const navigate = (dir: number) => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setActive((a) => (a + dir + projects.length) % projects.length);
+    setTimeout(() => setIsTransitioning(false), 500);
+  };
+
+  useEffect(() => {
+    autoRef.current = setInterval(() => navigate(1), 5000);
+    return () => clearInterval(autoRef.current);
+  }, []);
 
   const getIndex = (offset: number) => (active + offset + projects.length) % projects.length;
 
   return (
     <FadeIn>
-      <div className="relative">
-        {/* Carousel */}
-        <div className="flex items-center justify-center gap-4 md:gap-6">
+      <div className="relative flex items-center">
+        {/* Left arrow */}
+        <button
+          onClick={() => navigate(-1)}
+          className="shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 mr-3 md:mr-6"
+          aria-label="Poprzedni projekt"
+        >
+          <ChevronLeft size={20} />
+        </button>
+
+        {/* Carousel track */}
+        <div className="flex-1 flex items-center justify-center gap-4 md:gap-6 overflow-hidden">
           {/* Prev item (blurred) */}
-          <div className="hidden md:block w-1/4 shrink-0 opacity-40 blur-[2px] transition-all duration-500">
-            <Link to={projects[getIndex(-1)].href} className="block">
-              <img
-                src={projects[getIndex(-1)].image}
-                alt={projects[getIndex(-1)].title}
-                className="w-full aspect-[4/5] object-cover rounded-lg"
-              />
-            </Link>
+          <div className="hidden md:block w-1/4 shrink-0 opacity-30 blur-[3px] transition-all duration-500 ease-in-out">
+            <img
+              src={projects[getIndex(-1)].image}
+              alt={projects[getIndex(-1)].title}
+              className="w-full aspect-[4/5] object-cover rounded-lg"
+            />
           </div>
 
           {/* Active item */}
-          <div className="w-full md:w-1/2 shrink-0 transition-all duration-500">
+          <div className="w-full md:w-1/2 shrink-0 transition-all duration-500 ease-in-out">
             <Link to={projects[active].href} className="group block">
               <div className="overflow-hidden rounded-lg mb-5">
                 <img
                   src={projects[active].image}
-                  alt={`${projects[active].title} – projekt wnętrz AN Projekt`}
+                  alt={`${projects[active].title} projekt wnętrz AN Projekt`}
                   className="w-full aspect-[4/5] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               </div>
@@ -77,46 +95,37 @@ const ProjectCarousel = () => {
           </div>
 
           {/* Next item (blurred) */}
-          <div className="hidden md:block w-1/4 shrink-0 opacity-40 blur-[2px] transition-all duration-500">
-            <Link to={projects[getIndex(1)].href} className="block">
-              <img
-                src={projects[getIndex(1)].image}
-                alt={projects[getIndex(1)].title}
-                className="w-full aspect-[4/5] object-cover rounded-lg"
-              />
-            </Link>
+          <div className="hidden md:block w-1/4 shrink-0 opacity-30 blur-[3px] transition-all duration-500 ease-in-out">
+            <img
+              src={projects[getIndex(1)].image}
+              alt={projects[getIndex(1)].title}
+              className="w-full aspect-[4/5] object-cover rounded-lg"
+            />
           </div>
         </div>
 
-        {/* Arrows */}
+        {/* Right arrow */}
         <button
-          onClick={prev}
-          className="absolute left-0 md:-left-4 top-1/3 -translate-y-1/2 w-10 h-10 rounded-full bg-background/90 shadow-md flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 z-10"
-          aria-label="Poprzedni projekt"
-        >
-          <ChevronLeft size={20} />
-        </button>
-        <button
-          onClick={next}
-          className="absolute right-0 md:-right-4 top-1/3 -translate-y-1/2 w-10 h-10 rounded-full bg-background/90 shadow-md flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 z-10"
+          onClick={() => navigate(1)}
+          className="shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 ml-3 md:ml-6"
           aria-label="Następny projekt"
         >
           <ChevronRight size={20} />
         </button>
+      </div>
 
-        {/* Dots */}
-        <div className="flex justify-center gap-2 mt-8">
-          {projects.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                i === active ? "bg-accent w-6" : "bg-foreground/20"
-              }`}
-              aria-label={`Projekt ${i + 1}`}
-            />
-          ))}
-        </div>
+      {/* Dots */}
+      <div className="flex justify-center gap-2 mt-8">
+        {projects.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setActive(i)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              i === active ? "bg-accent w-6" : "bg-foreground/20"
+            }`}
+            aria-label={`Projekt ${i + 1}`}
+          />
+        ))}
       </div>
     </FadeIn>
   );

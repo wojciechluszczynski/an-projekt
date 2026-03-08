@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { MessageCircle, X, Send } from "lucide-react";
+import { useState, useEffect } from "react";
+import { X, Send } from "lucide-react";
 import annaPortrait from "@/assets/anna-portrait.jpg";
 
 const quickTopics = [
   { label: "Jak wygląda współpraca?", answer: "Współpraca zaczyna się od bezpłatnej rozmowy, podczas której poznaję Twoje potrzeby. Następnie przygotowuję układ funkcjonalny i koncepcję, potem wizualizacje 3D, a na końcu dokumentację techniczną. W opcji Kompleks wspieram też realizację na budowie." },
   { label: "Jakie są opcje współpracy?", answer: "Oferuję 4 formy: Konsultację (jednorazowe spotkanie), Opcję Koncepcyjną (układ + wizualizacje), Opcję Komfortową (pełny projekt z dokumentacją) i Opcję Kompleks (projekt + nadzór na budowie). Szczegóły znajdziesz na stronie Oferta." },
-  { label: "Ile kosztuje projekt?", answer: "Wycena zależy od metrażu i zakresu prac. Po pierwszej rozmowie przygotuję indywidualną ofertę dopasowaną do Twoich potrzeb. Pierwsza rozmowa jest bezpłatna – napisz lub zadzwoń." },
+  { label: "Ile kosztuje projekt?", answer: "Wycena zależy od metrażu i zakresu prac. Po pierwszej rozmowie przygotuję indywidualną ofertę dopasowaną do Twoich potrzeb. Pierwsza rozmowa jest bezpłatna, napisz lub zadzwoń." },
   { label: "Gdzie działasz?", answer: "Pracuję głównie na Podkarpaciu (okolice Krosna, Rzeszowa) i w Małopolsce (okolice Nowego Sącza). Wiele elementów projektów realizuję również zdalnie." },
-  { label: "Jak się skontaktować?", answer: "Napisz na anprojekt.com@gmail.com lub zadzwoń: +48 730 359 642. Możesz też wypełnić formularz na stronie Kontakt. Odezwę się w ciągu 1–2 dni roboczych." },
+  { label: "Jak się skontaktować?", answer: "Napisz na anprojekt.com@gmail.com lub zadzwoń: +48 730 359 642. Możesz też wypełnić formularz na stronie Kontakt. Odezwę się w ciągu 1-2 dni roboczych." },
 ];
 
 const siteLinks = [
@@ -24,11 +24,20 @@ interface ChatMessage {
 
 const Chatbot = () => {
   const [open, setOpen] = useState(false);
+  const [showGreeting, setShowGreeting] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: "bot", content: "Cześć! Jestem wirtualną asystentką AN Projekt. Mogę pomóc Ci znaleźć informacje o ofercie, procesie współpracy lub skontaktować się z Anią. O co chcesz zapytać?" },
+    { role: "bot", content: "Cześć! Mogę pomóc Ci znaleźć informacje o ofercie, procesie współpracy lub skontaktować się z Anią. O co chcesz zapytać?" },
   ]);
   const [input, setInput] = useState("");
   const [showTopics, setShowTopics] = useState(true);
+
+  // Show greeting bubble after 3 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!open) setShowGreeting(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleTopic = (topic: typeof quickTopics[0]) => {
     setMessages((prev) => [
@@ -45,9 +54,8 @@ const Chatbot = () => {
     setInput("");
     setShowTopics(false);
 
-    // Simple keyword matching for common questions
     const lower = userMsg.toLowerCase();
-    let botResponse = "Dziękuję za pytanie! Aby uzyskać szczegółową odpowiedź, najlepiej skontaktuj się bezpośrednio z Anią: anprojekt.com@gmail.com lub +48 730 359 642. Możesz też wypełnić formularz na stronie Kontakt.";
+    let botResponse = "Dziękuję za pytanie! Aby uzyskać szczegółową odpowiedź, najlepiej skontaktuj się bezpośrednio z Anią: anprojekt.com@gmail.com lub +48 730 359 642.";
 
     if (lower.includes("cen") || lower.includes("koszt") || lower.includes("ile")) {
       botResponse = quickTopics[2].answer;
@@ -70,22 +78,35 @@ const Chatbot = () => {
 
   return (
     <>
+      {/* Greeting bubble */}
+      {showGreeting && !open && (
+        <div
+          className="fixed bottom-24 right-6 z-50 bg-background rounded-2xl shadow-lg border border-border px-4 py-3 max-w-[220px] animate-fade-in-up cursor-pointer"
+          onClick={() => { setOpen(true); setShowGreeting(false); }}
+        >
+          <p className="font-body text-sm text-foreground">Cześć, porozmawiajmy o Twoim projekcie?</p>
+          <div className="absolute -bottom-2 right-6 w-4 h-4 bg-background border-r border-b border-border rotate-45" />
+        </div>
+      )}
+
       {/* Chat bubble */}
       <button
-        onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-accent text-accent-foreground shadow-lg hover:bg-accent/90 transition-all duration-300 flex items-center justify-center group"
+        onClick={() => { setOpen(!open); setShowGreeting(false); }}
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center overflow-hidden"
         aria-label="Otwórz czat"
       >
         {open ? (
-          <X size={22} />
+          <div className="w-full h-full bg-accent flex items-center justify-center">
+            <X size={22} className="text-accent-foreground" />
+          </div>
         ) : (
-          <div className="relative">
+          <div className="relative w-full h-full">
             <img
               src={annaPortrait}
               alt="Anna Nowak"
-              className="w-12 h-12 rounded-full object-cover border-2 border-accent"
+              className="w-full h-full object-cover object-top"
             />
-            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-accent animate-pulse" />
+            <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-background animate-pulse" />
           </div>
         )}
       </button>
@@ -95,10 +116,10 @@ const Chatbot = () => {
         <div className="fixed bottom-24 right-6 z-50 w-[340px] max-h-[480px] bg-background rounded-2xl shadow-2xl border border-border flex flex-col overflow-hidden animate-fade-in-up">
           {/* Header */}
           <div className="bg-primary px-4 py-3 flex items-center gap-3">
-            <img src={annaPortrait} alt="Anna Nowak" className="w-9 h-9 rounded-full object-cover" />
+            <img src={annaPortrait} alt="Anna Nowak" className="w-9 h-9 rounded-full object-cover object-top" />
             <div>
               <p className="text-primary-foreground font-body text-sm font-medium">AN Projekt</p>
-              <p className="text-primary-foreground/60 font-body text-xs">Zwykle odpowiadam w ciągu 1–2 dni</p>
+              <p className="text-primary-foreground/60 font-body text-xs">Zwykle odpowiadam w ciągu 1-2 dni</p>
             </div>
           </div>
 

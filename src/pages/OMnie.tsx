@@ -2,14 +2,13 @@ import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
 import annaPortrait from "@/assets/anna-portrait.jpg";
 import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
-import vizClosetMarble from "@/assets/viz-closet-marble.png";
 import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
 import { ArrowRight, Instagram, Facebook } from "lucide-react";
 
 const values = [
-  { title: "Estetyka z funkcją", desc: "Projektuję tak, żeby było pięknie i praktycznie – w równym stopniu." },
+  { title: "Estetyka z funkcją", desc: "Projektuję tak, żeby było pięknie i praktycznie, w równym stopniu." },
   { title: "Bliskość i komunikacja", desc: "Pracuję bezpośrednio z klientem, bez pośredników. Słucham, pytam, proponuję." },
-  { title: "Odpowiedzialność", desc: "Biorę odpowiedzialność za każdy etap – od pomysłu po nadzór na budowie." },
+  { title: "Odpowiedzialność", desc: "Biorę odpowiedzialność za każdy etap, od pomysłu po nadzór na budowie." },
 ];
 
 const processSteps = [
@@ -18,6 +17,12 @@ const processSteps = [
   "Projekt i wizualizacje",
   "Dokumentacja i wsparcie przy realizacji",
 ];
+
+const PinterestIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-[22px] h-[22px]">
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
+  </svg>
+);
 
 const OMnie = () => {
   return (
@@ -36,13 +41,14 @@ const OMnie = () => {
       <section className="bg-background section-padding-sm">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <FadeIn>
-            <div className="overflow-hidden rounded-lg">
+            <div className="relative overflow-hidden rounded-lg">
               <img
                 src={annaPortrait}
-                alt="Anna Nowak – projektantka wnętrz AN Projekt"
+                alt="Anna Nowak, projektantka wnętrz AN Projekt"
                 className="w-full aspect-[3/4] object-cover object-top"
                 loading="lazy"
               />
+              <div className="absolute inset-0 rounded-lg ring-2 ring-accent/20 animate-pulse pointer-events-none" />
             </div>
           </FadeIn>
           <FadeIn delay={150}>
@@ -51,13 +57,13 @@ const OMnie = () => {
                 Nazywam się Anna Nowak i prowadzę pracownię AN Projekt.
               </p>
               <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
-                Projektuję wnętrza mieszkań i domów dla osób, które chcą stworzyć przestrzeń dopasowaną do swojego stylu życia – funkcjonalną, estetyczną i przemyślaną w&nbsp;każdym detalu.
+                Projektuję wnętrza mieszkań i domów dla osób, które chcą stworzyć przestrzeń dopasowaną do swojego stylu życia. Funkcjonalną, estetyczną i przemyślaną w każdym detalu.
               </p>
               <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
-                Moja droga do projektowania wnętrz zaczęła się od budowy własnego domu. To właśnie wtedy zobaczyłam, jak wiele decyzji trzeba podjąć w&nbsp;trakcie projektowania i&nbsp;realizacji wnętrza – i&nbsp;jak łatwo w&nbsp;tym procesie o&nbsp;chaos, stres czy kosztowne pomyłki.
+                Moja droga do projektowania wnętrz zaczęła się od budowy własnego domu. To właśnie wtedy zobaczyłam, jak wiele decyzji trzeba podjąć w trakcie projektowania i realizacji wnętrza, i jak łatwo w tym procesie o chaos, stres czy kosztowne pomyłki.
               </p>
               <p className="text-foreground font-body text-base leading-relaxed font-medium">
-                Dziś pomagam moim klientom przejść przez ten proces spokojniej i&nbsp;bardziej świadomie.
+                Dziś pomagam moim klientom przejść przez ten proces spokojniej i bardziej świadomie.
               </p>
             </div>
           </FadeIn>
@@ -71,20 +77,20 @@ const OMnie = () => {
             <div>
               <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-5">Jak pracuję</h2>
               <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
-                W swojej pracy łączę estetykę z&nbsp;funkcjonalnością. Każdy projekt powstaje indywidualnie – dopasowany do stylu życia domowników, charakteru przestrzeni i&nbsp;budżetu inwestycji.
+                W swojej pracy łączę estetykę z funkcjonalnością. Każdy projekt powstaje indywidualnie, dopasowany do stylu życia domowników, charakteru przestrzeni i budżetu inwestycji.
               </p>
               <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
-                Nie tworzę wnętrz „z&nbsp;katalogu". Zależy mi, aby były spójne, wygodne w&nbsp;codziennym użytkowaniu i&nbsp;po&nbsp;prostu dobrze się w&nbsp;nich mieszkało.
+                Nie tworzę wnętrz „z katalogu". Zależy mi, aby były spójne, wygodne w codziennym użytkowaniu i po prostu dobrze się w nich mieszkało.
               </p>
               <p className="text-muted-foreground font-body text-base leading-relaxed">
-                Pracuję głównie z klientami z&nbsp;Podkarpacia i&nbsp;Małopolski – między innymi w okolicach Krosna, Rzeszowa czy Nowego Sącza – ale wiele elementów projektów można realizować również zdalnie.
+                Pracuję głównie z klientami z Podkarpacia i Małopolski, między innymi w okolicach Krosna, Rzeszowa czy Nowego Sącza, ale wiele elementów projektów można realizować również zdalnie.
               </p>
             </div>
           </FadeIn>
           <FadeIn delay={150}>
             <img
               src={vizBathroomMarble}
-              alt="Wizualizacja łazienki – projekt AN Projekt"
+              alt="Wizualizacja łazienki, projekt AN Projekt"
               className="w-full aspect-[4/3] object-cover rounded-lg"
               loading="lazy"
             />
@@ -116,7 +122,7 @@ const OMnie = () => {
             <div className="aspect-video flex items-center justify-center mb-6 overflow-hidden rounded-lg">
               <img src={vizBedroomDark} alt="Wizualizacja sypialni AN Projekt" className="w-full h-full object-cover" />
             </div>
-            <p className="text-muted-foreground font-body text-sm">Miejsce na krótkie wideo – Ania opowiada o swoim podejściu do projektów</p>
+            <p className="text-muted-foreground font-body text-sm">Miejsce na krótkie wideo. Ania opowiada o swoim podejściu do projektów</p>
           </FadeIn>
         </div>
       </section>
@@ -163,6 +169,9 @@ const OMnie = () => {
               </a>
               <a href="https://www.facebook.com/anna.nowakpaprocka" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors" aria-label="Facebook">
                 <Facebook size={22} />
+              </a>
+              <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors" aria-label="Pinterest">
+                <PinterestIcon />
               </a>
             </div>
           </FadeIn>

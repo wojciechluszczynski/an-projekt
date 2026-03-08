@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.svg";
+import annaPortrait from "@/assets/anna-portrait.jpg";
 
 const navLinks = [
   { href: "/", label: "Start" },
@@ -28,15 +28,14 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-4 md:px-8 pt-4">
-      <div
-        className="max-w-[1100px] mx-auto flex items-center justify-between px-6 md:px-8 py-3 rounded-full transition-all duration-500 bg-background/95 backdrop-blur-md shadow-md"
-      >
-        <Link to="/" className="z-50 shrink-0">
+      <div className="max-w-[1100px] mx-auto flex items-center justify-between px-6 md:px-8 py-3 rounded-full transition-all duration-500 bg-background/95 backdrop-blur-md shadow-md">
+        <Link to="/" className="z-50 shrink-0 flex items-center gap-3">
           <img
-            src={logo}
-            alt="AN Projekt – projektant wnętrz Krosno"
-            className="h-8 md:h-9 transition-all duration-300 invert"
+            src={annaPortrait}
+            alt="Anna Nowak"
+            className="w-9 h-9 rounded-full object-cover object-top"
           />
+          <span className="font-heading text-lg text-foreground tracking-wide">AN Projekt</span>
         </Link>
 
         {/* Desktop nav */}
