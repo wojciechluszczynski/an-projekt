@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Search, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Search } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import vizLivingBeige from "@/assets/viz-living-beige.png";
 import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
