@@ -475,15 +475,15 @@ const EbookPreview = () => {
             Jeśli planujesz remont lub wykończenie mieszkania na Podkarpaciu lub w Małopolsce, napisz do mnie. Pierwsza rozmowa jest bezpłatna i bez zobowiązań.
           </p>
           <div className="w-16 h-px bg-white/30 mx-auto mb-5" />
-          <div className="font-body text-xs text-white/50 space-y-1 mb-6">
-            <p>📧 anna@anprojekt.com.pl</p>
-            <p>📍 Odrzykoń | Podkarpacie</p>
+          <div className="font-body text-sm text-white/60 space-y-1.5 mb-6">
+            <p>anna@anprojekt.com.pl</p>
+            <p>Odrzykoń | Podkarpacie</p>
           </div>
           <Link
             to="/kontakt"
             className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-white text-foreground text-sm tracking-[0.05em] font-body hover:bg-white/90 transition-all duration-300"
           >
-            Napisz do Anny <ArrowRight size={14} />
+            Napisz do mnie <ArrowRight size={14} />
           </Link>
           <p className="font-body text-xs text-white/40 mt-8">© 2026 AN Projekt | Anna Nowak</p>
         </div>
