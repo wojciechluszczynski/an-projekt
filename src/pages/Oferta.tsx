@@ -5,7 +5,7 @@ import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
 import vizLivingBeige from "@/assets/viz-living-beige.png";
 import vizBedroomMural from "@/assets/viz-bedroom-mural.png";
 import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
-import { ArrowRight, Home, Building, Building2, Trees, MessageCircle, MapPin, Ruler, Monitor, Hammer, Plus, X } from "lucide-react";
+import { ArrowRight, Home, Building, Building2, Trees, MessageCircle, MapPin, Ruler, Monitor, Hammer, Plus, X, Check } from "lucide-react";
 
 const packages = [
   {
@@ -36,7 +36,14 @@ const packages = [
     icon: Trees,
     name: "Opcja Kompleks",
     target: "Dla osób szukających pełnego wsparcia. Od koncepcji, przez projekt, po nadzór na budowie.",
-    features: ["Wszystko z Opcji Komfortowej", "Krótkie wideo wizualne głównych pomieszczeń", "3 spotkania nadzorujące:", "  wspólne zakupy materiałów", "  spotkanie na budowie z wykonawcą", "  kontrola realizacji na budowie"],
+    features: [
+      "Wszystko z Opcji Komfortowej",
+      "Krótkie wideo wizualne głównych pomieszczeń",
+      "3 spotkania nadzorujące:",
+      "  wspólne zakupy materiałów",
+      "  spotkanie na budowie z wykonawcą",
+      "  kontrola realizacji na budowie",
+    ],
     image: vizBathroomMarble,
     tags: ["Pełne wsparcie", "Wideo", "Nadzór budowy", "Zakupy materiałów"],
   },
@@ -95,10 +102,20 @@ const Oferta = () => {
                       <div className="px-4 md:px-6 pb-6 flex flex-col md:flex-row gap-6">
                         <div className="flex-1">
                           <p className="text-muted-foreground font-body text-sm leading-relaxed mb-4">{pkg.target}</p>
-                          <ul className="space-y-2 mb-4">
+                          <ul className="space-y-2.5 mb-5">
                             {pkg.features.map((f) => (
-                              <li key={f} className="text-foreground/80 font-body text-sm flex items-start gap-2">
-                                {f.startsWith("  ") ? <span className="ml-4">{f.trim()}</span> : <><span className="text-accent mt-0.5 shrink-0">·</span> {f}</>}
+                              <li key={f} className="text-foreground/80 font-body text-sm flex items-start gap-2.5">
+                                {f.startsWith("  ") ? (
+                                  <span className="ml-7 flex items-start gap-2.5">
+                                    <span className="w-1 h-1 rounded-full bg-accent/50 mt-2 shrink-0" />
+                                    {f.trim()}
+                                  </span>
+                                ) : (
+                                  <>
+                                    <Check size={15} className="text-accent mt-0.5 shrink-0" />
+                                    {f}
+                                  </>
+                                )}
                               </li>
                             ))}
                           </ul>
@@ -108,14 +125,6 @@ const Oferta = () => {
                         </div>
                         <div className="md:w-52 shrink-0">
                           <img src={pkg.image} alt={pkg.name} className="w-full aspect-[4/3] object-cover rounded-lg" />
-                        </div>
-                        <div className="md:w-56 shrink-0">
-                          <p className="font-body text-xs tracking-[0.1em] uppercase text-muted-foreground mb-3">Zakres</p>
-                          <div className="flex flex-wrap gap-2">
-                            {pkg.tags.map((tag) => (
-                              <span key={tag} className="px-3 py-1.5 rounded-full border border-border text-foreground font-body text-xs">{tag}</span>
-                            ))}
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -132,7 +141,7 @@ const Oferta = () => {
       <section className="bg-secondary section-padding">
         <div className="max-w-[1000px] mx-auto">
           <FadeIn>
-            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-4 text-center">Jak przebiega współpraca</h2>
+            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-4 text-center">Jak przebiega współpraca?</h2>
             <p className="text-muted-foreground font-body text-base text-center mb-14 max-w-lg mx-auto">Przejrzysty proces, bez niespodzianek.</p>
           </FadeIn>
           <FadeIn delay={100}>

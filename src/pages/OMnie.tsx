@@ -4,7 +4,8 @@ import FadeIn from "@/components/FadeIn";
 import annaPortrait from "@/assets/anna-portrait.jpg";
 import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
 import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
-import { ArrowRight, Instagram, Facebook, MessageCircle, MapPin, Ruler, Hammer } from "lucide-react";
+import vizLivingBeige from "@/assets/viz-living-beige.png";
+import { ArrowRight, Instagram, Facebook, MessageCircle, MapPin, Ruler, Hammer, Play } from "lucide-react";
 
 const PinterestIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-[22px] h-[22px]">
@@ -30,41 +31,21 @@ const OMnie = () => {
 
   return (
     <main>
-      {/* Mobile-first hero: photo first, then name */}
-      <section className="pt-24 md:pt-32 pb-6 md:pb-10">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20">
-          {/* Mobile: photo on top */}
-          <div className="md:hidden mb-6">
-            <FadeIn>
-              <div className="relative overflow-hidden rounded-lg">
-                <img src={annaPortrait} alt="Anna Nowak, projektantka wnętrz AN Projekt" className="w-full aspect-[3/4] object-cover object-top" />
-                <div className="absolute inset-0 rounded-lg pointer-events-none">
-                  <div className="absolute inset-0 rounded-lg ring-2 ring-accent/20 animate-pulse" />
-                  <div className="absolute inset-2 rounded-lg ring-1 ring-accent/10 animate-pulse" style={{ animationDelay: "0.5s" }} />
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-          <FadeIn>
-            <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">O mnie</p>
-            <h1 className="font-heading text-3xl md:text-5xl text-foreground max-w-2xl">Anna Nowak</h1>
-          </FadeIn>
+      {/* Hero with full-width portrait */}
+      <section className="relative h-[70vh] min-h-[450px] overflow-hidden">
+        <img src={annaPortrait} alt="Anna Nowak, projektantka wnętrz AN Projekt" className="w-full h-full object-cover object-top" />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/20 to-transparent" />
+        <div className="absolute bottom-12 md:bottom-16 left-6 md:left-16 lg:left-24 z-10">
+          <p className="font-body text-xs tracking-[0.2em] uppercase text-dark-foreground/70 mb-3">O mnie</p>
+          <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl text-dark-foreground">Anna Nowak</h1>
+          <p className="font-body text-base text-dark-foreground/80 mt-2 max-w-md">Projektantka wnętrz, założycielka pracowni AN Projekt</p>
         </div>
       </section>
 
-      {/* Portrait + intro (desktop shows photo, mobile already showed it above) */}
+      {/* Intro text + realization image */}
       <section className="bg-background section-padding-sm">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <FadeIn>
-            <div className="relative overflow-hidden rounded-lg hidden md:block">
-              <img src={annaPortrait} alt="Anna Nowak, projektantka wnętrz AN Projekt" className="w-full aspect-[3/4] object-cover object-top" loading="lazy" />
-              <div className="absolute inset-0 rounded-lg pointer-events-none">
-                <div className="absolute inset-0 rounded-lg ring-2 ring-accent/20 animate-pulse" />
-                <div className="absolute inset-2 rounded-lg ring-1 ring-accent/10 animate-pulse" style={{ animationDelay: "0.5s" }} />
-              </div>
-            </div>
-          </FadeIn>
-          <FadeIn delay={150}>
             <div>
               <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
                 Nazywam się Anna Nowak i prowadzę pracownię AN Projekt.
@@ -80,15 +61,21 @@ const OMnie = () => {
               </p>
             </div>
           </FadeIn>
+          <FadeIn delay={150}>
+            <img src={vizLivingBeige} alt="Wizualizacja salonu AN Projekt" className="w-full aspect-[4/3] object-cover rounded-lg" loading="lazy" />
+          </FadeIn>
         </div>
       </section>
 
       {/* Extended story + realization photo */}
       <section className="bg-secondary section-padding">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+          <FadeIn delay={100}>
+            <img src={vizBathroomMarble} alt="Wizualizacja łazienki, projekt AN Projekt" className="w-full aspect-[4/3] object-cover rounded-lg" loading="lazy" />
+          </FadeIn>
           <FadeIn>
             <div>
-              <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-5">Jak pracuję</h2>
+              <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-5">Jak pracuję?</h2>
               <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
                 W swojej pracy łączę estetykę z funkcjonalnością. Każdy projekt powstaje indywidualnie, dopasowany do stylu życia domowników, charakteru przestrzeni i budżetu inwestycji.
               </p>
@@ -99,9 +86,6 @@ const OMnie = () => {
                 Pracuję głównie z klientami z Podkarpacia i Małopolski, między innymi w okolicach Krosna, Rzeszowa czy Nowego Sącza, ale wiele elementów projektów można realizować również zdalnie.
               </p>
             </div>
-          </FadeIn>
-          <FadeIn delay={150}>
-            <img src={vizBathroomMarble} alt="Wizualizacja łazienki, projekt AN Projekt" className="w-full aspect-[4/3] object-cover rounded-lg" loading="lazy" />
           </FadeIn>
         </div>
       </section>
@@ -132,14 +116,23 @@ const OMnie = () => {
         </div>
       </section>
 
-      {/* Video placeholder */}
+      {/* Video placeholder - looks like a video */}
       <section className="bg-secondary section-padding-sm">
         <div className="max-w-[800px] mx-auto text-center">
           <FadeIn>
-            <div className="aspect-video flex items-center justify-center mb-6 overflow-hidden rounded-lg">
-              <img src={vizBedroomDark} alt="Wizualizacja sypialni AN Projekt" className="w-full h-full object-cover" />
+            <div className="relative aspect-video overflow-hidden rounded-lg group cursor-pointer">
+              <img src={vizBedroomDark} alt="Wizualizacja sypialni AN Projekt" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
+              <div className="absolute inset-0 bg-foreground/30 group-hover:bg-foreground/40 transition-colors" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-dark-foreground/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Play size={28} className="text-foreground ml-1" fill="currentColor" />
+                </div>
+              </div>
+              <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
+                <p className="text-dark-foreground font-body text-sm font-medium">Poznaj moje podejście do projektów</p>
+                <p className="text-dark-foreground/60 font-body text-xs">Wideo w przygotowaniu</p>
+              </div>
             </div>
-            <p className="text-muted-foreground font-body text-sm">Miejsce na krótkie wideo. Ania opowiada o swoim podejściu do projektów</p>
           </FadeIn>
         </div>
       </section>
@@ -148,7 +141,7 @@ const OMnie = () => {
       <section className="bg-background section-padding">
         <div className="max-w-[1000px] mx-auto">
           <FadeIn>
-            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-12 text-center">Co jest dla mnie ważne</h2>
+            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-12 text-center">Co jest dla mnie ważne?</h2>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {values.map((v, i) => (
@@ -184,13 +177,13 @@ const OMnie = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-background section-padding">
+      <section className="bg-primary section-padding">
         <div className="max-w-[800px] mx-auto text-center">
           <FadeIn>
-            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-4">Planujesz remont lub wykończenie wnętrza?</h2>
-            <p className="text-muted-foreground font-body text-base mb-8">Chętnie pomogę Ci przełożyć pomysły na konkretny, przemyślany projekt.</p>
+            <h2 className="font-heading text-2xl md:text-3xl text-primary-foreground mb-4">Planujesz remont lub wykończenie wnętrza?</h2>
+            <p className="text-primary-foreground/70 font-body text-base mb-8">Chętnie pomogę Ci przełożyć pomysły na konkretny, przemyślany projekt.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/realizacje" className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-foreground text-foreground text-sm tracking-[0.05em] font-body hover:bg-foreground hover:text-background transition-all duration-300">
+              <Link to="/realizacje" className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-primary-foreground/30 text-primary-foreground text-sm tracking-[0.05em] font-body hover:bg-primary-foreground/10 transition-all duration-300">
                 Zobacz realizacje <ArrowRight size={14} />
               </Link>
               <Link to="/kontakt" className="px-7 py-3 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.05em] font-body hover:bg-accent/90 transition-all duration-300">
