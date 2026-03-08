@@ -124,7 +124,7 @@ const Oferta = () => {
                         <h2 className="font-heading text-xl md:text-2xl text-foreground shrink-0">{pkg.name}</h2>
                         {pkg.popular && (
                           <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-accent/10 text-accent font-body text-[10px] tracking-[0.05em] uppercase shrink-0">
-                            <Star size={10} className="fill-accent" /> Najczęściej wybierana
+                            <Star size={10} className="fill-accent" /> Najpopularniejsza
                           </span>
                         )}
                       </div>
@@ -187,21 +187,27 @@ const Oferta = () => {
           <FadeIn delay={100}>
             <div className="overflow-x-auto">
               <table className="w-full font-body text-sm table-fixed">
+                <colgroup>
+                  <col className="w-[28%]" />
+                  {packages.map((pkg) => (
+                    <col key={pkg.name} className="w-[18%]" />
+                  ))}
+                </colgroup>
                 <thead>
                   <tr>
-                    <th className="w-[28%] text-left py-4 px-3 text-muted-foreground font-normal text-xs uppercase tracking-wider border-b border-border">Co zawiera</th>
+                    <th className="text-left py-4 px-3 text-muted-foreground font-normal text-xs uppercase tracking-wider border-b border-border align-bottom">Co zawiera</th>
                     {packages.map((pkg) => (
                       <th
                         key={pkg.name}
-                        className={`w-[18%] text-center py-5 px-2 font-heading text-sm border-b ${
+                        className={`text-center px-2 border-b align-bottom ${
                           pkg.popular
-                            ? "bg-primary text-primary-foreground rounded-t-xl border-primary"
-                            : "text-foreground border-border"
+                            ? "bg-primary text-primary-foreground rounded-t-xl border-primary pb-5 pt-3"
+                            : "text-foreground border-border py-4"
                         }`}
                       >
                         {pkg.popular && (
-                          <span className="block mb-2 mx-auto w-fit px-3 py-0.5 rounded-full bg-accent text-accent-foreground font-body text-[10px] tracking-[0.1em] uppercase">
-                            Najczęściej wybierana
+                          <span className="block mb-3 mx-auto w-fit px-3 py-0.5 rounded-full bg-accent text-accent-foreground font-body text-[10px] tracking-[0.1em] uppercase">
+                            Najpopularniejsza
                           </span>
                         )}
                         <span className="block text-sm">{pkg.name}</span>
