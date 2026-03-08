@@ -83,14 +83,14 @@ const OMnie = () => {
       </section>
 
       {/* Stats / Achievements */}
-      <section className="bg-secondary section-padding-sm">
-        <div className="max-w-[1000px] mx-auto">
+      <section className="bg-background section-padding-sm">
+        <div className="max-w-[900px] mx-auto">
           <FadeIn>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            <div className="grid grid-cols-3 gap-8 md:gap-12">
               {stats.map((stat, i) => (
                 <div key={i} className="text-center">
-                  <p className="font-heading text-4xl md:text-5xl text-accent mb-2">{stat.number}</p>
-                  <p className="font-body text-sm text-muted-foreground">{stat.label}</p>
+                  <p className="font-heading text-3xl md:text-4xl text-foreground mb-1">{stat.number}</p>
+                  <p className="font-body text-xs text-muted-foreground mt-1">{stat.label}</p>
                 </div>
               ))}
             </div>
