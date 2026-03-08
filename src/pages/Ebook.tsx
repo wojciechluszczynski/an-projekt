@@ -60,7 +60,7 @@ const Ebook = () => {
             <Download size={11} /> Darmowy przewodnik
           </span>
           <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl text-white mb-5 max-w-2xl leading-tight">
-            Interior Design Guide 2026
+            Projekt wnętrza od A do Z
           </h1>
           <p className="font-body text-sm md:text-base text-white/60 max-w-lg leading-relaxed">
             Projekt wnętrza od A do Z. Pobierz darmowy przewodnik z checklistą, budżetem i praktycznymi wskazówkami.
