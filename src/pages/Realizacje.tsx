@@ -177,42 +177,6 @@ const Realizacje = () => {
         </div>
       </section>
 
-      {/* Lightbox */}
-      {lightbox && (
-        <div className="fixed inset-0 z-[100] bg-foreground/95 flex items-center justify-center" onClick={() => setLightbox(null)}>
-          <button className="absolute top-6 right-6 text-dark-foreground/80 hover:text-dark-foreground transition-colors z-10" onClick={() => setLightbox(null)}>
-            <X size={32} />
-          </button>
-          <button
-            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-dark-foreground/20 backdrop-blur-sm flex items-center justify-center text-dark-foreground hover:bg-dark-foreground/30 transition-colors z-10"
-            onClick={(e) => { e.stopPropagation(); setLightbox(prev => prev ? { ...prev, idx: (prev.idx - 1 + prev.images.length) % prev.images.length } : null); }}
-          >
-            <ChevronLeft size={24} />
-          </button>
-          <button
-            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-dark-foreground/20 backdrop-blur-sm flex items-center justify-center text-dark-foreground hover:bg-dark-foreground/30 transition-colors z-10"
-            onClick={(e) => { e.stopPropagation(); setLightbox(prev => prev ? { ...prev, idx: (prev.idx + 1) % prev.images.length } : null); }}
-          >
-            <ChevronRight size={24} />
-          </button>
-          <img
-            src={lightbox.images[lightbox.idx]}
-            alt="Wizualizacja projektu"
-            className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-            {lightbox.images.map((_, i) => (
-              <button
-                key={i}
-                onClick={(e) => { e.stopPropagation(); setLightbox(prev => prev ? { ...prev, idx: i } : null); }}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${i === lightbox.idx ? "bg-dark-foreground w-6" : "bg-dark-foreground/40"}`}
-              />
-            ))}
-          </div>
-        </div>
-      )}
-    </main>
   );
 };
 

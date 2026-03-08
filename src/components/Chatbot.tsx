@@ -125,11 +125,8 @@ const Chatbot = () => {
       <button
         onClick={() => open ? handleClose() : handleOpen()}
         className="fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center overflow-visible group"
-        style={{ zIndex: 9999, boxShadow: open ? undefined : "0 0 20px 4px hsl(25 22% 55% / 0.35), 0 4px 12px rgba(0,0,0,0.1)" }}
         aria-label="Otwórz czat"
-        style={{
-          boxShadow: open ? undefined : "0 0 20px 4px hsl(25 22% 55% / 0.35), 0 4px 12px rgba(0,0,0,0.1)",
-        }}
+        style={{ zIndex: 9999, boxShadow: open ? undefined : "0 0 20px 4px hsl(25 22% 55% / 0.35), 0 4px 12px rgba(0,0,0,0.1)" }}
       >
         {open ? (
           <div className="w-full h-full bg-accent flex items-center justify-center">
