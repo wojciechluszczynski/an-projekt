@@ -124,25 +124,18 @@ const Chatbot = () => {
       {/* Chat trigger button */}
       <button
         onClick={() => open ? handleClose() : handleOpen()}
-        className="fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center overflow-visible group"
+        className="fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center overflow-hidden group"
         aria-label="Otwórz czat"
         style={{ zIndex: 9999, boxShadow: open ? undefined : "0 0 20px 4px hsl(25 22% 55% / 0.35), 0 4px 12px rgba(0,0,0,0.1)" }}
       >
         {open ? (
-          <div className="w-full h-full bg-accent flex items-center justify-center">
+          <div className="w-full h-full rounded-full bg-accent flex items-center justify-center">
             <X size={22} className="text-accent-foreground" />
           </div>
         ) : (
-          <div className="relative w-full h-full">
-            <img src={annaPortrait} alt="Anna Nowak" className="w-full h-full object-cover object-top" />
-            {hasUnread && (
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-accent rounded-full border-2 border-background flex items-center justify-center" style={{ zIndex: 60 }}>
-                <span className="text-accent-foreground text-[10px] font-body font-semibold">1</span>
-              </span>
-            )}
-            {!hasUnread && (
-              <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-background animate-pulse" />
-            )}
+          <div className="relative w-full h-full rounded-full overflow-hidden">
+            <img src={annaPortrait} alt="Anna Nowak" className="w-full h-full object-cover object-top rounded-full" />
+            <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-background animate-pulse" />
           </div>
         )}
       </button>

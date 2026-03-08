@@ -365,11 +365,11 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary section-padding-sm">
+      <section className="bg-accent/10 section-padding-sm">
         <div className="max-w-[800px] mx-auto text-center">
           <FadeIn>
-            <h2 className="font-heading text-2xl md:text-3xl text-primary-foreground mb-4">Planujesz remont lub urządzanie wnętrza?</h2>
-            <p className="text-primary-foreground/70 font-body text-base mb-6">
+            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-4">Planujesz remont lub urządzanie wnętrza?</h2>
+            <p className="text-muted-foreground font-body text-base mb-6">
               Napisz do mnie. Chętnie porozmawiam o Twoim projekcie. Pierwsza rozmowa jest bezpłatna.
             </p>
             <Link to="/kontakt" className="inline-block px-8 py-3.5 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.05em] font-body hover:bg-accent/90 transition-all duration-300">
