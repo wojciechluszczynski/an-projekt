@@ -176,7 +176,7 @@ const Realizacje = () => {
           </FadeIn>
         </div>
       </section>
-
+    </main>
   );
 };
 
