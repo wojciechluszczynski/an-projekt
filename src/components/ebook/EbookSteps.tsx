@@ -23,7 +23,7 @@ const steps = [
     step: "04",
     title: "Wizualizacje 3D i poprawki",
     time: "2–4 tyg.",
-    desc: "Renderuję wnętrze. W zależności od pakietu przygotowuję 3–4 wizualizacje kluczowych pomieszczeń oraz panoramiczny widok 3D 360° — możesz wirtualnie „wejść" do swojego wnętrza i sprawdzić każdy kąt zanim cokolwiek zostanie zbudowane. W cenie pakietu są 2–3 rundy poprawek.",
+    desc: "Renderuję wnętrze. W zależności od pakietu przygotowuję 3\u20134 wizualizacje kluczowych pomieszczeń oraz panoramiczny widok 3D 360\u00B0 \u2014 mo\u017Cesz wirtualnie wej\u015B\u0107 do swojego wn\u0119trza i sprawdzi\u0107 ka\u017Cdy k\u0105t zanim cokolwiek zostanie zbudowane. W cenie pakietu s\u0105 2\u20133 rundy poprawek.",
   },
   {
     step: "05",

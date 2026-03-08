@@ -34,7 +34,7 @@ const mistakes = [
   {
     err: "Urządzanie pod Instagram zamiast pod życie",
     detail: "Biała sofa z aksamitu, dekoracyjne schody, rośliny wszędzie — ale zero miejsca na buty, a kuchnia za mała na codzienne gotowanie.",
-    tip: "Zadaj sobie pytanie: „Czy w tym naprawdę chcę żyć?"",
+    tip: 'Zadaj sobie pytanie: "Czy w tym naprawdę chcę żyć?"',
   },
   {
     err: "Oszczędzanie na podłodze i oświetleniu",
