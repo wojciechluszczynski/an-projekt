@@ -13,7 +13,7 @@ import vizClosetMarble from "@/assets/viz-closet-marble.png";
 import vizDetailCeramics from "@/assets/viz-detail-ceramics.png";
 import heroKitchen from "@/assets/hero-kitchen.png";
 
-const categories = ["Wszystkie", "Współpraca", "Błędy", "Porady", "Trendy", "Materiały"];
+const categories = ["Wszystkie", "Współpraca", "Błędy", "Porady", "Ebooki", "Trendy", "Materiały"];
 
 const blogPosts = [
   {
