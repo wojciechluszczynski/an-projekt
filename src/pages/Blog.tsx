@@ -98,6 +98,16 @@ const blogPosts = [
     readTime: "10 min",
     slug: "checklista-przed-remontem-mieszkania",
   },
+  {
+    title: "Darmowy ebook: Jak przygotować się do remontu – kompletny przewodnik",
+    excerpt: "Pobierz darmowy ebook z checklistą, harmonogramem i praktycznymi wskazówkami. Zaplanuj remont bez stresu i niepotrzebnych wydatków.",
+    image: vizLivingBeige,
+    category: "Ebooki",
+    date: "20 stycznia 2026",
+    readTime: "Ebook PDF",
+    slug: "ebook",
+    isEbook: true,
+  },
 ];
 
 const Blog = () => {
