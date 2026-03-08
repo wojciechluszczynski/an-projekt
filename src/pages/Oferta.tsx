@@ -5,37 +5,45 @@ import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
 import vizLivingBeige from "@/assets/viz-living-beige.png";
 import vizBedroomMural from "@/assets/viz-bedroom-mural.png";
 import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
-import { ArrowRight, Home, Building, Building2, Trees, MessageCircle, MapPin, Ruler, Monitor, Hammer, Plus, X, Check, ChevronDown } from "lucide-react";
+import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
+import { ArrowRight, Home, Building, Building2, Trees, MessageCircle, MapPin, Ruler, Monitor, Hammer, Plus, X, Check, ChevronDown, Star } from "lucide-react";
 
 const packages = [
   {
     icon: Home,
     name: "Konsultacja",
     target: "Dla osób, które chcą omówić pomysł, układ, styl lub konkretny problem we wnętrzu.",
+    price: "od 250 zł",
     features: ["Spotkanie online lub na miejscu (ok. 60 min)", "Analiza przestrzeni i potrzeb", "Wstępne rekomendacje stylistyczne i funkcjonalne", "Kierunek dalszych działań"],
     image: vizLivingBeige,
     tags: ["Jednorazowe spotkanie", "Analiza", "Rekomendacje"],
+    popular: false,
   },
   {
     icon: Building,
     name: "Opcja Koncepcyjna",
     target: "Dla osób szukających solidnej bazy projektowej. Pomysłu na układ i styl wnętrza.",
+    price: "120 zł/m²",
     features: ["Układ funkcjonalny pomieszczeń", "Propozycja stylistyczna i moodboard", "Wizualizacje 3D (3 ujęcia)", "Podstawowe rysunki techniczne"],
     image: vizKitchenRattan,
     tags: ["Układ funkcjonalny", "Moodboard", "Wizualizacje 3D"],
+    popular: false,
   },
   {
     icon: Building2,
     name: "Opcja Komfortowa",
     target: "Dla osób, które chcą gotowy projekt do przekazania wykonawcy.",
+    price: "150 zł/m²",
     features: ["Pełny projekt koncepcyjny wnętrz", "Propozycja materiałów i kolorystyki", "4 wizualizacje 3D", "Wizualizacja 3D 360°", "Dokładna dokumentacja techniczna"],
     image: vizBedroomMural,
     tags: ["Pełny projekt", "Wizualizacja 360°", "Dokumentacja techniczna"],
+    popular: true,
   },
   {
     icon: Trees,
     name: "Opcja Kompleks",
     target: "Dla osób szukających pełnego wsparcia. Od koncepcji, przez projekt, po nadzór na budowie.",
+    price: "170 zł/m²",
     features: [
       "Wszystko z Opcji Komfortowej",
       "Krótkie wideo wizualne głównych pomieszczeń",
@@ -46,6 +54,7 @@ const packages = [
     ],
     image: vizBathroomMarble,
     tags: ["Pełne wsparcie", "Wideo", "Nadzór budowy", "Zakupy materiałów"],
+    popular: false,
   },
 ];
 
@@ -55,6 +64,19 @@ const timeline = [
   { step: "03", title: "Układ, kierunek i koncepcja", desc: "Przygotowuję wstępną koncepcję, moodboard i propozycję układu.", icon: Ruler },
   { step: "04", title: "Wizualizacje i korekty", desc: "Tworzę realistyczne wizualizacje 3D. Możesz wnieść poprawki.", icon: Monitor },
   { step: "05", title: "Dokumentacja i realizacja", desc: "Przekazuję pełną dokumentację techniczną gotową dla wykonawcy.", icon: Hammer },
+];
+
+const comparisonFeatures = [
+  { name: "Konsultacja / spotkanie", values: [true, false, false, false] },
+  { name: "Układ funkcjonalny", values: [false, true, true, true] },
+  { name: "Moodboard stylistyczny", values: [false, true, true, true] },
+  { name: "Wizualizacje 3D", values: [false, "3", "4", "4+"] },
+  { name: "Wizualizacja 360°", values: [false, false, true, true] },
+  { name: "Dokumentacja techniczna", values: [false, "Podstawowa", "Pełna", "Pełna"] },
+  { name: "Dobór materiałów i mebli", values: [false, false, true, true] },
+  { name: "Wideo wizualne", values: [false, false, false, true] },
+  { name: "Nadzór na budowie", values: [false, false, false, "3 spotkania"] },
+  { name: "Zakupy z projektantką", values: [false, false, false, true] },
 ];
 
 const faqs = [
@@ -87,7 +109,7 @@ const Oferta = () => {
         </div>
       </section>
 
-      {/* Packages - Accordion with bigger images */}
+      {/* Packages - Accordion with prices */}
       <section className="bg-background section-padding">
         <div className="max-w-[1200px] mx-auto">
           <div className="space-y-0">
@@ -98,7 +120,15 @@ const Oferta = () => {
                   <div className={`border-t border-border transition-all duration-500 ${isOpen ? "bg-secondary rounded-xl my-2 border-transparent" : "hover:bg-secondary/50"}`}>
                     <button onClick={() => setExpandedPkg(isOpen ? null : i)} className="w-full flex items-center gap-4 md:gap-6 py-6 px-4 md:px-6 text-left">
                       <span className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center shrink-0 font-body text-sm text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
-                      <h2 className="font-heading text-xl md:text-2xl text-foreground flex-1">{pkg.name}</h2>
+                      <div className="flex-1 flex items-center gap-3">
+                        <h2 className="font-heading text-xl md:text-2xl text-foreground">{pkg.name}</h2>
+                        {pkg.popular && (
+                          <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-accent/10 text-accent font-body text-xs">
+                            <Star size={10} className="fill-accent" /> Popularna
+                          </span>
+                        )}
+                      </div>
+                      <span className="font-body text-sm text-accent hidden sm:block">{pkg.price}</span>
                       {isOpen ? <X size={20} className="text-muted-foreground shrink-0" /> : <Plus size={20} className="text-muted-foreground shrink-0" />}
                     </button>
 
@@ -106,6 +136,7 @@ const Oferta = () => {
                       <div className="px-4 md:px-6 pb-6 flex flex-col md:flex-row gap-6">
                         <div className="flex-1">
                           <p className="text-muted-foreground font-body text-sm leading-relaxed mb-4">{pkg.target}</p>
+                          <p className="font-heading text-lg text-accent mb-4 sm:hidden">{pkg.price}</p>
                           <ul className="space-y-2.5 mb-5">
                             {pkg.features.map((f) => (
                               <li key={f} className="text-foreground/80 font-body text-sm flex items-start gap-2.5">
@@ -133,7 +164,7 @@ const Oferta = () => {
                           </Link>
                         </div>
                         <div className="md:w-72 shrink-0">
-                          <img src={pkg.image} alt={pkg.name} className="w-full aspect-[4/3] object-cover" />
+                          <img src={pkg.image} alt={pkg.name} className="w-full aspect-[4/3] object-cover rounded-lg" />
                         </div>
                       </div>
                     </div>
@@ -146,8 +177,68 @@ const Oferta = () => {
         </div>
       </section>
 
-      {/* Horizontal Timeline */}
+      {/* Comparison Table */}
       <section className="bg-secondary section-padding">
+        <div className="max-w-[1000px] mx-auto">
+          <FadeIn>
+            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-3 text-center">Porównaj opcje</h2>
+            <p className="text-muted-foreground font-body text-base text-center mb-10 max-w-lg mx-auto">Sprawdź, co zawiera każdy pakiet i wybierz najlepszą opcję dla siebie.</p>
+          </FadeIn>
+          <FadeIn delay={100}>
+            <div className="overflow-x-auto">
+              <table className="w-full font-body text-sm">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left py-4 px-3 text-muted-foreground font-normal text-xs uppercase tracking-wider">Co zawiera</th>
+                    {packages.map((pkg) => (
+                      <th key={pkg.name} className="text-center py-4 px-3 font-heading text-sm text-foreground whitespace-nowrap">
+                        {pkg.name}
+                        {pkg.popular && <span className="block text-accent text-xs font-body font-normal mt-0.5">★ popularna</span>}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonFeatures.map((feat) => (
+                    <tr key={feat.name} className="border-b border-border/50">
+                      <td className="py-3 px-3 text-foreground/80 text-sm">{feat.name}</td>
+                      {feat.values.map((val, j) => (
+                        <td key={j} className="py-3 px-3 text-center">
+                          {val === true ? (
+                            <Check size={16} className="text-accent mx-auto" />
+                          ) : val === false ? (
+                            <span className="text-muted-foreground/30">—</span>
+                          ) : (
+                            <span className="text-foreground/70 text-xs">{val}</span>
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                  <tr>
+                    <td className="py-4 px-3 text-foreground font-medium">Cena</td>
+                    {packages.map((pkg) => (
+                      <td key={pkg.name} className="py-4 px-3 text-center font-heading text-sm text-accent">{pkg.price}</td>
+                    ))}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Showcase image strip */}
+      <section className="bg-background py-0">
+        <div className="grid grid-cols-3 gap-0">
+          <img src={vizDiningFireplace} alt="Realizacja AN Projekt" className="w-full aspect-[4/3] object-cover" />
+          <img src={vizBedroomMural} alt="Realizacja AN Projekt" className="w-full aspect-[4/3] object-cover" />
+          <img src={vizBathroomMarble} alt="Realizacja AN Projekt" className="w-full aspect-[4/3] object-cover" />
+        </div>
+      </section>
+
+      {/* Horizontal Timeline */}
+      <section className="bg-background section-padding">
         <div className="max-w-[1000px] mx-auto">
           <FadeIn>
             <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-4 text-center">Jak przebiega współpraca?</h2>
@@ -181,7 +272,7 @@ const Oferta = () => {
       </section>
 
       {/* FAQ - Accordion */}
-      <section className="bg-background section-padding">
+      <section className="bg-secondary section-padding">
         <div className="max-w-[700px] mx-auto">
           <FadeIn>
             <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-12 text-center">Najczęściej zadawane pytania</h2>
@@ -209,11 +300,11 @@ const Oferta = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary section-padding">
+      <section className="bg-accent/10 section-padding">
         <div className="max-w-[800px] mx-auto text-center">
           <FadeIn>
-            <h2 className="font-heading text-2xl md:text-3xl text-primary-foreground mb-4">Masz pytania?</h2>
-            <p className="text-primary-foreground/70 font-body text-base mb-8">Napisz do mnie. Chętnie opowiem o możliwościach współpracy. Pierwsza rozmowa jest bezpłatna.</p>
+            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-4">Masz pytania?</h2>
+            <p className="text-muted-foreground font-body text-base mb-8">Napisz do mnie. Chętnie opowiem o możliwościach współpracy. Pierwsza rozmowa jest bezpłatna.</p>
             <Link to="/kontakt" className="inline-block px-8 py-3.5 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.05em] font-body hover:bg-accent/90 transition-all duration-300">
               Umów konsultację
             </Link>
