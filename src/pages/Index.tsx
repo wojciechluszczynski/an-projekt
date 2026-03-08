@@ -148,11 +148,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* GALLERY STRIP - more images */}
-      <section className="bg-secondary py-4">
-        <div className="flex gap-4 overflow-hidden">
+      {/* GALLERY STRIP - scrollable with hover */}
+      <section className="bg-secondary py-6">
+        <div className="flex gap-4 overflow-x-auto px-6 pb-2 scrollbar-hide cursor-grab">
           {[vizDiningFireplace, vizBedroomDark, vizBathroomMarble, vizKitchenRattan, vizLivingBeige, vizBedroomMural].map((img, i) => (
-            <img key={i} src={img} alt={`Wizualizacja ${i + 1}`} className="h-32 md:h-48 w-auto object-cover flex-shrink-0" loading="lazy" />
+            <Link key={i} to="/realizacje" className="flex-shrink-0 group">
+              <img src={img} alt={`Wizualizacja ${i + 1}`} className="h-36 md:h-52 w-auto object-cover rounded-xl transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+            </Link>
           ))}
         </div>
       </section>
