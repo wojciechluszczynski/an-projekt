@@ -44,7 +44,7 @@ const AnnouncementBanner = () => {
       }`}
     >
       <div className="bg-accent text-accent-foreground">
-        <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-2 flex items-center justify-center gap-3 relative">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-1.5 flex items-center justify-center gap-3 relative">
           <Download size={14} className="shrink-0 hidden sm:block" />
           <p className="font-body text-xs sm:text-sm text-center">
             <span className="font-medium">Darmowy ebook:</span>{" "}

@@ -78,7 +78,7 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length), 5000);
+    const timer = setInterval(() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length), 10000);
     return () => clearInterval(timer);
   }, []);
 
@@ -339,7 +339,14 @@ const Index = () => {
           <div className="flex gap-5 overflow-x-auto pb-4 scrollbar-hide">
             {testimonials.map((t, i) => (
               <FadeIn key={i} delay={i * 80}>
-                <div className="bg-background rounded-xl p-6 flex flex-col min-w-[280px] max-w-[300px] h-full border border-border/50">
+                <div
+                  className={`bg-background rounded-xl p-6 flex flex-col min-w-[280px] max-w-[300px] h-full border transition-all duration-700 cursor-pointer ${
+                    activeTestimonial === i
+                      ? "border-accent shadow-md scale-[1.03]"
+                      : "border-border/50 opacity-60"
+                  }`}
+                  onClick={() => setActiveTestimonial(i)}
+                >
                   <div className="flex gap-0.5 mb-4">
                     {Array.from({ length: t.rating }).map((_, j) => (
                       <Star key={j} size={14} className="text-accent fill-accent" />
@@ -359,6 +366,19 @@ const Index = () => {
                   </div>
                 </div>
               </FadeIn>
+            ))}
+          </div>
+          {/* Dots indicator */}
+          <div className="flex justify-center gap-2 mt-4">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveTestimonial(i)}
+                className={`w-2 h-2 rounded-full transition-all duration-500 ${
+                  activeTestimonial === i ? "bg-accent w-5" : "bg-border"
+                }`}
+                aria-label={`Opinia ${i + 1}`}
+              />
             ))}
           </div>
         </div>
