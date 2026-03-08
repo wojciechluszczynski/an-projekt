@@ -398,7 +398,7 @@ const EbookPreview = () => {
 
             <div className="w-full h-px bg-primary-foreground/10 mb-6" />
 
-            <p className="font-body text-xs tracking-[0.1em] uppercase text-accent mb-4">⚠️ Czerwone flagi – uważaj gdy projektant:</p>
+            <p className="font-body text-xs tracking-[0.1em] uppercase text-accent mb-4">Czerwone flagi – uważaj gdy projektant:</p>
             <div className="space-y-2">
               {[
                 "Nie ma realnego portfolio (tylko stocki)",
@@ -408,7 +408,7 @@ const EbookPreview = () => {
                 'Wszystkie ceny „do ustalenia" bez widełek',
               ].map((flag) => (
                 <div key={flag} className="flex items-start gap-2 font-body text-sm text-primary-foreground/60">
-                  <X size={12} className="text-destructive mt-1 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-destructive mt-1.5 shrink-0" />
                   <span>{flag}</span>
                 </div>
               ))}
@@ -475,15 +475,15 @@ const EbookPreview = () => {
             Jeśli planujesz remont lub wykończenie mieszkania na Podkarpaciu lub w Małopolsce, napisz do mnie. Pierwsza rozmowa jest bezpłatna i bez zobowiązań.
           </p>
           <div className="w-16 h-px bg-white/30 mx-auto mb-5" />
-          <div className="font-body text-xs text-white/50 space-y-1 mb-6">
-            <p>📧 anna@anprojekt.com.pl</p>
-            <p>📍 Odrzykoń | Podkarpacie</p>
+          <div className="font-body text-sm text-white/60 space-y-1.5 mb-6">
+            <p>anna@anprojekt.com.pl</p>
+            <p>Odrzykoń | Podkarpacie</p>
           </div>
           <Link
             to="/kontakt"
             className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-white text-foreground text-sm tracking-[0.05em] font-body hover:bg-white/90 transition-all duration-300"
           >
-            Napisz do Anny <ArrowRight size={14} />
+            Napisz do mnie <ArrowRight size={14} />
           </Link>
           <p className="font-body text-xs text-white/40 mt-8">© 2026 AN Projekt | Anna Nowak</p>
         </div>
