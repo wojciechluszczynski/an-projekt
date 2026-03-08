@@ -165,15 +165,17 @@ const Index = () => {
           <FadeIn>
             <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-12 text-center">Na czym opiera się moja praca?</h2>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {pillars.map((p, i) => (
               <FadeIn key={p.title} delay={i * 100}>
-                <div className="group text-center md:text-left">
-                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mx-auto md:mx-0 mb-4 group-hover:bg-accent/20 transition-colors duration-300">
+                <div className="group flex items-start gap-4">
+                  <div className="w-11 h-11 rounded-full bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors duration-300 mt-0.5">
                     <p.icon size={18} className="text-accent" />
                   </div>
-                  <h3 className="font-heading text-xl text-foreground mb-3">{p.title}</h3>
-                  <p className="text-muted-foreground font-body text-base leading-relaxed">{p.desc}</p>
+                  <div>
+                    <h3 className="font-heading text-lg text-foreground mb-2">{p.title}</h3>
+                    <p className="text-muted-foreground font-body text-sm leading-relaxed">{p.desc}</p>
+                  </div>
                 </div>
               </FadeIn>
             ))}
