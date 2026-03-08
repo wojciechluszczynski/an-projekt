@@ -10,7 +10,7 @@ const PinterestIcon = () => (
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20 py-14 md:py-20">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20 py-10 md:py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-14">
           {/* Col 1 - Brand */}
           <div>
