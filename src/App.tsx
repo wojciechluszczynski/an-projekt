@@ -13,6 +13,8 @@ import Kontakt from "./pages/Kontakt";
 import Oferta from "./pages/Oferta";
 import Realizacje from "./pages/Realizacje";
 import OMnie from "./pages/OMnie";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import ProjectPage from "./pages/ProjectPage";
 import PolitykaPrywatnosci from "./pages/PolitykaPrywatnosci";
 import Regulamin from "./pages/Regulamin";
@@ -42,6 +44,8 @@ const App = () => (
           <Route path="/oferta" element={<Oferta />} />
           <Route path="/realizacje" element={<Realizacje />} />
           <Route path="/o-mnie" element={<OMnie />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosci />} />
           <Route path="/regulamin" element={<Regulamin />} />
           <Route path="/:slug" element={<ProjectPage />} />
