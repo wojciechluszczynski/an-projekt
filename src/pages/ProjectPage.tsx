@@ -135,6 +135,7 @@ const ProjectPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? projectsData[slug] : null;
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const [selectedImg, setSelectedImg] = useState(0);
 
   useEffect(() => {
     if (lightbox === null) return;
