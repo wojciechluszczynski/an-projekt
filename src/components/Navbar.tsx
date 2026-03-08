@@ -38,23 +38,23 @@ const Navbar = () => {
         style={{ maskImage: "linear-gradient(to bottom, black 60%, transparent)" }}
       />
 
-      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-4 md:px-8 pt-4">
-        <div className={`max-w-[1100px] mx-auto flex items-center justify-between px-6 md:px-8 py-3 rounded-full transition-all duration-500 ${
+      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-3 md:px-8 pt-4">
+        <div className={`max-w-[1100px] mx-auto flex items-center justify-between px-4 md:px-8 py-3 rounded-full transition-all duration-500 ${
           scrolled
             ? "bg-background/95 backdrop-blur-md shadow-md"
             : "bg-background/80 backdrop-blur-sm"
         }`}>
-          <Link to="/" className="z-50 shrink-0 flex items-center gap-3">
+          <Link to="/" className="z-50 shrink-0 flex items-center gap-2.5">
             <img
               src={annaPortrait}
               alt="Anna Nowak"
-              className="w-9 h-9 rounded-full object-cover object-top"
+              className="w-8 h-8 md:w-9 md:h-9 rounded-full object-cover object-top"
             />
-            <span className="font-heading text-lg text-foreground tracking-wide">AN Projekt</span>
+            <span className="font-heading text-base md:text-lg text-foreground tracking-wide">AN Projekt</span>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -74,10 +74,10 @@ const Navbar = () => {
             </Link>
           </nav>
 
-          {/* Mobile hamburger */}
+          {/* Mobile/Tablet hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden z-50 text-foreground transition-colors"
+            className="lg:hidden z-50 text-foreground transition-colors"
             aria-label="Menu"
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -86,24 +86,41 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         <div
-          className={`fixed inset-0 bg-background z-40 flex flex-col items-center justify-center gap-7 transition-all duration-500 ${
+          className={`fixed inset-0 bg-background z-40 flex flex-col items-center justify-center transition-all duration-500 ${
             mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className={`text-xl font-heading tracking-wider transition-colors hover:text-accent ${
-                location.pathname === link.href ? "text-accent" : "text-foreground"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {/* Profile header in mobile menu */}
+          <div className="flex flex-col items-center mb-10">
+            <img
+              src={annaPortrait}
+              alt="Anna Nowak"
+              className="w-20 h-20 rounded-full object-cover object-top mb-3"
+            />
+            <span className="font-heading text-xl text-foreground mb-1">AN Projekt</span>
+            <p className="font-body text-sm text-muted-foreground">Projektowanie wnętrz z pasją</p>
+          </div>
+
+          <div className="flex flex-col items-center gap-6 mb-10">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`text-xl font-heading tracking-wider transition-colors hover:text-accent ${
+                  location.pathname === link.href ? "text-accent" : "text-foreground"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          <p className="font-body text-sm text-muted-foreground mb-4 text-center max-w-[250px]">
+            Chętnie porozmawiam o Twoim wnętrzu. Pierwsza rozmowa jest bezpłatna.
+          </p>
           <Link
             to="/kontakt"
-            className="mt-3 px-7 py-2.5 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.05em] hover:bg-accent/90 transition-colors"
+            className="px-7 py-2.5 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.05em] hover:bg-accent/90 transition-colors"
           >
             Zapytaj o projekt
           </Link>

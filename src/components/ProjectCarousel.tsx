@@ -9,25 +9,25 @@ import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
 
 const projects = [
   {
-    title: "Zlota Harmonia",
-    desc: "Ciepie, przytulne mieszkanie z przemyslanym ukladem i eleganckimi detalami.",
+    title: "Złota Harmonia",
+    desc: "Ciepłe, przytulne mieszkanie z przemyślanym układem i eleganckimi detalami.",
     image: vizLivingBeige,
     href: "/zlota-harmonia",
-    meta: "Mieszkanie 85 m\u00B2 \u00B7 Rzeszow",
+    meta: "Mieszkanie 85 m² · Rzeszów",
   },
   {
-    title: "Czarna Perla",
-    desc: "Nowoczesny dom z odwaznymi materialami i duza iloscia naturalnego swiatla.",
+    title: "Czarna Perła",
+    desc: "Nowoczesny dom z odważnymi materiałami i dużą ilością naturalnego światła.",
     image: vizKitchenRattan,
     href: "/czarna-perla",
-    meta: "Dom 180 m\u00B2 \u00B7 Podkarpacie",
+    meta: "Dom 180 m² · Podkarpacie",
   },
   {
     title: "Bambusowa Oaza",
-    desc: "Przestrzen inspirowana natura, rattan, drewno i spokojne kolory.",
+    desc: "Przestrzeń inspirowana naturą, rattan, drewno i spokojne kolory.",
     image: vizDiningFireplace,
     href: "/bambusowa-oaza",
-    meta: "Salon 65 m\u00B2 \u00B7 Malopolska",
+    meta: "Salon 65 m² · Małopolska",
   },
 ];
 
@@ -53,27 +53,18 @@ const ProjectCarousel = () => {
   return (
     <FadeIn>
       <div className="relative">
-        {/* Carousel container */}
         <div className="overflow-hidden">
           <div className="flex items-center">
             {/* Previous (partially visible) */}
             <div className="hidden md:block w-[15%] shrink-0 opacity-40 blur-[2px] transition-all duration-600 -mr-2">
-              <img
-                src={projects[getIndex(-1)].image}
-                alt={projects[getIndex(-1)].title}
-                className="w-full aspect-[16/9] object-cover rounded-lg"
-              />
+              <img src={projects[getIndex(-1)].image} alt={projects[getIndex(-1)].title} className="w-full aspect-[16/9] object-cover rounded-lg" />
             </div>
 
             {/* Active item */}
             <div className="w-full md:w-[70%] shrink-0 transition-all duration-600 ease-out px-2 md:px-4">
               <Link to={projects[active].href} className="group block">
                 <div className="overflow-hidden rounded-xl">
-                  <img
-                    src={projects[active].image}
-                    alt={`${projects[active].title} projekt wnetrz AN Projekt`}
-                    className="w-full aspect-[16/9] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                  />
+                  <img src={projects[active].image} alt={`${projects[active].title} projekt wnętrz AN Projekt`} className="w-full aspect-[16/9] object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
                 </div>
                 <div className="mt-5 text-center">
                   <h3 className="font-heading text-2xl text-foreground mb-1">{projects[active].title}</h3>
@@ -88,28 +79,16 @@ const ProjectCarousel = () => {
 
             {/* Next (partially visible) */}
             <div className="hidden md:block w-[15%] shrink-0 opacity-40 blur-[2px] transition-all duration-600 -ml-2">
-              <img
-                src={projects[getIndex(1)].image}
-                alt={projects[getIndex(1)].title}
-                className="w-full aspect-[16/9] object-cover rounded-lg"
-              />
+              <img src={projects[getIndex(1)].image} alt={projects[getIndex(1)].title} className="w-full aspect-[16/9] object-cover rounded-lg" />
             </div>
           </div>
         </div>
 
         {/* Arrows */}
-        <button
-          onClick={() => navigate(-1)}
-          className="absolute left-2 md:left-4 top-[22%] -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 shadow-md"
-          aria-label="Poprzedni projekt"
-        >
+        <button onClick={() => navigate(-1)} className="absolute left-2 md:left-4 top-[22%] -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 shadow-md" aria-label="Poprzedni projekt">
           <ChevronLeft size={20} />
         </button>
-        <button
-          onClick={() => navigate(1)}
-          className="absolute right-2 md:right-4 top-[22%] -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 shadow-md"
-          aria-label="Nastepny projekt"
-        >
+        <button onClick={() => navigate(1)} className="absolute right-2 md:right-4 top-[22%] -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 shadow-md" aria-label="Następny projekt">
           <ChevronRight size={20} />
         </button>
       </div>
@@ -117,14 +96,7 @@ const ProjectCarousel = () => {
       {/* Dots */}
       <div className="flex justify-center gap-2 mt-6">
         {projects.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setActive(i)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              i === active ? "bg-accent w-6" : "bg-foreground/20"
-            }`}
-            aria-label={`Projekt ${i + 1}`}
-          />
+          <button key={i} onClick={() => setActive(i)} className={`w-2 h-2 rounded-full transition-all duration-300 ${i === active ? "bg-accent w-6" : "bg-foreground/20"}`} aria-label={`Projekt ${i + 1}`} />
         ))}
       </div>
     </FadeIn>

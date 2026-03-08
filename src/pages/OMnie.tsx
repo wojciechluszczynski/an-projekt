@@ -4,7 +4,7 @@ import FadeIn from "@/components/FadeIn";
 import annaPortrait from "@/assets/anna-portrait.jpg";
 import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
 import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
-import { ArrowRight, Instagram, Facebook, MessageCircle, MapPin, Ruler, Monitor, Hammer } from "lucide-react";
+import { ArrowRight, Instagram, Facebook, MessageCircle, MapPin, Ruler, Hammer } from "lucide-react";
 
 const PinterestIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-[22px] h-[22px]">
@@ -13,9 +13,9 @@ const PinterestIcon = () => (
 );
 
 const values = [
-  { title: "Estetyka z funkcja", desc: "Projektuje tak, zeby bylo pieknie i praktycznie, w rownym stopniu." },
-  { title: "Bliskosc i komunikacja", desc: "Pracuje bezposrednio z klientem, bez posrednikow. Slucham, pytam, proponuje." },
-  { title: "Odpowiedzialnosc", desc: "Biore odpowiedzialnosc za kazdy etap, od pomyslu po nadzor na budowie." },
+  { title: "Estetyka z funkcją", desc: "Projektuję tak, żeby było pięknie i praktycznie, w równym stopniu." },
+  { title: "Bliskość i komunikacja", desc: "Pracuję bezpośrednio z klientem, bez pośredników. Słucham, pytam, proponuję." },
+  { title: "Odpowiedzialność", desc: "Biorę odpowiedzialność za każdy etap, od pomysłu po nadzór na budowie." },
 ];
 
 const processSteps = [
@@ -30,9 +30,21 @@ const OMnie = () => {
 
   return (
     <main>
-      {/* Hero */}
-      <section className="pt-32 md:pt-40 pb-10 px-6 md:px-12 lg:px-20">
-        <div className="max-w-[1200px] mx-auto">
+      {/* Mobile-first hero: photo first, then name */}
+      <section className="pt-24 md:pt-32 pb-6 md:pb-10">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20">
+          {/* Mobile: photo on top */}
+          <div className="md:hidden mb-6">
+            <FadeIn>
+              <div className="relative overflow-hidden rounded-lg">
+                <img src={annaPortrait} alt="Anna Nowak, projektantka wnętrz AN Projekt" className="w-full aspect-[3/4] object-cover object-top" />
+                <div className="absolute inset-0 rounded-lg pointer-events-none">
+                  <div className="absolute inset-0 rounded-lg ring-2 ring-accent/20 animate-pulse" />
+                  <div className="absolute inset-2 rounded-lg ring-1 ring-accent/10 animate-pulse" style={{ animationDelay: "0.5s" }} />
+                </div>
+              </div>
+            </FadeIn>
+          </div>
           <FadeIn>
             <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">O mnie</p>
             <h1 className="font-heading text-3xl md:text-5xl text-foreground max-w-2xl">Anna Nowak</h1>
@@ -40,18 +52,12 @@ const OMnie = () => {
         </div>
       </section>
 
-      {/* Portrait + intro */}
+      {/* Portrait + intro (desktop shows photo, mobile already showed it above) */}
       <section className="bg-background section-padding-sm">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <FadeIn>
-            <div className="relative overflow-hidden rounded-lg group">
-              <img
-                src={annaPortrait}
-                alt="Anna Nowak, projektantka wnetrz AN Projekt"
-                className="w-full aspect-[3/4] object-cover object-top"
-                loading="lazy"
-              />
-              {/* Pulsing accent ring */}
+            <div className="relative overflow-hidden rounded-lg hidden md:block">
+              <img src={annaPortrait} alt="Anna Nowak, projektantka wnętrz AN Projekt" className="w-full aspect-[3/4] object-cover object-top" loading="lazy" />
               <div className="absolute inset-0 rounded-lg pointer-events-none">
                 <div className="absolute inset-0 rounded-lg ring-2 ring-accent/20 animate-pulse" />
                 <div className="absolute inset-2 rounded-lg ring-1 ring-accent/10 animate-pulse" style={{ animationDelay: "0.5s" }} />
@@ -61,16 +67,16 @@ const OMnie = () => {
           <FadeIn delay={150}>
             <div>
               <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
-                Nazywam sie Anna Nowak i prowadze pracownie AN Projekt.
+                Nazywam się Anna Nowak i prowadzę pracownię AN Projekt.
               </p>
               <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
-                Projektuje wnetrza mieszkan i domow dla osob, ktore chca stworzyc przestrzen dopasowana do swojego stylu zycia. Funkcjonalna, estetyczna i przemyslana w kazdym detalu.
+                Projektuję wnętrza mieszkań i domów dla osób, które chcą stworzyć przestrzeń dopasowaną do swojego stylu życia. Funkcjonalną, estetyczną i przemyślaną w każdym detalu.
               </p>
               <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
-                Moja droga do projektowania wnetrz zaczela sie od budowy wlasnego domu. To wlasnie wtedy zobaczylam, jak wiele decyzji trzeba podjac w trakcie projektowania i realizacji wnetrza, i jak latwo w tym procesie o chaos, stres czy kosztowne pomylki.
+                Moja droga do projektowania wnętrz zaczęła się od budowy własnego domu. To właśnie wtedy zobaczyłam, jak wiele decyzji trzeba podjąć w trakcie projektowania i realizacji wnętrza, i jak łatwo w tym procesie o chaos, stres czy kosztowne pomyłki.
               </p>
               <p className="text-foreground font-body text-base leading-relaxed font-medium">
-                Dzis pomagam moim klientom przejsc przez ten proces spokojniej i bardziej swiadomie.
+                Dziś pomagam moim klientom przejść przez ten proces spokojniej i bardziej świadomie.
               </p>
             </div>
           </FadeIn>
@@ -82,25 +88,20 @@ const OMnie = () => {
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <FadeIn>
             <div>
-              <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-5">Jak pracuje</h2>
+              <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-5">Jak pracuję</h2>
               <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
-                W swojej pracy lacze estyke z funkcjonalnoscia. Kazdy projekt powstaje indywidualnie, dopasowany do stylu zycia domownikow, charakteru przestrzeni i budzetu inwestycji.
+                W swojej pracy łączę estetykę z funkcjonalnością. Każdy projekt powstaje indywidualnie, dopasowany do stylu życia domowników, charakteru przestrzeni i budżetu inwestycji.
               </p>
               <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">
-                Nie tworze wnetrz "z katalogu". Zalezy mi, aby byly spojne, wygodne w codziennym uzytkowaniu i po prostu dobrze sie w nich mieszkalo.
+                Nie tworzę wnętrz „z katalogu". Zależy mi, aby były spójne, wygodne w codziennym użytkowaniu i po prostu dobrze się w nich mieszkało.
               </p>
               <p className="text-muted-foreground font-body text-base leading-relaxed">
-                Pracuje glownie z klientami z Podkarpacia i Malopolski, miedzy innymi w okolicach Krosna, Rzeszowa czy Nowego Sacza, ale wiele elementow projektow mozna realizowac rowniez zdalnie.
+                Pracuję głównie z klientami z Podkarpacia i Małopolski, między innymi w okolicach Krosna, Rzeszowa czy Nowego Sącza, ale wiele elementów projektów można realizować również zdalnie.
               </p>
             </div>
           </FadeIn>
           <FadeIn delay={150}>
-            <img
-              src={vizBathroomMarble}
-              alt="Wizualizacja lazienki, projekt AN Projekt"
-              className="w-full aspect-[4/3] object-cover rounded-lg"
-              loading="lazy"
-            />
+            <img src={vizBathroomMarble} alt="Wizualizacja łazienki, projekt AN Projekt" className="w-full aspect-[4/3] object-cover rounded-lg" loading="lazy" />
           </FadeIn>
         </div>
       </section>
@@ -109,27 +110,18 @@ const OMnie = () => {
       <section className="bg-background section-padding-sm">
         <div className="max-w-[800px] mx-auto">
           <FadeIn>
-            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-10 text-center">Jak wyglada wspolpraca?</h2>
+            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-10 text-center">Jak wygląda współpraca?</h2>
             <div className="relative">
               <div className="hidden sm:block absolute top-5 left-0 right-0 h-px bg-border" />
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
                 {processSteps.map((step, i) => {
                   const StepIcon = step.icon;
                   return (
-                    <div
-                      key={step.title}
-                      className="relative cursor-pointer text-center"
-                      onMouseEnter={() => setActiveStep(i)}
-                      onMouseLeave={() => setActiveStep(null)}
-                    >
-                      <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center mx-auto mb-3 transition-all duration-300 ${
-                        activeStep === i ? "border-accent bg-accent/10 scale-110" : "border-border bg-background"
-                      }`}>
+                    <div key={step.title} className="relative cursor-pointer text-center" onMouseEnter={() => setActiveStep(i)} onMouseLeave={() => setActiveStep(null)}>
+                      <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center mx-auto mb-3 transition-all duration-300 ${activeStep === i ? "border-accent bg-accent/10 scale-110" : "border-border bg-background"}`}>
                         <StepIcon size={16} className={`transition-colors ${activeStep === i ? "text-accent" : "text-muted-foreground"}`} />
                       </div>
-                      <span className={`font-heading text-lg mr-1 transition-colors ${activeStep === i ? "text-accent" : "text-accent/50"}`}>
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
+                      <span className={`font-heading text-lg mr-1 transition-colors ${activeStep === i ? "text-accent" : "text-accent/50"}`}>{String(i + 1).padStart(2, "0")}</span>
                       <p className="font-body text-sm text-foreground">{step.title}</p>
                     </div>
                   );
@@ -147,7 +139,7 @@ const OMnie = () => {
             <div className="aspect-video flex items-center justify-center mb-6 overflow-hidden rounded-lg">
               <img src={vizBedroomDark} alt="Wizualizacja sypialni AN Projekt" className="w-full h-full object-cover" />
             </div>
-            <p className="text-muted-foreground font-body text-sm">Miejsce na krotkie wideo. Ania opowiada o swoim podejsciu do projektow</p>
+            <p className="text-muted-foreground font-body text-sm">Miejsce na krótkie wideo. Ania opowiada o swoim podejściu do projektów</p>
           </FadeIn>
         </div>
       </section>
@@ -156,7 +148,7 @@ const OMnie = () => {
       <section className="bg-background section-padding">
         <div className="max-w-[1000px] mx-auto">
           <FadeIn>
-            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-12 text-center">Co jest dla mnie wazne</h2>
+            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-12 text-center">Co jest dla mnie ważne</h2>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {values.map((v, i) => (
@@ -177,27 +169,15 @@ const OMnie = () => {
         <div className="max-w-[800px] mx-auto text-center">
           <FadeIn>
             <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-4">Kontakt</h2>
-            <p className="text-muted-foreground font-body text-base mb-8">
-              Masz pytania albo chcesz porozmawiac o swoim projekcie?
-            </p>
+            <p className="text-muted-foreground font-body text-base mb-8">Masz pytania albo chcesz porozmawiać o swoim projekcie?</p>
             <div className="flex flex-col gap-2 items-center text-foreground font-body text-base mb-6">
-              <a href="mailto:anprojekt.com@gmail.com" className="hover:text-accent transition-colors">
-                anprojekt.com@gmail.com
-              </a>
-              <a href="tel:+48730359642" className="hover:text-accent transition-colors">
-                +48 730 359 642
-              </a>
+              <a href="mailto:anprojekt.com@gmail.com" className="hover:text-accent transition-colors">anprojekt.com@gmail.com</a>
+              <a href="tel:+48730359642" className="hover:text-accent transition-colors">+48 730 359 642</a>
             </div>
             <div className="flex gap-4 justify-center mb-8">
-              <a href="https://www.instagram.com/an_projekt/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors" aria-label="Instagram">
-                <Instagram size={22} />
-              </a>
-              <a href="https://www.facebook.com/anna.nowakpaprocka" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors" aria-label="Facebook">
-                <Facebook size={22} />
-              </a>
-              <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors" aria-label="Pinterest">
-                <PinterestIcon />
-              </a>
+              <a href="https://www.instagram.com/an_projekt/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors" aria-label="Instagram"><Instagram size={22} /></a>
+              <a href="https://www.facebook.com/anna.nowakpaprocka" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors" aria-label="Facebook"><Facebook size={22} /></a>
+              <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors" aria-label="Pinterest"><PinterestIcon /></a>
             </div>
           </FadeIn>
         </div>
@@ -207,23 +187,13 @@ const OMnie = () => {
       <section className="bg-background section-padding">
         <div className="max-w-[800px] mx-auto text-center">
           <FadeIn>
-            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-4">
-              Planujesz remont lub wykonczenie wnetrza?
-            </h2>
-            <p className="text-muted-foreground font-body text-base mb-8">
-              Chetnie pomoge Ci przelozyc pomysly na konkretny, przemyslany projekt.
-            </p>
+            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-4">Planujesz remont lub wykończenie wnętrza?</h2>
+            <p className="text-muted-foreground font-body text-base mb-8">Chętnie pomogę Ci przełożyć pomysły na konkretny, przemyślany projekt.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/realizacje"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-foreground text-foreground text-sm tracking-[0.05em] font-body hover:bg-foreground hover:text-background transition-all duration-300"
-              >
+              <Link to="/realizacje" className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-foreground text-foreground text-sm tracking-[0.05em] font-body hover:bg-foreground hover:text-background transition-all duration-300">
                 Zobacz realizacje <ArrowRight size={14} />
               </Link>
-              <Link
-                to="/kontakt"
-                className="px-7 py-3 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.05em] font-body hover:bg-accent/90 transition-all duration-300"
-              >
+              <Link to="/kontakt" className="px-7 py-3 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.05em] font-body hover:bg-accent/90 transition-all duration-300">
                 Zapytaj o projekt
               </Link>
             </div>
