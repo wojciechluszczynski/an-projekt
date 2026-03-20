@@ -22,7 +22,7 @@ const packages = [
     icon: Building,
     name: "Opcja Koncepcyjna",
     target: "Dla osób szukających solidnej bazy projektowej. Pomysłu na układ i styl wnętrza.",
-    price: "120 zł/m²",
+    price: "Wycena indywidualna",
     features: ["Układ funkcjonalny pomieszczeń", "Propozycja stylistyczna i moodboard", "Wizualizacje 3D (3 ujęcia)", "Podstawowe rysunki techniczne"],
     image: vizKitchenRattan,
     tags: ["Układ funkcjonalny", "Moodboard", "Wizualizacje 3D"],
