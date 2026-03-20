@@ -2,8 +2,8 @@ import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Search } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
-import vizLivingBeige from "@/assets/viz-living-beige.png";
-import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
+import willaHarmonia1 from "@/assets/willa-harmonia-1.jpeg";
+import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
 import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
 import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
 import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
@@ -13,38 +13,38 @@ import vizDetailCeramics from "@/assets/viz-detail-ceramics.png";
 
 const featured = [
   {
-    title: "Złota Harmonia",
-    type: "Mieszkanie",
-    area: "85 m²",
-    location: "Rzeszów",
-    desc: "Ciepłe, przytulne wnętrze z przemyślanym układem i eleganckimi detalami.",
-    image: vizLivingBeige,
+    title: "Willa Harmonia",
+    type: "Dom jednorodzinny",
+    area: "160 m\u00B2",
+    location: "Podkarpacie",
+    desc: "Dom, kt\u00F3ry nie domaga si\u0119 uwagi. Ale daje dok\u0142adnie to, czego jego w\u0142a\u015Bciciele potrzebowali \u2014 spok\u00F3j.",
+    image: willaHarmonia1,
   },
   {
-    title: "Czarna Perła",
+    title: "Dom, do kt\u00F3rego si\u0119 wraca",
     type: "Dom jednorodzinny",
-    area: "180 m²",
-    location: "Podkarpacie",
-    desc: "Nowoczesny dom z odważnymi materiałami i dużą ilością naturalnego światła.",
-    image: vizKitchenRattan,
+    area: "140 m\u00B2",
+    location: "Rzesz\u00F3w",
+    desc: "Wn\u0119trze, kt\u00F3re nie pr\u00F3buje imponowa\u0107. Zamiast tego sprawia, \u017Ce chce si\u0119 w nim zosta\u0107.",
+    image: domPowrot1,
   },
   {
     title: "Bambusowa Oaza",
-    type: "Salon z jadalnią",
-    area: "65 m²",
-    location: "Małopolska",
-    desc: "Przestrzeń inspirowana naturą, rattan, drewno i spokojne kolory.",
+    type: "Salon z jadalni\u0105",
+    area: "65 m\u00B2",
+    location: "Ma\u0142opolska",
+    desc: "Przestrze\u0144 inspirowana natur\u0105, rattan, drewno i spokojne kolory.",
     image: vizDiningFireplace,
   },
 ];
 
 const allProjects = [
-  { title: "Złota Harmonia", slug: "zlota-harmonia", type: "Mieszkanie", area: 85, location: "Rzeszów", image: vizLivingBeige },
-  { title: "Czarna Perła", slug: "czarna-perla", type: "Dom", area: 180, location: "Podkarpacie", image: vizKitchenRattan },
-  { title: "Bambusowa Oaza", slug: "bambusowa-oaza", type: "Salon", area: 65, location: "Małopolska", image: vizDiningFireplace },
-  { title: "Marmurowa Łazienka", slug: "marmurowa-lazienka", type: "Łazienka", area: 12, location: "Krosno", image: vizBathroomMarble },
-  { title: "Ciemna Sypialnia", slug: "ciemna-sypialnia", type: "Sypialnia", area: 20, location: "Rzeszów", image: vizBedroomDark },
-  { title: "Mural Sypialnia", slug: "mural-sypialnia", type: "Sypialnia", area: 18, location: "Nowy Sącz", image: vizBedroomMural },
+  { title: "Willa Harmonia", slug: "willa-harmonia", type: "Dom", area: 160, location: "Podkarpacie", image: willaHarmonia1 },
+  { title: "Dom, do kt\u00F3rego si\u0119 wraca", slug: "dom-powrot", type: "Dom", area: 140, location: "Rzesz\u00F3w", image: domPowrot1 },
+  { title: "Bambusowa Oaza", slug: "bambusowa-oaza", type: "Salon", area: 65, location: "Ma\u0142opolska", image: vizDiningFireplace },
+  { title: "Marmurowa \u0141azienka", slug: "marmurowa-lazienka", type: "\u0141azienka", area: 12, location: "Krosno", image: vizBathroomMarble },
+  { title: "Ciemna Sypialnia", slug: "ciemna-sypialnia", type: "Sypialnia", area: 20, location: "Rzesz\u00F3w", image: vizBedroomDark },
+  { title: "Mural Sypialnia", slug: "mural-sypialnia", type: "Sypialnia", area: 18, location: "Nowy S\u0105cz", image: vizBedroomMural },
   { title: "Marmurowa Garderoba", slug: "marmurowa-garderoba", type: "Garderoba", area: 8, location: "Podkarpacie", image: vizClosetMarble },
   { title: "Detale Ceramiczne", slug: "detale-ceramiczne", type: "Kuchnia", area: 25, location: "Krosno", image: vizDetailCeramics },
 ];

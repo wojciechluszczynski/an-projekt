@@ -2,30 +2,30 @@ import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
 import { ArrowRight } from "lucide-react";
 
-import vizLivingBeige from "@/assets/viz-living-beige.png";
-import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
+import willaHarmonia1 from "@/assets/willa-harmonia-1.jpeg";
+import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
 import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
 
 const projects = [
   {
-    title: "Złota Harmonia",
-    desc: "Ciepłe, przytulne mieszkanie z przemyślanym układem i eleganckimi detalami.",
-    image: vizLivingBeige,
-    href: "/realizacje",
-    meta: "Mieszkanie 85 m² · Rzeszów",
+    title: "Willa Harmonia",
+    desc: "Dom, który nie domaga się uwagi. Ale daje dokładnie to, czego jego właściciele potrzebowali — spokój.",
+    image: willaHarmonia1,
+    href: "/willa-harmonia",
+    meta: "Dom 160 m² · Podkarpacie",
   },
   {
-    title: "Czarna Perła",
-    desc: "Nowoczesny dom z odważnymi materiałami i dużą ilością naturalnego światła.",
-    image: vizKitchenRattan,
-    href: "/realizacje",
-    meta: "Dom 180 m² · Podkarpacie",
+    title: "Dom, do którego się wraca",
+    desc: "Wnętrze, które nie próbuje imponować. Zamiast tego sprawia, że chce się w nim zostać.",
+    image: domPowrot1,
+    href: "/dom-powrot",
+    meta: "Dom 140 m² · Rzeszów",
   },
   {
     title: "Bambusowa Oaza",
     desc: "Przestrzeń inspirowana naturą, rattan, drewno i spokojne kolory.",
     image: vizDiningFireplace,
-    href: "/realizacje",
+    href: "/bambusowa-oaza",
     meta: "Salon 65 m² · Małopolska",
   },
 ];
