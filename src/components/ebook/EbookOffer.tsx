@@ -4,7 +4,7 @@ import FadeIn from "@/components/FadeIn";
 const packages = [
   {
     name: "Koncepcyjna",
-    price: "120 zł/m²",
+    price: "Wycena indywidualna",
     features: [
       "Układ funkcjonalny wszystkich pomieszczeń",
       "3 wizualizacje kluczowych pomieszczeń",
