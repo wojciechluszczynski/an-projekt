@@ -32,7 +32,7 @@ const packages = [
     icon: Building2,
     name: "Opcja Komfortowa",
     target: "Dla osób, które chcą gotowy projekt do przekazania wykonawcy.",
-    price: "150 zł/m²",
+    price: "Wycena indywidualna",
     features: ["Pełny projekt koncepcyjny wnętrz", "Propozycja materiałów i kolorystyki", "4 wizualizacje 3D", "Wizualizacja 3D 360°", "Dokładna dokumentacja techniczna"],
     image: vizBedroomMural,
     tags: ["Pełny projekt", "Wizualizacja 360°", "Dokumentacja techniczna"],
