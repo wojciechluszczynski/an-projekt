@@ -18,48 +18,48 @@ const featured = [
   {
     title: "Willa Harmonia",
     type: "Dom jednorodzinny",
-    area: "160 m\u00B2",
+    area: "160 m²",
     location: "Podkarpacie",
-    desc: "Dom, kt\u00F3ry nie domaga si\u0119 uwagi. Ale daje dok\u0142adnie to, czego jego w\u0142a\u015Bciciele potrzebowali \u2014 spok\u00F3j.",
+    desc: "Dom, który nie domaga się uwagi. Ale daje dokładnie to, czego jego właściciele potrzebowali — spokój.",
     image: willaHarmonia1,
   },
   {
-    title: "Apartament z klas\u0105",
+    title: "Apartament z klasą",
     type: "Apartament",
-    area: "95 m\u00B2",
-    location: "Rzesz\u00F3w",
-    desc: "Przestrze\u0144, kt\u00F3ra nie tylko dobrze wygl\u0105da, ale te\u017C wspiera styl \u017Cycia w\u0142a\u015Bcicielki.",
+    area: "95 m²",
+    location: "Rzeszów",
+    desc: "Przestrzeń, która nie tylko dobrze wygląda, ale też wspiera styl życia właścicielki.",
     image: apartamentKlasa1,
   },
   {
-    title: "Dom, do kt\u00F3rego si\u0119 wraca",
+    title: "Dom, do którego się wraca",
     type: "Dom jednorodzinny",
-    area: "140 m\u00B2",
-    location: "Rzesz\u00F3w",
-    desc: "Wn\u0119trze, kt\u00F3re nie pr\u00F3buje imponowa\u0107. Zamiast tego sprawia, \u017Ce chce si\u0119 w nim zosta\u0107.",
+    area: "140 m²",
+    location: "Rzeszów",
+    desc: "Wnętrze, które nie próbuje imponować. Zamiast tego sprawia, że chce się w nim zostać.",
     image: domPowrot1,
   },
 ];
 
 const allProjects = [
   { title: "Willa Harmonia", slug: "willa-harmonia", type: "Dom", area: 160, location: "Podkarpacie", image: willaHarmonia1 },
-  { title: "Dom, do kt\u00F3rego si\u0119 wraca", slug: "dom-powrot", type: "Dom", area: 140, location: "Rzesz\u00F3w", image: domPowrot1 },
-  { title: "Apartament z klas\u0105", slug: "apartament-klasa", type: "Apartament", area: 95, location: "Rzesz\u00F3w", image: apartamentKlasa1 },
-  { title: "Pierwsze wsp\u00F3lne mieszkanie", slug: "pierwsze-mieszkanie", type: "Mieszkanie", area: 52, location: "Rzesz\u00F3w", image: pierwszeMieszkanie1 },
-  { title: "Nowy rozdzia\u0142", slug: "nowy-rozdzial", type: "Biuro", area: 120, location: "Podkarpacie", image: nowyRozdzial1 },
-  { title: "Bambusowa Oaza", slug: "bambusowa-oaza", type: "Salon", area: 65, location: "Ma\u0142opolska", image: vizDiningFireplace },
-  { title: "Marmurowa \u0141azienka", slug: "marmurowa-lazienka", type: "\u0141azienka", area: 12, location: "Krosno", image: vizBathroomMarble },
-  { title: "Ciemna Sypialnia", slug: "ciemna-sypialnia", type: "Sypialnia", area: 20, location: "Rzesz\u00F3w", image: vizBedroomDark },
-  { title: "Mural Sypialnia", slug: "mural-sypialnia", type: "Sypialnia", area: 18, location: "Nowy S\u0105cz", image: vizBedroomMural },
+  { title: "Dom, do którego się wraca", slug: "dom-powrot", type: "Dom", area: 140, location: "Rzeszów", image: domPowrot1 },
+  { title: "Apartament z klasą", slug: "apartament-klasa", type: "Apartament", area: 95, location: "Rzeszów", image: apartamentKlasa1 },
+  { title: "Pierwsze wspólne mieszkanie", slug: "pierwsze-mieszkanie", type: "Mieszkanie", area: 52, location: "Rzeszów", image: pierwszeMieszkanie1 },
+  { title: "Nowy rozdział", slug: "nowy-rozdzial", type: "Biuro", area: 120, location: "Podkarpacie", image: nowyRozdzial1 },
+  { title: "Bambusowa Oaza", slug: "bambusowa-oaza", type: "Salon", area: 65, location: "Małopolska", image: vizDiningFireplace },
+  { title: "Marmurowa Łazienka", slug: "marmurowa-lazienka", type: "Łazienka", area: 12, location: "Krosno", image: vizBathroomMarble },
+  { title: "Ciemna Sypialnia", slug: "ciemna-sypialnia", type: "Sypialnia", area: 20, location: "Rzeszów", image: vizBedroomDark },
+  { title: "Mural Sypialnia", slug: "mural-sypialnia", type: "Sypialnia", area: 18, location: "Nowy Sącz", image: vizBedroomMural },
   { title: "Marmurowa Garderoba", slug: "marmurowa-garderoba", type: "Garderoba", area: 8, location: "Podkarpacie", image: vizClosetMarble },
   { title: "Detale Ceramiczne", slug: "detale-ceramiczne", type: "Kuchnia", area: 25, location: "Krosno", image: vizDetailCeramics },
 ];
 
 const sizeFilters = [
   { label: "Wszystkie", min: 0, max: 999 },
-  { label: "do 30 m\u00B2", min: 0, max: 30 },
-  { label: "30\u201380 m\u00B2", min: 30, max: 80 },
-  { label: "80+ m\u00B2", min: 80, max: 999 },
+  { label: "do 30 m²", min: 0, max: 30 },
+  { label: "30–80 m²", min: 30, max: 80 },
+  { label: "80+ m²", min: 80, max: 999 },
 ];
 
 const Realizacje = () => {
@@ -99,10 +99,10 @@ const Realizacje = () => {
         ))}
 
         <div className="absolute bottom-16 md:bottom-24 left-6 md:left-16 lg:left-24 z-10 max-w-xl">
-          <p className="font-body text-xs tracking-[0.2em] uppercase text-dark-foreground/70 mb-3">Wyr\u00F3\u017Cniony projekt</p>
+          <p className="font-body text-xs tracking-[0.2em] uppercase text-dark-foreground/70 mb-3">Wyróżniony projekt</p>
           <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl text-dark-foreground mb-3">{featured[featuredIdx].title}</h1>
           <p className="font-body text-sm text-dark-foreground/80 mb-1">
-            {featured[featuredIdx].type} \u00B7 {featured[featuredIdx].area} \u00B7 {featured[featuredIdx].location}
+            {featured[featuredIdx].type} · {featured[featuredIdx].area} · {featured[featuredIdx].location}
           </p>
           <p className="font-body text-base text-dark-foreground/70 mb-6 max-w-sm">{featured[featuredIdx].desc}</p>
           <Link to="/kontakt" className="px-6 py-2.5 rounded-full bg-accent text-accent-foreground text-sm font-body hover:bg-accent/90 transition-colors">
@@ -155,17 +155,17 @@ const Realizacje = () => {
               <FadeIn key={p.title} delay={i * 60}>
                 <Link to={`/${p.slug}`} className="group block">
                   <div className="overflow-hidden rounded-lg mb-3">
-                    <img src={p.image} alt={`${p.title} projekt wn\u0119trz`} className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+                    <img src={p.image} alt={`${p.title} projekt wnętrz`} className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
                   </div>
                   <h3 className="font-heading text-base text-foreground mb-0.5">{p.title}</h3>
-                  <p className="text-muted-foreground font-body text-xs">{p.type} {p.area} m\u00B2 \u00B7 {p.location}</p>
+                  <p className="text-muted-foreground font-body text-xs">{p.type} {p.area} m² · {p.location}</p>
                 </Link>
               </FadeIn>
             ))}
           </div>
 
           {filtered.length === 0 && (
-            <p className="text-center text-muted-foreground font-body text-base py-12">Brak realizacji pasuj\u0105cych do wyszukiwania.</p>
+            <p className="text-center text-muted-foreground font-body text-base py-12">Brak realizacji pasujących do wyszukiwania.</p>
           )}
         </div>
       </section>
@@ -174,10 +174,10 @@ const Realizacje = () => {
       <section className="bg-primary section-padding">
         <div className="max-w-[700px] mx-auto text-center">
           <FadeIn>
-            <h2 className="font-heading text-2xl md:text-3xl text-primary-foreground mb-4">Chcesz zobaczy\u0107, jak mog\u0119 pom\u00F3c z Twoim wn\u0119trzem?</h2>
-            <p className="text-primary-foreground/70 font-body text-base mb-8">Napisz do mnie. Ch\u0119tnie porozmawiam o Twoim projekcie.</p>
+            <h2 className="font-heading text-2xl md:text-3xl text-primary-foreground mb-4">Chcesz zobaczyć, jak mogę pomóc z Twoim wnętrzem?</h2>
+            <p className="text-primary-foreground/70 font-body text-base mb-8">Napisz do mnie. Chętnie porozmawiam o Twoim projekcie.</p>
             <Link to="/kontakt" className="px-7 py-3 rounded-full bg-accent text-accent-foreground text-sm tracking-[0.05em] font-body hover:bg-accent/90 transition-all duration-300">
-              Um\u00F3w spotkanie
+              Umów spotkanie
             </Link>
           </FadeIn>
         </div>
