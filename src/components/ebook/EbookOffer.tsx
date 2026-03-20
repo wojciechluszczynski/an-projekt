@@ -31,7 +31,7 @@ const packages = [
   },
   {
     name: "Kompleksowa",
-    price: "170 zł/m²",
+    price: "Wycena indywidualna",
     features: [
       "Wszystko z pakietu Komfortowa",
       "Krótkie wideo wizualne wnętrza",
