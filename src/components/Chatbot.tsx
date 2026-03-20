@@ -57,7 +57,6 @@ const Chatbot = () => {
     setOpen(true);
     setShowGreeting(false);
     setGreetingDismissed(true);
-    setHasUnread(false);
   };
 
   const handleClose = () => {
