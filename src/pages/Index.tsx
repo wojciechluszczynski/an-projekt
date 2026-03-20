@@ -309,14 +309,10 @@ const Index = () => {
               <p className="font-heading italic text-2xl text-accent mb-8" style={{ fontFamily: "'Playfair Display', serif" }}>Anna Nowak</p>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-2 gap-6 mb-8">
                 <div>
                   <p className="font-heading text-3xl md:text-4xl text-foreground">50+</p>
                   <p className="font-body text-xs text-muted-foreground mt-1">Zrealizowanych projektów</p>
-                </div>
-                <div>
-                  <p className="font-heading text-3xl md:text-4xl text-foreground">8</p>
-                  <p className="font-body text-xs text-muted-foreground mt-1">Lat doświadczenia</p>
                 </div>
                 <div>
                   <p className="font-heading text-3xl md:text-4xl text-foreground">100%</p>

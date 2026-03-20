@@ -135,7 +135,7 @@ const Chatbot = () => {
         ) : (
           <div className="relative w-full h-full rounded-full overflow-hidden">
             <img src={annaPortrait} alt="Anna Nowak" className="w-full h-full object-cover object-top rounded-full" />
-            <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-background animate-pulse" />
+            <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-background" />
           </div>
         )}
       </button>

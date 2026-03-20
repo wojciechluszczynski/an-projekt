@@ -47,8 +47,8 @@ const AnnouncementBanner = () => {
         <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-1.5 flex items-center justify-center gap-3 relative">
           <Download size={14} className="shrink-0 hidden sm:block" />
           <p className="font-body text-xs sm:text-sm text-center">
-            <span className="font-medium">Darmowy ebook:</span>{" "}
-            Jak przygotować się do remontu – pobierz przewodnik
+            <span className="font-medium">Darmowy poradnik:</span>{" "}
+            Jak przygotować się do remontu i wykończenia wnętrza
           </p>
           <Link
             to="/ebook/przewodnik"
