@@ -17,7 +17,7 @@ const packages = [
   },
   {
     name: "Komfortowa",
-    price: "150 zł/m²",
+    price: "Wycena indywidualna",
     features: [
       "Wszystko z pakietu Koncepcyjna",
       "Pełny projekt wnętrza wszystkich pomieszczeń",
