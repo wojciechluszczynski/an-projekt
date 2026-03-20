@@ -42,12 +42,12 @@ const Chatbot = () => {
     return () => clearTimeout(greetingTimer.current);
   }, []);
 
-  // Auto-hide greeting after 6 seconds, show badge
+  // Auto-hide greeting after 6 seconds
   useEffect(() => {
     if (showGreeting && !open) {
       hideTimer.current = setTimeout(() => {
         setShowGreeting(false);
-        setHasUnread(true);
+        setGreetingDismissed(true);
       }, 6000);
       return () => clearTimeout(hideTimer.current);
     }
