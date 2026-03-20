@@ -4,7 +4,7 @@ import FadeIn from "@/components/FadeIn";
 const packages = [
   {
     name: "Koncepcyjna",
-    price: "120 zł/m²",
+    price: "Wycena indywidualna",
     features: [
       "Układ funkcjonalny wszystkich pomieszczeń",
       "3 wizualizacje kluczowych pomieszczeń",
@@ -17,7 +17,7 @@ const packages = [
   },
   {
     name: "Komfortowa",
-    price: "150 zł/m²",
+    price: "Wycena indywidualna",
     features: [
       "Wszystko z pakietu Koncepcyjna",
       "Pełny projekt wnętrza wszystkich pomieszczeń",
@@ -31,7 +31,7 @@ const packages = [
   },
   {
     name: "Kompleksowa",
-    price: "170 zł/m²",
+    price: "Wycena indywidualna",
     features: [
       "Wszystko z pakietu Komfortowa",
       "Krótkie wideo wizualne wnętrza",

@@ -240,24 +240,6 @@ const Oferta = () => {
                       ))}
                     </tr>
                   ))}
-                  <tr>
-                    <td className="py-5 px-3 text-foreground font-medium">Cena</td>
-                    {packages.map((pkg) => (
-                      <td
-                        key={pkg.name}
-                        className={`py-5 px-3 text-center ${
-                          pkg.popular ? "bg-primary/5 rounded-b-xl" : ""
-                        }`}
-                      >
-                        <span className={`font-heading text-base ${pkg.popular ? "text-accent" : "text-foreground"}`}>{pkg.price}</span>
-                        {pkg.popular && (
-                          <Link to="/kontakt" className="block mt-2 mx-auto w-fit px-5 py-1.5 rounded-full bg-accent text-accent-foreground font-body text-xs hover:bg-accent/90 transition-colors">
-                            Wybierz
-                          </Link>
-                        )}
-                      </td>
-                    ))}
-                  </tr>
                 </tbody>
               </table>
             </div>
