@@ -110,7 +110,7 @@ const Chatbot = () => {
           onClick={handleOpen}
         >
           <button
-            onClick={(e) => { e.stopPropagation(); setShowGreeting(false); setGreetingDismissed(true); setHasUnread(true); }}
+            onClick={(e) => { e.stopPropagation(); setShowGreeting(false); setGreetingDismissed(true); }}
             className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
             aria-label="Zamknij"
           >
