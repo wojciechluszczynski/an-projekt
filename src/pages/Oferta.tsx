@@ -12,6 +12,7 @@ const packages = [
   {
     icon: Home,
     name: "Konsultacja",
+    target: "Dla osób, które chcą omówić pomysł, układ, styl lub konkretny problem we wnętrzu.",
     price: "Wycena indywidualna",
     features: ["Spotkanie online lub na miejscu (ok. 60 min)", "Analiza przestrzeni i potrzeb", "Wstępne rekomendacje stylistyczne i funkcjonalne", "Kierunek dalszych działań"],
     image: vizLivingBeige,
