@@ -42,7 +42,7 @@ const packages = [
     icon: Trees,
     name: "Opcja Kompleks",
     target: "Dla osób szukających pełnego wsparcia. Od koncepcji, przez projekt, po nadzór na budowie.",
-    price: "170 zł/m²",
+    price: "Wycena indywidualna",
     features: [
       "Wszystko z Opcji Komfortowej",
       "Krótkie wideo wizualne głównych pomieszczeń",
