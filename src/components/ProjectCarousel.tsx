@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 import willaHarmonia1 from "@/assets/willa-harmonia-1.jpeg";
 import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
-import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
+import apartamentKlasa1 from "@/assets/apartament-klasa-1.jpeg";
 
 const projects = [
   {
@@ -22,11 +22,11 @@ const projects = [
     meta: "Dom 140 m² · Rzeszów",
   },
   {
-    title: "Bambusowa Oaza",
-    desc: "Przestrzeń inspirowana naturą, rattan, drewno i spokojne kolory.",
-    image: vizDiningFireplace,
-    href: "/bambusowa-oaza",
-    meta: "Salon 65 m² · Małopolska",
+    title: "Apartament z klasą",
+    desc: "Przestrzeń, która nie tylko dobrze wygląda, ale też wspiera styl życia właścicielki.",
+    image: apartamentKlasa1,
+    href: "/apartament-klasa",
+    meta: "Apartament 95 m² · Rzeszów",
   },
 ];
 

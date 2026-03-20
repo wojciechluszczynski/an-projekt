@@ -26,7 +26,7 @@ const Chatbot = () => {
   const [open, setOpen] = useState(false);
   const [showGreeting, setShowGreeting] = useState(false);
   const [greetingDismissed, setGreetingDismissed] = useState(false);
-  const [hasUnread, setHasUnread] = useState(false);
+  const [hasUnread] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
     { role: "bot", content: "Cześć! Jestem Anna. Mogę pomóc Ci znaleźć informacje o ofercie, procesie współpracy lub umówić rozmowę. O co chcesz zapytać?" },
   ]);
@@ -42,12 +42,12 @@ const Chatbot = () => {
     return () => clearTimeout(greetingTimer.current);
   }, []);
 
-  // Auto-hide greeting after 6 seconds, show badge
+  // Auto-hide greeting after 6 seconds
   useEffect(() => {
     if (showGreeting && !open) {
       hideTimer.current = setTimeout(() => {
         setShowGreeting(false);
-        setHasUnread(true);
+        setGreetingDismissed(true);
       }, 6000);
       return () => clearTimeout(hideTimer.current);
     }
@@ -57,7 +57,6 @@ const Chatbot = () => {
     setOpen(true);
     setShowGreeting(false);
     setGreetingDismissed(true);
-    setHasUnread(false);
   };
 
   const handleClose = () => {
@@ -110,7 +109,7 @@ const Chatbot = () => {
           onClick={handleOpen}
         >
           <button
-            onClick={(e) => { e.stopPropagation(); setShowGreeting(false); setGreetingDismissed(true); setHasUnread(true); }}
+            onClick={(e) => { e.stopPropagation(); setShowGreeting(false); setGreetingDismissed(true); }}
             className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
             aria-label="Zamknij"
           >
@@ -135,7 +134,7 @@ const Chatbot = () => {
         ) : (
           <div className="relative w-full h-full rounded-full overflow-hidden">
             <img src={annaPortrait} alt="Anna Nowak" className="w-full h-full object-cover object-top rounded-full" />
-            <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-background animate-pulse" />
+            <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-background" />
           </div>
         )}
       </button>

@@ -15,7 +15,6 @@ const PinterestIcon = () => (
 
 const stats = [
   { number: "50+", label: "Zrealizowanych projektów" },
-  { number: "8", label: "Lat doświadczenia" },
   { number: "100%", label: "Zadowolonych klientów" },
 ];
 
@@ -86,7 +85,7 @@ const OMnie = () => {
       <section className="bg-background section-padding-sm">
         <div className="max-w-[900px] mx-auto">
           <FadeIn>
-            <div className="grid grid-cols-3 gap-8 md:gap-12">
+            <div className="grid grid-cols-2 gap-8 md:gap-12">
               {stats.map((stat, i) => (
                 <div key={i} className="text-center">
                   <p className="font-heading text-3xl md:text-4xl text-foreground mb-1">{stat.number}</p>

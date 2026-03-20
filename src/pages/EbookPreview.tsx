@@ -124,7 +124,7 @@ const EbookPreview = () => {
       <EbookInspirations />
       <EbookFaq />
       <EbookOffer />
-      <EbookCta onPrint={() => window.print()} />
+      <EbookCta />
     </main>
   );
 };
