@@ -26,7 +26,7 @@ const Chatbot = () => {
   const [open, setOpen] = useState(false);
   const [showGreeting, setShowGreeting] = useState(false);
   const [greetingDismissed, setGreetingDismissed] = useState(false);
-  const [hasUnread, setHasUnread] = useState(false);
+  const [hasUnread] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
     { role: "bot", content: "Cześć! Jestem Anna. Mogę pomóc Ci znaleźć informacje o ofercie, procesie współpracy lub umówić rozmowę. O co chcesz zapytać?" },
   ]);
