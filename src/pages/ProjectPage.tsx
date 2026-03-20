@@ -3,7 +3,21 @@ import { Link, useParams } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
 import { ArrowRight, ChevronLeft, ChevronRight, X } from "lucide-react";
 
-import vizLivingBeige from "@/assets/viz-living-beige.png";
+import willaHarmonia1 from "@/assets/willa-harmonia-1.jpeg";
+import willaHarmonia2 from "@/assets/willa-harmonia-2.jpeg";
+import willaHarmonia3 from "@/assets/willa-harmonia-3.jpeg";
+import willaHarmonia4 from "@/assets/willa-harmonia-4.jpeg";
+import willaHarmonia5 from "@/assets/willa-harmonia-5.jpeg";
+import willaHarmonia6 from "@/assets/willa-harmonia-6.jpeg";
+import willaHarmonia7 from "@/assets/willa-harmonia-7.jpeg";
+import willaHarmonia8 from "@/assets/willa-harmonia-8.jpeg";
+import willaHarmonia9 from "@/assets/willa-harmonia-9.jpeg";
+import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
+import domPowrot2 from "@/assets/dom-powrot-2.jpeg";
+import domPowrot3 from "@/assets/dom-powrot-3.jpeg";
+import domPowrot4 from "@/assets/dom-powrot-4.jpeg";
+import domPowrot5 from "@/assets/dom-powrot-5.jpeg";
+import domPowrot6 from "@/assets/dom-powrot-6.jpeg";
 import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
 import vizClosetMarble from "@/assets/viz-closet-marble.png";
 import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
@@ -11,6 +25,7 @@ import vizBedroomMural from "@/assets/viz-bedroom-mural.png";
 import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
 import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
 import vizDetailCeramics from "@/assets/viz-detail-ceramics.png";
+import vizLivingBeige from "@/assets/viz-living-beige.png";
 
 const projectsData: Record<string, {
   title: string;
@@ -20,36 +35,52 @@ const projectsData: Record<string, {
   pkg: string;
   time: string;
   challenge: string;
-  story: string;
+  story: string[];
   scope: string[];
   result: string;
   images: string[];
 }> = {
-  "zlota-harmonia": {
-    title: "Złota Harmonia",
-    type: "Mieszkanie",
-    area: "85 m²",
-    location: "Rzeszów",
-    pkg: "Komfortowa",
-    time: "6 tygodni",
-    challenge: "Małe pomieszczenia wymagały sprytnych rozwiązań, żeby zmieścić wszystko, czego potrzebuje czteroosobowa rodzina.",
-    story: "Klientom zależało na wnętrzu, które będzie ciepłe i przytulne, ale jednocześnie uporządkowane i łatwe do utrzymania. Zaproponowałam spokojną paletę barw, miękkie tkaniny i przemyślany układ, który daje dużo miejsca do przechowywania.",
-    scope: ["Układ funkcjonalny", "Projekt koncepcyjny", "4 wizualizacje 3D", "Wizualizacja 360°", "Dokumentacja techniczna"],
-    result: "Funkcjonalne, ciepłe wnętrze, w którym każdy ma swoją przestrzeń – a jednocześnie wspólna strefa dzienna zachęca do wspólnego spędzania czasu.",
-    images: [vizLivingBeige, vizBathroomMarble, vizClosetMarble, vizDetailCeramics],
-  },
-  "czarna-perla": {
-    title: "Czarna Perła",
+  "willa-harmonia": {
+    title: "Willa Harmonia",
     type: "Dom jednorodzinny",
-    area: "180 m²",
+    area: "160 m²",
     location: "Podkarpacie",
     pkg: "Kompleks",
+    time: "10 tygodni",
+    challenge: "Intensywne tempo życia inwestorów wymagało stworzenia przestrzeni, która będzie przeciwwagą — nie kolejnym bodźcem, a miejscem wyciszenia.",
+    story: [
+      "To miał być dom „na później". Na spokojniejsze tempo, na więcej czasu dla siebie. Problem w tym, że życie inwestorów nie zwalniało — intensywna praca, szybkie tempo, ciągłe decyzje. Potrzebowali miejsca, które nie będzie kolejnym bodźcem, tylko przeciwwagą.",
+      "Od początku było jasne, że kluczem nie będzie spektakularna forma, tylko spokój. Dlatego zamiast nadmiaru — ograniczenie. Zamiast efektu „wow" — konsekwencja.",
+      "Parter został zaprojektowany jako jedna płynna przestrzeń, w której funkcje naturalnie się przenikają. Kuchnia, jadalnia i salon nie konkurują ze sobą, tylko tworzą tło dla codziennych rytuałów. Duża wyspa i stół stają się centrum życia — nie tylko do jedzenia, ale też rozmów, pracy i zatrzymania się na chwilę.",
+      "Materiały dobrano tak, żeby nie męczyły. Jasne drewno, kamień o delikatnym rysunku, miękkie tkaniny. Wszystko jest spokojne, ale nie chłodne. Minimalizm został tu „ocieplony" strukturą i światłem — to ono buduje klimat wnętrza w ciągu dnia i wieczorem przejmuje rolę pierwszego planu.",
+      "Duże przeszklenia otwierają dom na ogród, ale nie dominują przestrzeni. Są raczej tłem dla tego, co dzieje się w środku. Wnętrze nie potrzebuje widoku, żeby działać — ale kiedy się pojawia, staje się jego naturalnym przedłużeniem.",
+      "Część prywatna została potraktowana jeszcze spokojniej. Sypialnia to wyciszona, niemal hotelowa przestrzeń, w której wszystko sprowadza się do odpoczynku. Mocniejszy akcent pojawia się tylko tam, gdzie ma sens — jak w formie artystycznej ściany, która nadaje charakter, ale nie zaburza równowagi.",
+      "Łazienka i garderoba tworzą spójny, uporządkowany układ. Kamień, szkło i światło prowadzą użytkownika intuicyjnie przez przestrzeń. Nie ma tu przypadkowych decyzji — każdy element ma swoje miejsce i funkcję.",
+    ],
+    scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Dokumentacja techniczna", "Nadzór nad realizacją", "Dobór materiałów i mebli"],
+    result: "Dom, który nie domaga się uwagi. Ale daje dokładnie to, czego jego właściciele najbardziej potrzebowali — spokój.",
+    images: [willaHarmonia1, willaHarmonia2, willaHarmonia3, willaHarmonia4, willaHarmonia5, willaHarmonia6, willaHarmonia7, willaHarmonia8, willaHarmonia9],
+  },
+  "dom-powrot": {
+    title: "Dom, do którego się wraca",
+    type: "Dom jednorodzinny",
+    area: "140 m²",
+    location: "Rzeszów",
+    pkg: "Kompleks",
     time: "8 tygodni",
-    challenge: "Duża otwarta przestrzeń i odważna wizja inwestora – trzeba było zbalansować nowoczesne materiały z ciepłem domowego wnętrza.",
-    story: "Projekt obejmował cały dom od salonu po łazienkę na piętrze. Klient chciał ciemne, odważne materiały, ale bez efektu chłodu. Połączyłam czarny kamień z drewnem, ciepłym oświetleniem i dużą ilością zieleni.",
-    scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Wideo wizualne", "Dokumentacja techniczna", "3 spotkania nadzorujące", "Wspólne zakupy materiałów"],
-    result: "Nowoczesny dom, który robi wrażenie, ale w którym dobrze się mieszka na co dzień.",
-    images: [vizKitchenRattan, vizBedroomDark, vizBedroomMural, vizBathroomMarble],
+    challenge: "Wnętrze, które kiedyś było „wystarczające", z czasem zaczęło przeszkadzać. Za dużo przypadkowych decyzji, za mało spójności.",
+    story: [
+      "To nie był projekt o zmianie stylu. To była decyzja o zmianie codzienności.",
+      "Inwestorzy przyszli z poczuciem zmęczenia własnym domem. Wnętrze, które kiedyś było „wystarczające", z czasem zaczęło przeszkadzać. Za dużo przypadkowych decyzji, za mało spójności. Zamiast odpoczynku — lekki chaos, który trudno było nazwać, ale łatwo odczuć.",
+      "Od początku było jasne, że nie chodzi o rewolucję dla samego efektu. Raczej o uporządkowanie tego, co już jest — i nadanie temu nowej jakości.",
+      "Strefa dzienna została otwarta i uspokojona wizualnie. Kuchnia przestała być zbiorem funkcji, a zaczęła być naturalnym tłem dla życia. Jasna zabudowa, ciepłe drewno i kamień o subtelnym rysunku tworzą bazę, która nie narzuca się, ale buduje atmosferę. Światło — zarówno dzienne, jak i sztuczne — zostało potraktowane jak materiał.",
+      "Salon to kontynuacja tej samej historii. Duża, miękka sofa, niskie stoliki, kominek — wszystko jest tu po to, żeby zwolnić. To przestrzeń, w której nie trzeba nic robić. Wystarczy być.",
+      "W części prywatnej postawiliśmy na jeszcze większe wyciszenie. Sypialnia jest prosta, ale nie surowa. Warstwy tkanin, ciepłe drewno i miękkie światło budują poczucie bezpieczeństwa i komfortu.",
+      "Łazienka kontynuuje tę samą logikę. Połączenie kamienia i drewna, czytelny układ, brak zbędnych podziałów. Wszystko jest intuicyjne, spokojne, uporządkowane.",
+    ],
+    scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D", "Dokumentacja techniczna", "Nadzór nad realizacją", "Dobór materiałów"],
+    result: "Wnętrze, które nie próbuje imponować na pierwszy rzut oka. Zamiast tego robi coś trudniejszego — sprawia, że chce się w nim zostać.",
+    images: [domPowrot1, domPowrot2, domPowrot3, domPowrot4, domPowrot5, domPowrot6],
   },
   "bambusowa-oaza": {
     title: "Bambusowa Oaza",
@@ -59,7 +90,9 @@ const projectsData: Record<string, {
     pkg: "Koncepcyjna",
     time: "3 tygodnie",
     challenge: "Klienci chcieli wnętrze inspirowane naturą, ale nie wiedzieli, jak to przełożyć na konkretne rozwiązania.",
-    story: "Zaproponowałam naturalny rattan, jasne drewno i spokojną paletę beżów i zieleni. Kominek stał się centralnym punktem, a duże okna z widokiem na ogród – integralną częścią projektu.",
+    story: [
+      "Zaproponowałam naturalny rattan, jasne drewno i spokojną paletę beżów i zieleni. Kominek stał się centralnym punktem, a duże okna z widokiem na ogród – integralną częścią projektu.",
+    ],
     scope: ["Układ funkcjonalny", "Moodboard i propozycja stylistyczna", "3 wizualizacje 3D", "Podstawowe rysunki techniczne"],
     result: "Spójna koncepcja, która dała klientom jasny punkt wyjścia do dalszej realizacji.",
     images: [vizDiningFireplace, vizLivingBeige, vizDetailCeramics, vizClosetMarble],
@@ -72,7 +105,9 @@ const projectsData: Record<string, {
     pkg: "Komfortowa",
     time: "3 tygodnie",
     challenge: "Niewielka przestrzeń, w której trzeba było pomieścić wannę, prysznic i dużo miejsca do przechowywania.",
-    story: "Klientka marzyła o łazience w stylu hotelowym – jasny marmur, złote detale i dużo światła. Zaproponowałam duże płyty imitujące marmur, podświetlane lustro i sprytne schowki za lustrzanymi frontami.",
+    story: [
+      "Klientka marzyła o łazience w stylu hotelowym – jasny marmur, złote detale i dużo światła. Zaproponowałam duże płyty imitujące marmur, podświetlane lustro i sprytne schowki za lustrzanymi frontami.",
+    ],
     scope: ["Projekt koncepcyjny", "2 wizualizacje 3D", "Dokumentacja techniczna", "Dobór materiałów"],
     result: "Elegancka łazienka, która wygląda na znacznie większą niż jest w rzeczywistości.",
     images: [vizBathroomMarble, vizDetailCeramics, vizClosetMarble, vizLivingBeige],
@@ -85,7 +120,9 @@ const projectsData: Record<string, {
     pkg: "Koncepcyjna",
     time: "2 tygodnie",
     challenge: "Klient chciał ciemną, przytulną sypialnię, ale bez efektu przygnębiającego wnętrza.",
-    story: "Postawiłam na głębokie, ciepłe odcienie grafitu i brązu, miękkie tkaniny i punktowe oświetlenie. Drewniane panele za łóżkiem dodały ciepła, a duże okno z lnianą zasłoną zapewnia naturalny dostęp światła w ciągu dnia.",
+    story: [
+      "Postawiłam na głębokie, ciepłe odcienie grafitu i brązu, miękkie tkaniny i punktowe oświetlenie. Drewniane panele za łóżkiem dodały ciepła, a duże okno z lnianą zasłoną zapewnia naturalny dostęp światła w ciągu dnia.",
+    ],
     scope: ["Moodboard", "2 wizualizacje 3D", "Propozycja kolorystyczna", "Lista materiałów"],
     result: "Klimatyczna sypialnia, w której dobrze się odpoczywa – ciemna, ale ciepła i przytulna.",
     images: [vizBedroomDark, vizBedroomMural, vizLivingBeige, vizKitchenRattan],
@@ -98,7 +135,9 @@ const projectsData: Record<string, {
     pkg: "Koncepcyjna",
     time: "2 tygodnie",
     challenge: "Para chciała sypialnię z charakterem – coś więcej niż standardowe, białe ściany.",
-    story: "Zaproponowałam delikatny mural z motywem roślinnym na ścianie za łóżkiem. Reszta wnętrza utrzymana w spokojnych beżach i bieli, żeby mural mógł być głównym akcentem. Drewniana podłoga i lniane tkaniny dopełniają całość.",
+    story: [
+      "Zaproponowałam delikatny mural z motywem roślinnym na ścianie za łóżkiem. Reszta wnętrza utrzymana w spokojnych beżach i bieli, żeby mural mógł być głównym akcentem. Drewniana podłoga i lniane tkaniny dopełniają całość.",
+    ],
     scope: ["Moodboard", "2 wizualizacje 3D", "Propozycja muralu", "Dobór tkanin"],
     result: "Sypialnia z duszą – spokojna, ale z wyrazistym elementem, który nadaje charakter.",
     images: [vizBedroomMural, vizBedroomDark, vizDiningFireplace, vizDetailCeramics],
@@ -111,7 +150,9 @@ const projectsData: Record<string, {
     pkg: "Komfortowa",
     time: "2 tygodnie",
     challenge: "Mała garderoba musiała pomieścić ubrania dwóch osób i wyglądać elegancko.",
-    story: "Zaprojektowałam system szaf od podłogi do sufitu z lustrzanymi frontami, które optycznie powiększają przestrzeń. Marmurowa podłoga i złote uchwyty nadają wnętrzu luksusowy charakter.",
+    story: [
+      "Zaprojektowałam system szaf od podłogi do sufitu z lustrzanymi frontami, które optycznie powiększają przestrzeń. Marmurowa podłoga i złote uchwyty nadają wnętrzu luksusowy charakter.",
+    ],
     scope: ["Projekt zabudowy", "2 wizualizacje 3D", "Dokumentacja techniczna", "Dobór materiałów"],
     result: "Kompaktowa garderoba, która mieści wszystko i wygląda jak z katalogu.",
     images: [vizClosetMarble, vizBathroomMarble, vizDetailCeramics, vizLivingBeige],
@@ -124,7 +165,9 @@ const projectsData: Record<string, {
     pkg: "Komfortowa",
     time: "4 tygodnie",
     challenge: "Kuchnia otwarta na salon wymagała spójnego połączenia strefy gotowania z wypoczynkową.",
-    story: "Ręcznie robiona ceramika na ścianie nad blatem stała się centralnym elementem projektu. Drewniane fronty, kamienny blat i rattanowe dodatki tworzą ciepłą, naturalną atmosferę.",
+    story: [
+      "Ręcznie robiona ceramika na ścianie nad blatem stała się centralnym elementem projektu. Drewniane fronty, kamienny blat i rattanowe dodatki tworzą ciepłą, naturalną atmosferę.",
+    ],
     scope: ["Układ funkcjonalny", "3 wizualizacje 3D", "Dokumentacja techniczna", "Nadzór nad wykonaniem płytek"],
     result: "Kuchnia, która jest sercem domu – piękna, funkcjonalna i z unikatowym charakterem dzięki ceramice.",
     images: [vizDetailCeramics, vizKitchenRattan, vizDiningFireplace, vizBathroomMarble],
@@ -196,11 +239,9 @@ const ProjectPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 mb-12">
               <div>
                 <h2 className="font-heading text-2xl text-foreground mb-4">O projekcie</h2>
-                <p className="text-muted-foreground font-body text-base leading-relaxed mb-4">{project.story}</p>
-                <h3 className="font-heading text-lg text-foreground mb-2 mt-6">Wyzwanie</h3>
-                <p className="text-muted-foreground font-body text-base leading-relaxed">{project.challenge}</p>
-                <h3 className="font-heading text-lg text-foreground mb-2 mt-6">Efekt</h3>
-                <p className="text-muted-foreground font-body text-base leading-relaxed">{project.result}</p>
+                {project.story.map((paragraph, i) => (
+                  <p key={i} className="text-muted-foreground font-body text-base leading-relaxed mb-4">{paragraph}</p>
+                ))}
               </div>
               <div className="md:border-l md:border-border md:pl-8 space-y-5 md:min-w-[200px]">
                 {[
@@ -226,6 +267,13 @@ const ProjectPage = () => {
                 <li key={s} className="font-body text-sm text-muted-foreground bg-secondary px-4 py-1.5 rounded-full">{s}</li>
               ))}
             </ul>
+          </FadeIn>
+
+          {/* Result quote */}
+          <FadeIn delay={150}>
+            <blockquote className="border-l-2 border-accent pl-5 py-1 mb-12">
+              <p className="font-body text-base text-foreground/70 italic leading-relaxed">{project.result}</p>
+            </blockquote>
           </FadeIn>
         </div>
       </section>
