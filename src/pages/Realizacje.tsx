@@ -48,6 +48,7 @@ const allProjects = [
   { title: "Apartament z klasą", slug: "apartament-klasa", type: "Apartament", area: 95, location: "Rzeszów", image: apartamentKlasa1 },
   { title: "Pierwsze wspólne mieszkanie", slug: "pierwsze-mieszkanie", type: "Mieszkanie", area: 52, location: "Rzeszów", image: pierwszeMieszkanie1 },
   { title: "Nowy rozdział", slug: "nowy-rozdzial", type: "Biuro", area: 120, location: "Podkarpacie", image: nowyRozdzial1 },
+  { title: "Dom gotowy na więcej", slug: "dom-scenariusz", type: "Dom", area: 130, location: "Rzeszów", image: domScenariusz1 },
   { title: "Bambusowa Oaza", slug: "bambusowa-oaza", type: "Salon", area: 65, location: "Małopolska", image: vizDiningFireplace },
   { title: "Marmurowa Łazienka", slug: "marmurowa-lazienka", type: "Łazienka", area: 12, location: "Krosno", image: vizBathroomMarble },
   { title: "Ciemna Sypialnia", slug: "ciemna-sypialnia", type: "Sypialnia", area: 20, location: "Rzeszów", image: vizBedroomDark },
