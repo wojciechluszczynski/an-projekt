@@ -54,6 +54,12 @@ import domScenariusz3 from "@/assets/dom-scenariusz-3.png";
 import domScenariusz4 from "@/assets/dom-scenariusz-4.png";
 import domScenariusz5 from "@/assets/dom-scenariusz-5.png";
 import domScenariusz6 from "@/assets/dom-scenariusz-6.png";
+import domScenariusz7 from "@/assets/dom-scenariusz-7.png";
+import domScenariusz8 from "@/assets/dom-scenariusz-8.png";
+import domScenariusz9 from "@/assets/dom-scenariusz-9.png";
+import domScenariusz10 from "@/assets/dom-scenariusz-10.png";
+import domScenariusz11 from "@/assets/dom-scenariusz-11.png";
+import domScenariusz12 from "@/assets/dom-scenariusz-12.png";
 
 const projectsData: Record<string, {
   title: string;
@@ -196,7 +202,7 @@ const projectsData: Record<string, {
     ],
     scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Dokumentacja techniczna", "Nadzór nad realizacją", "Dobór materiałów i mebli"],
     result: "Dom, który nie tylko wygląda, ale przede wszystkim działa. Gotowy na nowy etap życia — bez chaosu, bez kompromisów i bez potrzeby 'poprawek po czasie'.",
-    images: [domScenariusz1, domScenariusz2, domScenariusz3, domScenariusz4, domScenariusz5, domScenariusz6],
+    images: [domScenariusz1, domScenariusz2, domScenariusz3, domScenariusz4, domScenariusz5, domScenariusz6, domScenariusz7, domScenariusz8, domScenariusz9, domScenariusz10, domScenariusz11, domScenariusz12],
   },
   "bambusowa-oaza": {
     title: "Bambusowa Oaza",
