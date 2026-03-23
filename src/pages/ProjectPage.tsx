@@ -202,7 +202,7 @@ const projectsData: Record<string, {
     ],
     scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Dokumentacja techniczna", "Nadzór nad realizacją", "Dobór materiałów i mebli"],
     result: "Dom, który nie tylko wygląda, ale przede wszystkim działa. Gotowy na nowy etap życia — bez chaosu, bez kompromisów i bez potrzeby 'poprawek po czasie'.",
-    images: [domScenariusz1, domScenariusz2, domScenariusz3, domScenariusz4, domScenariusz5, domScenariusz6],
+    images: [domScenariusz1, domScenariusz2, domScenariusz3, domScenariusz4, domScenariusz5, domScenariusz6, domScenariusz7, domScenariusz8, domScenariusz9, domScenariusz10, domScenariusz11, domScenariusz12],
   },
   "bambusowa-oaza": {
     title: "Bambusowa Oaza",
