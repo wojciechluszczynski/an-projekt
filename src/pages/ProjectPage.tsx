@@ -48,6 +48,12 @@ import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
 import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
 import vizDetailCeramics from "@/assets/viz-detail-ceramics.png";
 import vizLivingBeige from "@/assets/viz-living-beige.png";
+import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
+import domScenariusz2 from "@/assets/dom-scenariusz-2.png";
+import domScenariusz3 from "@/assets/dom-scenariusz-3.png";
+import domScenariusz4 from "@/assets/dom-scenariusz-4.png";
+import domScenariusz5 from "@/assets/dom-scenariusz-5.png";
+import domScenariusz6 from "@/assets/dom-scenariusz-6.png";
 
 const projectsData: Record<string, {
   title: string;
