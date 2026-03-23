@@ -48,6 +48,12 @@ import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
 import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
 import vizDetailCeramics from "@/assets/viz-detail-ceramics.png";
 import vizLivingBeige from "@/assets/viz-living-beige.png";
+import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
+import domScenariusz2 from "@/assets/dom-scenariusz-2.png";
+import domScenariusz3 from "@/assets/dom-scenariusz-3.png";
+import domScenariusz4 from "@/assets/dom-scenariusz-4.png";
+import domScenariusz5 from "@/assets/dom-scenariusz-5.png";
+import domScenariusz6 from "@/assets/dom-scenariusz-6.png";
 
 const projectsData: Record<string, {
   title: string;
@@ -167,6 +173,30 @@ const projectsData: Record<string, {
     scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Dokumentacja techniczna", "Nadzór nad realizacją", "Dobór materiałów i oświetlenia"],
     result: "Biuro, które nie próbuje być 'kreatywne na siłę'. Jest spokojne, uporządkowane i świadome. Dobrze zaprojektowana przestrzeń nie odciąga uwagi od pracy. Ona ją po prostu wspiera.",
     images: [nowyRozdzial1, nowyRozdzial2, nowyRozdzial3, nowyRozdzial4, nowyRozdzial5, nowyRozdzial6, nowyRozdzial7, nowyRozdzial8],
+  },
+  "dom-scenariusz": {
+    title: "Dom gotowy na więcej niż jeden scenariusz",
+    type: "Dom jednorodzinny",
+    area: "130 m²",
+    location: "Rzeszów",
+    pkg: "Kompleks",
+    time: "10 tygodni",
+    challenge: "Życie w trakcie zmiany — małżeństwo z małą córeczką i drugim dzieckiem w drodze potrzebowało domu, który realnie odpowie na codzienność, która za chwilę miała się zmienić.",
+    story: [
+      "Ten projekt od początku miał konkretny kontekst — życie w trakcie zmiany.",
+      "Małżeństwo z małą córeczką i drugim dzieckiem w drodze. Dom w centrum Rzeszowa, który miał przestać być 'po prostu miejscem do mieszkania', a zacząć realnie odpowiadać na codzienność, która za chwilę miała się zmienić.",
+      "Największym wyzwaniem nie był styl. Była funkcja.",
+      "Jedna z kluczowych decyzji dotyczyła pracy zdalnej. Potrzebne było miejsce, które nie będzie prowizorycznym biurkiem w salonie, tylko pełnoprawną przestrzenią do skupienia. Problem w tym, że dostępne pomieszczenie nie miało okna.",
+      "Zamiast je skreślić — wykorzystaliśmy je maksymalnie. Po wyburzeniach i wprowadzeniu przeszkleń powstało biuro, które dziś jest jednym z najbardziej komfortowych miejsc w domu. Światło z sąsiednich stref zaczęło pracować na jego korzyść, a zamknięcie w szkle daje jednocześnie prywatność i poczucie kontaktu z resztą wnętrza.",
+      "Pralnia przeniesiona do garażu uwolniła cenną przestrzeń, którą mogliśmy przeznaczyć na funkcje naprawdę potrzebne na co dzień. Po kolejnych zmianach i przesunięciach ścian udało nam się uzyskać garderobę — element, który porządkuje życie bardziej, niż się wydaje na etapie projektu.",
+      "Strefa dzienna została utrzymana w jasnej, spokojnej tonacji, ale z wyraźnymi akcentami materiałowymi. Wyspa kuchenna i ciepłe drewno budują centrum domu — miejsce, które naturalnie przyciąga domowników. To tu toczy się codzienność.",
+      "Sypialnia została wyciszona. Miękkie światło, tkaniny i ograniczona paleta kolorów tworzą przestrzeń do odpoczynku, która kontrastuje z bardziej dynamiczną częścią dzienną.",
+      "Pokoje dziecięce są inne — lżejsze, bardziej swobodne, gotowe na zmiany. Bo to właśnie tam wszystko będzie się zmieniać najszybciej.",
+      "Ten projekt miał jeszcze jeden wymiar — logistyczny. Inwestorzy na co dzień mieszkali w Warszawie, a cały proces realizacji odbywał się na miejscu, w Rzeszowie. Nadzór autorski i dobra współpraca z wykonawcami były tu kluczowe.",
+    ],
+    scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Dokumentacja techniczna", "Nadzór nad realizacją", "Dobór materiałów i mebli"],
+    result: "Dom, który nie tylko wygląda, ale przede wszystkim działa. Gotowy na nowy etap życia — bez chaosu, bez kompromisów i bez potrzeby 'poprawek po czasie'.",
+    images: [domScenariusz1, domScenariusz2, domScenariusz3, domScenariusz4, domScenariusz5, domScenariusz6],
   },
   "bambusowa-oaza": {
     title: "Bambusowa Oaza",
