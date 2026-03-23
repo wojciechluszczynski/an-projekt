@@ -13,6 +13,7 @@ import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
 import vizBedroomMural from "@/assets/viz-bedroom-mural.png";
 import vizClosetMarble from "@/assets/viz-closet-marble.png";
 import vizDetailCeramics from "@/assets/viz-detail-ceramics.png";
+import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
 
 const featured = [
   {
