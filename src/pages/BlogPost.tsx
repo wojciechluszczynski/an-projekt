@@ -342,11 +342,7 @@ Nie każdy klient chce projektować całe mieszkanie od razu. Zrób listę pomie
 
 ## Ile kosztuje projekt wnętrza?
 
-| Pakiet | Cena | Co zawiera |
-|--------|------|-----------|
-| Koncepcyjna | 120 zł/m² | Układ + 3 wizualizacje |
-| Komfortowa | 150 zł/m² | Pełny projekt + 3D 360° + dokumentacja |
-| Kompleksowa | 170 zł/m² | Pełny projekt + nadzór realizacji |`,
+Każdy projekt wyceniam indywidualnie — bo każde wnętrze jest inne. **[Skontaktuj się ze mną](/kontakt)** – uzgodnimy szczegóły Twojego projektu.`,
   },
   "projektant-wnetrz-krosno-rzeszow": {
     title: "Projektant wnętrz Krosno i Rzeszów – kiedy warto skorzystać z pomocy i ile kosztuje projekt",
