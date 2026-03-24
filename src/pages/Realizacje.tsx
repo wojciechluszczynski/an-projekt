@@ -7,12 +7,6 @@ import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
 import apartamentKlasa1 from "@/assets/apartament-klasa-1.jpeg";
 import pierwszeMieszkanie1 from "@/assets/pierwsze-mieszkanie-1.jpeg";
 import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
-import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
-import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
-import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
-import vizBedroomMural from "@/assets/viz-bedroom-mural.png";
-import vizClosetMarble from "@/assets/viz-closet-marble.png";
-import vizDetailCeramics from "@/assets/viz-detail-ceramics.png";
 import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
 
 const featured = [
