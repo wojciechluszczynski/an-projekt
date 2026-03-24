@@ -7,12 +7,6 @@ import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
 import apartamentKlasa1 from "@/assets/apartament-klasa-1.jpeg";
 import pierwszeMieszkanie1 from "@/assets/pierwsze-mieszkanie-1.jpeg";
 import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
-import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
-import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
-import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
-import vizBedroomMural from "@/assets/viz-bedroom-mural.png";
-import vizClosetMarble from "@/assets/viz-closet-marble.png";
-import vizDetailCeramics from "@/assets/viz-detail-ceramics.png";
 import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
 
 const featured = [
@@ -49,12 +43,6 @@ const allProjects = [
   { title: "Pierwsze wspólne mieszkanie", slug: "pierwsze-mieszkanie", type: "Mieszkanie", area: 52, location: "Rzeszów", image: pierwszeMieszkanie1 },
   { title: "Nowy rozdział", slug: "nowy-rozdzial", type: "Biuro", area: 120, location: "Podkarpacie", image: nowyRozdzial1 },
   { title: "Dom gotowy na więcej", slug: "dom-scenariusz", type: "Dom", area: 130, location: "Rzeszów", image: domScenariusz1 },
-  { title: "Bambusowa Oaza", slug: "bambusowa-oaza", type: "Salon", area: 65, location: "Małopolska", image: vizDiningFireplace },
-  { title: "Marmurowa Łazienka", slug: "marmurowa-lazienka", type: "Łazienka", area: 12, location: "Krosno", image: vizBathroomMarble },
-  { title: "Ciemna Sypialnia", slug: "ciemna-sypialnia", type: "Sypialnia", area: 20, location: "Rzeszów", image: vizBedroomDark },
-  { title: "Mural Sypialnia", slug: "mural-sypialnia", type: "Sypialnia", area: 18, location: "Nowy Sącz", image: vizBedroomMural },
-  { title: "Marmurowa Garderoba", slug: "marmurowa-garderoba", type: "Garderoba", area: 8, location: "Podkarpacie", image: vizClosetMarble },
-  { title: "Detale Ceramiczne", slug: "detale-ceramiczne", type: "Kuchnia", area: 25, location: "Krosno", image: vizDetailCeramics },
 ];
 
 const sizeFilters = [

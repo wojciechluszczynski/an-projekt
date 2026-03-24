@@ -253,11 +253,7 @@ Jeśli wybierasz Pakiet Kompleksowa, jestem z Tobą również podczas realizacji
 
 ## Ile kosztuje projekt wnętrza na Podkarpaciu?
 
-| Pakiet | Cena | Przykład: mieszkanie 70m² |
-|--------|------|--------------------------|
-| Koncepcyjna | 120 zł/m² | ok. 8 400 zł |
-| Komfortowa | 150 zł/m² | ok. 10 500 zł |
-| Kompleksowa | 170 zł/m² | ok. 11 900 zł |
+Każdy projekt wyceniam indywidualnie — bo każde wnętrze jest inne. **[Skontaktuj się ze mną](/kontakt)** – uzgodnimy szczegóły Twojego projektu.
 
 ---
 
@@ -346,11 +342,7 @@ Nie każdy klient chce projektować całe mieszkanie od razu. Zrób listę pomie
 
 ## Ile kosztuje projekt wnętrza?
 
-| Pakiet | Cena | Co zawiera |
-|--------|------|-----------|
-| Koncepcyjna | 120 zł/m² | Układ + 3 wizualizacje |
-| Komfortowa | 150 zł/m² | Pełny projekt + 3D 360° + dokumentacja |
-| Kompleksowa | 170 zł/m² | Pełny projekt + nadzór realizacji |`,
+Każdy projekt wyceniam indywidualnie — bo każde wnętrze jest inne. **[Skontaktuj się ze mną](/kontakt)** – uzgodnimy szczegóły Twojego projektu.`,
   },
   "projektant-wnetrz-krosno-rzeszow": {
     title: "Projektant wnętrz Krosno i Rzeszów – kiedy warto skorzystać z pomocy i ile kosztuje projekt",
@@ -387,11 +379,7 @@ Obsługuję klientów z Rzeszowa i okolic (Boguchwała, Głogów Małopolski, Ś
 
 ## Ile kosztuje projekt wnętrza w Krosnie i Rzeszowie?
 
-| Pakiet | Cena | Przykład: dom 120m² |
-|--------|------|---------------------|
-| Koncepcyjna | 120 zł/m² | ok. 14 400 zł |
-| Komfortowa | 150 zł/m² | ok. 18 000 zł |
-| Kompleksowa | 170 zł/m² | ok. 20 400 zł |
+Każdy projekt wyceniam indywidualnie — bo każde wnętrze jest inne. **[Skontaktuj się ze mną](/kontakt)** – uzgodnimy szczegóły Twojego projektu.
 
 Warto pamiętać, że dobry projekt zazwyczaj **oszczędza pieniądze** podczas realizacji – eliminuje błędy, optymalizuje zakupy materiałów i pozwala uniknąć kosztownych zmian w trakcie remontu.
 
@@ -729,7 +717,7 @@ Rosnące koszty błędów, brak czasu, przytłaczająca liczba wyborów – to g
 ## Najczęstsze pytania
 
 **Czy projektant wnętrz jest tylko dla bogatych?**
-Nie – projekt wnętrza to koszt 120–170 zł/m², który zazwyczaj zwraca się w lepszych decyzjach zakupowych i unikniętych błędach.
+Nie – koszt projektu zależy od zakresu i metrażu. Zazwyczaj zwraca się w lepszych decyzjach zakupowych i unikniętych błędach. [Napisz do mnie](/kontakt), żeby poznać wycenę.
 
 **Czy mogę samodzielnie urządzić mieszkanie bez projektanta?**
 Tak, jeśli masz czas, cierpliwość i doświadczenie. Warto rozważyć przynajmniej konsultację (1h), która kosztuje znacznie mniej niż pełny projekt.
