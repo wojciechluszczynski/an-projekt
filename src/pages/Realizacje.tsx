@@ -43,12 +43,6 @@ const allProjects = [
   { title: "Pierwsze wspólne mieszkanie", slug: "pierwsze-mieszkanie", type: "Mieszkanie", area: 52, location: "Rzeszów", image: pierwszeMieszkanie1 },
   { title: "Nowy rozdział", slug: "nowy-rozdzial", type: "Biuro", area: 120, location: "Podkarpacie", image: nowyRozdzial1 },
   { title: "Dom gotowy na więcej", slug: "dom-scenariusz", type: "Dom", area: 130, location: "Rzeszów", image: domScenariusz1 },
-  { title: "Bambusowa Oaza", slug: "bambusowa-oaza", type: "Salon", area: 65, location: "Małopolska", image: vizDiningFireplace },
-  { title: "Marmurowa Łazienka", slug: "marmurowa-lazienka", type: "Łazienka", area: 12, location: "Krosno", image: vizBathroomMarble },
-  { title: "Ciemna Sypialnia", slug: "ciemna-sypialnia", type: "Sypialnia", area: 20, location: "Rzeszów", image: vizBedroomDark },
-  { title: "Mural Sypialnia", slug: "mural-sypialnia", type: "Sypialnia", area: 18, location: "Nowy Sącz", image: vizBedroomMural },
-  { title: "Marmurowa Garderoba", slug: "marmurowa-garderoba", type: "Garderoba", area: 8, location: "Podkarpacie", image: vizClosetMarble },
-  { title: "Detale Ceramiczne", slug: "detale-ceramiczne", type: "Kuchnia", area: 25, location: "Krosno", image: vizDetailCeramics },
 ];
 
 const sizeFilters = [

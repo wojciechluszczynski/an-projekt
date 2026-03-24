@@ -717,7 +717,7 @@ Rosnące koszty błędów, brak czasu, przytłaczająca liczba wyborów – to g
 ## Najczęstsze pytania
 
 **Czy projektant wnętrz jest tylko dla bogatych?**
-Nie – projekt wnętrza to koszt 120–170 zł/m², który zazwyczaj zwraca się w lepszych decyzjach zakupowych i unikniętych błędach.
+Nie – koszt projektu zależy od zakresu i metrażu. Zazwyczaj zwraca się w lepszych decyzjach zakupowych i unikniętych błędach. [Napisz do mnie](/kontakt), żeby poznać wycenę.
 
 **Czy mogę samodzielnie urządzić mieszkanie bez projektanta?**
 Tak, jeśli masz czas, cierpliwość i doświadczenie. Warto rozważyć przynajmniej konsultację (1h), która kosztuje znacznie mniej niż pełny projekt.
