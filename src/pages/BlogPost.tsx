@@ -379,11 +379,7 @@ Obsługuję klientów z Rzeszowa i okolic (Boguchwała, Głogów Małopolski, Ś
 
 ## Ile kosztuje projekt wnętrza w Krosnie i Rzeszowie?
 
-| Pakiet | Cena | Przykład: dom 120m² |
-|--------|------|---------------------|
-| Koncepcyjna | 120 zł/m² | ok. 14 400 zł |
-| Komfortowa | 150 zł/m² | ok. 18 000 zł |
-| Kompleksowa | 170 zł/m² | ok. 20 400 zł |
+Każdy projekt wyceniam indywidualnie — bo każde wnętrze jest inne. **[Skontaktuj się ze mną](/kontakt)** – uzgodnimy szczegóły Twojego projektu.
 
 Warto pamiętać, że dobry projekt zazwyczaj **oszczędza pieniądze** podczas realizacji – eliminuje błędy, optymalizuje zakupy materiałów i pozwala uniknąć kosztownych zmian w trakcie remontu.
 
