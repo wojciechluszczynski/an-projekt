@@ -253,11 +253,7 @@ Jeśli wybierasz Pakiet Kompleksowa, jestem z Tobą również podczas realizacji
 
 ## Ile kosztuje projekt wnętrza na Podkarpaciu?
 
-| Pakiet | Cena | Przykład: mieszkanie 70m² |
-|--------|------|--------------------------|
-| Koncepcyjna | 120 zł/m² | ok. 8 400 zł |
-| Komfortowa | 150 zł/m² | ok. 10 500 zł |
-| Kompleksowa | 170 zł/m² | ok. 11 900 zł |
+Każdy projekt wyceniam indywidualnie — bo każde wnętrze jest inne. **[Skontaktuj się ze mną](/kontakt)** – uzgodnimy szczegóły Twojego projektu.
 
 ---
 
