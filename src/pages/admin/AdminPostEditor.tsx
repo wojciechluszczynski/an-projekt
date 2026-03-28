@@ -276,7 +276,7 @@ const AdminPostEditor = () => {
               />
             </div>
             <div>
-              <Label hint="Np. „7 min"">Czas czytania</Label>
+              <Label hint={'Np. „7 min"'}>Czas czytania</Label>
               <input
                 type="text"
                 value={post.read_time}
