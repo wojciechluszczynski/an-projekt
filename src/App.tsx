@@ -36,16 +36,32 @@ const ScrollRestoration = () => {
   return null;
 };
 
+const isAdmin = (pathname: string) => pathname.startsWith('/admin');
+
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  const { pathname } = useLocation();
+  const admin = isAdmin(pathname);
+  return (
+    <>
+      {!admin && <AnnouncementBanner />}
+      <ScrollRestoration />
+      {!admin && <Navbar />}
+      {children}
+      {!admin && <Footer />}
+      {!admin && <Chatbot />}
+      {!admin && <CookieBanner />}
+    </>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <AnnouncementBanner />
-        <ScrollRestoration />
-        <Navbar />
-        <Routes>
+        <Layout>
+          <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/oferta" element={<Oferta />} />
