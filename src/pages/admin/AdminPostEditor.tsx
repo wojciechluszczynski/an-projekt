@@ -266,7 +266,7 @@ const AdminPostEditor = () => {
               </select>
             </div>
             <div>
-              <Label hint="Np. „5 marca 2026"">Data publikacji</Label>
+              <Label hint={'Np. „5 marca 2026"'}>Data publikacji</Label>
               <input
                 type="text"
                 value={post.display_date}
