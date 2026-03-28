@@ -79,9 +79,7 @@ const App = () => (
           <Route path="/:slug" element={<ProjectPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer />
-        <Chatbot />
-        <CookieBanner />
+        </Layout>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
