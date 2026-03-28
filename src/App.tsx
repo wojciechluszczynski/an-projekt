@@ -57,6 +57,9 @@ const App = () => (
           <Route path="/regulamin" element={<Regulamin />} />
           <Route path="/ebook" element={<Ebook />} />
           <Route path="/ebook/przewodnik" element={<EbookPreview />} />
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/wpisy" element={<AdminPosts />} />
+          <Route path="/admin/wpisy/:id" element={<AdminPostEditor />} />
           <Route path="/:slug" element={<ProjectPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
