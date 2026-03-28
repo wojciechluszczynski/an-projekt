@@ -1025,60 +1025,75 @@ const BlogPost = () => {
 
           <h1 className="font-heading text-3xl md:text-4xl text-foreground mb-10">{post.title}</h1>
 
-          {sections.map((section, i) => {
-            // Check if CTA should be inserted before this section
-            const ctaHere = ctaPositions.find(c => c.after === i - 1);
-
-            return (
-              <div key={i}>
-                {ctaHere && <CtaBanner variant={ctaHere.variant} />}
-
-                {section.type === "h2" && (
-                  <h2 className="font-heading text-xl md:text-2xl text-foreground mt-10 mb-4">{section.content}</h2>
-                )}
-                {section.type === "h3" && (
-                  <h3 className="font-heading text-lg text-foreground mt-6 mb-3">{section.content}</h3>
-                )}
-                {section.type === "p" && (
-                  <p className="text-muted-foreground font-body text-base leading-relaxed mb-4">
-                    {renderInlineMarkdown(section.content || "")}
-                  </p>
-                )}
-                {section.type === "ul" && (
-                  <ul className="space-y-2 mb-6 ml-1">
-                    {section.items?.map((item, j) => (
-                      <li key={j} className="flex items-start gap-3 text-muted-foreground font-body text-base leading-relaxed">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2.5 shrink-0" />
-                        <span>{renderInlineMarkdown(item)}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                {section.type === "table" && (
-                  <div className="overflow-x-auto mb-6">
-                    <table className="w-full border-collapse font-body text-sm">
-                      <thead>
-                        <tr>
-                          {section.headers?.map((h, j) => (
-                            <th key={j} className="text-left py-3 px-4 bg-secondary text-foreground font-medium border-b border-border">{h}</th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {section.rows?.map((row, j) => (
-                          <tr key={j} className="border-b border-border/50">
-                            {row.map((cell, k) => (
-                              <td key={k} className="py-3 px-4 text-muted-foreground">{cell}</td>
+          {post.isHtml ? (
+            <div
+              className="blog-content
+                [&_h2]:font-heading [&_h2]:text-xl [&_h2]:md:text-2xl [&_h2]:text-foreground [&_h2]:mt-10 [&_h2]:mb-4
+                [&_h3]:font-heading [&_h3]:text-lg [&_h3]:text-foreground [&_h3]:mt-6 [&_h3]:mb-3
+                [&_p]:text-muted-foreground [&_p]:font-body [&_p]:text-base [&_p]:leading-relaxed [&_p]:mb-4
+                [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-6 [&_ul]:space-y-1 [&_ul_li]:text-muted-foreground [&_ul_li]:font-body [&_ul_li]:text-base
+                [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-6 [&_ol]:space-y-1 [&_ol_li]:text-muted-foreground [&_ol_li]:font-body [&_ol_li]:text-base
+                [&_blockquote]:border-l-4 [&_blockquote]:border-accent/40 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-muted-foreground [&_blockquote]:my-6
+                [&_img]:rounded-lg [&_img]:my-6 [&_img]:max-w-full
+                [&_a]:text-accent [&_a]:underline [&_a]:hover:text-accent/80
+                [&_strong]:text-foreground [&_strong]:font-medium
+                [&_hr]:border-border [&_hr]:my-8
+              "
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}
+            />
+          ) : (
+            sections.map((section, i) => {
+              const ctaHere = ctaPositions.find(c => c.after === i - 1);
+              return (
+                <div key={i}>
+                  {ctaHere && <CtaBanner variant={ctaHere.variant} />}
+                  {section.type === "h2" && (
+                    <h2 className="font-heading text-xl md:text-2xl text-foreground mt-10 mb-4">{section.content}</h2>
+                  )}
+                  {section.type === "h3" && (
+                    <h3 className="font-heading text-lg text-foreground mt-6 mb-3">{section.content}</h3>
+                  )}
+                  {section.type === "p" && (
+                    <p className="text-muted-foreground font-body text-base leading-relaxed mb-4">
+                      {renderInlineMarkdown(section.content || "")}
+                    </p>
+                  )}
+                  {section.type === "ul" && (
+                    <ul className="space-y-2 mb-6 ml-1">
+                      {section.items?.map((item, j) => (
+                        <li key={j} className="flex items-start gap-3 text-muted-foreground font-body text-base leading-relaxed">
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2.5 shrink-0" />
+                          <span>{renderInlineMarkdown(item)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {section.type === "table" && (
+                    <div className="overflow-x-auto mb-6">
+                      <table className="w-full border-collapse font-body text-sm">
+                        <thead>
+                          <tr>
+                            {section.headers?.map((h, j) => (
+                              <th key={j} className="text-left py-3 px-4 bg-secondary text-foreground font-medium border-b border-border">{h}</th>
                             ))}
                           </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+                        </thead>
+                        <tbody>
+                          {section.rows?.map((row, j) => (
+                            <tr key={j} className="border-b border-border/50">
+                              {row.map((cell, k) => (
+                                <td key={k} className="py-3 px-4 text-muted-foreground">{cell}</td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                </div>
+              );
+            })
+          )}
         </FadeIn>
 
         {/* Bottom CTA */}
