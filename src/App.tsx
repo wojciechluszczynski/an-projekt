@@ -21,6 +21,9 @@ import PolitykaPrywatnosci from "./pages/PolitykaPrywatnosci";
 import Regulamin from "./pages/Regulamin";
 import Ebook from "./pages/Ebook";
 import EbookPreview from "./pages/EbookPreview";
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminPosts from "./pages/admin/AdminPosts";
+import AdminPostEditor from "./pages/admin/AdminPostEditor";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,16 +36,32 @@ const ScrollRestoration = () => {
   return null;
 };
 
+const isAdmin = (pathname: string) => pathname.startsWith('/admin');
+
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  const { pathname } = useLocation();
+  const admin = isAdmin(pathname);
+  return (
+    <>
+      {!admin && <AnnouncementBanner />}
+      <ScrollRestoration />
+      {!admin && <Navbar />}
+      {children}
+      {!admin && <Footer />}
+      {!admin && <Chatbot />}
+      {!admin && <CookieBanner />}
+    </>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <AnnouncementBanner />
-        <ScrollRestoration />
-        <Navbar />
-        <Routes>
+        <Layout>
+          <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/oferta" element={<Oferta />} />
@@ -54,12 +73,13 @@ const App = () => (
           <Route path="/regulamin" element={<Regulamin />} />
           <Route path="/ebook" element={<Ebook />} />
           <Route path="/ebook/przewodnik" element={<EbookPreview />} />
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/wpisy" element={<AdminPosts />} />
+          <Route path="/admin/wpisy/:id" element={<AdminPostEditor />} />
           <Route path="/:slug" element={<ProjectPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer />
-        <Chatbot />
-        <CookieBanner />
+        </Layout>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
