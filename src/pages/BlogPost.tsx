@@ -907,9 +907,46 @@ Można, ale to ryzykowne – większość kosztownych błędów (złe gniazdka, 
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const post = slug ? posts[slug] : null;
+  const hardcodedPost = slug ? posts[slug] : null;
+  const [dbPost, setDbPost] = useState<{
+    title: string; metaTitle: string; metaDesc: string; image: string;
+    category: string; date: string; readTime: string; content: string; isHtml: boolean;
+    relatedSlugs: string[];
+  } | null>(null);
+  const [loading, setLoading] = useState(true);
   const [scrollProgress, setScrollProgress] = useState(0);
   const articleRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const fetchFromDb = async () => {
+      if (!slug) { setLoading(false); return; }
+      const { data } = await supabase
+        .from('blog_posts')
+        .select('*')
+        .eq('slug', slug)
+        .eq('published', true)
+        .maybeSingle();
+
+      if (data) {
+        setDbPost({
+          title: data.title,
+          metaTitle: data.meta_title || data.title,
+          metaDesc: data.meta_description || data.excerpt,
+          image: data.cover_image_url || '',
+          category: data.category,
+          date: data.display_date,
+          readTime: data.read_time,
+          content: data.content,
+          isHtml: true,
+          relatedSlugs: data.related_slugs || [],
+        });
+      }
+      setLoading(false);
+    };
+    fetchFromDb();
+  }, [slug]);
+
+  const post = dbPost || (hardcodedPost ? { ...hardcodedPost, isHtml: false, relatedSlugs: [] as string[] } : null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -925,6 +962,14 @@ const BlogPost = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [post]);
 
+  if (loading) {
+    return (
+      <main className="bg-background pt-28 min-h-screen flex items-center justify-center">
+        <p className="font-body text-muted-foreground">Ładowanie...</p>
+      </main>
+    );
+  }
+
   if (!post) {
     return (
       <main className="bg-background pt-28 min-h-screen flex items-center justify-center">
@@ -936,7 +981,7 @@ const BlogPost = () => {
     );
   }
 
-  const sections = parseMarkdownToSections(post.content);
+  const sections = post.isHtml ? [] : parseMarkdownToSections(post.content);
 
   // Insert CTA banners at strategic positions
   const ctaPositions: { after: number; variant: "kontakt" | "realizacje" | "oferta" }[] = [];
