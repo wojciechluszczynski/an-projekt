@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
+import { supabase } from "@/integrations/supabase/client";
+import DOMPurify from "dompurify";
 
 import vizLivingBeige from "@/assets/viz-living-beige.png";
 import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
