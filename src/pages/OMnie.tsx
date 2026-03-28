@@ -150,18 +150,15 @@ const OMnie = () => {
       <section className="bg-background section-padding-sm">
         <div className="max-w-[800px] mx-auto text-center">
           <FadeIn>
-            <div className="relative aspect-video overflow-hidden rounded-lg group cursor-pointer">
-              <img src={vizBedroomDark} alt="Wizualizacja sypialni AN Projekt" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
-              <div className="absolute inset-0 bg-foreground/30 group-hover:bg-foreground/40 transition-colors" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-dark-foreground/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <Play size={28} className="text-foreground ml-1" fill="currentColor" />
-                </div>
-              </div>
-              <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
-                <p className="text-dark-foreground font-body text-sm font-medium">Poznaj moje podejście do projektów</p>
-                <p className="text-dark-foreground/60 font-body text-xs">Wideo w przygotowaniu</p>
-              </div>
+            <div className="relative aspect-video overflow-hidden rounded-lg">
+              <iframe
+                src="https://www.youtube.com/embed/R38q5zn0ZU4"
+                title="AN Projekt – poznaj moje podejście do projektów"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full border-0"
+                loading="lazy"
+              />
             </div>
           </FadeIn>
         </div>
