@@ -21,6 +21,9 @@ import PolitykaPrywatnosci from "./pages/PolitykaPrywatnosci";
 import Regulamin from "./pages/Regulamin";
 import Ebook from "./pages/Ebook";
 import EbookPreview from "./pages/EbookPreview";
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminPosts from "./pages/admin/AdminPosts";
+import AdminPostEditor from "./pages/admin/AdminPostEditor";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
