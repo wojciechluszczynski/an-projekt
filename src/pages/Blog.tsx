@@ -114,14 +114,42 @@ const blogPosts = [
 const Blog = () => {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("Wszystkie");
+  const [dbPosts, setDbPosts] = useState<typeof blogPosts>([]);
 
-  const filtered = blogPosts.filter((post) => {
+  useEffect(() => {
+    const fetchDbPosts = async () => {
+      const { data } = await supabase
+        .from('blog_posts')
+        .select('*')
+        .eq('published', true)
+        .order('created_at', { ascending: false });
+
+      if (data) {
+        setDbPosts(data.map(p => ({
+          title: p.title,
+          excerpt: p.excerpt,
+          image: p.cover_image_url || '',
+          category: p.category,
+          date: p.display_date,
+          readTime: p.read_time,
+          slug: p.slug,
+          featured: p.featured,
+          fromDb: true,
+        })));
+      }
+    };
+    fetchDbPosts();
+  }, []);
+
+  const allPosts = [...dbPosts, ...blogPosts.filter(hp => !dbPosts.some(dp => dp.slug === hp.slug))];
+
+  const filtered = allPosts.filter((post) => {
     const matchesSearch = !search || post.title.toLowerCase().includes(search.toLowerCase()) || post.excerpt.toLowerCase().includes(search.toLowerCase());
     const matchesCategory = activeCategory === "Wszystkie" || post.category === activeCategory;
     return matchesSearch && matchesCategory;
   });
 
-  const featuredPost = blogPosts.find((p) => p.featured);
+  const featuredPost = allPosts.find((p) => p.featured);
   const regularPosts = filtered.filter((p) => !p.featured || activeCategory !== "Wszystkie" || search);
 
   return (
