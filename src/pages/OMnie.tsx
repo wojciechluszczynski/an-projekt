@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
 import annaPortrait from "@/assets/anna-portrait.jpg";
 import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
-import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
 import vizLivingBeige from "@/assets/viz-living-beige.png";
-import { ArrowRight, Instagram, Facebook, MessageCircle, MapPin, Ruler, Hammer, Play } from "lucide-react";
+import { ArrowRight, Instagram, Facebook, MessageCircle, MapPin, Ruler, Hammer } from "lucide-react";
 
 const PinterestIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-[22px] h-[22px]">
