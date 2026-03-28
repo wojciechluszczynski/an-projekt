@@ -322,7 +322,7 @@ const AdminPostEditor = () => {
 
           {/* Related posts */}
           <div>
-            <Label hint="Zaznacz wpisy, które pojawią się jako „Podobne artykuły" na dole">Powiązane wpisy</Label>
+            <Label hint={'Zaznacz wpisy, które pojawią się jako „Podobne artykuły" na dole'}>Powiązane wpisy</Label>
             <div className="flex flex-wrap gap-2 mt-1">
               {allPosts
                 .filter(p => p.slug !== post.slug)
