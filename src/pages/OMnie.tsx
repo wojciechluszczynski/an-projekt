@@ -149,11 +149,11 @@ const OMnie = () => {
       <section className="bg-background section-padding-sm">
         <div className="max-w-[800px] mx-auto text-center">
           <FadeIn>
-            <div className="relative aspect-video overflow-hidden rounded-lg">
+            <div className="relative aspect-video overflow-hidden rounded-2xl shadow-lg">
               <iframe
-                src="https://www.youtube.com/embed/R38q5zn0ZU4"
+                src="https://drive.google.com/file/d/1MRN5cLeLHEb-7-cZ8LYNNbwjByn7MitA/preview"
                 title="AN Projekt – poznaj moje podejście do projektów"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="autoplay; encrypted-media"
                 allowFullScreen
                 className="w-full h-full border-0"
                 loading="lazy"
