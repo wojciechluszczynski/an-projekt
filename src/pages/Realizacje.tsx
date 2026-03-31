@@ -11,11 +11,15 @@ import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
 import realPhoto1 from "@/assets/realizacja-real-1.jpg";
 import realPhoto2 from "@/assets/realizacja-real-2.jpg";
 import realPhoto3 from "@/assets/realizacja-real-3.jpg";
+import realPhoto4 from "@/assets/realizacja-real-4.jpg";
+import realPhoto5 from "@/assets/realizacja-real-5.jpg";
 
 const realPhotos = [
   { src: realPhoto1, alt: "Salon z drewnianą zabudową i łukiem", caption: "Salon — zabudowa na wymiar z podświetleniem LED" },
   { src: realPhoto2, alt: "Kuchnia w ciemnym drewnie z wyspą", caption: "Kuchnia — ciemny fornir z wyspą barową" },
   { src: realPhoto3, alt: "Kuchnia biało-drewniana z kamiennym blatem", caption: "Kuchnia — biel, drewno i kamień" },
+  { src: realPhoto4, alt: "Kuchnia z wyspą i białymi hokerami", caption: "Kuchnia — wyspa z kamiennym blatem" },
+  { src: realPhoto5, alt: "Jasna kuchnia z witryną i wyspą", caption: "Kuchnia — jasne drewno z przeszkleniami" },
 ];
 
 const featured = [
@@ -181,16 +185,23 @@ const Realizacje = () => {
               </p>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {realPhotos.map((photo, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {realPhotos.slice(0, 3).map((photo, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="group relative overflow-hidden rounded-xl">
-                  <img
-                    src={photo.src}
-                    alt={photo.alt}
-                    className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                    loading="lazy"
-                  />
+                  <img src={photo.src} alt={photo.alt} className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/70 to-transparent p-5 pt-16">
+                    <p className="font-body text-xs text-dark-foreground/90">{photo.caption}</p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+            {realPhotos.slice(3).map((photo, i) => (
+              <FadeIn key={i + 3} delay={(i + 3) * 100}>
+                <div className="group relative overflow-hidden rounded-xl">
+                  <img src={photo.src} alt={photo.alt} className="w-full aspect-[3/4] md:aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/70 to-transparent p-5 pt-16">
                     <p className="font-body text-xs text-dark-foreground/90">{photo.caption}</p>
                   </div>
