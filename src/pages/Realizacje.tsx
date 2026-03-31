@@ -8,6 +8,15 @@ import apartamentKlasa1 from "@/assets/apartament-klasa-1.jpeg";
 import pierwszeMieszkanie1 from "@/assets/pierwsze-mieszkanie-1.jpeg";
 import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
 import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
+import realPhoto1 from "@/assets/realizacja-real-1.jpg";
+import realPhoto2 from "@/assets/realizacja-real-2.jpg";
+import realPhoto3 from "@/assets/realizacja-real-3.jpg";
+
+const realPhotos = [
+  { src: realPhoto1, alt: "Salon z drewnianą zabudową i łukiem", caption: "Salon — zabudowa na wymiar z podświetleniem LED" },
+  { src: realPhoto2, alt: "Kuchnia w ciemnym drewnie z wyspą", caption: "Kuchnia — ciemny fornir z wyspą barową" },
+  { src: realPhoto3, alt: "Kuchnia biało-drewniana z kamiennym blatem", caption: "Kuchnia — biel, drewno i kamień" },
+];
 
 const featured = [
   {
