@@ -84,7 +84,7 @@ const blogPosts = [
   {
     title: "Jak dobrać kolory, materiały i dodatki do wnętrza – zasady, które działają zawsze",
     excerpt: "Nie wiesz jak dobrać kolory i materiały do swojego wnętrza? Tłumaczę zasady doboru kolorystyki, faktur i dodatków – po ludzku, bez żargonu.",
-    image: vizClosetMarble,
+    image: domPowrot3,
     category: "Porady",
     date: "1 lutego 2026",
     readTime: "8 min",
