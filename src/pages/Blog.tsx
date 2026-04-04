@@ -30,7 +30,7 @@ const blogPosts = [
   {
     title: "Projekt wnętrza – od czego zacząć i co przygotować?",
     excerpt: "Planujesz projekt wnętrza i nie wiesz od czego zacząć? Dowiedz się, co przygotować przed pierwszym spotkaniem z projektantką.",
-    image: vizLivingBeige,
+    image: domPowrot1,
     category: "Współpraca",
     date: "1 marca 2026",
     readTime: "7 min",
