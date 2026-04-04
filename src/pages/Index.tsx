@@ -35,7 +35,7 @@ const packages = [
     icon: Building,
     name: "Opcja Koncepcyjna",
     desc: "Układ funkcjonalny, wizualizacje i podstawowe rysunki techniczne. Solidna baza pod Twój projekt.",
-    image: vizKitchenRattan,
+    image: willaHarmonia3,
     tags: ["Układ funkcjonalny", "Moodboard", "Wizualizacje 3D"],
   },
   {
