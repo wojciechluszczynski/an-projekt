@@ -57,6 +57,8 @@ import miejsceZnali2 from "@/assets/miejsce-znali-2.png";
 import miejsceZnali3 from "@/assets/miejsce-znali-3.png";
 import miejsceZnali4 from "@/assets/miejsce-znali-4.png";
 import miejsceZnali5 from "@/assets/miejsce-znali-5.png";
+import miejsceZnali6 from "@/assets/miejsce-znali-6.png";
+import miejsceZnali7 from "@/assets/miejsce-znali-7.png";
 
 const projectsData: Record<string, {
   title: string;
