@@ -52,6 +52,11 @@ import domScenariusz9 from "@/assets/dom-scenariusz-9.png";
 import domScenariusz10 from "@/assets/dom-scenariusz-10.png";
 import domScenariusz11 from "@/assets/dom-scenariusz-11.png";
 import domScenariusz12 from "@/assets/dom-scenariusz-12.png";
+import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
+import miejsceZnali2 from "@/assets/miejsce-znali-2.png";
+import miejsceZnali3 from "@/assets/miejsce-znali-3.png";
+import miejsceZnali4 from "@/assets/miejsce-znali-4.png";
+import miejsceZnali5 from "@/assets/miejsce-znali-5.png";
 
 const projectsData: Record<string, {
   title: string;
