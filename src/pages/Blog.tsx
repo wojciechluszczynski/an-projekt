@@ -75,7 +75,7 @@ const blogPosts = [
   {
     title: "7 rzeczy, które robi dobry projektant wnętrz – i których nie zrobi IKEA ani YouTube",
     excerpt: "Zastanawiasz się, czy warto zatrudnić projektanta wnętrz? Oto 7 konkretnych rzeczy, które robi dobra projektantka – a których nie zastąpią sklepy meblowe ani tutoriale.",
-    image: vizBedroomDark,
+    image: nowyRozdzial1,
     category: "Porady",
     date: "5 lutego 2026",
     readTime: "9 min",
