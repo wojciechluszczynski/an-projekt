@@ -57,7 +57,7 @@ const blogPosts = [
   {
     title: "Dlaczego remont wymyka się spod kontroli – błędy w planowaniu",
     excerpt: "Remont, który miał kosztować 80 tys., kończy się na 130 tys. Skąd się biorą te różnice? Tłumaczę, jakie błędy kosztują najwięcej.",
-    image: vizBathroomMarble,
+    image: domScenariusz1,
     category: "Błędy",
     date: "15 lutego 2026",
     readTime: "7 min",
