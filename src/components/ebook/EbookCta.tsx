@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
-import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
+import domScenariusz3 from "@/assets/dom-scenariusz-3.png";
 
 const EbookCta = () => (
   <section id="cta" className="relative min-h-[55vh] overflow-hidden flex items-center justify-center scroll-mt-16">
-    <img src={vizBathroomMarble} alt="AN Projekt realizacja" className="absolute inset-0 w-full h-full object-cover" />
+    <img src={domScenariusz3} alt="AN Projekt realizacja" className="absolute inset-0 w-full h-full object-cover" />
     <div className="absolute inset-0 bg-gradient-to-b from-foreground/50 via-foreground/60 to-foreground/75" />
     <div className="relative z-10 text-center px-6 max-w-xl py-16">
       <FadeIn>

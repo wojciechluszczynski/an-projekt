@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { Eye } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
-import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
-import vizClosetMarble from "@/assets/viz-closet-marble.png";
-import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
-import vizBedroomMural from "@/assets/viz-bedroom-mural.png";
-import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
+import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
+import domPowrot3 from "@/assets/dom-powrot-3.jpeg";
+import willaHarmonia5 from "@/assets/willa-harmonia-5.jpeg";
+import apartamentKlasa5 from "@/assets/apartament-klasa-5.jpeg";
+import domScenariusz3 from "@/assets/dom-scenariusz-3.png";
 
 const materials = [
   "Podłoga: deska dębowa w kolorze orzech (200×20)",
@@ -18,7 +18,7 @@ const materials = [
 const EbookCaseStudy = () => (
   <section id="case" className="overflow-hidden scroll-mt-16">
     <div className="relative h-64 md:h-96">
-      <img src={vizDiningFireplace} alt="Realizacja Złota Harmonia" className="w-full h-full object-cover" />
+      <img src={nowyRozdzial1} alt="Realizacja Złota Harmonia" className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-secondary" />
     </div>
     <div className="section-padding bg-secondary -mt-1">
@@ -78,7 +78,7 @@ const EbookCaseStudy = () => (
 
           {/* Gallery */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
-            {[vizClosetMarble, vizBedroomDark, vizBedroomMural, vizBathroomMarble].map((img, i) => (
+            {[domPowrot3, willaHarmonia5, apartamentKlasa5, domScenariusz3].map((img, i) => (
               <img
                 key={i}
                 src={img}

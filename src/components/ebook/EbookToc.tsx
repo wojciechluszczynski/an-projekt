@@ -1,5 +1,5 @@
 import FadeIn from "@/components/FadeIn";
-import vizDetailCeramics from "@/assets/viz-detail-ceramics.png";
+import miejsceZnali2 from "@/assets/miejsce-znali-2.png";
 
 const tocEntries = [
   "Czy potrzebujesz projektanta?",
@@ -45,7 +45,7 @@ const EbookToc = () => (
             </div>
           </div>
           <div>
-            <img src={vizDetailCeramics} alt="Detal wnętrza" className="w-full rounded-2xl object-cover aspect-[3/4] shadow-lg" />
+            <img src={miejsceZnali2} alt="Detal wnętrza" className="w-full rounded-2xl object-cover aspect-[3/4] shadow-lg" />
           </div>
         </div>
       </FadeIn>
