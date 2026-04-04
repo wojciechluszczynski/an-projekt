@@ -4,15 +4,18 @@ import FadeIn from "@/components/FadeIn";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import { ArrowRight, Palette, ClipboardList, UserCheck, Home, Building, Building2, Trees, MessageCircle, Ruler, Monitor, Hammer, Plus, X, Check, Star } from "lucide-react";
 
-import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
-import vizLivingBeige from "@/assets/viz-living-beige.png";
-import vizBedroomMural from "@/assets/viz-bedroom-mural.png";
-import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
-import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
-import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
+import willaHarmonia1 from "@/assets/willa-harmonia-1.jpeg";
+import willaHarmonia3 from "@/assets/willa-harmonia-3.jpeg";
+import apartamentKlasa1 from "@/assets/apartament-klasa-1.jpeg";
+import apartamentKlasa3 from "@/assets/apartament-klasa-3.jpeg";
+import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
+import domPowrot3 from "@/assets/dom-powrot-3.jpeg";
+import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
+import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
+import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
 import annaPortrait from "@/assets/anna-portrait.jpg";
 
-const heroSlides = [vizKitchenRattan, vizLivingBeige, vizBedroomMural];
+const heroSlides = [willaHarmonia1, apartamentKlasa1, domPowrot1];
 
 const pillars = [
   { icon: Palette, title: "Estetyka z funkcją", desc: "Projektuję tak, żeby było pięknie i wygodnie na co dzień, bez kompromisów." },
