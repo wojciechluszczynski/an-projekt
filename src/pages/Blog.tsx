@@ -93,7 +93,7 @@ const blogPosts = [
   {
     title: "Checklista przed remontem mieszkania – 27 pytań przed startem",
     excerpt: "Planujesz remont? Sprawdź 27 pytań, które musisz zadać sobie zanim zaczniesz. Oszczędź czas, nerwy i pieniądze.",
-    image: vizDetailCeramics,
+    image: miejsceZnali1,
     category: "Porady",
     date: "25 stycznia 2026",
     readTime: "10 min",
