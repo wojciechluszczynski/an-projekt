@@ -49,7 +49,7 @@ const packages = [
     icon: Trees,
     name: "Opcja Kompleks",
     desc: "Najbardziej rozbudowana forma współpracy. Od koncepcji po nadzór na budowie.",
-    image: vizBathroomMarble,
+    image: domScenariusz1,
     tags: ["Pełne wsparcie", "Nadzór budowy", "Zakupy materiałów"],
   },
 ];
