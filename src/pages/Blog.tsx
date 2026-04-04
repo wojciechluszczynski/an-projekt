@@ -20,7 +20,7 @@ const blogPosts = [
   {
     title: "Jak wygląda współpraca z projektantką wnętrz? Proces krok po kroku",
     excerpt: "Zastanawiasz się, jak przebiega projektowanie wnętrz od pierwszej rozmowy do realizacji? Tłumaczę cały proces krok po kroku – bez żargonu, po ludzku.",
-    image: heroKitchen,
+    image: willaHarmonia1,
     category: "Współpraca",
     date: "5 marca 2026",
     readTime: "8 min",
