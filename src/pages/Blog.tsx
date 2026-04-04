@@ -66,7 +66,7 @@ const blogPosts = [
   {
     title: "Najczęstsze błędy przy projektowaniu kuchni i salonu",
     excerpt: "Źle zaplanowana kuchnia to jeden z największych problemów po remoncie. Oto najczęstsze błędy, których warto uniknąć.",
-    image: vizKitchenRattan,
+    image: apartamentKlasa3,
     category: "Błędy",
     date: "10 lutego 2026",
     readTime: "7 min",
