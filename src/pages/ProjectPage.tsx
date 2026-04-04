@@ -224,7 +224,7 @@ const projectsData: Record<string, {
     ],
     scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Dokumentacja techniczna", "Nadzór nad realizacją", "Dobór materiałów i oświetlenia"],
     result: "Miejsce, które nie zaczyna od nowa — tylko od tego, co zawsze miało. Ludzie znowu chcą tu przychodzić.",
-    images: [miejsceZnali1, miejsceZnali2, miejsceZnali3, miejsceZnali4, miejsceZnali5],
+    images: [miejsceZnali1, miejsceZnali2, miejsceZnali3, miejsceZnali4, miejsceZnali5, miejsceZnali6, miejsceZnali7],
   },
 };
 
