@@ -1,8 +1,8 @@
-import vizLivingBeige from "@/assets/viz-living-beige.png";
+import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
 
 const EbookCover = () => (
   <section className="relative min-h-[85vh] md:min-h-screen overflow-hidden flex items-center justify-center">
-    <img src={vizLivingBeige} alt="AN Projekt wnętrze" className="absolute inset-0 w-full h-full object-cover scale-105" />
+    <img src={domPowrot1} alt="AN Projekt wnętrze" className="absolute inset-0 w-full h-full object-cover scale-105" />
     <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 via-foreground/55 to-foreground/70" />
     <div className="relative z-10 text-center px-6 max-w-2xl">
       <span className="inline-block font-body text-[10px] md:text-xs tracking-[0.25em] uppercase text-white/60 mb-6 animate-fade-in-up">

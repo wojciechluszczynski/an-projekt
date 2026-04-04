@@ -57,6 +57,8 @@ import miejsceZnali2 from "@/assets/miejsce-znali-2.png";
 import miejsceZnali3 from "@/assets/miejsce-znali-3.png";
 import miejsceZnali4 from "@/assets/miejsce-znali-4.png";
 import miejsceZnali5 from "@/assets/miejsce-znali-5.png";
+import miejsceZnali6 from "@/assets/miejsce-znali-6.png";
+import miejsceZnali7 from "@/assets/miejsce-znali-7.png";
 
 const projectsData: Record<string, {
   title: string;
@@ -222,7 +224,7 @@ const projectsData: Record<string, {
     ],
     scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Dokumentacja techniczna", "Nadzór nad realizacją", "Dobór materiałów i oświetlenia"],
     result: "Miejsce, które nie zaczyna od nowa — tylko od tego, co zawsze miało. Ludzie znowu chcą tu przychodzić.",
-    images: [miejsceZnali1, miejsceZnali2, miejsceZnali3, miejsceZnali4, miejsceZnali5],
+    images: [miejsceZnali1, miejsceZnali2, miejsceZnali3, miejsceZnali4, miejsceZnali5, miejsceZnali6, miejsceZnali7],
   },
 };
 

@@ -1,6 +1,6 @@
 import { AlertTriangle } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
-import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
+import willaHarmonia3 from "@/assets/willa-harmonia-3.jpeg";
 
 const colorMistakes = [
   {
@@ -20,7 +20,7 @@ const colorMistakes = [
 const EbookColors = () => (
   <section id="colors" className="overflow-hidden scroll-mt-16">
     <div className="relative h-56 md:h-72">
-      <img src={vizKitchenRattan} alt="Realizacja AN Projekt" className="w-full h-full object-cover" />
+      <img src={willaHarmonia3} alt="Realizacja AN Projekt" className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/20" />
     </div>
     <div className="section-padding">

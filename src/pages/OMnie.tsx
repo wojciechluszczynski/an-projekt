@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
 import annaPortrait from "@/assets/anna-portrait.jpg";
-import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
-import vizLivingBeige from "@/assets/viz-living-beige.png";
+import apartamentKlasa3 from "@/assets/apartament-klasa-3.jpeg";
+import willaHarmonia3 from "@/assets/willa-harmonia-3.jpeg";
 import { ArrowRight, Instagram, Facebook, MessageCircle, MapPin, Ruler, Hammer } from "lucide-react";
 
 const PinterestIcon = () => (
@@ -61,7 +61,7 @@ const OMnie = () => {
       <section className="bg-secondary section-padding-sm">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <FadeIn delay={100}>
-            <img src={vizLivingBeige} alt="Wizualizacja salonu AN Projekt" className="w-full aspect-[4/3] object-cover rounded-lg" loading="lazy" />
+            <img src={willaHarmonia3} alt="Wizualizacja salonu AN Projekt" className="w-full aspect-[4/3] object-cover rounded-lg" loading="lazy" />
           </FadeIn>
           <FadeIn>
             <div>
@@ -100,7 +100,7 @@ const OMnie = () => {
       <section className="bg-secondary section-padding-sm">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <FadeIn delay={100}>
-            <img src={vizBathroomMarble} alt="Wizualizacja łazienki, projekt AN Projekt" className="w-full aspect-[4/3] object-cover rounded-lg" loading="lazy" />
+            <img src={apartamentKlasa3} alt="Wizualizacja łazienki, projekt AN Projekt" className="w-full aspect-[4/3] object-cover rounded-lg" loading="lazy" />
           </FadeIn>
           <FadeIn>
             <div>
