@@ -39,7 +39,7 @@ const blogPosts = [
   {
     title: "Projektant wnętrz Krosno i Rzeszów – kiedy warto i ile kosztuje?",
     excerpt: "Szukasz projektanta wnętrz w Krośnie lub Rzeszowie? Dowiedz się, kiedy warto skorzystać z pomocy projektantki i jak wygląda współpraca na Podkarpaciu.",
-    image: vizDiningFireplace,
+    image: apartamentKlasa1,
     category: "Współpraca",
     date: "25 lutego 2026",
     readTime: "7 min",
