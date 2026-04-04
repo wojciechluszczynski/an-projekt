@@ -48,7 +48,7 @@ const blogPosts = [
   {
     title: "10 najczęstszych błędów przy urządzaniu mieszkania",
     excerpt: "Urządzasz mieszkanie i chcesz uniknąć kosztownych błędów? Oto 10 najczęstszych błędów przy urządzaniu wnętrz, które widzę jako projektantka.",
-    image: vizBedroomMural,
+    image: willaHarmonia3,
     category: "Błędy",
     date: "20 lutego 2026",
     readTime: "8 min",
