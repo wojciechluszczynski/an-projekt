@@ -102,7 +102,7 @@ const blogPosts = [
   {
     title: "Darmowy ebook: Jak przygotować się do remontu – kompletny przewodnik",
     excerpt: "Pobierz darmowy ebook z checklistą, harmonogramem i praktycznymi wskazówkami. Zaplanuj remont bez stresu i niepotrzebnych wydatków.",
-    image: vizLivingBeige,
+    image: domPowrot1,
     category: "Ebooki",
     date: "20 stycznia 2026",
     readTime: "Ebook PDF",
