@@ -217,7 +217,7 @@ const projectsData: Record<string, {
       'I dopiero w tym kontraście zaczyna się prawdziwa "atmosfera".',
       "Drewno spina oba światy. W starej części jest naturalną kontynuacją tego, co było tu wcześniej. W nowej — ociepla nowoczesną, bardziej surową architekturę. Zieleń wchodzi do środka i robi coś, czego nie da się osiągnąć samym materiałem — daje życie.",
       "Układ przestrzeni jest prosty, ale przemyślany. Są miejsca bardziej kameralne i takie, które żyją gwarem. Można tu przyjść na szybki obiad, ale równie dobrze spędzić pół dnia.",
-      "I co ważne — to nie jest restauracja „na pokaz". To miejsce zaprojektowane tak, żeby działało w codzienności. Z myślą o rodzinach, o spotkaniach, o dzieciach, które też mają tu swoje miejsce — nie jako dodatek, tylko naturalna część całości.",
+      'I co ważne — to nie jest restauracja "na pokaz". To miejsce zaprojektowane tak, żeby działało w codzienności. Z myślą o rodzinach, o spotkaniach, o dzieciach, które też mają tu swoje miejsce — nie jako dodatek, tylko naturalna część całości.',
       "Największą zmianą w tym projekcie nie jest wnętrze. Tylko to, że ludzie znowu chcą tu przychodzić.",
     ],
     scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Dokumentacja techniczna", "Nadzór nad realizacją", "Dobór materiałów i oświetlenia"],
