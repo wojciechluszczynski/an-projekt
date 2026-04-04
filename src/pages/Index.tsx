@@ -42,7 +42,7 @@ const packages = [
     icon: Building2,
     name: "Opcja Komfortowa",
     desc: "Pełny projekt z wizualizacjami 3D 360°, dokumentacją techniczną. Gotowy do realizacji.",
-    image: vizBedroomMural,
+    image: apartamentKlasa3,
     tags: ["Pełny projekt", "Wizualizacja 360°", "Dokumentacja"],
   },
   {
