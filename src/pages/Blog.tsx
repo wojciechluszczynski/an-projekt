@@ -4,15 +4,15 @@ import { supabase } from "@/integrations/supabase/client";
 import { Search, ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 
-import vizLivingBeige from "@/assets/viz-living-beige.png";
-import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
-import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
-import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
-import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
-import vizBedroomMural from "@/assets/viz-bedroom-mural.png";
-import vizClosetMarble from "@/assets/viz-closet-marble.png";
-import vizDetailCeramics from "@/assets/viz-detail-ceramics.png";
-import heroKitchen from "@/assets/hero-kitchen.png";
+import willaHarmonia1 from "@/assets/willa-harmonia-1.jpeg";
+import willaHarmonia3 from "@/assets/willa-harmonia-3.jpeg";
+import apartamentKlasa1 from "@/assets/apartament-klasa-1.jpeg";
+import apartamentKlasa3 from "@/assets/apartament-klasa-3.jpeg";
+import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
+import domPowrot3 from "@/assets/dom-powrot-3.jpeg";
+import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
+import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
+import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
 
 const categories = ["Wszystkie", "Współpraca", "Błędy", "Porady", "Ebooki", "Trendy", "Materiały"];
 
