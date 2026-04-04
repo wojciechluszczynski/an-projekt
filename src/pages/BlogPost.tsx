@@ -5,15 +5,15 @@ import FadeIn from "@/components/FadeIn";
 import { supabase } from "@/integrations/supabase/client";
 import DOMPurify from "dompurify";
 
-import vizLivingBeige from "@/assets/viz-living-beige.png";
-import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
-import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
-import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
-import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
-import vizBedroomMural from "@/assets/viz-bedroom-mural.png";
-import vizClosetMarble from "@/assets/viz-closet-marble.png";
-import vizDetailCeramics from "@/assets/viz-detail-ceramics.png";
-import heroKitchen from "@/assets/hero-kitchen.png";
+import willaHarmonia1 from "@/assets/willa-harmonia-1.jpeg";
+import willaHarmonia3 from "@/assets/willa-harmonia-3.jpeg";
+import apartamentKlasa1 from "@/assets/apartament-klasa-1.jpeg";
+import apartamentKlasa3 from "@/assets/apartament-klasa-3.jpeg";
+import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
+import domPowrot3 from "@/assets/dom-powrot-3.jpeg";
+import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
+import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
+import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
 
 // CTA Banner component for inserting in articles
 const CtaBanner = ({ variant }: { variant: "kontakt" | "realizacje" | "oferta" }) => {
@@ -172,7 +172,7 @@ const posts: Record<string, {
     title: "Jak wygląda współpraca z projektantką wnętrz? Proces od pierwszej rozmowy do realizacji",
     metaTitle: "Jak wygląda współpraca z projektantką wnętrz? Proces krok po kroku | AN Projekt",
     metaDesc: "Zastanawiasz się, jak przebiega projektowanie wnętrz od pierwszej rozmowy do realizacji? Tłumaczę cały proces krok po kroku.",
-    image: heroKitchen,
+    image: willaHarmonia1,
     category: "Współpraca",
     date: "5 marca 2026",
     readTime: "8 min",
@@ -274,7 +274,7 @@ Absolutnie nie. Część klientów przychodzi z konkretną wizją, część – 
     title: "Projekt wnętrza mieszkania lub domu – od czego zacząć i co przygotować",
     metaTitle: "Projekt wnętrza mieszkania lub domu – od czego zacząć? | AN Projekt",
     metaDesc: "Planujesz projekt wnętrza i nie wiesz od czego zacząć? Dowiedz się, co przygotować przed pierwszym spotkaniem z projektantką.",
-    image: vizLivingBeige,
+    image: domPowrot1,
     category: "Współpraca",
     date: "1 marca 2026",
     readTime: "7 min",
@@ -350,7 +350,7 @@ Każdy projekt wyceniam indywidualnie — bo każde wnętrze jest inne. **[Skont
     title: "Projektant wnętrz Krosno i Rzeszów – kiedy warto skorzystać z pomocy i ile kosztuje projekt",
     metaTitle: "Projektant wnętrz Krosno i Rzeszów – kiedy warto i ile kosztuje? | AN Projekt",
     metaDesc: "Szukasz projektanta wnętrz w Krośnie lub Rzeszowie? Dowiedz się, kiedy warto skorzystać z pomocy projektantki.",
-    image: vizDiningFireplace,
+    image: apartamentKlasa1,
     category: "Współpraca",
     date: "25 lutego 2026",
     readTime: "7 min",
@@ -401,7 +401,7 @@ Warto pamiętać, że dobry projekt zazwyczaj **oszczędza pieniądze** podczas 
     title: "10 najczęstszych błędów przy urządzaniu mieszkania – i jak ich uniknąć",
     metaTitle: "10 najczęstszych błędów przy urządzaniu mieszkania – i jak ich uniknąć | AN Projekt",
     metaDesc: "Urządzasz mieszkanie i chcesz uniknąć kosztownych błędów? Oto 10 najczęstszych błędów przy urządzaniu wnętrz.",
-    image: vizBedroomMural,
+    image: willaHarmonia3,
     category: "Błędy",
     date: "20 lutego 2026",
     readTime: "8 min",
@@ -489,7 +489,7 @@ Większości z tych błędów można uniknąć, jeśli przed zakupami i remontem
     title: "Dlaczego remont mieszkania wymyka się spod kontroli – błędy w planowaniu, które kosztują najwięcej",
     metaTitle: "Dlaczego remont mieszkania wymyka się spod kontroli – błędy w planowaniu | AN Projekt",
     metaDesc: "Remont, który miał kosztować 80 tys., kończy się na 130 tys. Tłumaczę, jakie błędy w planowaniu remontu kosztują najwięcej.",
-    image: vizBathroomMarble,
+    image: domScenariusz1,
     category: "Błędy",
     date: "15 lutego 2026",
     readTime: "7 min",
@@ -561,7 +561,7 @@ Najtańsza oferta rzadko okazuje się najtańsza po zakończeniu remontu. Popraw
     title: "Najczęstsze błędy przy projektowaniu kuchni i salonu – czego właściciele żałują po remoncie",
     metaTitle: "Najczęstsze błędy przy projektowaniu kuchni i salonu | AN Projekt",
     metaDesc: "Źle zaplanowana kuchnia to jeden z największych problemów po remoncie. Oto najczęstsze błędy, których warto uniknąć.",
-    image: vizKitchenRattan,
+    image: apartamentKlasa3,
     category: "Błędy",
     date: "10 lutego 2026",
     readTime: "7 min",
@@ -632,7 +632,7 @@ Stolik kawowy powinien mieć wysokość zbliżoną do wysokości siedziska sofy 
     title: "7 rzeczy, które robi dobry projektant wnętrz – i których nie zrobi sam IKEA ani YouTube",
     metaTitle: "7 rzeczy, które robi dobry projektant wnętrz – i których nie zrobi sam IKEA ani YouTube | AN Projekt",
     metaDesc: "Zastanawiasz się, czy warto zatrudnić projektanta wnętrz? Oto 7 konkretnych rzeczy, które robi dobra projektantka – a których nie zastąpią sklepy meblowe ani tutoriale.",
-    image: vizBedroomDark,
+    image: nowyRozdzial1,
     category: "Porady",
     date: "5 lutego 2026",
     readTime: "9 min",
@@ -734,7 +734,7 @@ Tak – AN Projekt obsługuje Podkarpacie (Krosno, Rzeszów) i Małopolskę (Now
     title: "Jak dobrać kolory, materiały i dodatki do wnętrza – zasady, które działają zawsze",
     metaTitle: "Jak dobrać kolory, materiały i dodatki do wnętrza – zasady, które działają zawsze | AN Projekt",
     metaDesc: "Nie wiesz jak dobrać kolory i materiały do swojego wnętrza? Tłumaczę zasady doboru kolorystyki, faktur i dodatków – po ludzku, bez żargonu.",
-    image: vizClosetMarble,
+    image: domPowrot3,
     category: "Porady",
     date: "1 lutego 2026",
     readTime: "8 min",
@@ -819,7 +819,7 @@ Tak – dobór kolorystyki i moodboard materialny jest częścią każdego pakie
     title: "Checklista przed remontem mieszkania lub domu – 27 pytań, które musisz zadać sobie przed startem",
     metaTitle: "Checklista przed remontem mieszkania lub domu – 27 pytań przed startem | AN Projekt",
     metaDesc: "Planujesz remont? Sprawdź checklistę 27 pytań, które musisz zadać sobie zanim zaczniesz. Oszczędź czas, nerwy i pieniądze.",
-    image: vizDetailCeramics,
+    image: miejsceZnali1,
     category: "Porady",
     date: "25 stycznia 2026",
     readTime: "10 min",

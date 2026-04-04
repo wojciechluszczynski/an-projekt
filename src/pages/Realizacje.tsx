@@ -13,13 +13,14 @@ import realPhoto2 from "@/assets/realizacja-real-2.jpg";
 import realPhoto3 from "@/assets/realizacja-real-3.jpg";
 import realPhoto4 from "@/assets/realizacja-real-4.jpg";
 import realPhoto5 from "@/assets/realizacja-real-5.jpg";
+import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
 
 const realPhotos = [
-  { src: realPhoto1, alt: "Salon z drewnianą zabudową i łukiem", caption: "Salon — zabudowa na wymiar z podświetleniem LED" },
-  { src: realPhoto2, alt: "Kuchnia w ciemnym drewnie z wyspą", caption: "Kuchnia — ciemny fornir z wyspą barową" },
-  { src: realPhoto3, alt: "Kuchnia biało-drewniana z kamiennym blatem", caption: "Kuchnia — biel, drewno i kamień" },
-  { src: realPhoto4, alt: "Kuchnia z wyspą i białymi hokerami", caption: "Kuchnia — wyspa z kamiennym blatem" },
-  { src: realPhoto5, alt: "Jasna kuchnia z witryną i wyspą", caption: "Kuchnia — jasne drewno z przeszkleniami" },
+  { src: realPhoto1, alt: "Dom gotowy na więcej – realizacja salonu", caption: "Dom gotowy na więcej niż jeden scenariusz – realizacja" },
+  { src: realPhoto2, alt: "Dom gotowy na więcej – realizacja kuchni", caption: "Dom gotowy na więcej niż jeden scenariusz – realizacja" },
+  { src: realPhoto3, alt: "Dom gotowy na więcej – realizacja kuchni z wyspą", caption: "Dom gotowy na więcej niż jeden scenariusz – realizacja" },
+  { src: realPhoto4, alt: "Dom gotowy na więcej – realizacja kuchni z hokerami", caption: "Dom gotowy na więcej niż jeden scenariusz – realizacja" },
+  { src: realPhoto5, alt: "Dom gotowy na więcej – realizacja jasnej kuchni", caption: "Dom gotowy na więcej niż jeden scenariusz – realizacja" },
 ];
 
 const featured = [
@@ -47,6 +48,14 @@ const featured = [
     desc: "Wnętrze, które nie próbuje imponować. Zamiast tego sprawia, że chce się w nim zostać.",
     image: domPowrot1,
   },
+  {
+    title: "Miejsce, które wszyscy znali",
+    type: "Lokal gastronomiczny",
+    area: "200 m²",
+    location: "Krosno",
+    desc: "Dawny bar z nową historią. Ludzie znowu chcą tu przychodzić.",
+    image: miejsceZnali1,
+  },
 ];
 
 const allProjects = [
@@ -56,6 +65,7 @@ const allProjects = [
   { title: "Pierwsze wspólne mieszkanie", slug: "pierwsze-mieszkanie", type: "Mieszkanie", area: 52, location: "Rzeszów", image: pierwszeMieszkanie1 },
   { title: "Nowy rozdział", slug: "nowy-rozdzial", type: "Biuro", area: 120, location: "Podkarpacie", image: nowyRozdzial1 },
   { title: "Dom gotowy na więcej", slug: "dom-scenariusz", type: "Dom", area: 130, location: "Rzeszów", image: domScenariusz1 },
+  { title: "Miejsce, które wszyscy znali", slug: "miejsce-znali", type: "Lokal", area: 200, location: "Krosno", image: miejsceZnali1 },
 ];
 
 const sizeFilters = [

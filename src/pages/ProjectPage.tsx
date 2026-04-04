@@ -52,6 +52,11 @@ import domScenariusz9 from "@/assets/dom-scenariusz-9.png";
 import domScenariusz10 from "@/assets/dom-scenariusz-10.png";
 import domScenariusz11 from "@/assets/dom-scenariusz-11.png";
 import domScenariusz12 from "@/assets/dom-scenariusz-12.png";
+import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
+import miejsceZnali2 from "@/assets/miejsce-znali-2.png";
+import miejsceZnali3 from "@/assets/miejsce-znali-3.png";
+import miejsceZnali4 from "@/assets/miejsce-znali-4.png";
+import miejsceZnali5 from "@/assets/miejsce-znali-5.png";
 
 const projectsData: Record<string, {
   title: string;
@@ -195,6 +200,29 @@ const projectsData: Record<string, {
     scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Dokumentacja techniczna", "Nadzór nad realizacją", "Dobór materiałów i mebli"],
     result: "Dom, który nie tylko wygląda, ale przede wszystkim działa. Gotowy na nowy etap życia — bez chaosu, bez kompromisów i bez potrzeby 'poprawek po czasie'.",
     images: [domScenariusz1, domScenariusz2, domScenariusz3, domScenariusz4, domScenariusz5, domScenariusz6, domScenariusz7, domScenariusz8, domScenariusz9, domScenariusz10, domScenariusz11, domScenariusz12],
+  },
+  "miejsce-znali": {
+    title: "Miejsce, które wszyscy znali",
+    type: "Lokal gastronomiczny",
+    area: "200 m²",
+    location: "Krosno",
+    pkg: "Kompleks",
+    time: "12 tygodni",
+    challenge: "Dawny bar — trochę sentymentalny, trochę zapomniany. Każdy go kojarzył, ale jego czas już minął. Wyzwaniem było nie burzyć historii, tylko ją wykorzystać.",
+    story: [
+      "W Krośnie są takie adresy, które pamięta się latami. Ten był jednym z nich.",
+      "Dawny bar — trochę sentymentalny, trochę zapomniany. Każdy go kojarzył, ale jego czas już minął. I wtedy pojawił się ktoś, kto zamiast zaczynać od zera, postanowił dać temu miejscu drugą szansę.",
+      "To był najciekawszy moment tego projektu — decyzja, żeby nie burzyć historii, tylko ją wykorzystać.",
+      "Stary budynek został. Surowa cegła, konstrukcja, proporcje — wszystko to, co budowało jego charakter. Ale tuż obok pojawiła się zupełnie nowa część. Otwarta, przeszklona, pełna światła. Taka, w której granica między wnętrzem a ogrodem właściwie znika.",
+      'I dopiero w tym kontraście zaczyna się prawdziwa "atmosfera".',
+      "Drewno spina oba światy. W starej części jest naturalną kontynuacją tego, co było tu wcześniej. W nowej — ociepla nowoczesną, bardziej surową architekturę. Zieleń wchodzi do środka i robi coś, czego nie da się osiągnąć samym materiałem — daje życie.",
+      "Układ przestrzeni jest prosty, ale przemyślany. Są miejsca bardziej kameralne i takie, które żyją gwarem. Można tu przyjść na szybki obiad, ale równie dobrze spędzić pół dnia.",
+      'I co ważne — to nie jest restauracja "na pokaz". To miejsce zaprojektowane tak, żeby działało w codzienności. Z myślą o rodzinach, o spotkaniach, o dzieciach, które też mają tu swoje miejsce — nie jako dodatek, tylko naturalna część całości.',
+      "Największą zmianą w tym projekcie nie jest wnętrze. Tylko to, że ludzie znowu chcą tu przychodzić.",
+    ],
+    scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Dokumentacja techniczna", "Nadzór nad realizacją", "Dobór materiałów i oświetlenia"],
+    result: "Miejsce, które nie zaczyna od nowa — tylko od tego, co zawsze miało. Ludzie znowu chcą tu przychodzić.",
+    images: [miejsceZnali1, miejsceZnali2, miejsceZnali3, miejsceZnali4, miejsceZnali5],
   },
 };
 

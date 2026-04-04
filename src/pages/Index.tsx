@@ -4,15 +4,18 @@ import FadeIn from "@/components/FadeIn";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import { ArrowRight, Palette, ClipboardList, UserCheck, Home, Building, Building2, Trees, MessageCircle, Ruler, Monitor, Hammer, Plus, X, Check, Star } from "lucide-react";
 
-import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
-import vizLivingBeige from "@/assets/viz-living-beige.png";
-import vizBedroomMural from "@/assets/viz-bedroom-mural.png";
-import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
-import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
-import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
+import willaHarmonia1 from "@/assets/willa-harmonia-1.jpeg";
+import willaHarmonia3 from "@/assets/willa-harmonia-3.jpeg";
+import apartamentKlasa1 from "@/assets/apartament-klasa-1.jpeg";
+import apartamentKlasa3 from "@/assets/apartament-klasa-3.jpeg";
+import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
+import domPowrot3 from "@/assets/dom-powrot-3.jpeg";
+import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
+import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
+import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
 import annaPortrait from "@/assets/anna-portrait.jpg";
 
-const heroSlides = [vizKitchenRattan, vizLivingBeige, vizBedroomMural];
+const heroSlides = [willaHarmonia1, apartamentKlasa1, domPowrot1];
 
 const pillars = [
   { icon: Palette, title: "Estetyka z funkcją", desc: "Projektuję tak, żeby było pięknie i wygodnie na co dzień, bez kompromisów." },
@@ -25,28 +28,28 @@ const packages = [
     icon: Home,
     name: "Konsultacja",
     desc: "Krótka rozmowa o Twoim wnętrzu. Omówimy pomysł, układ, styl lub konkretny problem.",
-    image: vizLivingBeige,
+    image: domPowrot3,
     tags: ["Spotkanie 60 min", "Analiza przestrzeni", "Rekomendacje"],
   },
   {
     icon: Building,
     name: "Opcja Koncepcyjna",
     desc: "Układ funkcjonalny, wizualizacje i podstawowe rysunki techniczne. Solidna baza pod Twój projekt.",
-    image: vizKitchenRattan,
+    image: willaHarmonia3,
     tags: ["Układ funkcjonalny", "Moodboard", "Wizualizacje 3D"],
   },
   {
     icon: Building2,
     name: "Opcja Komfortowa",
     desc: "Pełny projekt z wizualizacjami 3D 360°, dokumentacją techniczną. Gotowy do realizacji.",
-    image: vizBedroomMural,
+    image: apartamentKlasa3,
     tags: ["Pełny projekt", "Wizualizacja 360°", "Dokumentacja"],
   },
   {
     icon: Trees,
     name: "Opcja Kompleks",
     desc: "Najbardziej rozbudowana forma współpracy. Od koncepcji po nadzór na budowie.",
-    image: vizBathroomMarble,
+    image: domScenariusz1,
     tags: ["Pełne wsparcie", "Nadzór budowy", "Zakupy materiałów"],
   },
 ];
@@ -154,9 +157,9 @@ const Index = () => {
       <section className="bg-secondary py-6 overflow-hidden">
         <div className="flex w-max animate-marquee gap-4">
           {[...Array(2)].flatMap((_, setIdx) =>
-            [vizDiningFireplace, vizBedroomDark, vizBathroomMarble, vizKitchenRattan, vizLivingBeige, vizBedroomMural].map((img, i) => (
+            [willaHarmonia1, apartamentKlasa1, domPowrot1, domScenariusz1, nowyRozdzial1, miejsceZnali1].map((img, i) => (
               <Link key={`${setIdx}-${i}`} to="/realizacje" className="flex-shrink-0 group">
-                <img src={img} alt={`Wizualizacja ${i + 1}`} className="h-36 md:h-52 w-auto object-cover rounded-xl transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                <img src={img} alt={`Realizacja ${i + 1}`} className="h-36 md:h-52 w-auto object-cover rounded-xl transition-transform duration-500 group-hover:scale-105" loading="lazy" />
               </Link>
             ))
           )}

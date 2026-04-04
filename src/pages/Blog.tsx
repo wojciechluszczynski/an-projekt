@@ -4,15 +4,15 @@ import { supabase } from "@/integrations/supabase/client";
 import { Search, ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 
-import vizLivingBeige from "@/assets/viz-living-beige.png";
-import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
-import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
-import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
-import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
-import vizBedroomMural from "@/assets/viz-bedroom-mural.png";
-import vizClosetMarble from "@/assets/viz-closet-marble.png";
-import vizDetailCeramics from "@/assets/viz-detail-ceramics.png";
-import heroKitchen from "@/assets/hero-kitchen.png";
+import willaHarmonia1 from "@/assets/willa-harmonia-1.jpeg";
+import willaHarmonia3 from "@/assets/willa-harmonia-3.jpeg";
+import apartamentKlasa1 from "@/assets/apartament-klasa-1.jpeg";
+import apartamentKlasa3 from "@/assets/apartament-klasa-3.jpeg";
+import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
+import domPowrot3 from "@/assets/dom-powrot-3.jpeg";
+import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
+import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
+import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
 
 const categories = ["Wszystkie", "Współpraca", "Błędy", "Porady", "Ebooki", "Trendy", "Materiały"];
 
@@ -20,7 +20,7 @@ const blogPosts = [
   {
     title: "Jak wygląda współpraca z projektantką wnętrz? Proces krok po kroku",
     excerpt: "Zastanawiasz się, jak przebiega projektowanie wnętrz od pierwszej rozmowy do realizacji? Tłumaczę cały proces krok po kroku – bez żargonu, po ludzku.",
-    image: heroKitchen,
+    image: willaHarmonia1,
     category: "Współpraca",
     date: "5 marca 2026",
     readTime: "8 min",
@@ -30,7 +30,7 @@ const blogPosts = [
   {
     title: "Projekt wnętrza – od czego zacząć i co przygotować?",
     excerpt: "Planujesz projekt wnętrza i nie wiesz od czego zacząć? Dowiedz się, co przygotować przed pierwszym spotkaniem z projektantką.",
-    image: vizLivingBeige,
+    image: domPowrot1,
     category: "Współpraca",
     date: "1 marca 2026",
     readTime: "7 min",
@@ -39,7 +39,7 @@ const blogPosts = [
   {
     title: "Projektant wnętrz Krosno i Rzeszów – kiedy warto i ile kosztuje?",
     excerpt: "Szukasz projektanta wnętrz w Krośnie lub Rzeszowie? Dowiedz się, kiedy warto skorzystać z pomocy projektantki i jak wygląda współpraca na Podkarpaciu.",
-    image: vizDiningFireplace,
+    image: apartamentKlasa1,
     category: "Współpraca",
     date: "25 lutego 2026",
     readTime: "7 min",
@@ -48,7 +48,7 @@ const blogPosts = [
   {
     title: "10 najczęstszych błędów przy urządzaniu mieszkania",
     excerpt: "Urządzasz mieszkanie i chcesz uniknąć kosztownych błędów? Oto 10 najczęstszych błędów przy urządzaniu wnętrz, które widzę jako projektantka.",
-    image: vizBedroomMural,
+    image: willaHarmonia3,
     category: "Błędy",
     date: "20 lutego 2026",
     readTime: "8 min",
@@ -57,7 +57,7 @@ const blogPosts = [
   {
     title: "Dlaczego remont wymyka się spod kontroli – błędy w planowaniu",
     excerpt: "Remont, który miał kosztować 80 tys., kończy się na 130 tys. Skąd się biorą te różnice? Tłumaczę, jakie błędy kosztują najwięcej.",
-    image: vizBathroomMarble,
+    image: domScenariusz1,
     category: "Błędy",
     date: "15 lutego 2026",
     readTime: "7 min",
@@ -66,7 +66,7 @@ const blogPosts = [
   {
     title: "Najczęstsze błędy przy projektowaniu kuchni i salonu",
     excerpt: "Źle zaplanowana kuchnia to jeden z największych problemów po remoncie. Oto najczęstsze błędy, których warto uniknąć.",
-    image: vizKitchenRattan,
+    image: apartamentKlasa3,
     category: "Błędy",
     date: "10 lutego 2026",
     readTime: "7 min",
@@ -75,7 +75,7 @@ const blogPosts = [
   {
     title: "7 rzeczy, które robi dobry projektant wnętrz – i których nie zrobi IKEA ani YouTube",
     excerpt: "Zastanawiasz się, czy warto zatrudnić projektanta wnętrz? Oto 7 konkretnych rzeczy, które robi dobra projektantka – a których nie zastąpią sklepy meblowe ani tutoriale.",
-    image: vizBedroomDark,
+    image: nowyRozdzial1,
     category: "Porady",
     date: "5 lutego 2026",
     readTime: "9 min",
@@ -84,7 +84,7 @@ const blogPosts = [
   {
     title: "Jak dobrać kolory, materiały i dodatki do wnętrza – zasady, które działają zawsze",
     excerpt: "Nie wiesz jak dobrać kolory i materiały do swojego wnętrza? Tłumaczę zasady doboru kolorystyki, faktur i dodatków – po ludzku, bez żargonu.",
-    image: vizClosetMarble,
+    image: domPowrot3,
     category: "Porady",
     date: "1 lutego 2026",
     readTime: "8 min",
@@ -93,7 +93,7 @@ const blogPosts = [
   {
     title: "Checklista przed remontem mieszkania – 27 pytań przed startem",
     excerpt: "Planujesz remont? Sprawdź 27 pytań, które musisz zadać sobie zanim zaczniesz. Oszczędź czas, nerwy i pieniądze.",
-    image: vizDetailCeramics,
+    image: miejsceZnali1,
     category: "Porady",
     date: "25 stycznia 2026",
     readTime: "10 min",
@@ -102,7 +102,7 @@ const blogPosts = [
   {
     title: "Darmowy ebook: Jak przygotować się do remontu – kompletny przewodnik",
     excerpt: "Pobierz darmowy ebook z checklistą, harmonogramem i praktycznymi wskazówkami. Zaplanuj remont bez stresu i niepotrzebnych wydatków.",
-    image: vizLivingBeige,
+    image: domPowrot1,
     category: "Ebooki",
     date: "20 stycznia 2026",
     readTime: "Ebook PDF",
