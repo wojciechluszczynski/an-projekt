@@ -214,7 +214,7 @@ const projectsData: Record<string, {
       "Dawny bar — trochę sentymentalny, trochę zapomniany. Każdy go kojarzył, ale jego czas już minął. I wtedy pojawił się ktoś, kto zamiast zaczynać od zera, postanowił dać temu miejscu drugą szansę.",
       "To był najciekawszy moment tego projektu — decyzja, żeby nie burzyć historii, tylko ją wykorzystać.",
       "Stary budynek został. Surowa cegła, konstrukcja, proporcje — wszystko to, co budowało jego charakter. Ale tuż obok pojawiła się zupełnie nowa część. Otwarta, przeszklona, pełna światła. Taka, w której granica między wnętrzem a ogrodem właściwie znika.",
-      "I dopiero w tym kontraście zaczyna się prawdziwa „atmosfera".",
+      'I dopiero w tym kontraście zaczyna się prawdziwa "atmosfera".',
       "Drewno spina oba światy. W starej części jest naturalną kontynuacją tego, co było tu wcześniej. W nowej — ociepla nowoczesną, bardziej surową architekturę. Zieleń wchodzi do środka i robi coś, czego nie da się osiągnąć samym materiałem — daje życie.",
       "Układ przestrzeni jest prosty, ale przemyślany. Są miejsca bardziej kameralne i takie, które żyją gwarem. Można tu przyjść na szybki obiad, ale równie dobrze spędzić pół dnia.",
       "I co ważne — to nie jest restauracja „na pokaz". To miejsce zaprojektowane tak, żeby działało w codzienności. Z myślą o rodzinach, o spotkaniach, o dzieciach, które też mają tu swoje miejsce — nie jako dodatek, tylko naturalna część całości.",
