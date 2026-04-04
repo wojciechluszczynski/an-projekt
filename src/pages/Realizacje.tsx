@@ -48,6 +48,14 @@ const featured = [
     desc: "Wnętrze, które nie próbuje imponować. Zamiast tego sprawia, że chce się w nim zostać.",
     image: domPowrot1,
   },
+  {
+    title: "Miejsce, które wszyscy znali",
+    type: "Lokal gastronomiczny",
+    area: "200 m²",
+    location: "Krosno",
+    desc: "Dawny bar z nową historią. Ludzie znowu chcą tu przychodzić.",
+    image: miejsceZnali1,
+  },
 ];
 
 const allProjects = [
