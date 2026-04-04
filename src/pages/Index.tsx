@@ -28,7 +28,7 @@ const packages = [
     icon: Home,
     name: "Konsultacja",
     desc: "Krótka rozmowa o Twoim wnętrzu. Omówimy pomysł, układ, styl lub konkretny problem.",
-    image: vizLivingBeige,
+    image: domPowrot3,
     tags: ["Spotkanie 60 min", "Analiza przestrzeni", "Rekomendacje"],
   },
   {
