@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
-import vizKitchenRattan from "@/assets/viz-kitchen-rattan.png";
-import vizLivingBeige from "@/assets/viz-living-beige.png";
-import vizBedroomMural from "@/assets/viz-bedroom-mural.png";
-import vizBathroomMarble from "@/assets/viz-bathroom-marble.png";
-import vizDiningFireplace from "@/assets/viz-dining-fireplace.png";
+import willaHarmonia1 from "@/assets/willa-harmonia-1.jpeg";
+import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
+import apartamentKlasa1 from "@/assets/apartament-klasa-1.jpeg";
+import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
+import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
 import { ArrowRight, Home, Building, Building2, Trees, MessageCircle, MapPin, Ruler, Monitor, Hammer, Plus, X, Check, ChevronDown, Star } from "lucide-react";
 
 const packages = [
@@ -15,7 +15,7 @@ const packages = [
     target: "Dla osób, które chcą omówić pomysł, układ, styl lub konkretny problem we wnętrzu.",
     price: "Wycena indywidualna",
     features: ["Spotkanie online lub na miejscu (ok. 60 min)", "Analiza przestrzeni i potrzeb", "Wstępne rekomendacje stylistyczne i funkcjonalne", "Kierunek dalszych działań"],
-    image: vizLivingBeige,
+    image: domPowrot1,
     tags: ["Jednorazowe spotkanie", "Analiza", "Rekomendacje"],
     popular: false,
   },
@@ -25,7 +25,7 @@ const packages = [
     target: "Dla osób szukających solidnej bazy projektowej. Pomysłu na układ i styl wnętrza.",
     price: "Wycena indywidualna",
     features: ["Układ funkcjonalny pomieszczeń", "Propozycja stylistyczna i moodboard", "Wizualizacje 3D (3 ujęcia)", "Podstawowe rysunki techniczne"],
-    image: vizKitchenRattan,
+    image: willaHarmonia1,
     tags: ["Układ funkcjonalny", "Moodboard", "Wizualizacje 3D"],
     popular: false,
   },
@@ -35,7 +35,7 @@ const packages = [
     target: "Dla osób, które chcą gotowy projekt do przekazania wykonawcy.",
     price: "Wycena indywidualna",
     features: ["Pełny projekt koncepcyjny wnętrz", "Propozycja materiałów i kolorystyki", "4 wizualizacje 3D", "Wizualizacja 3D 360°", "Dokładna dokumentacja techniczna"],
-    image: vizBedroomMural,
+    image: apartamentKlasa1,
     tags: ["Pełny projekt", "Wizualizacja 360°", "Dokumentacja techniczna"],
     popular: true,
   },
@@ -52,7 +52,7 @@ const packages = [
       "  spotkanie na budowie z wykonawcą",
       "  kontrola realizacji na budowie",
     ],
-    image: vizBathroomMarble,
+    image: domScenariusz1,
     tags: ["Pełne wsparcie", "Wideo", "Nadzór budowy", "Zakupy materiałów"],
     popular: false,
   },
@@ -99,7 +99,7 @@ const Oferta = () => {
     <main>
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[350px] overflow-hidden">
-        <img src={vizKitchenRattan} alt="Projekt wnętrza, oferta AN Projekt" className="w-full h-full object-cover" />
+        <img src={willaHarmonia1} alt="Projekt wnętrza, oferta AN Projekt" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-foreground/35" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <h1 className="font-heading text-3xl md:text-5xl text-dark-foreground mb-3">Oferta</h1>
@@ -250,9 +250,9 @@ const Oferta = () => {
       {/* Showcase image strip */}
       <section className="bg-background py-0">
         <div className="grid grid-cols-3 gap-0">
-          <img src={vizDiningFireplace} alt="Realizacja AN Projekt" className="w-full aspect-[4/3] object-cover" />
-          <img src={vizBedroomMural} alt="Realizacja AN Projekt" className="w-full aspect-[4/3] object-cover" />
-          <img src={vizBathroomMarble} alt="Realizacja AN Projekt" className="w-full aspect-[4/3] object-cover" />
+          <img src={nowyRozdzial1} alt="Realizacja AN Projekt" className="w-full aspect-[4/3] object-cover" />
+          <img src={apartamentKlasa1} alt="Realizacja AN Projekt" className="w-full aspect-[4/3] object-cover" />
+          <img src={domScenariusz1} alt="Realizacja AN Projekt" className="w-full aspect-[4/3] object-cover" />
         </div>
       </section>
 

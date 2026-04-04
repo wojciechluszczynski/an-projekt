@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Download, CheckCircle, BookOpen, Eye, Palette, ListChecks, AlertTriangle } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
-import vizLivingBeige from "@/assets/viz-living-beige.png";
-import vizBedroomDark from "@/assets/viz-bedroom-dark.png";
+import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
+import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
 import { toast } from "sonner";
 
 const ebookHighlights = [
@@ -53,7 +53,7 @@ const Ebook = () => {
     <main className="bg-background">
       {/* Hero */}
       <section className="relative min-h-[50vh] overflow-hidden">
-        <img src={vizLivingBeige} alt="Ebook AN Projekt" className="w-full h-full absolute inset-0 object-cover scale-105" />
+        <img src={domPowrot1} alt="Ebook AN Projekt" className="w-full h-full absolute inset-0 object-cover scale-105" />
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/30 via-foreground/50 to-foreground/70" />
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 pt-32 pb-20 md:pt-40 md:pb-24">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white/80 font-body text-[10px] tracking-[0.15em] uppercase mb-6 backdrop-blur-sm border border-white/10">
@@ -192,7 +192,7 @@ const Ebook = () => {
         <div className="max-w-[800px] mx-auto">
           <FadeIn>
             <div className="relative rounded-2xl overflow-hidden shadow-lg">
-              <img src={vizBedroomDark} alt="Podgląd ebooka" className="w-full aspect-video object-cover" />
+              <img src={nowyRozdzial1} alt="Podgląd ebooka" className="w-full aspect-video object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent flex items-end justify-center pb-8">
                 <Link
                   to="/ebook/przewodnik"
