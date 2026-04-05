@@ -41,7 +41,7 @@ const Kontakt = () => {
   const set = (key: string, value: string | boolean) => setForm((prev) => ({ ...prev, [key]: value }));
 
   return (
-    <main className="bg-primary pt-24 md:pt-28">
+    <main className="bg-primary pt-32 md:pt-36">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20 pb-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14">
           {/* Left - Contact info (desktop) / appears second on mobile */}
