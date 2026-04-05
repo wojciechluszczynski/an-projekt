@@ -14,6 +14,7 @@ import realPhoto3 from "@/assets/realizacja-real-3.jpg";
 import realPhoto4 from "@/assets/realizacja-real-4.jpg";
 import realPhoto5 from "@/assets/realizacja-real-5.jpg";
 import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
+import tenSamDom1 from "@/assets/ten-sam-dom-1.png";
 
 const realPhotos = [
   { src: realPhoto1, alt: "Dom gotowy na więcej – realizacja salonu", caption: "Dom gotowy na więcej niż jeden scenariusz – realizacja" },
@@ -66,6 +67,7 @@ const allProjects = [
   { title: "Nowy rozdział", slug: "nowy-rozdzial", type: "Biuro", area: 120, location: "Podkarpacie", image: nowyRozdzial1 },
   { title: "Dom gotowy na więcej", slug: "dom-scenariusz", type: "Dom", area: 130, location: "Rzeszów", image: domScenariusz1 },
   { title: "Miejsce, które wszyscy znali", slug: "miejsce-znali", type: "Lokal", area: 200, location: "Krosno", image: miejsceZnali1 },
+  { title: "Ten sam dom, zupełnie inna historia", slug: "ten-sam-dom", type: "Dom", area: 160, location: "Podkarpacie", image: tenSamDom1 },
 ];
 
 const sizeFilters = [
