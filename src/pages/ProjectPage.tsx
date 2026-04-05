@@ -59,6 +59,11 @@ import miejsceZnali4 from "@/assets/miejsce-znali-4.png";
 import miejsceZnali5 from "@/assets/miejsce-znali-5.png";
 import miejsceZnali6 from "@/assets/miejsce-znali-6.png";
 import miejsceZnali7 from "@/assets/miejsce-znali-7.png";
+import tenSamDom1 from "@/assets/ten-sam-dom-1.png";
+import tenSamDom2 from "@/assets/ten-sam-dom-2.png";
+import tenSamDom3 from "@/assets/ten-sam-dom-3.png";
+import tenSamDom4 from "@/assets/ten-sam-dom-4.png";
+import tenSamDom5 from "@/assets/ten-sam-dom-5.png";
 
 const projectsData: Record<string, {
   title: string;
@@ -225,6 +230,33 @@ const projectsData: Record<string, {
     scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Dokumentacja techniczna", "Nadzór nad realizacją", "Dobór materiałów i oświetlenia"],
     result: "Miejsce, które nie zaczyna od nowa — tylko od tego, co zawsze miało. Ludzie znowu chcą tu przychodzić.",
     images: [miejsceZnali1, miejsceZnali2, miejsceZnali3, miejsceZnali4, miejsceZnali5, miejsceZnali6, miejsceZnali7],
+  },
+  "ten-sam-dom": {
+    title: "Ten sam dom, zupełnie inna historia",
+    type: "Dom jednorodzinny",
+    area: "160 m²",
+    location: "Podkarpacie",
+    pkg: "Kompleks",
+    time: "10 tygodni",
+    challenge: "Ten sam układ, te same możliwości — lustrzane odbicie wcześniejszej realizacji. Teoretycznie wszystko było jasne. W praktyce… to był zupełnie inny projekt.",
+    story: [
+      "Czasem projekt zaczyna się od planu. A czasem… od sąsiedztwa.",
+      "Ten dom już znaliśmy. Ten sam układ, te same możliwości — lustrzane odbicie wcześniejszej realizacji. Teoretycznie wszystko było jasne. W praktyce… to był zupełnie inny projekt.",
+      "Nowy inwestor pojawił się w trakcie realizacji domu obok. Zobaczył proces, zobaczył efekt i — co ważniejsze — zobaczył, ile decyzji trzeba podjąć po drodze. Szybko stało się jasne, że nie chce przez to przechodzić sam.",
+      "I tu zaczęła się nasza współpraca.",
+      'Tym razem punkt wyjścia był inny. Nie było potrzeby „ratowania funkcji" ani dużych zmian układu. Fundament już działał. Kluczowe było nadanie temu wnętrzu charakteru, który będzie pasował do jego właściciela — spokojnego, konkretnego, ale z bardzo dobrym wyczuciem estetyki.',
+      'Postawiliśmy na materiały, które robią atmosferę bez zbędnego wysiłku. Jasne, ciepłe drewno pojawia się konsekwentnie w całym domu, budując spójność i wrażenie naturalności. Śmietankowa biel porządkuje przestrzeń i odbija światło, a kamień o wyraźnej strukturze wprowadza głębię — szczególnie tam, gdzie światło może go „złapać" i podkreślić.',
+      "Oświetlenie odgrywa tu większą rolę niż na pierwszy rzut oka. To ono buduje klimat wieczorem i wydobywa strukturę materiałów. Nie jest dekoracją — jest narzędziem.",
+      "Czarne detale pojawiają się oszczędnie, ale dokładnie tam, gdzie trzeba. Linie lamp, uchwyty, balustrada. Dzięki temu wnętrze nie rozpływa się w jasnej palecie — ma punkt zaczepienia.",
+      "Strefa dzienna jest otwarta i swobodna, ale nie przypadkowa. Kuchnia z dużą wyspą i stołem tworzy naturalne centrum domu. Salon jest jego przedłużeniem — miejsce, które nie potrzebuje wielu elementów, żeby działać.",
+      "Sypialnia to już zupełnie inny rytm. Bardziej miękka, bardziej wyciszona. Tu wszystko schodzi na drugi plan, żeby zostawić przestrzeń na odpoczynek.",
+      'A łazienka? To moment, w którym projekt lekko zmienia ton. Więcej światła, więcej struktury, więcej „oddechu". Trochę jak prywatna strefa spa — ale bez przesady, nadal w tej samej, spójnej estetyce.',
+      "Najciekawsze w tym projekcie jest to, że pokazuje jedną rzecz bardzo wyraźnie: ten sam układ nie oznacza tego samego domu.",
+      "Bo ostatecznie nie chodzi o metry ani ściany. Chodzi o człowieka, który w tym wnętrzu będzie żył.",
+    ],
+    scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Dokumentacja techniczna", "Nadzór nad realizacją", "Dobór materiałów i mebli"],
+    result: "Ten sam układ nie oznacza tego samego domu. Bo ostatecznie nie chodzi o metry ani ściany — chodzi o człowieka, który w tym wnętrzu będzie żył.",
+    images: [tenSamDom1, tenSamDom2, tenSamDom3, tenSamDom4, tenSamDom5],
   },
 };
 
