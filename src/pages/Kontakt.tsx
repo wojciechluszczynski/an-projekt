@@ -37,32 +37,31 @@ const Kontakt = () => {
     toast.success("Dziękuję! Odezwę się najszybciej jak to możliwe.");
   };
 
-  const inputClass = "w-full bg-transparent border-b border-primary-foreground/20 text-primary-foreground font-body text-sm py-3 px-0 placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors";
+  const inputClass = "w-full bg-transparent border-b border-primary-foreground/20 text-primary-foreground font-body text-sm py-2 px-0 placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors";
   const set = (key: string, value: string | boolean) => setForm((prev) => ({ ...prev, [key]: value }));
 
   return (
-    <main className="bg-primary pt-28 md:pt-32">
+    <main className="bg-primary pt-24 md:pt-28">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20 pb-0">
-        {/* Mobile: form first */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14">
           {/* Left - Contact info (desktop) / appears second on mobile */}
           <FadeIn>
             <div className="order-2 md:order-1">
-              <h1 className="font-heading text-3xl md:text-4xl text-primary-foreground mb-4">
+               <h1 className="font-heading text-2xl md:text-3xl text-primary-foreground mb-3">
                 Porozmawiajmy o&nbsp;Twoim wnętrzu
               </h1>
-              <p className="text-primary-foreground/60 font-body text-base mb-10">
+              <p className="text-primary-foreground/60 font-body text-sm mb-8">
                 Opisz w kilku zdaniach swój projekt lub zadaj pytanie. Pierwsza rozmowa jest bezpłatna.
               </p>
 
-              <div className="flex flex-col gap-2 text-primary-foreground/70 font-body text-sm mb-8">
+              <div className="flex flex-col gap-1.5 text-primary-foreground/70 font-body text-sm mb-6">
                 <span className="text-primary-foreground font-medium text-base">Anna Nowak, AN Projekt</span>
                 <span>Odrzykoń, Podkarpacie</span>
                 <a href="tel:+48730359642" className="hover:text-accent transition-colors">+48 730 359 642</a>
                 <a href="mailto:anprojekt.com@gmail.com" className="hover:text-accent transition-colors">anprojekt.com@gmail.com</a>
               </div>
 
-              <div className="flex gap-4 mb-10">
+              <div className="flex gap-4 mb-6">
                 <a href="https://www.instagram.com/an_projekt/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/40 hover:text-accent transition-colors" aria-label="Instagram"><Instagram size={22} /></a>
                 <a href="https://www.facebook.com/anna.nowakpaprocka" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/40 hover:text-accent transition-colors" aria-label="Facebook"><Facebook size={22} /></a>
                 <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/40 hover:text-accent transition-colors" aria-label="Pinterest"><PinterestIcon /></a>
@@ -79,8 +78,8 @@ const Kontakt = () => {
           <FadeIn delay={150}>
             <div className="order-1 md:order-2">
               {/* Form header */}
-              <div className="mb-6 pb-4 border-b border-primary-foreground/10">
-                <h2 className="font-heading text-xl text-primary-foreground mb-1">Formularz kontaktowy</h2>
+              <div className="mb-4 pb-3 border-b border-primary-foreground/10">
+                <h2 className="font-heading text-lg text-primary-foreground mb-0.5">Formularz kontaktowy</h2>
                 <p className="text-primary-foreground/50 font-body text-xs">Wypełnij poniższe pola, odezwę się najszybciej jak mogę.</p>
               </div>
 
@@ -93,7 +92,7 @@ const Kontakt = () => {
                   </div>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
                   <input type="text" name="website" value={form.honeypot} onChange={(e) => set("honeypot", e.target.value)} className="hidden" tabIndex={-1} autoComplete="off" />
                   <input type="text" placeholder="Imię i nazwisko *" value={form.name} onChange={(e) => set("name", e.target.value)} className={inputClass} maxLength={100} />
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -112,7 +111,7 @@ const Kontakt = () => {
                     <option value="" disabled>Na jakim etapie jesteś?</option>
                     {stages.map((s) => (<option key={s} value={s} className="text-foreground bg-background">{s}</option>))}
                   </select>
-                  <textarea placeholder="Opisz w kilku zdaniach swój projekt lub pytanie... *" value={form.message} onChange={(e) => set("message", e.target.value)} className={`${inputClass} resize-none min-h-[100px]`} maxLength={2000} />
+                  <textarea placeholder="Opisz w kilku zdaniach swój projekt lub pytanie... *" value={form.message} onChange={(e) => set("message", e.target.value)} className={`${inputClass} resize-none min-h-[70px]`} maxLength={2000} />
                   <label className="flex items-start gap-3 mt-1">
                     <input type="checkbox" checked={form.consent} onChange={(e) => set("consent", e.target.checked)} className="mt-1 accent-accent" />
                     <span className="text-primary-foreground/50 font-body text-xs leading-relaxed">
@@ -120,7 +119,7 @@ const Kontakt = () => {
                       <a href="/polityka-prywatnosci" className="underline hover:text-accent">polityką prywatności</a>. *
                     </span>
                   </label>
-                  <button type="submit" disabled={sending} className="w-full mt-3 py-3.5 rounded-full bg-accent text-accent-foreground font-body text-sm tracking-[0.05em] uppercase hover:bg-accent/90 transition-all duration-300 disabled:opacity-60">
+                  <button type="submit" disabled={sending} className="w-full mt-1 py-3 rounded-full bg-accent text-accent-foreground font-body text-sm tracking-[0.05em] uppercase hover:bg-accent/90 transition-all duration-300 disabled:opacity-60">
                     {sending ? "Wysyłanie..." : "Wyślij wiadomość"}
                   </button>
                 </form>
