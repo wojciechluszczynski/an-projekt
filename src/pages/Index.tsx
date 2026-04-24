@@ -4,18 +4,20 @@ import FadeIn from "@/components/FadeIn";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import { ArrowRight, Palette, ClipboardList, UserCheck, Home, Building, Building2, Trees, MessageCircle, Ruler, Monitor, Hammer, Plus, X, Check, Star } from "lucide-react";
 
-import willaHarmonia1 from "@/assets/willa-harmonia-1.jpeg";
 import willaHarmonia3 from "@/assets/willa-harmonia-3.jpeg";
-import apartamentKlasa1 from "@/assets/apartament-klasa-1.jpeg";
 import apartamentKlasa3 from "@/assets/apartament-klasa-3.jpeg";
-import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
 import domPowrot3 from "@/assets/dom-powrot-3.jpeg";
 import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
 import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
 import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
 import annaPortrait from "@/assets/anna-portrait.jpg";
+import realHomeKitchen1 from "@/assets/real-home-kitchen-1.webp";
+import realHomeKitchen2 from "@/assets/real-home-kitchen-2.webp";
+import realHomeKitchen5 from "@/assets/real-home-kitchen-5.webp";
+import realHomeKitchen6 from "@/assets/real-home-kitchen-6.webp";
+import realHomeBedroom1 from "@/assets/real-home-bedroom-1.webp";
 
-const heroSlides = [willaHarmonia1, apartamentKlasa1, domPowrot1];
+const heroSlides = [realHomeKitchen2, realHomeKitchen5, realHomeBedroom1];
 
 const pillars = [
   { icon: Palette, title: "Estetyka z funkcją", desc: "Projektuję tak, żeby było pięknie i wygodnie na co dzień, bez kompromisów." },
@@ -91,7 +93,7 @@ const Index = () => {
       <section className="relative h-screen w-full overflow-hidden">
         {heroSlides.map((slide, i) => (
           <div key={i} className={`absolute inset-0 transition-all duration-1000 ease-in-out ${i === currentSlide ? "opacity-100 scale-100" : "opacity-0 scale-105"}`}>
-            <img src={slide} alt={`Wizualizacja wnętrza AN Projekt ${i + 1}`} className="w-full h-full object-cover" loading={i === 0 ? "eager" : "lazy"} />
+            <img src={slide} alt={`Realizacja wnętrza AN Projekt ${i + 1}`} className="w-full h-full object-cover" loading={i === 0 ? "eager" : "lazy"} />
           </div>
         ))}
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/30 to-foreground/10" />
@@ -157,7 +159,7 @@ const Index = () => {
       <section className="bg-secondary py-6 overflow-hidden">
         <div className="flex w-max animate-marquee gap-4">
           {[...Array(2)].flatMap((_, setIdx) =>
-            [willaHarmonia1, apartamentKlasa1, domPowrot1, domScenariusz1, nowyRozdzial1, miejsceZnali1].map((img, i) => (
+            [realHomeKitchen1, realHomeKitchen2, realHomeKitchen5, realHomeBedroom1, realHomeKitchen6, miejsceZnali1].map((img, i) => (
               <Link key={`${setIdx}-${i}`} to="/realizacje" className="flex-shrink-0 group">
                 <img src={img} alt={`Realizacja ${i + 1}`} className="h-36 md:h-52 w-auto object-cover rounded-xl transition-transform duration-500 group-hover:scale-105" loading="lazy" />
               </Link>
