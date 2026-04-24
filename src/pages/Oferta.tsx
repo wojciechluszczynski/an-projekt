@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
 import willaHarmonia1 from "@/assets/willa-harmonia-1.jpeg";
 import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
-import apartamentKlasa1 from "@/assets/apartament-klasa-1.jpeg";
-import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
 import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
 import realHomeKitchen1 from "@/assets/real-home-kitchen-1.webp";
 import realHomeKitchen2 from "@/assets/real-home-kitchen-2.webp";
+import realHomeKitchen4 from "@/assets/real-home-kitchen-4.webp";
 import realHomeKitchen5 from "@/assets/real-home-kitchen-5.webp";
 import realHomeBedroom1 from "@/assets/real-home-bedroom-1.webp";
 import { ArrowRight, Home, Building, Building2, Trees, MessageCircle, MapPin, Ruler, Monitor, Hammer, Plus, X, Check, ChevronDown, Star } from "lucide-react";
@@ -255,8 +254,8 @@ const Oferta = () => {
       <section className="bg-background py-0">
         <div className="grid grid-cols-3 gap-0">
           <img src={nowyRozdzial1} alt="Realizacja AN Projekt" className="w-full aspect-[4/3] object-cover" />
-          <img src={apartamentKlasa1} alt="Realizacja AN Projekt" className="w-full aspect-[4/3] object-cover" />
-          <img src={domScenariusz1} alt="Realizacja AN Projekt" className="w-full aspect-[4/3] object-cover" />
+          <img src={realHomeKitchen4} alt="Realizacja AN Projekt" className="w-full aspect-[4/3] object-cover" />
+          <img src={realHomeBedroom1} alt="Realizacja AN Projekt" className="w-full aspect-[4/3] object-cover" />
         </div>
       </section>
 
