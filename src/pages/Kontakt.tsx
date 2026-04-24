@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Instagram, Facebook } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import { toast } from "sonner";
+import annaPortrait from "@/assets/anna-nowak-portrait.png";
 
 const PinterestIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-[22px] h-[22px]">
@@ -54,11 +55,19 @@ const Kontakt = () => {
                 Opisz w kilku zdaniach swój projekt lub zadaj pytanie. Pierwsza rozmowa jest bezpłatna.
               </p>
 
-              <div className="flex flex-col gap-1.5 text-primary-foreground/70 font-body text-sm mb-6">
-                <span className="text-primary-foreground font-medium text-base">Anna Nowak, AN Projekt</span>
-                <span>Odrzykoń, Podkarpacie</span>
-                <a href="tel:+48730359642" className="hover:text-accent transition-colors">+48 730 359 642</a>
-                <a href="mailto:anprojekt.com@gmail.com" className="hover:text-accent transition-colors">anprojekt.com@gmail.com</a>
+              <div className="flex items-start gap-4 mb-6">
+                <img
+                  src={annaPortrait}
+                  alt="Anna Nowak, AN Projekt"
+                  className="w-20 h-20 rounded-2xl object-cover object-top shrink-0"
+                  loading="lazy"
+                />
+                <div className="flex flex-col gap-1.5 text-primary-foreground/70 font-body text-sm">
+                  <span className="text-primary-foreground font-medium text-base">Anna Nowak, AN Projekt</span>
+                  <span>Odrzykoń, Podkarpacie</span>
+                  <a href="tel:+48730359642" className="hover:text-accent transition-colors">+48 730 359 642</a>
+                  <a href="mailto:anprojekt.com@gmail.com" className="hover:text-accent transition-colors">anprojekt.com@gmail.com</a>
+                </div>
               </div>
 
               <div className="flex gap-4 mb-6">

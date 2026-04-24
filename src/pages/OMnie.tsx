@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
-import annaPortrait from "@/assets/anna-portrait.jpg";
+import annaPortrait from "@/assets/anna-nowak-portrait.png";
 import realHomeBedroom1 from "@/assets/real-home-bedroom-1.webp";
 import realHomeKitchen5 from "@/assets/real-home-kitchen-5.webp";
 import { ArrowRight, Instagram, Facebook, MessageCircle, MapPin, Ruler, Hammer } from "lucide-react";
