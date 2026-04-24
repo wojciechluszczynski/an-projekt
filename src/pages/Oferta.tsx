@@ -6,6 +6,10 @@ import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
 import apartamentKlasa1 from "@/assets/apartament-klasa-1.jpeg";
 import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
 import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
+import realHomeKitchen1 from "@/assets/real-home-kitchen-1.webp";
+import realHomeKitchen2 from "@/assets/real-home-kitchen-2.webp";
+import realHomeKitchen5 from "@/assets/real-home-kitchen-5.webp";
+import realHomeBedroom1 from "@/assets/real-home-bedroom-1.webp";
 import { ArrowRight, Home, Building, Building2, Trees, MessageCircle, MapPin, Ruler, Monitor, Hammer, Plus, X, Check, ChevronDown, Star } from "lucide-react";
 
 const packages = [
@@ -25,7 +29,7 @@ const packages = [
     target: "Dla osób szukających solidnej bazy projektowej. Pomysłu na układ i styl wnętrza.",
     price: "Wycena indywidualna",
     features: ["Układ funkcjonalny pomieszczeń", "Propozycja stylistyczna i moodboard", "Wizualizacje 3D (3 ujęcia)", "Podstawowe rysunki techniczne"],
-    image: willaHarmonia1,
+    image: realHomeKitchen1,
     tags: ["Układ funkcjonalny", "Moodboard", "Wizualizacje 3D"],
     popular: false,
   },
@@ -35,7 +39,7 @@ const packages = [
     target: "Dla osób, które chcą gotowy projekt do przekazania wykonawcy.",
     price: "Wycena indywidualna",
     features: ["Pełny projekt koncepcyjny wnętrz", "Propozycja materiałów i kolorystyki", "4 wizualizacje 3D", "Wizualizacja 3D 360°", "Dokładna dokumentacja techniczna"],
-    image: apartamentKlasa1,
+    image: realHomeKitchen5,
     tags: ["Pełny projekt", "Wizualizacja 360°", "Dokumentacja techniczna"],
     popular: true,
   },
@@ -52,7 +56,7 @@ const packages = [
       "  spotkanie na budowie z wykonawcą",
       "  kontrola realizacji na budowie",
     ],
-    image: domScenariusz1,
+    image: realHomeBedroom1,
     tags: ["Pełne wsparcie", "Wideo", "Nadzór budowy", "Zakupy materiałów"],
     popular: false,
   },
@@ -99,7 +103,7 @@ const Oferta = () => {
     <main>
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[350px] overflow-hidden">
-        <img src={willaHarmonia1} alt="Projekt wnętrza, oferta AN Projekt" className="w-full h-full object-cover" />
+        <img src={realHomeKitchen2} alt="Realizacja wnętrza, oferta AN Projekt" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-foreground/35" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <h1 className="font-heading text-3xl md:text-5xl text-dark-foreground mb-3">Oferta</h1>
