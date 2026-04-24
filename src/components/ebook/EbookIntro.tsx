@@ -1,5 +1,5 @@
 import FadeIn from "@/components/FadeIn";
-import annaPortrait from "@/assets/anna-portrait.jpg";
+import annaPortrait from "@/assets/anna-nowak-portrait.png";
 
 const EbookIntro = () => (
   <section id="intro" className="section-padding scroll-mt-16">
