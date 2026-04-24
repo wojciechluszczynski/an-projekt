@@ -64,6 +64,13 @@ import tenSamDom2 from "@/assets/ten-sam-dom-2.png";
 import tenSamDom3 from "@/assets/ten-sam-dom-3.png";
 import tenSamDom4 from "@/assets/ten-sam-dom-4.png";
 import tenSamDom5 from "@/assets/ten-sam-dom-5.png";
+import realHomeKitchen1 from "@/assets/real-home-kitchen-1.webp";
+import realHomeKitchen2 from "@/assets/real-home-kitchen-2.webp";
+import realHomeKitchen3 from "@/assets/real-home-kitchen-3.webp";
+import realHomeBedroom1 from "@/assets/real-home-bedroom-1.webp";
+import realHomeKitchen4 from "@/assets/real-home-kitchen-4.webp";
+import realHomeKitchen5 from "@/assets/real-home-kitchen-5.webp";
+import realHomeKitchen6 from "@/assets/real-home-kitchen-6.webp";
 
 const projectsData: Record<string, {
   title: string;
@@ -97,7 +104,7 @@ const projectsData: Record<string, {
     ],
     scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Dokumentacja techniczna", "Nadzór nad realizacją", "Dobór materiałów i mebli"],
     result: "Dom, który nie domaga się uwagi. Ale daje dokładnie to, czego jego właściciele najbardziej potrzebowali — spokój.",
-    images: [willaHarmonia1, willaHarmonia2, willaHarmonia3, willaHarmonia4, willaHarmonia5, willaHarmonia6, willaHarmonia7, willaHarmonia8, willaHarmonia9],
+    images: [realHomeKitchen2, realHomeKitchen1, realHomeKitchen5, realHomeBedroom1, realHomeKitchen6, realHomeKitchen4, realHomeKitchen3],
   },
   "dom-powrot": {
     title: "Dom, do którego się wraca",
