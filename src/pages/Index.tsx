@@ -17,7 +17,7 @@ import realHomeKitchen5 from "@/assets/real-home-kitchen-5.webp";
 import realHomeKitchen6 from "@/assets/real-home-kitchen-6.webp";
 import realHomeBedroom1 from "@/assets/real-home-bedroom-1.webp";
 
-const heroSlides = [realHomeKitchen2, realHomeKitchen5, realHomeBedroom1];
+const heroSlides = [willaHarmonia3, apartamentKlasa3, domPowrot3];
 
 const pillars = [
   { icon: Palette, title: "Estetyka z funkcją", desc: "Projektuję tak, żeby było pięknie i wygodnie na co dzień, bez kompromisów." },
