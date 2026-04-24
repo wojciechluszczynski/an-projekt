@@ -102,7 +102,7 @@ const Oferta = () => {
     <main>
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[350px] overflow-hidden">
-        <img src={realHomeKitchen2} alt="Realizacja wnętrza, oferta AN Projekt" className="w-full h-full object-cover" />
+        <img src={willaHarmonia1} alt="Wizualizacja wnętrza, oferta AN Projekt" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-foreground/35" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <h1 className="font-heading text-3xl md:text-5xl text-dark-foreground mb-3">Oferta</h1>
