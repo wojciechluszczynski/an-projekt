@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import annaPortrait from "@/assets/anna-portrait.jpg";
+import annaPortrait from "@/assets/anna-nowak-portrait.png";
 
 const navLinks = [
   { href: "/", label: "Start" },

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { X, Send } from "lucide-react";
-import annaPortrait from "@/assets/anna-portrait.jpg";
+import annaPortrait from "@/assets/anna-nowak-portrait.png";
 
 const quickTopics = [
   { label: "Jak wygląda współpraca?", answer: "Współpraca zaczyna się od bezpłatnej rozmowy, podczas której poznaję Twoje potrzeby. Następnie przygotowuję układ funkcjonalny i koncepcję, potem wizualizacje 3D, a na końcu dokumentację techniczną. W opcji Kompleks wspieram też realizację na budowie." },
