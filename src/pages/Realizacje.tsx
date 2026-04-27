@@ -15,6 +15,7 @@ import realPhoto4 from "@/assets/realizacja-real-4.jpg";
 import realPhoto5 from "@/assets/realizacja-real-5.jpg";
 import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
 import tenSamDom1 from "@/assets/ten-sam-dom-1.png";
+import salaWeselna2 from "@/assets/sala-weselna-2.png";
 
 
 const realPhotos = [
