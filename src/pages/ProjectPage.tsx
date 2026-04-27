@@ -265,6 +265,26 @@ const projectsData: Record<string, {
     result: "Ten sam układ nie oznacza tego samego domu. Bo ostatecznie nie chodzi o metry ani ściany — chodzi o człowieka, który w tym wnętrzu będzie żył.",
     images: [tenSamDom1, tenSamDom2, tenSamDom3, tenSamDom4, tenSamDom5],
   },
+  // TODO: podmienić obrazy po otrzymaniu wizualizacji z WeTransfer
+  "sala-weselna": {
+    title: "Przestrzeń dla emocji – sala weselna",
+    type: "Lokal usługowy",
+    area: "—",
+    location: "Podkarpacie",
+    pkg: "Kompleks",
+    time: "w realizacji",
+    challenge: "Sala, która ma być tłem dla najważniejszych chwil w życiu. Nie może krzyczeć, ale musi zostać w pamięci – łączyć elegancję z ciepłem i pozwolić, by to ludzie, a nie wnętrze, byli na pierwszym planie.",
+    story: [
+      "To projekt, w którym wnętrze nie jest celem. Jest tłem.",
+      "Sala weselna to przestrzeń, w której emocje są na maksimum – radość, wzruszenie, czasem łzy. Wszystko, co się tu dzieje, zostaje w pamięci na lata. Dlatego od samego początku wiedziałam, że projekt nie może rywalizować z gośćmi i parą młodą. Ma stworzyć ramę, w której ludzie poczują się dobrze.",
+      "Postawiliśmy na elegancję bez przepychu. Spokojną paletę kolorów, naturalne materiały, światło, które łatwo dostosować do nastroju – od jasnego, dziennego, po ciepłe i intymne wieczorem. Wnętrze ma działać tak samo dobrze przy oficjalnym obiedzie, jak i w środku nocy na parkiecie.",
+      "Kluczem była elastyczność. Sala musi obsłużyć wesela, komunie, jubileusze, konferencje – każde z tych wydarzeń ma inny rytm i inne potrzeby. Dlatego układ został zaprojektowany tak, żeby łatwo było zmieniać aranżację stołów, strefę baru i parkietu.",
+      "Detale – akustyka, oświetlenie sceniczne, sposób, w jaki światło odbija się od materiałów na ścianach – to rzeczy, których goście nie zauważą świadomie. Ale poczują, że wieczór był po prostu „dobry".",
+    ],
+    scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D", "Dokumentacja techniczna", "Dobór materiałów i mebli", "Konsultacje akustyczne i oświetleniowe"],
+    result: "Wnętrze, które nie próbuje być bohaterem wieczoru. Pozwala nim być parze młodej i ich gościom – a samo, dyskretnie, robi swoją robotę.",
+    images: ["/placeholder.svg"],
+  },
 };
 
 const ProjectPage = () => {
