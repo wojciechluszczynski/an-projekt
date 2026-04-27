@@ -15,7 +15,7 @@ import realPhoto4 from "@/assets/realizacja-real-4.jpg";
 import realPhoto5 from "@/assets/realizacja-real-5.jpg";
 import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
 import tenSamDom1 from "@/assets/ten-sam-dom-1.png";
-import realHomeKitchen2 from "@/assets/real-home-kitchen-2.webp";
+
 
 const realPhotos = [
   { src: realPhoto1, alt: "Dom gotowy na więcej – realizacja salonu", caption: "Dom gotowy na więcej niż jeden scenariusz – realizacja" },
@@ -32,7 +32,7 @@ const featured = [
     area: "160 m²",
     location: "Podkarpacie",
     desc: "Dom, który nie domaga się uwagi. Ale daje dokładnie to, czego jego właściciele potrzebowali — spokój.",
-    image: realHomeKitchen2,
+    image: willaHarmonia1,
   },
   {
     title: "Apartament z klasą",
@@ -61,7 +61,7 @@ const featured = [
 ];
 
 const allProjects = [
-  { title: "Willa Harmonia", slug: "willa-harmonia", type: "Dom", area: 160, location: "Podkarpacie", image: realHomeKitchen2 },
+  { title: "Willa Harmonia", slug: "willa-harmonia", type: "Dom", area: 160, location: "Podkarpacie", image: willaHarmonia1 },
   { title: "Dom, do którego się wraca", slug: "dom-powrot", type: "Dom", area: 140, location: "Rzeszów", image: domPowrot1 },
   { title: "Apartament z klasą", slug: "apartament-klasa", type: "Apartament", area: 95, location: "Rzeszów", image: apartamentKlasa1 },
   { title: "Pierwsze wspólne mieszkanie", slug: "pierwsze-mieszkanie", type: "Mieszkanie", area: 52, location: "Rzeszów", image: pierwszeMieszkanie1 },

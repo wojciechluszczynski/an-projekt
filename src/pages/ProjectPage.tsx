@@ -104,7 +104,7 @@ const projectsData: Record<string, {
     ],
     scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D i 360°", "Dokumentacja techniczna", "Nadzór nad realizacją", "Dobór materiałów i mebli"],
     result: "Dom, który nie domaga się uwagi. Ale daje dokładnie to, czego jego właściciele najbardziej potrzebowali — spokój.",
-    images: [realHomeKitchen2, realHomeKitchen1, realHomeKitchen5, realHomeBedroom1, realHomeKitchen6, realHomeKitchen4, realHomeKitchen3],
+    images: [willaHarmonia1, willaHarmonia2, willaHarmonia3, willaHarmonia4, willaHarmonia5, willaHarmonia6, willaHarmonia7, willaHarmonia8, willaHarmonia9],
   },
   "dom-powrot": {
     title: "Dom, do którego się wraca",
