@@ -70,6 +70,7 @@ const allProjects = [
   { title: "Dom gotowy na więcej", slug: "dom-scenariusz", type: "Dom", area: 130, location: "Rzeszów", image: domScenariusz1 },
   { title: "Miejsce, które wszyscy znali", slug: "miejsce-znali", type: "Lokal", area: 200, location: "Krosno", image: miejsceZnali1 },
   { title: "Ten sam dom, zupełnie inna historia", slug: "ten-sam-dom", type: "Dom", area: 160, location: "Podkarpacie", image: tenSamDom1 },
+  { title: "Przestrzeń dla emocji – sala weselna", slug: "sala-weselna", type: "Lokal", area: 350, location: "Podkarpacie", image: salaWeselna2 },
 ];
 
 const sizeFilters = [
