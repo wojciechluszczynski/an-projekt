@@ -15,6 +15,7 @@ import realPhoto4 from "@/assets/realizacja-real-4.jpg";
 import realPhoto5 from "@/assets/realizacja-real-5.jpg";
 import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
 import tenSamDom1 from "@/assets/ten-sam-dom-1.png";
+import salaWeselna2 from "@/assets/sala-weselna-2.png";
 
 
 const realPhotos = [
@@ -69,6 +70,7 @@ const allProjects = [
   { title: "Dom gotowy na więcej", slug: "dom-scenariusz", type: "Dom", area: 130, location: "Rzeszów", image: domScenariusz1 },
   { title: "Miejsce, które wszyscy znali", slug: "miejsce-znali", type: "Lokal", area: 200, location: "Krosno", image: miejsceZnali1 },
   { title: "Ten sam dom, zupełnie inna historia", slug: "ten-sam-dom", type: "Dom", area: 160, location: "Podkarpacie", image: tenSamDom1 },
+  { title: "Przestrzeń dla emocji – sala weselna", slug: "sala-weselna", type: "Lokal", area: 350, location: "Podkarpacie", image: salaWeselna2 },
 ];
 
 const sizeFilters = [

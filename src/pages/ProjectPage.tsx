@@ -71,6 +71,12 @@ import realHomeBedroom1 from "@/assets/real-home-bedroom-1.webp";
 import realHomeKitchen4 from "@/assets/real-home-kitchen-4.webp";
 import realHomeKitchen5 from "@/assets/real-home-kitchen-5.webp";
 import realHomeKitchen6 from "@/assets/real-home-kitchen-6.webp";
+import salaWeselna1 from "@/assets/sala-weselna-1.png";
+import salaWeselna2 from "@/assets/sala-weselna-2.png";
+import salaWeselna3 from "@/assets/sala-weselna-3.png";
+import salaWeselna4 from "@/assets/sala-weselna-4.png";
+import salaWeselna5 from "@/assets/sala-weselna-5.png";
+import salaWeselna6 from "@/assets/sala-weselna-6.png";
 
 const projectsData: Record<string, {
   title: string;
@@ -283,7 +289,7 @@ const projectsData: Record<string, {
     ],
     scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D", "Dokumentacja techniczna", "Dobór materiałów i mebli", "Konsultacje akustyczne i oświetleniowe"],
     result: "Wnętrze, które nie próbuje być bohaterem wieczoru. Pozwala nim być parze młodej i ich gościom – a samo, dyskretnie, robi swoją robotę.",
-    images: ["/placeholder.svg"],
+    images: [salaWeselna2, salaWeselna4, salaWeselna3, salaWeselna5, salaWeselna6, salaWeselna1],
   },
 };
 
