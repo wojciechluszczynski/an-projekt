@@ -60,6 +60,7 @@ const AdminPostEditor = () => {
   const [allPosts, setAllPosts] = useState<{ slug: string; title: string }[]>([]);
   const [coverUploading, setCoverUploading] = useState(false);
   const [ogUploading, setOgUploading] = useState(false);
+  const [authorInfo, setAuthorInfo] = useState<{ author: string; editor: string | null; updatedAt: string | null }>({ author: '', editor: null, updatedAt: null });
 
   useEffect(() => {
     checkAuth();
