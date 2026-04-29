@@ -1,46 +1,47 @@
 ## Plan
 
-### 1. Zdjęcia Porcelanosa → wpis blogowy (4 zdjęcia)
+### 1. Drugi dostęp do panelu CMS — `w.luszczynski@gmail.com`
 
-Skopiuję 4 załączone zdjęcia do `public/blog/`:
-- `porcelanosa-budynek.jpg` (Ania przed siedzibą Porcelanosa Grupo)
-- `porcelanosa-probki.jpg` (regały z próbkami płytek i drewna)
-- `porcelanosa-showroom.jpg` (showroom Top Trends)
-- `porcelanosa-lobby.jpg` (designerskie lobby z falującymi liniami światła)
+Aktualnie `/admin` używa Supabase Auth + RLS na `blog_posts`, gdzie **każdy zalogowany użytkownik** ma pełny dostęp (`Authenticated users can manage all posts`). Wystarczy więc dodać drugie konto — kod logowania nie wymaga zmian.
 
-Zaktualizuję istniejący szkic `porcelanosa-design-i-technologia` w bazie:
-- Ustawię `cover_image_url` i `og_image_url` na `porcelanosa-budynek.jpg`
-- Wstawię w treści 4 zdjęcia z podpisami w sekcjach (Wstęp / Co zobaczyłam / Materiały / Wnioski)
-- Na końcu dodam delikatną adnotację: *„To dopiero początek — niebawem wrzucę więcej materiałów z tego wyjazdu, w tym film."*
-- Wpis pozostaje szkicem (`published = false`) — Ania uzupełni tekst i opublikuje z `/admin`.
+- Utworzę użytkownika w Supabase Auth:
+  - email: `w.luszczynski@gmail.com`
+  - hasło: `AnProjekt2026!cms`
+  - email od razu potwierdzony (żeby od razu można się było zalogować bez weryfikacji)
+- Konto zachowa pełne uprawnienia jak konto Ani — pełna edycja, publikacja, usuwanie wpisów.
+- Zaktualizuję pamięć projektu (`mem://auth/admin-access`), żeby były wymienione **oba** konta administratora.
 
-### 2. Sala weselna ← „Unilin" (wyjaśnienie)
+### 2. Widoczność autora wpisów (kto zrobił którą wersję roboczą)
 
-Według Twojej wiadomości 3 pliki, które wcześniej oznaczyłem jako Unilin (`public/blog/unilin-budynek.jpg`, `unilin-showroom.jpg`, `unilin-probki.jpg`), są w rzeczywistości wizualizacjami sali weselnej.
+Obecnie `blog_posts` nie ma kolumny autora — nie da się rozróżnić, kto utworzył/edytował dany wpis. Dodam to:
 
-**Ważne:** projekt „Sala weselna" już ma 6 osobnych wizualizacji (`src/assets/sala-weselna-1…6.png`) używanych w `ProjectPage.tsx` i `Realizacje.tsx` — i to one są obecnie pokazywane.
+**Schemat (migracja):**
+- Dodaję `author_id uuid` (nullable) i `last_edited_by uuid` (nullable) do `blog_posts`.
+- Trigger `BEFORE INSERT`: jeśli `author_id IS NULL`, wstawia `auth.uid()`.
+- Trigger `BEFORE UPDATE`: ustawia `last_edited_by = auth.uid()` i `updated_at = now()`.
+- Backfill istniejących 2 szkiców → `author_id` = konto Ani (`anprojekt.com@gmail.com`).
+- Widok pomocniczy `admin_post_authors` (security_invoker) zwracający `user_id` + email z `auth.users`, dostępny tylko dla zalogowanych — żeby UI mógł pokazać czytelną nazwę zamiast UUID-a.
 
-Zaproponowane działanie:
-- Skopiuję te 3 pliki z `public/blog/` do `src/assets/` jako `sala-weselna-7.png/.jpg`, `sala-weselna-8…`, `sala-weselna-9…` (zachowując oryginalne rozszerzenia).
-- **Dodam** je do galerii `sala-weselna` w `ProjectPage.tsx` (na końcu obecnego zestawu, łącznie 9 zdjęć).
-- Usunę 3 zdjęcia z treści wpisu blogowego `unilin-belgia-materialy-od-srodka` i wyczyszczę jego `cover_image_url`/`og_image_url` (wpis wraca do czystego szkicu, czeka na właściwe zdjęcia z Belgii).
-- Skasuję pliki `public/blog/unilin-*.jpg` żeby nie zostawiać śmieci.
+**UI — `/admin/wpisy` (lista):**
+- Pod tytułem każdego wpisu pojawi się drobny chip „Autor: Anna" lub „Autor: Wojciech" (mapowanie e-mail → imię po stronie klienta).
+- Jeśli `last_edited_by` różni się od autora, dodatkowo „· edytował: …".
+- Filtr u góry: **Wszyscy / Anna / Wojciech / Tylko szkice** — żebyś szybko widział, co Ania zostawiła w robocze.
 
-Jeżeli wolisz zamiast dodać je do galerii **podmienić** istniejące 6 wizualizacji — daj znać, ale domyślnie zakładam dodanie (więcej materiału = lepiej).
+**UI — edytor wpisu:**
+- W prawym górnym rogu mała informacja „Utworzył: Anna · ostatnia edycja: Wojciech, 29 kwi 2026".
 
-### 3. Pinterest w social media
+### 3. Film z wyjazdu do Porcelanosa
 
-Dodam ikonę Pinteresta (lucide `<Pin />` lub `<PinIcon />` — sprawdzę dostępność, użyję najbardziej Pinterest-podobnej ikony z lucide-react, np. własny SVG „P" jeśli potrzeba) z linkiem `https://pl.pinterest.com/anprojektcom/` w dwóch miejscach:
-- `src/components/Footer.tsx` — obok Instagrama i Facebooka
-- `src/pages/Kontakt.tsx` — w tej samej grupie ikon
-
-Styl, kolory, hover, `target="_blank" rel="noopener noreferrer"` i `aria-label` — zgodnie z istniejącym wzorcem.
+- Skopiuję załączony plik do `public/blog/porcelanosa-wyjazd-relacja.mp4` (oryginalny `porcelanosa-wyjazd.mp4` już jest — sprawdzę czy to ten sam, jeśli tak — pominę kopiowanie i użyję istniejącego, jeśli inny — dodam jako `-2.mp4`).
+- W szkicu wpisu `porcelanosa-design-i-technologia` (Supabase, status `published=false` — nadal szkic) wstawię w treści osadzony odtwarzacz `<video controls>` z linkiem do pliku, podpis: „Krótka relacja z wyjazdu — pełniejszy materiał wkrótce."
+- Plik dostępny też pod publicznym URL-em `/blog/porcelanosa-wyjazd-relacja.mp4`, więc Ania może go pobrać/podlinkować z poziomu CMS.
 
 ---
 
-## Czego NIE ruszam
-- 6 obecnych wizualizacji `sala-weselna-1…6` zostaje (dodaję, nie podmieniam).
-- Status szkicu obu wpisów (`published = false`) — żebyś mogła dokończyć tekst.
-- Reszta layoutu, kolorów, brandu — bez zmian.
+## Czego NIE zmieniam
+- Hasła Ani (`anprojekt.com@gmail.com`) — bez zmian.
+- RLS na `blog_posts` — pozostaje „każdy zalogowany admin = pełna edycja". Nie wprowadzam ról (admin/editor) — wg Twojej prośby chodzi o **widok**, nie o ograniczanie uprawnień.
+- Layoutu/brandu — bez zmian, dodaję tylko subtelne chipsy autora.
 
-Po akceptacji wykonuję wszystko jednym ciągiem.
+## Po akceptacji wykonuję wszystko jednym ciągiem
+Migracja → utworzenie konta → backfill autorów → UI listy + edytora → wstawienie filmu w szkic Porcelanosa.
