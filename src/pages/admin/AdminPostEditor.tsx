@@ -97,6 +97,25 @@ const AdminPostEditor = () => {
         published: data.published,
         related_slugs: data.related_slugs || [],
       });
+
+      // Fetch author + editor display names
+      const ids = [data.author_id, data.last_edited_by].filter((x): x is string => !!x);
+      if (ids.length > 0) {
+        const { data: users } = await supabase.rpc('get_admin_user_emails', { user_ids: ids });
+        const map: Record<string, string> = {};
+        (users as Array<{ id: string; email: string }> | null)?.forEach(u => { map[u.id] = u.email; });
+        const nameOf = (id: string | null) => {
+          const e = id ? map[id] : null;
+          if (!e) return '';
+          if (e.startsWith('anprojekt.com')) return 'Anna';
+          if (e.startsWith('w.luszczynski')) return 'Wojciech';
+          return e.split('@')[0];
+        };
+        const author = nameOf(data.author_id);
+        const editor = data.last_edited_by && data.last_edited_by !== data.author_id ? nameOf(data.last_edited_by) : null;
+        const updatedAt = data.updated_at ? new Date(data.updated_at).toLocaleDateString('pl-PL', { day: 'numeric', month: 'short', year: 'numeric' }) : null;
+        setAuthorInfo({ author, editor, updatedAt });
+      }
     }
   };
 
