@@ -1,87 +1,46 @@
-## Plan – co zrobimy teraz, na co czekamy
+## Plan
 
-Materiały z WeTransfer (Porcelanosa, Unilin, sala weselna, Nowowiejska od Pawła) jeszcze nie dotarły. Możemy jednak wykonać teraz wszystko, co nie wymaga tych plików, żeby po ich otrzymaniu zostało już tylko wgranie zdjęć.
+### 1. Zdjęcia Porcelanosa → wpis blogowy (4 zdjęcia)
 
----
+Skopiuję 4 załączone zdjęcia do `public/blog/`:
+- `porcelanosa-budynek.jpg` (Ania przed siedzibą Porcelanosa Grupo)
+- `porcelanosa-probki.jpg` (regały z próbkami płytek i drewna)
+- `porcelanosa-showroom.jpg` (showroom Top Trends)
+- `porcelanosa-lobby.jpg` (designerskie lobby z falującymi liniami światła)
 
-### 1. Willa Harmonia – przywrócenie oryginalnych wizualizacji (ROBIMY TERAZ)
+Zaktualizuję istniejący szkic `porcelanosa-design-i-technologia` w bazie:
+- Ustawię `cover_image_url` i `og_image_url` na `porcelanosa-budynek.jpg`
+- Wstawię w treści 4 zdjęcia z podpisami w sekcjach (Wstęp / Co zobaczyłam / Materiały / Wnioski)
+- Na końcu dodam delikatną adnotację: *„To dopiero początek — niebawem wrzucę więcej materiałów z tego wyjazdu, w tym film."*
+- Wpis pozostaje szkicem (`published = false`) — Ania uzupełni tekst i opublikuje z `/admin`.
 
-Zdjęcia z realizacji (`real-home-*.webp`) trafiły omyłkowo do projektu „Willa Harmonia". Cofniemy je w trzech miejscach:
+### 2. Sala weselna ← „Unilin" (wyjaśnienie)
 
-- `src/pages/Realizacje.tsx` – kafelek „Willa Harmonia" w sekcji wyróżnionych oraz w siatce wszystkich projektów: `realHomeKitchen2` → `willaHarmonia1`.
-- `src/pages/ProjectPage.tsx` – galeria projektu `willa-harmonia`: zamiast siedmiu zdjęć z realizacji wracamy do oryginalnych `willaHarmonia1…9`.
-- Pozostałe miejsca, w których te zdjęcia są używane jako uniwersalne „real photos" (Strona główna marquee, Oferta, O mnie) – zostają bez zmian, zgodnie z dotychczasowymi ustaleniami.
+Według Twojej wiadomości 3 pliki, które wcześniej oznaczyłem jako Unilin (`public/blog/unilin-budynek.jpg`, `unilin-showroom.jpg`, `unilin-probki.jpg`), są w rzeczywistości wizualizacjami sali weselnej.
 
-### 2. Sekcja „Od projektu do realizacji" (NIE RUSZAMY)
+**Ważne:** projekt „Sala weselna" już ma 6 osobnych wizualizacji (`src/assets/sala-weselna-1…6.png`) używanych w `ProjectPage.tsx` i `Realizacje.tsx` — i to one są obecnie pokazywane.
 
-Czekamy na zdjęcia z Nowowiejskiej od Pawła. Sekcja zostaje w obecnej formie.
+Zaproponowane działanie:
+- Skopiuję te 3 pliki z `public/blog/` do `src/assets/` jako `sala-weselna-7.png/.jpg`, `sala-weselna-8…`, `sala-weselna-9…` (zachowując oryginalne rozszerzenia).
+- **Dodam** je do galerii `sala-weselna` w `ProjectPage.tsx` (na końcu obecnego zestawu, łącznie 9 zdjęć).
+- Usunę 3 zdjęcia z treści wpisu blogowego `unilin-belgia-materialy-od-srodka` i wyczyszczę jego `cover_image_url`/`og_image_url` (wpis wraca do czystego szkicu, czeka na właściwe zdjęcia z Belgii).
+- Skasuję pliki `public/blog/unilin-*.jpg` żeby nie zostawiać śmieci.
 
-### 3. Kod QR do druku (ROBIMY TERAZ)
+Jeżeli wolisz zamiast dodać je do galerii **podmienić** istniejące 6 wizualizacji — daj znać, ale domyślnie zakładam dodanie (więcej materiału = lepiej).
 
-Dodajemy w panelu admina (`/admin/wpisy`) mały widget „Materiały drukowane":
+### 3. Pinterest w social media
 
-- Przycisk „Pobierz kod QR (PNG)" generujący QR prowadzący do `https://an-projekt.com.pl`.
-- Generowanie po stronie klienta biblioteką `qrcode` (mała paczka, brak backendu).
-- QR w wysokiej rozdzielczości (1024×1024, czarny na białym, margines), gotowy do druku.
-- Pole tekstowe z podglądem aktualnego URL, na wypadek gdyby Ania chciała wygenerować QR do innej podstrony.
+Dodam ikonę Pinteresta (lucide `<Pin />` lub `<PinIcon />` — sprawdzę dostępność, użyję najbardziej Pinterest-podobnej ikony z lucide-react, np. własny SVG „P" jeśli potrzeba) z linkiem `https://pl.pinterest.com/anprojektcom/` w dwóch miejscach:
+- `src/components/Footer.tsx` — obok Instagrama i Facebooka
+- `src/pages/Kontakt.tsx` — w tej samej grupie ikon
 
-### 4. Nowy wpis blogowy – Porcelanosa (SZKIC – ROBIMY TERAZ, PUBLIKACJA PO ZDJĘCIACH)
-
-Wpis utworzymy jako **szkic w CMS** (`published = false`) – Ania uzupełni zdjęcia/film po WeTransfer i opublikuje ręcznie z panelu:
-
-- Tytuł: „Porcelanosa Group – kiedy design spotyka technologię"
-- Slug: `porcelanosa-design-i-technologia`
-- Kategoria: `Inspiracje` (dodajemy nową kategorię obok istniejących)
-- `featured: false`, `published: false`
-- Treść: szkielet z nagłówkami (Wstęp, Co zobaczyłam w Hiszpanii, Materiały, Wnioski dla moich projektów) + zaślepki na zdjęcia/wideo do wstawienia z edytora.
-
-### 5. Nowy wpis blogowy – Unilin (SZKIC – ROBIMY TERAZ, PUBLIKACJA PO ZDJĘCIACH)
-
-Analogicznie:
-
-- Tytuł: „Unilin w Belgii – materiały od środka"
-- Slug: `unilin-belgia-materialy-od-srodka`
-- Kategoria: `Inspiracje`
-- Szkielet treści + miejsca na media.
-
-### 6. Nowa realizacja – Sala weselna (SZKIC – ROBIMY TERAZ, ODKRYWAMY PO WIZUALIZACJACH)
-
-Dodajemy nową podstronę projektu, ale ukrywamy ją na liście realizacji do czasu wgrania wizualizacji:
-
-- Slug: `sala-weselna`
-- Tytuł: „Przestrzeń dla emocji – sala weselna"
-- Wpis w `projectsData` w `ProjectPage.tsx` z pełnym opisem (wprowadzenie, wyzwanie, rozwiązanie) – zdjęcia wskazują tymczasowo na placeholder (`/placeholder.svg`) i są wyraźnie oznaczone w komentarzu kodu jako „TODO: podmienić po WeTransfer".
-- W `Realizacje.tsx` wpis zostaje **zakomentowany** lub oflagowany `hidden: true`, żeby nie pojawił się publicznie z placeholderem.
-
-### 7. Kategorie blogowe
-
-Aktualnie jest: `Wszystkie`, `Współpraca`, `Błędy`, `Porady`, `Ebooki`, `Trendy`, `Materiały`. Dodajemy `Inspiracje` (do wpisów z wyjazdów Porcelanosa/Unilin).
+Styl, kolory, hover, `target="_blank" rel="noopener noreferrer"` i `aria-label` — zgodnie z istniejącym wzorcem.
 
 ---
 
-## Czego NIE ruszamy
+## Czego NIE ruszam
+- 6 obecnych wizualizacji `sala-weselna-1…6` zostaje (dodaję, nie podmieniam).
+- Status szkicu obu wpisów (`published = false`) — żebyś mogła dokończyć tekst.
+- Reszta layoutu, kolorów, brandu — bez zmian.
 
-- Zdjęcia Ani (portret) – zostają.
-- Pozostałe realizacje, kolejność i opisy – bez zmian.
-- Sekcja „Od projektu do realizacji" – czeka na materiały od Pawła.
-- Panel CMS `/admin` – tylko dodajemy widget QR, reszta bez zmian.
-
-## Czeka na materiały
-
-| Materiał | Co podmienimy |
-|---|---|
-| WeTransfer Porcelanosa | media w wpisie blogowym + publikacja |
-| WeTransfer Unilin | media w wpisie blogowym + publikacja |
-| WeTransfer sala weselna | obrazy w `ProjectPage` + odkrycie w `Realizacje` |
-| Zdjęcia Nowowiejska (Paweł) | sekcja „Od projektu do realizacji" |
-
----
-
-## Szczegóły techniczne
-
-- QR: `bun add qrcode @types/qrcode`. Komponent `AdminQrWidget` w `src/components/admin/AdminQrWidget.tsx`, osadzony na górze `AdminPosts.tsx`. Generowanie do `<canvas>`, eksport `toDataURL("image/png")` → pobranie pliku `an-projekt-qr.png`.
-- Szkice blogowe: jeden migration insert do `blog_posts` z `published=false`, kategoria `Inspiracje`. Treść Markdown/HTML zgodna z istniejącym edytorem TipTap.
-- Sala weselna: wpis w `projectsData` (ProjectPage.tsx) + ukryty kafelek w `Realizacje.tsx` (warunek `!project.hidden`).
-- Willa Harmonia rollback: 3 punktowe zmiany importów/referencji w `Realizacje.tsx` i `ProjectPage.tsx`.
-
-Po Twojej akceptacji przechodzę do implementacji.
+Po akceptacji wykonuję wszystko jednym ciągiem.

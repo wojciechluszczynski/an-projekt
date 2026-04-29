@@ -25,7 +25,7 @@ const Footer = () => {
               <a href="https://www.facebook.com/anna.nowakpaprocka" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-accent transition-colors" aria-label="Facebook">
                 <Facebook size={20} />
               </a>
-              <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-accent transition-colors" aria-label="Pinterest">
+              <a href="https://pl.pinterest.com/anprojektcom/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-accent transition-colors" aria-label="Pinterest">
                 <PinterestIcon />
               </a>
             </div>
