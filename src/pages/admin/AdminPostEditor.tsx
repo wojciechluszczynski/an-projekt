@@ -60,6 +60,7 @@ const AdminPostEditor = () => {
   const [allPosts, setAllPosts] = useState<{ slug: string; title: string }[]>([]);
   const [coverUploading, setCoverUploading] = useState(false);
   const [ogUploading, setOgUploading] = useState(false);
+  const [authorInfo, setAuthorInfo] = useState<{ author: string; editor: string | null; updatedAt: string | null }>({ author: '', editor: null, updatedAt: null });
 
   useEffect(() => {
     checkAuth();
@@ -96,6 +97,25 @@ const AdminPostEditor = () => {
         published: data.published,
         related_slugs: data.related_slugs || [],
       });
+
+      // Fetch author + editor display names
+      const ids = [data.author_id, data.last_edited_by].filter((x): x is string => !!x);
+      if (ids.length > 0) {
+        const { data: users } = await supabase.rpc('get_admin_user_emails', { user_ids: ids });
+        const map: Record<string, string> = {};
+        (users as Array<{ id: string; email: string }> | null)?.forEach(u => { map[u.id] = u.email; });
+        const nameOf = (id: string | null) => {
+          const e = id ? map[id] : null;
+          if (!e) return '';
+          if (e.startsWith('anprojekt.com')) return 'Anna';
+          if (e.startsWith('w.luszczynski')) return 'Wojciech';
+          return e.split('@')[0];
+        };
+        const author = nameOf(data.author_id);
+        const editor = data.last_edited_by && data.last_edited_by !== data.author_id ? nameOf(data.last_edited_by) : null;
+        const updatedAt = data.updated_at ? new Date(data.updated_at).toLocaleDateString('pl-PL', { day: 'numeric', month: 'short', year: 'numeric' }) : null;
+        setAuthorInfo({ author, editor, updatedAt });
+      }
     }
   };
 
@@ -224,7 +244,14 @@ const AdminPostEditor = () => {
           </div>
         </div>
 
-        <h1 className="font-heading text-2xl text-foreground mb-6">{isNew ? 'Nowy wpis' : 'Edytuj wpis'}</h1>
+        <h1 className="font-heading text-2xl text-foreground mb-2">{isNew ? 'Nowy wpis' : 'Edytuj wpis'}</h1>
+        {!isNew && authorInfo.author ? (
+          <p className="font-body text-xs text-muted-foreground mb-6">
+            Utworzył/a: <strong className="font-medium text-foreground">{authorInfo.author}</strong>
+            {authorInfo.editor && <> · ostatnia edycja: <strong className="font-medium text-foreground">{authorInfo.editor}</strong></>}
+            {authorInfo.updatedAt && <> · {authorInfo.updatedAt}</>}
+          </p>
+        ) : <div className="mb-6" />}
 
         <div className="space-y-6">
           {/* Title */}

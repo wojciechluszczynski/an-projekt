@@ -16,6 +16,7 @@ export type Database = {
     Tables: {
       blog_posts: {
         Row: {
+          author_id: string | null
           category: string
           content: string
           cover_image_url: string | null
@@ -24,6 +25,7 @@ export type Database = {
           excerpt: string
           featured: boolean
           id: string
+          last_edited_by: string | null
           meta_description: string | null
           meta_title: string | null
           og_image_url: string | null
@@ -35,6 +37,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          author_id?: string | null
           category?: string
           content?: string
           cover_image_url?: string | null
@@ -43,6 +46,7 @@ export type Database = {
           excerpt?: string
           featured?: boolean
           id?: string
+          last_edited_by?: string | null
           meta_description?: string | null
           meta_title?: string | null
           og_image_url?: string | null
@@ -54,6 +58,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          author_id?: string | null
           category?: string
           content?: string
           cover_image_url?: string | null
@@ -62,6 +67,7 @@ export type Database = {
           excerpt?: string
           featured?: boolean
           id?: string
+          last_edited_by?: string | null
           meta_description?: string | null
           meta_title?: string | null
           og_image_url?: string | null
@@ -79,7 +85,13 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_admin_user_emails: {
+        Args: { user_ids: string[] }
+        Returns: {
+          email: string
+          id: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
