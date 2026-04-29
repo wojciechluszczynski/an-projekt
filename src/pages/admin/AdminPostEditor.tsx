@@ -244,7 +244,14 @@ const AdminPostEditor = () => {
           </div>
         </div>
 
-        <h1 className="font-heading text-2xl text-foreground mb-6">{isNew ? 'Nowy wpis' : 'Edytuj wpis'}</h1>
+        <h1 className="font-heading text-2xl text-foreground mb-2">{isNew ? 'Nowy wpis' : 'Edytuj wpis'}</h1>
+        {!isNew && authorInfo.author ? (
+          <p className="font-body text-xs text-muted-foreground mb-6">
+            Utworzył/a: <strong className="font-medium text-foreground">{authorInfo.author}</strong>
+            {authorInfo.editor && <> · ostatnia edycja: <strong className="font-medium text-foreground">{authorInfo.editor}</strong></>}
+            {authorInfo.updatedAt && <> · {authorInfo.updatedAt}</>}
+          </p>
+        ) : <div className="mb-6" />}
 
         <div className="space-y-6">
           {/* Title */}
