@@ -1077,7 +1077,8 @@ const BlogPost = () => {
                 [&_a]:text-accent [&_a]:underline [&_a]:hover:text-accent/80
                 [&_strong]:text-foreground [&_strong]:font-medium
                 [&_hr]:border-border [&_hr]:my-8
-                [&_video]:w-full [&_video]:rounded-lg [&_video]:my-8 [&_video]:bg-black [&_video]:shadow-md
+                [&_video]:block [&_video]:w-full [&_video]:aspect-video [&_video]:object-contain [&_video]:rounded-lg [&_video]:my-8 [&_video]:bg-black [&_video]:shadow-md
+                [&_figure]:my-8 [&_figure_video]:my-0 [&_figcaption]:text-center [&_figcaption]:text-sm [&_figcaption]:text-muted-foreground [&_figcaption]:mt-2
                 [&_.video-embed]:relative [&_.video-embed]:w-full [&_.video-embed]:my-8 [&_.video-embed]:rounded-lg [&_.video-embed]:overflow-hidden [&_.video-embed]:bg-black [&_.video-embed]:shadow-md [&_.video-embed]:aspect-video
                 [&_.video-embed_iframe]:absolute [&_.video-embed_iframe]:inset-0 [&_.video-embed_iframe]:w-full [&_.video-embed_iframe]:h-full [&_.video-embed_iframe]:border-0
               "
