@@ -5,6 +5,45 @@ import FadeIn from "@/components/FadeIn";
 import { supabase } from "@/integrations/supabase/client";
 import DOMPurify from "dompurify";
 
+// Whitelist iframe tylko dla zaufanych hostów wideo. Dopuszczamy też <video>/<source>.
+const ALLOWED_IFRAME_HOSTS = [
+  "www.youtube.com",
+  "youtube.com",
+  "www.youtube-nocookie.com",
+  "youtube-nocookie.com",
+  "player.vimeo.com",
+];
+
+function sanitizeBlogHtml(html: string): string {
+  if (typeof window === "undefined") return html;
+
+  // Hook: usuń iframe z niezaufanych domen.
+  DOMPurify.removeAllHooks();
+  DOMPurify.addHook("uponSanitizeElement", (node, data) => {
+    if (data.tagName === "iframe") {
+      const src = (node as Element).getAttribute("src") || "";
+      try {
+        const host = new URL(src, window.location.origin).hostname;
+        if (!ALLOWED_IFRAME_HOSTS.includes(host)) {
+          (node as Element).remove();
+        }
+      } catch {
+        (node as Element).remove();
+      }
+    }
+  });
+
+  return DOMPurify.sanitize(html, {
+    ADD_TAGS: ["video", "source", "iframe"],
+    ADD_ATTR: [
+      "controls", "preload", "poster", "playsinline", "muted", "loop",
+      "src", "type", "allow", "allowfullscreen", "frameborder",
+      "loading", "referrerpolicy", "title",
+    ],
+    ALLOWED_URI_REGEXP: /^(?:(?:https?|mailto|tel):|\/|#|data:image\/)/i,
+  });
+}
+
 import willaHarmonia1 from "@/assets/willa-harmonia-1.jpeg";
 import willaHarmonia3 from "@/assets/willa-harmonia-3.jpeg";
 import apartamentKlasa1 from "@/assets/apartament-klasa-1.jpeg";
