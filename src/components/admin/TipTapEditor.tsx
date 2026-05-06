@@ -8,9 +8,9 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 import {
   Bold, Italic, Heading2, Heading3, List, ListOrdered,
-  Quote, ImageIcon, LinkIcon, Undo, Redo, Minus, Video,
+  Quote, ImageIcon, LinkIcon, Undo, Redo, Minus, Video, Loader2,
 } from 'lucide-react';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 interface TipTapEditorProps {
   content: string;
@@ -18,8 +18,8 @@ interface TipTapEditorProps {
 }
 
 // ----------------------- Video Embed Extension -----------------------
-// Obsługuje zarówno <video src=...> (wgrane pliki / bezpośrednie .mp4)
-// jak i <iframe> z YouTube/Vimeo opakowane w <div class="video-embed">.
+// Obsługuje zarówno <video> (z src lub <source>), jak i iframe YouTube/Vimeo
+// opakowany w <div class="video-embed">.
 
 const VideoEmbed = Node.create({
   name: 'videoEmbed',
@@ -81,15 +81,22 @@ const VideoEmbed = Node.create({
       ];
     }
 
+    // Plik wideo: zawsze wstawiamy z <source>, żeby player był stabilny.
+    const ext = (src.split('.').pop() || 'mp4').split('?')[0].toLowerCase();
+    const mime = ext === 'webm' ? 'video/webm'
+      : ext === 'ogg' ? 'video/ogg'
+      : ext === 'mov' || ext === 'm4v' ? 'video/mp4'
+      : 'video/mp4';
+
     return [
       'video',
       mergeAttributes({
-        src,
         controls: 'true',
         preload: 'metadata',
         playsinline: 'true',
         class: 'blog-video',
       }),
+      ['source', { src, type: mime }],
     ];
   },
 });
@@ -100,7 +107,6 @@ function parseVideoUrl(rawUrl: string): { src: string; kind: 'youtube' | 'vimeo'
   const url = rawUrl.trim();
   if (!url) return null;
 
-  // YouTube: watch?v=, youtu.be/, /embed/, /shorts/
   const yt = url.match(
     /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/,
   );
@@ -108,13 +114,11 @@ function parseVideoUrl(rawUrl: string): { src: string; kind: 'youtube' | 'vimeo'
     return { src: `https://www.youtube-nocookie.com/embed/${yt[1]}`, kind: 'youtube' };
   }
 
-  // Vimeo
   const vm = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
   if (vm) {
     return { src: `https://player.vimeo.com/video/${vm[1]}`, kind: 'vimeo' };
   }
 
-  // Bezpośredni plik wideo
   if (/\.(mp4|webm|mov|m4v|ogg)(\?.*)?$/i.test(url)) {
     return { src: url, kind: 'file' };
   }
@@ -124,14 +128,15 @@ function parseVideoUrl(rawUrl: string): { src: string; kind: 'youtube' | 'vimeo'
 
 // ----------------------- Toolbar Button -----------------------
 
-const MenuButton = ({ onClick, active, children, title }: {
-  onClick: () => void; active?: boolean; children: React.ReactNode; title: string;
+const MenuButton = ({ onClick, active, disabled, children, title }: {
+  onClick: () => void; active?: boolean; disabled?: boolean; children: React.ReactNode; title: string;
 }) => (
   <button
     type="button"
     onClick={onClick}
     title={title}
-    className={`p-2 rounded transition-colors ${active ? 'bg-accent text-accent-foreground' : 'text-muted-foreground hover:bg-secondary hover:text-foreground'}`}
+    disabled={disabled}
+    className={`p-2 rounded transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${active ? 'bg-accent text-accent-foreground' : 'text-muted-foreground hover:bg-secondary hover:text-foreground'}`}
   >
     {children}
   </button>
@@ -140,6 +145,7 @@ const MenuButton = ({ onClick, active, children, title }: {
 const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const videoInputRef = useRef<HTMLInputElement>(null);
+  const [videoUploading, setVideoUploading] = useState(false);
 
   const editor = useEditor({
     extensions: [
@@ -172,6 +178,7 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
 
     if (error) {
       toast({ title: 'Błąd przesyłania zdjęcia', description: error.message, variant: 'destructive' });
+      e.target.value = '';
       return;
     }
 
@@ -185,7 +192,17 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
 
   const handleVideoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
+    e.target.value = ''; // wyczyść od razu, żeby ten sam plik dało się ponownie wybrać
     if (!file) return;
+
+    if (!file.type.startsWith('video/') && !/\.(mp4|webm|mov|m4v|ogg)$/i.test(file.name)) {
+      toast({
+        title: 'To nie jest plik wideo',
+        description: 'Wybierz plik MP4, WEBM lub MOV.',
+        variant: 'destructive',
+      });
+      return;
+    }
 
     const maxSize = 100 * 1024 * 1024; // 100 MB
     if (file.size > maxSize) {
@@ -194,22 +211,29 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
         description: 'Maksymalny rozmiar to 100 MB. Skompresuj film lub wstaw link z YouTube/Vimeo.',
         variant: 'destructive',
       });
-      e.target.value = '';
       return;
     }
 
-    toast({ title: 'Wgrywam film…', description: 'To może chwilę potrwać.' });
+    setVideoUploading(true);
+    toast({ title: 'Wgrywam film...', description: 'To może chwilę potrwać.' });
 
-    const ext = file.name.split('.').pop()?.toLowerCase() || 'mp4';
+    const ext = (file.name.split('.').pop() || 'mp4').toLowerCase();
     const fileName = `videos/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
 
     const { error } = await supabase.storage
       .from('blog-images')
-      .upload(fileName, file, { contentType: file.type, cacheControl: '3600' });
+      .upload(fileName, file, {
+        contentType: file.type || 'video/mp4',
+        cacheControl: '3600',
+      });
 
     if (error) {
-      toast({ title: 'Błąd przesyłania filmu', description: error.message, variant: 'destructive' });
-      e.target.value = '';
+      setVideoUploading(false);
+      toast({
+        title: 'Nie udało się wgrać filmu',
+        description: error.message,
+        variant: 'destructive',
+      });
       return;
     }
 
@@ -220,22 +244,27 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
       attrs: { src: publicUrl, kind: 'file' },
     }).run();
 
+    setVideoUploading(false);
     toast({ title: 'Film dodany', description: 'Pamiętaj, aby zapisać wpis.' });
-    e.target.value = '';
   };
 
   const addVideo = () => {
-    const choice = window.prompt(
-      'Wstaw film:\n\n• Wpisz LINK z YouTube lub Vimeo (np. https://youtu.be/abc123)\n• albo bezpośredni adres pliku .mp4\n• albo wpisz "plik" aby wgrać film z dysku',
-    );
-    if (!choice) return;
+    if (videoUploading) return;
 
-    if (choice.trim().toLowerCase() === 'plik') {
+    // Krok 1: wybór trybu — plik z dysku (OK) albo link (Anuluj).
+    const wantFile = window.confirm(
+      'Wgrać film z komputera?\n\nOK = wybierz plik MP4/WEBM/MOV z dysku\nAnuluj = wklej link z YouTube / Vimeo / bezpośredni .mp4',
+    );
+
+    if (wantFile) {
       videoInputRef.current?.click();
       return;
     }
 
-    const parsed = parseVideoUrl(choice);
+    const url = window.prompt('Wklej link do filmu (YouTube, Vimeo lub bezpośredni .mp4):');
+    if (!url) return;
+
+    const parsed = parseVideoUrl(url);
     if (!parsed) {
       toast({
         title: 'Nieobsługiwany link',
@@ -291,8 +320,12 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
         <MenuButton onClick={() => fileInputRef.current?.click()} title="Wstaw zdjęcie">
           <ImageIcon size={16} />
         </MenuButton>
-        <MenuButton onClick={addVideo} title="Wstaw film (YouTube, Vimeo lub plik)">
-          <Video size={16} />
+        <MenuButton
+          onClick={addVideo}
+          disabled={videoUploading}
+          title={videoUploading ? 'Trwa wgrywanie filmu...' : 'Wstaw film (plik z dysku lub YouTube/Vimeo)'}
+        >
+          {videoUploading ? <Loader2 size={16} className="animate-spin" /> : <Video size={16} />}
         </MenuButton>
         <MenuButton onClick={addLink} active={editor.isActive('link')} title="Wstaw link">
           <LinkIcon size={16} />
@@ -335,7 +368,7 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
           [&_.tiptap_img]:rounded-lg [&_.tiptap_img]:my-6 [&_.tiptap_img]:max-w-full
           [&_.tiptap_a]:text-accent [&_.tiptap_a]:underline
           [&_.tiptap_hr]:border-border [&_.tiptap_hr]:my-8
-          [&_.tiptap_video]:w-full [&_.tiptap_video]:rounded-lg [&_.tiptap_video]:my-6 [&_.tiptap_video]:bg-black
+          [&_.tiptap_video]:block [&_.tiptap_video]:w-full [&_.tiptap_video]:aspect-video [&_.tiptap_video]:rounded-lg [&_.tiptap_video]:my-6 [&_.tiptap_video]:bg-black [&_.tiptap_video]:object-contain
           [&_.tiptap_.video-embed]:relative [&_.tiptap_.video-embed]:w-full [&_.tiptap_.video-embed]:my-6 [&_.tiptap_.video-embed]:rounded-lg [&_.tiptap_.video-embed]:overflow-hidden [&_.tiptap_.video-embed]:bg-black [&_.tiptap_.video-embed]:aspect-video
           [&_.tiptap_.video-embed_iframe]:absolute [&_.tiptap_.video-embed_iframe]:inset-0 [&_.tiptap_.video-embed_iframe]:w-full [&_.tiptap_.video-embed_iframe]:h-full
           [&_.tiptap_.is-editor-empty:first-child::before]:text-muted-foreground/50 [&_.tiptap_.is-editor-empty:first-child::before]:float-left [&_.tiptap_.is-editor-empty:first-child::before]:content-[attr(data-placeholder)] [&_.tiptap_.is-editor-empty:first-child::before]:pointer-events-none [&_.tiptap_.is-editor-empty:first-child::before]:h-0
