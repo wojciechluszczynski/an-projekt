@@ -1,47 +1,35 @@
-## Plan
+## Cel
+Ania ma móc w panelu CMS wstawić do wpisu blogowego film (z pliku lub z linku YouTube/Vimeo), który następnie wyświetli się jako estetyczny odtwarzacz w treści posta.
 
-### 1. Drugi dostęp do panelu CMS — `w.luszczynski@gmail.com`
+## Zakres zmian
 
-Aktualnie `/admin` używa Supabase Auth + RLS na `blog_posts`, gdzie **każdy zalogowany użytkownik** ma pełny dostęp (`Authenticated users can manage all posts`). Wystarczy więc dodać drugie konto — kod logowania nie wymaga zmian.
+### 1. Edytor TipTap (`src/components/admin/TipTapEditor.tsx`)
+- Dodaję nowy przycisk w toolbarze (ikona `Video` z lucide), obok obecnego przycisku „Wstaw zdjęcie".
+- Po kliknięciu pojawia się prosty wybór:
+  - **Wgraj plik wideo** (mp4/webm/mov, do ~50 MB) → ląduje w buckecie `blog-images` (już publicznym), wstawia tag `<video controls preload="metadata" class="blog-video">…</video>`.
+  - **Wklej link** (YouTube / Vimeo / bezpośredni MP4) → automatyczna detekcja:
+    - YouTube → osadzony `<iframe>` z `youtube-nocookie.com/embed/...`
+    - Vimeo → osadzony `<iframe>` z `player.vimeo.com/video/...`
+    - inny URL `.mp4`/`.webm` → `<video controls>` z tym źródłem
+- Technicznie rejestruję w TipTap niestandardowe rozszerzenie `Node` o nazwie `videoEmbed`, które potrafi serializować/deserializować zarówno `<video>`, jak i `<iframe>` opakowany w `<div class="video-embed">` (dzięki temu zostają w treści po ponownej edycji wpisu — TipTap inaczej je gubi).
+- Plik wideo wgrywany jest pod nazwę `videos/{timestamp}-{rand}.{ext}` w istniejącym buckecie `blog-images`.
 
-- Utworzę użytkownika w Supabase Auth:
-  - email: `w.luszczynski@gmail.com`
-  - hasło: `AnProjekt2026!cms`
-  - email od razu potwierdzony (żeby od razu można się było zalogować bez weryfikacji)
-- Konto zachowa pełne uprawnienia jak konto Ani — pełna edycja, publikacja, usuwanie wpisów.
-- Zaktualizuję pamięć projektu (`mem://auth/admin-access`), żeby były wymienione **oba** konta administratora.
+### 2. Renderer wpisu (`src/pages/BlogPost.tsx`)
+- W bloku `dangerouslySetInnerHTML` rozszerzam stylowanie Tailwind o:
+  - `[&_video]` — pełna szerokość, zaokrąglone rogi, `aspect-video`, czarne tło, cień, `my-6`.
+  - `[&_.video-embed]` — wrapper `relative aspect-video w-full my-6 rounded-lg overflow-hidden bg-black`, a wewnątrz `iframe` na `absolute inset-0 w-full h-full`.
+- Dodaję do `DOMPurify.sanitize` konfigurację, która **dopuszcza** tagi `video`, `source`, `iframe` oraz atrybuty `controls`, `preload`, `poster`, `playsinline`, `src`, `type`, `allow`, `allowfullscreen`, `frameborder`, `loading`, `referrerpolicy`. Whitelist `iframe` zawężona do hostów: `youtube.com`, `youtube-nocookie.com`, `player.vimeo.com` — żeby nie otwierać dziury XSS.
 
-### 2. Widoczność autora wpisów (kto zrobił którą wersję roboczą)
-
-Obecnie `blog_posts` nie ma kolumny autora — nie da się rozróżnić, kto utworzył/edytował dany wpis. Dodam to:
-
-**Schemat (migracja):**
-- Dodaję `author_id uuid` (nullable) i `last_edited_by uuid` (nullable) do `blog_posts`.
-- Trigger `BEFORE INSERT`: jeśli `author_id IS NULL`, wstawia `auth.uid()`.
-- Trigger `BEFORE UPDATE`: ustawia `last_edited_by = auth.uid()` i `updated_at = now()`.
-- Backfill istniejących 2 szkiców → `author_id` = konto Ani (`anprojekt.com@gmail.com`).
-- Widok pomocniczy `admin_post_authors` (security_invoker) zwracający `user_id` + email z `auth.users`, dostępny tylko dla zalogowanych — żeby UI mógł pokazać czytelną nazwę zamiast UUID-a.
-
-**UI — `/admin/wpisy` (lista):**
-- Pod tytułem każdego wpisu pojawi się drobny chip „Autor: Anna" lub „Autor: Wojciech" (mapowanie e-mail → imię po stronie klienta).
-- Jeśli `last_edited_by` różni się od autora, dodatkowo „· edytował: …".
-- Filtr u góry: **Wszyscy / Anna / Wojciech / Tylko szkice** — żebyś szybko widział, co Ania zostawiła w robocze.
-
-**UI — edytor wpisu:**
-- W prawym górnym rogu mała informacja „Utworzył: Anna · ostatnia edycja: Wojciech, 29 kwi 2026".
-
-### 3. Film z wyjazdu do Porcelanosa
-
-- Skopiuję załączony plik do `public/blog/porcelanosa-wyjazd-relacja.mp4` (oryginalny `porcelanosa-wyjazd.mp4` już jest — sprawdzę czy to ten sam, jeśli tak — pominę kopiowanie i użyję istniejącego, jeśli inny — dodam jako `-2.mp4`).
-- W szkicu wpisu `porcelanosa-design-i-technologia` (Supabase, status `published=false` — nadal szkic) wstawię w treści osadzony odtwarzacz `<video controls>` z linkiem do pliku, podpis: „Krótka relacja z wyjazdu — pełniejszy materiał wkrótce."
-- Plik dostępny też pod publicznym URL-em `/blog/porcelanosa-wyjazd-relacja.mp4`, więc Ania może go pobrać/podlinkować z poziomu CMS.
-
----
+### 3. Drobne UX
+- W edytorze pod toolbarem subtelna podpowiedź przy najechaniu na ikonę: „Wstaw film (plik lub YouTube/Vimeo)".
+- Jeśli upload się nie powiedzie (limit, brak sieci) — toast z czytelnym komunikatem zamiast `alert()`.
+- Aktualizuję istniejący szkic Porcelanosa, żeby `<video>` w treści miał klasę spójną z nowym stylowaniem (kosmetyka, jeśli potrzeba).
 
 ## Czego NIE zmieniam
-- Hasła Ani (`anprojekt.com@gmail.com`) — bez zmian.
-- RLS na `blog_posts` — pozostaje „każdy zalogowany admin = pełna edycja". Nie wprowadzam ról (admin/editor) — wg Twojej prośby chodzi o **widok**, nie o ograniczanie uprawnień.
-- Layoutu/brandu — bez zmian, dodaję tylko subtelne chipsy autora.
+- Bucketów Supabase (używamy `blog-images`, jest publiczny).
+- Schematu bazy — wideo to nadal część pola `content` (HTML).
+- Brandu/layoutu wpisu — tylko nowe style dla `video`/`iframe`.
+- Uprawnień CMS.
 
-## Po akceptacji wykonuję wszystko jednym ciągiem
-Migracja → utworzenie konta → backfill autorów → UI listy + edytora → wstawienie filmu w szkic Porcelanosa.
+## Po akceptacji
+Rozszerzenie TipTap → upload + parser linków → whitelist DOMPurify → style w `BlogPost.tsx` → szybki test na szkicu Porcelanosa.
