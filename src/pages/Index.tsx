@@ -16,8 +16,13 @@ import realHomeKitchen2 from "@/assets/real-home-kitchen-2.webp";
 import realHomeKitchen5 from "@/assets/real-home-kitchen-5.webp";
 import realHomeKitchen6 from "@/assets/real-home-kitchen-6.webp";
 import realHomeBedroom1 from "@/assets/real-home-bedroom-1.webp";
+import { nowowiejskaPhotos } from "@/data/nowowiejska-photos";
 
 const heroSlides = [willaHarmonia3, apartamentKlasa3, domPowrot3];
+
+const livePhotos = ["now-01", "now-02", "now-06", "now-04", "now-08"]
+  .map((id) => nowowiejskaPhotos.find((p) => p.id === id)!)
+  .filter(Boolean);
 
 const pillars = [
   { icon: Palette, title: "Estetyka z funkcją", desc: "Projektuję tak, żeby było pięknie i wygodnie na co dzień, bez kompromisów." },
