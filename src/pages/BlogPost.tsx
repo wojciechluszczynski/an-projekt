@@ -1006,6 +1006,54 @@ const BlogPost = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [post]);
 
+  // Fallback dla wideo: jeśli player nie wczyta się, podmień na komunikat z linkiem.
+  useEffect(() => {
+    if (!post?.isHtml || !articleRef.current) return;
+    const root = articleRef.current;
+    const videos = Array.from(root.querySelectorAll<HTMLVideoElement>("video"));
+
+    const showFallback = (video: HTMLVideoElement) => {
+      const src =
+        video.currentSrc ||
+        video.getAttribute("src") ||
+        video.querySelector("source")?.getAttribute("src") ||
+        "";
+      const wrapper = document.createElement("div");
+      wrapper.className =
+        "my-8 rounded-lg border border-border bg-secondary p-6 text-center";
+      wrapper.innerHTML = `
+        <p class="font-body text-sm text-muted-foreground mb-3">Nie udało się wczytać filmu w przeglądarce.</p>
+        ${
+          src
+            ? `<a href="${src}" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 rounded-full bg-accent text-accent-foreground font-body text-xs">Otwórz film w nowej karcie</a>`
+            : ""
+        }
+      `;
+      video.replaceWith(wrapper);
+    };
+
+    const cleanups: Array<() => void> = [];
+    videos.forEach((video) => {
+      const onError = () => showFallback(video);
+      video.addEventListener("error", onError);
+      const sources = video.querySelectorAll("source");
+      sources.forEach((s) => s.addEventListener("error", onError));
+      cleanups.push(() => {
+        video.removeEventListener("error", onError);
+        sources.forEach((s) => s.removeEventListener("error", onError));
+      });
+      // Ostateczny watchdog: jeśli po 12s wciąż brak metadanych, pokaż fallback.
+      const watchdog = window.setTimeout(() => {
+        if (video.readyState === 0 && document.body.contains(video)) {
+          showFallback(video);
+        }
+      }, 12000);
+      cleanups.push(() => window.clearTimeout(watchdog));
+    });
+
+    return () => cleanups.forEach((fn) => fn());
+  }, [post]);
+
   if (loading) {
     return (
       <main className="bg-background pt-28 min-h-screen flex items-center justify-center">
