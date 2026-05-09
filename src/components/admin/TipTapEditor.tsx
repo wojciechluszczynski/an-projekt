@@ -7,8 +7,13 @@ import { Node, mergeAttributes } from '@tiptap/core';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 import {
+  Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter,
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import {
   Bold, Italic, Heading2, Heading3, List, ListOrdered,
-  Quote, ImageIcon, LinkIcon, Undo, Redo, Minus, Video, Loader2,
+  Quote, ImageIcon, LinkIcon, Undo, Redo, Minus, Video, Loader2, Upload, Link as LinkIcon2,
 } from 'lucide-react';
 import { useRef, useState } from 'react';
 
