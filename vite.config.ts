@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 const cloudUrl = process.env.VITE_SUPABASE_URL || "https://rpdhnvnwxtzekpnlrvju.supabase.co";
 const cloudPublishableKey =
   process.env.VITE_SUPABASE_PUBLISHABLE_KEY ||
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJIcHN1cGFiYXNlIiwicmVmIjoicnBkaG52bnd4dHpla3BubHJ2anUiLCJyb2xlIjoiYW5vbiIsImlhdCI6MTc3NDY0MzA1MCwiZXhwIjoyMDkwMjE5MDUwfQ.tsXJRY_PKRjMtqUHL1yrotb2frA8il4MmWb0QniNtmY";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJIc3VwYWJhc2UiLCJyZWYiOiJycGRobnZud3h0emVrcG5scnZqdSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzc0NjQzMDUwLCJleHAiOjIwOTAyMTkwNTB9.tsXJRY_PKRjMtqUHL1yrotb2frA8il4MmWb0QniNtmY";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
