@@ -17,15 +17,6 @@ import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
 import tenSamDom1 from "@/assets/ten-sam-dom-1.png";
 import salaWeselna2 from "@/assets/sala-weselna-2.png";
 
-
-const realPhotos = [
-  { src: realPhoto1, alt: "Dom gotowy na więcej – realizacja salonu", caption: "Dom gotowy na więcej niż jeden scenariusz – realizacja" },
-  { src: realPhoto2, alt: "Dom gotowy na więcej – realizacja kuchni", caption: "Dom gotowy na więcej niż jeden scenariusz – realizacja" },
-  { src: realPhoto3, alt: "Dom gotowy na więcej – realizacja kuchni z wyspą", caption: "Dom gotowy na więcej niż jeden scenariusz – realizacja" },
-  { src: realPhoto4, alt: "Dom gotowy na więcej – realizacja kuchni z hokerami", caption: "Dom gotowy na więcej niż jeden scenariusz – realizacja" },
-  { src: realPhoto5, alt: "Dom gotowy na więcej – realizacja jasnej kuchni", caption: "Dom gotowy na więcej niż jeden scenariusz – realizacja" },
-];
-
 const featured = [
   {
     title: "Willa Harmonia",
