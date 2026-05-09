@@ -174,45 +174,6 @@ const Realizacje = () => {
         </div>
       </section>
 
-      {/* Real execution photos */}
-      <section className="bg-secondary section-padding">
-        <div className="max-w-[1200px] mx-auto">
-          <FadeIn>
-            <div className="text-center mb-10">
-              <p className="font-body text-[10px] tracking-[0.2em] uppercase text-accent mb-3">Od projektu do realizacji</p>
-              <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-3">Jak to wygląda na żywo</h2>
-              <p className="font-body text-sm text-muted-foreground max-w-lg mx-auto">
-                Wizualizacje to jedno — ale prawdziwe wnętrza mówią same za siebie. Oto fragmenty zrealizowanych projektów.
-              </p>
-            </div>
-          </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {realPhotos.slice(0, 3).map((photo, i) => (
-              <FadeIn key={i} delay={i * 100}>
-                <div className="group relative overflow-hidden rounded-xl">
-                  <img src={photo.src} alt={photo.alt} className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/70 to-transparent p-5 pt-16">
-                    <p className="font-body text-xs text-dark-foreground/90">{photo.caption}</p>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-            {realPhotos.slice(3).map((photo, i) => (
-              <FadeIn key={i + 3} delay={(i + 3) * 100}>
-                <div className="group relative overflow-hidden rounded-xl">
-                  <img src={photo.src} alt={photo.alt} className="w-full aspect-[3/4] md:aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/70 to-transparent p-5 pt-16">
-                    <p className="font-body text-xs text-dark-foreground/90">{photo.caption}</p>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="bg-primary section-padding">
         <div className="max-w-[700px] mx-auto text-center">
