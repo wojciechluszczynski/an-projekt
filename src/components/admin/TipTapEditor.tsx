@@ -257,21 +257,12 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
 
   const addVideo = () => {
     if (videoUploading) return;
+    setVideoUrlInput('');
+    setVideoDialogOpen(true);
+  };
 
-    // Krok 1: wybór trybu — plik z dysku (OK) albo link (Anuluj).
-    const wantFile = window.confirm(
-      'Wgrać film z komputera?\n\nOK = wybierz plik MP4/WEBM/MOV z dysku\nAnuluj = wklej link z YouTube / Vimeo / bezpośredni .mp4',
-    );
-
-    if (wantFile) {
-      videoInputRef.current?.click();
-      return;
-    }
-
-    const url = window.prompt('Wklej link do filmu (YouTube, Vimeo lub bezpośredni .mp4):');
-    if (!url) return;
-
-    const parsed = parseVideoUrl(url);
+  const submitVideoUrl = () => {
+    const parsed = parseVideoUrl(videoUrlInput);
     if (!parsed) {
       toast({
         title: 'Nieobsługiwany link',
@@ -280,11 +271,19 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
       });
       return;
     }
-
     editor.chain().focus().insertContent({
       type: 'videoEmbed',
       attrs: parsed,
     }).run();
+    setVideoDialogOpen(false);
+    setVideoUrlInput('');
+    toast({ title: 'Film dodany', description: 'Pamiętaj, aby zapisać wpis.' });
+  };
+
+  const pickVideoFile = () => {
+    setVideoDialogOpen(false);
+    // Małe opóźnienie, żeby modal zdążył się zamknąć przed otwarciem natywnego pickera.
+    setTimeout(() => videoInputRef.current?.click(), 80);
   };
 
   const addLink = () => {
