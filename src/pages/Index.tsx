@@ -16,8 +16,13 @@ import realHomeKitchen2 from "@/assets/real-home-kitchen-2.webp";
 import realHomeKitchen5 from "@/assets/real-home-kitchen-5.webp";
 import realHomeKitchen6 from "@/assets/real-home-kitchen-6.webp";
 import realHomeBedroom1 from "@/assets/real-home-bedroom-1.webp";
+import { nowowiejskaPhotos } from "@/data/nowowiejska-photos";
 
 const heroSlides = [willaHarmonia3, apartamentKlasa3, domPowrot3];
+
+const livePhotos = ["now-01", "now-02", "now-06", "now-04", "now-08"]
+  .map((id) => nowowiejskaPhotos.find((p) => p.id === id)!)
+  .filter(Boolean);
 
 const pillars = [
   { icon: Palette, title: "Estetyka z funkcją", desc: "Projektuję tak, żeby było pięknie i wygodnie na co dzień, bez kompromisów." },
@@ -165,6 +170,43 @@ const Index = () => {
               </Link>
             ))
           )}
+        </div>
+      </section>
+
+      {/* JAK TO WYGLĄDA NA ŻYWO - Nowowiejska */}
+      <section className="bg-background section-padding-sm">
+        <div className="max-w-[1200px] mx-auto">
+          <FadeIn>
+            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-4 text-center">Jak to wygląda na żywo?</h2>
+            <p className="text-muted-foreground font-body text-base text-center mb-12 max-w-xl mx-auto">
+              Wizualizacja to jedno. Zdjęcia z gotowych wnętrz mówią same za siebie.
+            </p>
+          </FadeIn>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+            {livePhotos.slice(0, 3).map((photo, i) => (
+              <FadeIn key={photo.id} delay={i * 80}>
+                <div className="overflow-hidden rounded-xl">
+                  <img src={photo.src} alt={photo.alt} loading="lazy" className="w-full aspect-[4/3] object-cover transition-transform duration-700 hover:scale-105" />
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+          <div className="grid grid-cols-2 gap-4 md:gap-5 mt-4 md:mt-5 max-w-[820px] mx-auto">
+            {livePhotos.slice(3, 5).map((photo, i) => (
+              <FadeIn key={photo.id} delay={(i + 3) * 80}>
+                <div className="overflow-hidden rounded-xl">
+                  <img src={photo.src} alt={photo.alt} loading="lazy" className="w-full aspect-[4/3] object-cover transition-transform duration-700 hover:scale-105" />
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+          <FadeIn delay={400}>
+            <div className="text-center mt-10">
+              <Link to="/realizacje" className="inline-flex items-center gap-2 text-sm font-body tracking-[0.05em] uppercase text-foreground border-b border-foreground/30 pb-0.5 hover:border-accent hover:text-accent transition-colors">
+                Zobacz wszystkie realizacje <ArrowRight size={14} />
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 

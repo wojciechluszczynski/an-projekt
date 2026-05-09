@@ -18,6 +18,9 @@ import realHomeKitchen2 from "@/assets/real-home-kitchen-2.webp";
 import realHomeKitchen5 from "@/assets/real-home-kitchen-5.webp";
 import realHomeKitchen6 from "@/assets/real-home-kitchen-6.webp";
 import realHomeBedroom1 from "@/assets/real-home-bedroom-1.webp";
+import nowowiejska3 from "@/assets/nowowiejska/nowowiejska-3.webp";
+import nowowiejska4 from "@/assets/nowowiejska/nowowiejska-4.webp";
+import nowowiejska7 from "@/assets/nowowiejska/nowowiejska-7.webp";
 
 const categories = ["Wszystkie", "Współpraca", "Błędy", "Porady", "Ebooki", "Trendy", "Materiały"];
 
@@ -53,7 +56,7 @@ const blogPosts = [
   {
     title: "10 najczęstszych błędów przy urządzaniu mieszkania",
     excerpt: "Urządzasz mieszkanie i chcesz uniknąć kosztownych błędów? Oto 10 najczęstszych błędów przy urządzaniu wnętrz, które widzę jako projektantka.",
-    image: realHomeKitchen2,
+    image: nowowiejska7,
     category: "Błędy",
     date: "20 lutego 2026",
     readTime: "8 min",
@@ -71,7 +74,7 @@ const blogPosts = [
   {
     title: "Najczęstsze błędy przy projektowaniu kuchni i salonu",
     excerpt: "Źle zaplanowana kuchnia to jeden z największych problemów po remoncie. Oto najczęstsze błędy, których warto uniknąć.",
-    image: apartamentKlasa3,
+    image: nowowiejska4,
     category: "Błędy",
     date: "10 lutego 2026",
     readTime: "7 min",
@@ -89,7 +92,7 @@ const blogPosts = [
   {
     title: "Jak dobrać kolory, materiały i dodatki do wnętrza – zasady, które działają zawsze",
     excerpt: "Nie wiesz jak dobrać kolory i materiały do swojego wnętrza? Tłumaczę zasady doboru kolorystyki, faktur i dodatków – po ludzku, bez żargonu.",
-    image: realHomeKitchen6,
+    image: nowowiejska3,
     category: "Porady",
     date: "1 lutego 2026",
     readTime: "8 min",
@@ -177,11 +180,11 @@ const Blog = () => {
           <div className="max-w-[1200px] mx-auto">
             <FadeIn>
               <Link to={`/blog/${featuredPost.slug}`} className="group block">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-secondary rounded-xl overflow-hidden">
-                  <div className="overflow-hidden">
-                    <img src={featuredPost.image} alt={featuredPost.title} className="w-full h-full min-h-[250px] object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center">
+                  <div className="overflow-hidden rounded-xl">
+                    <img src={featuredPost.image} alt={featuredPost.title} className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
                   </div>
-                  <div className="p-6 md:p-10 flex flex-col justify-center">
+                  <div className="flex flex-col justify-center">
                     <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent font-body text-xs mb-4 w-fit">{featuredPost.category}</span>
                     <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-3 group-hover:text-accent transition-colors">{featuredPost.title}</h2>
                     <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">{featuredPost.excerpt}</p>
