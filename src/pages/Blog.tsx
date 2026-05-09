@@ -180,11 +180,11 @@ const Blog = () => {
           <div className="max-w-[1200px] mx-auto">
             <FadeIn>
               <Link to={`/blog/${featuredPost.slug}`} className="group block">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-secondary rounded-xl overflow-hidden">
-                  <div className="overflow-hidden">
-                    <img src={featuredPost.image} alt={featuredPost.title} className="w-full h-full min-h-[250px] object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center">
+                  <div className="overflow-hidden rounded-xl">
+                    <img src={featuredPost.image} alt={featuredPost.title} className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
                   </div>
-                  <div className="p-6 md:p-10 flex flex-col justify-center">
+                  <div className="flex flex-col justify-center">
                     <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent font-body text-xs mb-4 w-fit">{featuredPost.category}</span>
                     <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-3 group-hover:text-accent transition-colors">{featuredPost.title}</h2>
                     <p className="text-muted-foreground font-body text-base leading-relaxed mb-5">{featuredPost.excerpt}</p>
