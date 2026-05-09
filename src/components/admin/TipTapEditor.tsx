@@ -151,6 +151,8 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const videoInputRef = useRef<HTMLInputElement>(null);
   const [videoUploading, setVideoUploading] = useState(false);
+  const [videoDialogOpen, setVideoDialogOpen] = useState(false);
+  const [videoUrlInput, setVideoUrlInput] = useState('');
 
   const editor = useEditor({
     extensions: [
