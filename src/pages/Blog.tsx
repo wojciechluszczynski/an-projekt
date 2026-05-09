@@ -18,6 +18,9 @@ import realHomeKitchen2 from "@/assets/real-home-kitchen-2.webp";
 import realHomeKitchen5 from "@/assets/real-home-kitchen-5.webp";
 import realHomeKitchen6 from "@/assets/real-home-kitchen-6.webp";
 import realHomeBedroom1 from "@/assets/real-home-bedroom-1.webp";
+import nowowiejska3 from "@/assets/nowowiejska/nowowiejska-3.webp";
+import nowowiejska4 from "@/assets/nowowiejska/nowowiejska-4.webp";
+import nowowiejska7 from "@/assets/nowowiejska/nowowiejska-7.webp";
 
 const categories = ["Wszystkie", "Współpraca", "Błędy", "Porady", "Ebooki", "Trendy", "Materiały"];
 
