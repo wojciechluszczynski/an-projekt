@@ -380,6 +380,66 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
           [&_.tiptap_.is-editor-empty:first-child::before]:text-muted-foreground/50 [&_.tiptap_.is-editor-empty:first-child::before]:float-left [&_.tiptap_.is-editor-empty:first-child::before]:content-[attr(data-placeholder)] [&_.tiptap_.is-editor-empty:first-child::before]:pointer-events-none [&_.tiptap_.is-editor-empty:first-child::before]:h-0
         "
       />
+
+      {/* Video insert dialog */}
+      <Dialog open={videoDialogOpen} onOpenChange={setVideoDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Wstaw film</DialogTitle>
+            <DialogDescription>
+              Wgraj plik z dysku (do 100 MB) albo wklej link do filmu na YouTube / Vimeo lub bezpośredni .mp4.
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-4 py-2">
+            <Button
+              type="button"
+              onClick={pickVideoFile}
+              className="w-full justify-center gap-2"
+              disabled={videoUploading}
+            >
+              <Upload size={16} />
+              Wgraj plik z komputera (MP4 / WEBM / MOV)
+            </Button>
+
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t border-border" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-background px-2 text-muted-foreground">albo</span>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm font-body text-foreground flex items-center gap-2">
+                <LinkIcon2 size={14} /> Link do filmu
+              </label>
+              <Input
+                type="url"
+                value={videoUrlInput}
+                onChange={(e) => setVideoUrlInput(e.target.value)}
+                placeholder="https://www.youtube.com/watch?v=..."
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    e.preventDefault();
+                    submitVideoUrl();
+                  }
+                }}
+              />
+            </div>
+          </div>
+
+          <DialogFooter className="gap-2 sm:gap-2">
+            <Button type="button" variant="outline" onClick={() => setVideoDialogOpen(false)}>
+              Anuluj
+            </Button>
+            <Button type="button" onClick={submitVideoUrl} disabled={!videoUrlInput.trim()}>
+              Wstaw link
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
