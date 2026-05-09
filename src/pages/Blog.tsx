@@ -13,6 +13,11 @@ import domPowrot3 from "@/assets/dom-powrot-3.jpeg";
 import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
 import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
 import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
+import realHomeKitchen1 from "@/assets/real-home-kitchen-1.webp";
+import realHomeKitchen2 from "@/assets/real-home-kitchen-2.webp";
+import realHomeKitchen5 from "@/assets/real-home-kitchen-5.webp";
+import realHomeKitchen6 from "@/assets/real-home-kitchen-6.webp";
+import realHomeBedroom1 from "@/assets/real-home-bedroom-1.webp";
 
 const categories = ["Wszystkie", "Współpraca", "Błędy", "Porady", "Ebooki", "Trendy", "Materiały"];
 
