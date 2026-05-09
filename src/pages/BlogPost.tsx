@@ -53,6 +53,11 @@ import domPowrot3 from "@/assets/dom-powrot-3.jpeg";
 import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
 import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
 import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
+import realHomeKitchen1 from "@/assets/real-home-kitchen-1.webp";
+import realHomeKitchen2 from "@/assets/real-home-kitchen-2.webp";
+import realHomeKitchen5 from "@/assets/real-home-kitchen-5.webp";
+import realHomeKitchen6 from "@/assets/real-home-kitchen-6.webp";
+import realHomeBedroom1 from "@/assets/real-home-bedroom-1.webp";
 
 // CTA Banner component for inserting in articles
 const CtaBanner = ({ variant }: { variant: "kontakt" | "realizacje" | "oferta" }) => {
@@ -211,7 +216,7 @@ const posts: Record<string, {
     title: "Jak wygląda współpraca z projektantką wnętrz? Proces od pierwszej rozmowy do realizacji",
     metaTitle: "Jak wygląda współpraca z projektantką wnętrz? Proces krok po kroku | AN Projekt",
     metaDesc: "Zastanawiasz się, jak przebiega projektowanie wnętrz od pierwszej rozmowy do realizacji? Tłumaczę cały proces krok po kroku.",
-    image: willaHarmonia1,
+    image: realHomeKitchen1,
     category: "Współpraca",
     date: "5 marca 2026",
     readTime: "8 min",
@@ -313,7 +318,7 @@ Absolutnie nie. Część klientów przychodzi z konkretną wizją, część – 
     title: "Projekt wnętrza mieszkania lub domu – od czego zacząć i co przygotować",
     metaTitle: "Projekt wnętrza mieszkania lub domu – od czego zacząć? | AN Projekt",
     metaDesc: "Planujesz projekt wnętrza i nie wiesz od czego zacząć? Dowiedz się, co przygotować przed pierwszym spotkaniem z projektantką.",
-    image: domPowrot1,
+    image: realHomeBedroom1,
     category: "Współpraca",
     date: "1 marca 2026",
     readTime: "7 min",
@@ -389,7 +394,7 @@ Każdy projekt wyceniam indywidualnie — bo każde wnętrze jest inne. **[Skont
     title: "Projektant wnętrz Krosno i Rzeszów – kiedy warto skorzystać z pomocy i ile kosztuje projekt",
     metaTitle: "Projektant wnętrz Krosno i Rzeszów – kiedy warto i ile kosztuje? | AN Projekt",
     metaDesc: "Szukasz projektanta wnętrz w Krośnie lub Rzeszowie? Dowiedz się, kiedy warto skorzystać z pomocy projektantki.",
-    image: apartamentKlasa1,
+    image: realHomeKitchen5,
     category: "Współpraca",
     date: "25 lutego 2026",
     readTime: "7 min",
@@ -440,7 +445,7 @@ Warto pamiętać, że dobry projekt zazwyczaj **oszczędza pieniądze** podczas 
     title: "10 najczęstszych błędów przy urządzaniu mieszkania – i jak ich uniknąć",
     metaTitle: "10 najczęstszych błędów przy urządzaniu mieszkania – i jak ich uniknąć | AN Projekt",
     metaDesc: "Urządzasz mieszkanie i chcesz uniknąć kosztownych błędów? Oto 10 najczęstszych błędów przy urządzaniu wnętrz.",
-    image: willaHarmonia3,
+    image: realHomeKitchen2,
     category: "Błędy",
     date: "20 lutego 2026",
     readTime: "8 min",
@@ -773,7 +778,7 @@ Tak – AN Projekt obsługuje Podkarpacie (Krosno, Rzeszów) i Małopolskę (Now
     title: "Jak dobrać kolory, materiały i dodatki do wnętrza – zasady, które działają zawsze",
     metaTitle: "Jak dobrać kolory, materiały i dodatki do wnętrza – zasady, które działają zawsze | AN Projekt",
     metaDesc: "Nie wiesz jak dobrać kolory i materiały do swojego wnętrza? Tłumaczę zasady doboru kolorystyki, faktur i dodatków – po ludzku, bez żargonu.",
-    image: domPowrot3,
+    image: realHomeKitchen6,
     category: "Porady",
     date: "1 lutego 2026",
     readTime: "8 min",
