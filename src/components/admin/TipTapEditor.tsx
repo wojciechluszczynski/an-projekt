@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
   Bold, Italic, Heading2, Heading3, List, ListOrdered,
-  Quote, ImageIcon, LinkIcon, Undo, Redo, Minus, Video, Loader2, Upload, Link as LinkIcon2,
+  Quote, ImageIcon, LinkIcon, Undo, Redo, Minus, Video, Loader2, Upload,
 } from 'lucide-react';
 import { useRef, useState } from 'react';
 
@@ -413,7 +413,7 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
 
             <div className="space-y-2">
               <label className="text-sm font-body text-foreground flex items-center gap-2">
-                <LinkIcon2 size={14} /> Link do filmu
+                <LinkIcon size={14} /> Link do filmu
               </label>
               <Input
                 type="url"
