@@ -13,6 +13,11 @@ import domPowrot3 from "@/assets/dom-powrot-3.jpeg";
 import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
 import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
 import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
+import realHomeKitchen1 from "@/assets/real-home-kitchen-1.webp";
+import realHomeKitchen2 from "@/assets/real-home-kitchen-2.webp";
+import realHomeKitchen5 from "@/assets/real-home-kitchen-5.webp";
+import realHomeKitchen6 from "@/assets/real-home-kitchen-6.webp";
+import realHomeBedroom1 from "@/assets/real-home-bedroom-1.webp";
 
 const categories = ["Wszystkie", "Współpraca", "Błędy", "Porady", "Ebooki", "Trendy", "Materiały"];
 
@@ -20,7 +25,7 @@ const blogPosts = [
   {
     title: "Jak wygląda współpraca z projektantką wnętrz? Proces krok po kroku",
     excerpt: "Zastanawiasz się, jak przebiega projektowanie wnętrz od pierwszej rozmowy do realizacji? Tłumaczę cały proces krok po kroku – bez żargonu, po ludzku.",
-    image: willaHarmonia1,
+    image: realHomeKitchen1,
     category: "Współpraca",
     date: "5 marca 2026",
     readTime: "8 min",
@@ -30,7 +35,7 @@ const blogPosts = [
   {
     title: "Projekt wnętrza – od czego zacząć i co przygotować?",
     excerpt: "Planujesz projekt wnętrza i nie wiesz od czego zacząć? Dowiedz się, co przygotować przed pierwszym spotkaniem z projektantką.",
-    image: domPowrot1,
+    image: realHomeBedroom1,
     category: "Współpraca",
     date: "1 marca 2026",
     readTime: "7 min",
@@ -39,7 +44,7 @@ const blogPosts = [
   {
     title: "Projektant wnętrz Krosno i Rzeszów – kiedy warto i ile kosztuje?",
     excerpt: "Szukasz projektanta wnętrz w Krośnie lub Rzeszowie? Dowiedz się, kiedy warto skorzystać z pomocy projektantki i jak wygląda współpraca na Podkarpaciu.",
-    image: apartamentKlasa1,
+    image: realHomeKitchen5,
     category: "Współpraca",
     date: "25 lutego 2026",
     readTime: "7 min",
@@ -48,7 +53,7 @@ const blogPosts = [
   {
     title: "10 najczęstszych błędów przy urządzaniu mieszkania",
     excerpt: "Urządzasz mieszkanie i chcesz uniknąć kosztownych błędów? Oto 10 najczęstszych błędów przy urządzaniu wnętrz, które widzę jako projektantka.",
-    image: willaHarmonia3,
+    image: realHomeKitchen2,
     category: "Błędy",
     date: "20 lutego 2026",
     readTime: "8 min",
@@ -84,7 +89,7 @@ const blogPosts = [
   {
     title: "Jak dobrać kolory, materiały i dodatki do wnętrza – zasady, które działają zawsze",
     excerpt: "Nie wiesz jak dobrać kolory i materiały do swojego wnętrza? Tłumaczę zasady doboru kolorystyki, faktur i dodatków – po ludzku, bez żargonu.",
-    image: domPowrot3,
+    image: realHomeKitchen6,
     category: "Porady",
     date: "1 lutego 2026",
     readTime: "8 min",

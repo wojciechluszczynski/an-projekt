@@ -7,8 +7,13 @@ import { Node, mergeAttributes } from '@tiptap/core';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 import {
+  Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter,
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import {
   Bold, Italic, Heading2, Heading3, List, ListOrdered,
-  Quote, ImageIcon, LinkIcon, Undo, Redo, Minus, Video, Loader2,
+  Quote, ImageIcon, LinkIcon, Undo, Redo, Minus, Video, Loader2, Upload,
 } from 'lucide-react';
 import { useRef, useState } from 'react';
 
@@ -146,6 +151,8 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const videoInputRef = useRef<HTMLInputElement>(null);
   const [videoUploading, setVideoUploading] = useState(false);
+  const [videoDialogOpen, setVideoDialogOpen] = useState(false);
+  const [videoUrlInput, setVideoUrlInput] = useState('');
 
   const editor = useEditor({
     extensions: [
@@ -250,21 +257,12 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
 
   const addVideo = () => {
     if (videoUploading) return;
+    setVideoUrlInput('');
+    setVideoDialogOpen(true);
+  };
 
-    // Krok 1: wybór trybu — plik z dysku (OK) albo link (Anuluj).
-    const wantFile = window.confirm(
-      'Wgrać film z komputera?\n\nOK = wybierz plik MP4/WEBM/MOV z dysku\nAnuluj = wklej link z YouTube / Vimeo / bezpośredni .mp4',
-    );
-
-    if (wantFile) {
-      videoInputRef.current?.click();
-      return;
-    }
-
-    const url = window.prompt('Wklej link do filmu (YouTube, Vimeo lub bezpośredni .mp4):');
-    if (!url) return;
-
-    const parsed = parseVideoUrl(url);
+  const submitVideoUrl = () => {
+    const parsed = parseVideoUrl(videoUrlInput);
     if (!parsed) {
       toast({
         title: 'Nieobsługiwany link',
@@ -273,11 +271,19 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
       });
       return;
     }
-
     editor.chain().focus().insertContent({
       type: 'videoEmbed',
       attrs: parsed,
     }).run();
+    setVideoDialogOpen(false);
+    setVideoUrlInput('');
+    toast({ title: 'Film dodany', description: 'Pamiętaj, aby zapisać wpis.' });
+  };
+
+  const pickVideoFile = () => {
+    setVideoDialogOpen(false);
+    // Małe opóźnienie, żeby modal zdążył się zamknąć przed otwarciem natywnego pickera.
+    setTimeout(() => videoInputRef.current?.click(), 80);
   };
 
   const addLink = () => {
@@ -374,6 +380,66 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
           [&_.tiptap_.is-editor-empty:first-child::before]:text-muted-foreground/50 [&_.tiptap_.is-editor-empty:first-child::before]:float-left [&_.tiptap_.is-editor-empty:first-child::before]:content-[attr(data-placeholder)] [&_.tiptap_.is-editor-empty:first-child::before]:pointer-events-none [&_.tiptap_.is-editor-empty:first-child::before]:h-0
         "
       />
+
+      {/* Video insert dialog */}
+      <Dialog open={videoDialogOpen} onOpenChange={setVideoDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Wstaw film</DialogTitle>
+            <DialogDescription>
+              Wgraj plik z dysku (do 100 MB) albo wklej link do filmu na YouTube / Vimeo lub bezpośredni .mp4.
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-4 py-2">
+            <Button
+              type="button"
+              onClick={pickVideoFile}
+              className="w-full justify-center gap-2"
+              disabled={videoUploading}
+            >
+              <Upload size={16} />
+              Wgraj plik z komputera (MP4 / WEBM / MOV)
+            </Button>
+
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t border-border" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-background px-2 text-muted-foreground">albo</span>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm font-body text-foreground flex items-center gap-2">
+                <LinkIcon size={14} /> Link do filmu
+              </label>
+              <Input
+                type="url"
+                value={videoUrlInput}
+                onChange={(e) => setVideoUrlInput(e.target.value)}
+                placeholder="https://www.youtube.com/watch?v=..."
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    e.preventDefault();
+                    submitVideoUrl();
+                  }
+                }}
+              />
+            </div>
+          </div>
+
+          <DialogFooter className="gap-2 sm:gap-2">
+            <Button type="button" variant="outline" onClick={() => setVideoDialogOpen(false)}>
+              Anuluj
+            </Button>
+            <Button type="button" onClick={submitVideoUrl} disabled={!videoUrlInput.trim()}>
+              Wstaw link
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
