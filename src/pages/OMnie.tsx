@@ -145,23 +145,6 @@ const OMnie = () => {
         </div>
       </section>
 
-      {/* Video placeholder */}
-      <section className="bg-background section-padding-sm">
-        <div className="max-w-[800px] mx-auto text-center">
-          <FadeIn>
-            <div className="relative aspect-video overflow-hidden rounded-2xl shadow-lg">
-              <iframe
-                src="https://drive.google.com/file/d/1MRN5cLeLHEb-7-cZ8LYNNbwjByn7MitA/preview"
-                title="AN Projekt – poznaj moje podejście do projektów"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="w-full h-full border-0"
-                loading="lazy"
-              />
-            </div>
-          </FadeIn>
-        </div>
-      </section>
 
       {/* Values */}
       <section className="bg-secondary section-padding">
@@ -196,7 +179,7 @@ const OMnie = () => {
             <div className="flex gap-4 justify-center mb-8">
               <a href="https://www.instagram.com/an_projekt/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors" aria-label="Instagram"><Instagram size={22} /></a>
               <a href="https://www.facebook.com/anna.nowakpaprocka" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors" aria-label="Facebook"><Facebook size={22} /></a>
-              <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors" aria-label="Pinterest"><PinterestIcon /></a>
+              <a href="https://pl.pinterest.com/anprojektcom/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors" aria-label="Pinterest"><PinterestIcon /></a>
             </div>
           </FadeIn>
         </div>
