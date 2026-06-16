@@ -79,7 +79,6 @@ import salaWeselna5 from "@/assets/sala-weselna-5.png";
 import salaWeselna6 from "@/assets/sala-weselna-6.png";
 import salaWeselna7 from "@/assets/sala-weselna-7.jpg";
 import salaWeselna8 from "@/assets/sala-weselna-8.jpg";
-import salaWeselna9 from "@/assets/sala-weselna-9.jpg";
 
 const projectsData: Record<string, {
   title: string;
@@ -292,7 +291,7 @@ const projectsData: Record<string, {
     ],
     scope: ["Pełny projekt koncepcyjny", "Wizualizacje 3D", "Dokumentacja techniczna", "Dobór materiałów i mebli", "Konsultacje akustyczne i oświetleniowe"],
     result: "Wnętrze, które nie próbuje być bohaterem wieczoru. Pozwala nim być parze młodej i ich gościom – a samo, dyskretnie, robi swoją robotę.",
-    images: [salaWeselna2, salaWeselna4, salaWeselna3, salaWeselna5, salaWeselna6, salaWeselna1, salaWeselna7, salaWeselna8, salaWeselna9],
+    images: [salaWeselna2, salaWeselna4, salaWeselna3, salaWeselna5, salaWeselna6, salaWeselna1, salaWeselna7, salaWeselna8],
   },
 };
 

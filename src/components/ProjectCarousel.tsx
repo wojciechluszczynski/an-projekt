@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
 import { ArrowRight } from "lucide-react";
 
-import realHomeKitchen1 from "@/assets/real-home-kitchen-1.webp";
+import willaHarmonia1 from "@/assets/willa-harmonia-1.jpeg";
 import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
 import apartamentKlasa1 from "@/assets/apartament-klasa-1.jpeg";
 
@@ -10,7 +10,7 @@ const projects = [
   {
     title: "Willa Harmonia",
     desc: "Dom, który nie domaga się uwagi. Ale daje dokładnie to, czego jego właściciele potrzebowali — spokój.",
-    image: realHomeKitchen1,
+    image: willaHarmonia1,
     href: "/willa-harmonia",
     meta: "Dom 160 m² · Podkarpacie",
   },
