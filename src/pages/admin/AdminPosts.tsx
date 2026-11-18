@@ -2,7 +2,6 @@ import { useEffect, useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Plus, Edit, Trash2, Eye, EyeOff, LogOut, Star, User } from 'lucide-react';
-import AdminQrWidget from '@/components/admin/AdminQrWidget';
 
 interface Post {
   id: string;
@@ -124,8 +123,6 @@ const AdminPosts = () => {
           </div>
         </div>
 
-        {/* QR widget */}
-        <AdminQrWidget />
 
         {/* Info */}
         <div className="bg-secondary/70 rounded-xl p-4 mb-6">
