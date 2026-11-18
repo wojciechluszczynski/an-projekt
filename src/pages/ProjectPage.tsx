@@ -77,20 +77,93 @@ import salaWeselna3 from "@/assets/sala-weselna-3.png";
 import salaWeselna4 from "@/assets/sala-weselna-4.png";
 import salaWeselna5 from "@/assets/sala-weselna-5.png";
 import salaWeselna6 from "@/assets/sala-weselna-6.png";
+import ponadMiastemTaras from "@/assets/apartament-ponad-miastem-taras.webp";
+import ponadMiastemSalon from "@/assets/apartament-ponad-miastem-salon.webp";
+import ponadMiastemKuchnia from "@/assets/apartament-ponad-miastem-kuchnia.webp";
+import ponadMiastemSalonDetal from "@/assets/apartament-ponad-miastem-salon-detal.webp";
+import ponadMiastemSypialnia from "@/assets/apartament-ponad-miastem-sypialnia.webp";
+import ponadMiastemSypialniaDetal from "@/assets/apartament-ponad-miastem-sypialnia-detal.webp";
+import ponadMiastemLazienka from "@/assets/apartament-ponad-miastem-lazienka.webp";
+import elegancjaJadalniaDzien from "@/assets/elegancja-bez-slow-jadalnia-dzien.webp";
+import elegancjaJadalniaWieczor from "@/assets/elegancja-bez-slow-jadalnia-wieczor.webp";
+import elegancjaKuchnia from "@/assets/elegancja-bez-slow-kuchnia.webp";
+import elegancjaSalonKuchnia from "@/assets/elegancja-bez-slow-salon-kuchnia.webp";
+import elegancjaSalonScianaTv from "@/assets/elegancja-bez-slow-salon-sciana-tv.webp";
+import elegancjaDetalStolik from "@/assets/elegancja-bez-slow-detal-stolik.webp";
+import elegancjaSypialnia from "@/assets/elegancja-bez-slow-sypialnia.webp";
+
+// Pola oznaczone ? można pominąć, gdy nie ma rzetelnej informacji (nie wymyślamy
+// pakietu, czasu realizacji ani zakresu). Strona pokazuje tylko to, co jest podane.
+// Element fabuły może być akapitem (string) albo wyróżnionym cytatem ({ quote }).
+type StoryItem = string | { quote: string };
 
 const projectsData: Record<string, {
   title: string;
   type: string;
-  area: string;
-  location: string;
-  pkg: string;
-  time: string;
-  challenge: string;
-  story: string[];
-  scope: string[];
-  result: string;
+  area?: string;
+  location?: string;
+  pkg?: string;
+  time?: string;
+  challenge?: string;
+  story: StoryItem[];
+  scope?: string[];
+  result?: string;
   images: string[];
+  alts?: string[];
 }> = {
+  "apartament-ponad-miastem": {
+    title: "Apartament ponad miastem",
+    type: "Apartament",
+    area: "120 m²",
+    location: "Rzeszów",
+    story: [
+      "Przestrzeń zaprojektowana wokół życia.",
+      "Niektóre miejsca od początku mają w sobie coś wyjątkowego. Wystarczy dostrzec ich możliwości i wiedzieć, jak je wykorzystać. Tak było z tym 120-metrowym apartamentem w Rzeszowie, którego największymi atutami są przestrzeń, piękne widoki i rozległe tarasy.",
+      "Od pierwszego spotkania z tą przestrzenią wiedziałam, że możemy stworzyć coś znacznie więcej niż efektowne wnętrze. Chciałam, aby każdy metr miał swoje uzasadnienie, a wszystkie rozwiązania tworzyły spójną całość. Kilka ważnych zmian w układzie apartamentu pozwoliło wydobyć jego potencjał, poprawić funkcjonalność i nadać mu zupełnie nową jakość.",
+      "Projekt powstawał z myślą o parze, która zamierza spędzić tutaj kolejne lata. Dlatego równie ważne jak wygląd były dla mnie ich potrzeby, przyzwyczajenia i sposób spędzania czasu. Każda decyzja, od organizacji przestrzeni po dobór oświetlenia i najdrobniejszych detali, miała służyć codziennemu komfortowi.",
+      "We wnętrzu spotykają się naturalne materiały, ciepłe barwy i wyraziste, ale spokojne formy. Głębokie odcienie drewna pięknie kontrastują z jasnym kamieniem, a delikatne akcenty i starannie dobrane światło budują atmosferę subtelnej elegancji. Nie ma tu miejsca na przypadkowe dekoracje. To wnętrze, którego charakter wynika z harmonii, proporcji i jakości zastosowanych rozwiązań.",
+      "Osobną historią są tarasy. Od początku traktowałam je jako integralną część apartamentu, a nie jedynie dodatek do mieszkania. Zaprojektowałam je tak, aby stały się naturalną kontynuacją wnętrza. To przestrzeń na poranną kawę, spokojne popołudnia, spotkania z bliskimi i chwile, w których można po prostu zatrzymać się i podziwiać widok.",
+      "Właśnie takie połączenie sprawia, że apartament zyskuje zupełnie inny wymiar. Wnętrze i otoczenie wzajemnie się uzupełniają, tworząc miejsce, w którym chce się przebywać.",
+      "Największą satysfakcję daje mi świadomość, że za pięknymi kadrami kryje się coś znacznie ważniejszego. Przemyślana przestrzeń, wygoda użytkowania i rozwiązania, które będą dobrze służyć właścicielom przez lata.",
+      { quote: "Wierzę, że prawdziwa wartość projektu nie kończy się na estetyce. Dobry projekt potrafi odmienić sposób życia, wydobyć potencjał nieruchomości i zwiększyć jej wartość." },
+      "Ten apartament jest właśnie taką historią. Historią o przestrzeni, która dzięki odpowiednim decyzjom stała się miejscem stworzonym dla konkretnych ludzi.",
+      "To jeden z tych projektów, które zajmują szczególne miejsce w moim portfolio.",
+    ],
+    images: [ponadMiastemTaras, ponadMiastemSalon, ponadMiastemKuchnia, ponadMiastemSalonDetal, ponadMiastemSypialnia, ponadMiastemSypialniaDetal, ponadMiastemLazienka],
+    alts: [
+      "Wizualizacja: taras apartamentu z jacuzzi i widokiem na miasto o zachodzie słońca, Rzeszów",
+      "Wizualizacja: salon z otwartą kuchnią, miękką sofą i pierścieniowymi lampami nad stolikami",
+      "Wizualizacja: kuchnia z wyspą w kamieniu, brązowymi hokerami i zabudową w ciemnym drewnie",
+      "Wizualizacja: detal salonu z wazonem i szklanym stolikiem, w tle kuchnia",
+      "Wizualizacja: sypialnia z ciemnymi panelami z drewna, tapicerowanym łóżkiem i wyjściem na taras",
+      "Wizualizacja: detal sypialni, szafka nocna z wazonem i książkami",
+      "Wizualizacja: łazienka z jasnym kamieniem, lustrem w kształcie półksiężyca i sufitem z drewnianych lamelek",
+    ],
+  },
+  "elegancja-bez-slow": {
+    title: "Elegancja, która nie potrzebuje słów",
+    type: "Apartament premium",
+    scope: ["Projekt wnętrza"],
+    story: [
+      "Są projekty, przy których można pozwolić sobie na więcej. Więcej odwagi, wyrazistych połączeń i rozwiązań, które nie podążają ślepo za trendami.",
+      "Ten apartament jest właśnie taki.",
+      "Mocny rysunek kamienia, ciemne drewno, nieoczywiste zestawienia faktur i światło, które potrafi całkowicie zmienić odbiór przestrzeni. Tutaj nic nie jest przypadkowe, ale też nic nie jest nudne.",
+      "Chciałam stworzyć wnętrze, które robi wrażenie, ale nie traci przy tym tego, co w domu najważniejsze — komfortu i przyjemności z codziennego życia.",
+      "Lubię projekty, które mają własną osobowość. Nie są kopią tego, co widzimy wszędzie. Mają w sobie coś, co sprawia, że trudno przejść obok nich obojętnie.",
+      { quote: "Bo dobry projekt nie polega na tym, żeby było po prostu ładnie. Chodzi o to, żeby stworzyć przestrzeń, której nie da się pomylić z żadną inną." },
+      "I właśnie za to kocham swoją pracę.",
+    ],
+    images: [elegancjaJadalniaDzien, elegancjaJadalniaWieczor, elegancjaKuchnia, elegancjaSalonKuchnia, elegancjaSalonScianaTv, elegancjaDetalStolik, elegancjaSypialnia],
+    alts: [
+      "Wizualizacja: jadalnia za dnia z długim stołem, szarymi krzesłami i ścianą z drewna oraz kamienia",
+      "Wizualizacja: ta sama jadalnia wieczorem, z podświetlonym sufitem i ciepłym światłem",
+      "Wizualizacja: kuchnia z podświetlaną wyspą z kamienia, czarną zabudową i szklanymi witrynami",
+      "Wizualizacja: salon połączony z kuchnią, jasna sofa, kamienny blat i lampa pierścieniowa",
+      "Wizualizacja: ściana telewizyjna w drewnie, podświetlone kamienne wstawki i regał z ekspozycją",
+      "Wizualizacja: detal salonu, kamienny stolik kawowy z książką, w tle ściana z kamienia",
+      "Wizualizacja: sypialnia z pionowo pikowanym zagłówkiem, toaletką i okrągłym lustrem z podświetleniem",
+    ],
+  },
   "willa-harmonia": {
     title: "Willa Harmonia",
     type: "Dom jednorodzinny",
@@ -298,6 +371,7 @@ const ProjectPage = () => {
   const project = slug ? projectsData[slug] : null;
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [selectedImg, setSelectedImg] = useState(0);
+  const [selectedPortrait, setSelectedPortrait] = useState(false);
 
   useEffect(() => {
     if (lightbox === null) return;
@@ -324,16 +398,24 @@ const ProjectPage = () => {
     );
   }
 
+  const altFor = (i: number) => project.alts?.[i] ?? `${project.title} wizualizacja ${i + 1}`;
+  const details = [
+    { label: "Lokalizacja", value: project.location },
+    { label: "Metraż", value: project.area },
+    { label: "Opcja", value: project.pkg },
+    { label: "Czas realizacji", value: project.time },
+  ].filter((d): d is { label: string; value: string } => Boolean(d.value));
+
   return (
     <main>
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[400px] overflow-hidden">
-        <img src={project.images[0]} alt={`${project.title} – projekt wnętrz ${project.location}`} className="w-full h-full object-cover" />
+        <img src={project.images[0]} alt={project.alts?.[0] ?? `${project.title} – projekt wnętrz${project.location ? ` ${project.location}` : ""}`} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-foreground/35" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <h1 className="font-heading text-3xl md:text-5xl text-dark-foreground mb-3">{project.title}</h1>
           <p className="font-body text-sm text-dark-foreground/80 tracking-wide uppercase">
-            {project.type} · {project.area} · {project.location}
+            {[project.type, project.area, project.location].filter(Boolean).join(" · ")}
           </p>
         </div>
       </section>
@@ -355,45 +437,52 @@ const ProjectPage = () => {
       <section className="bg-background section-padding">
         <div className="max-w-[900px] mx-auto">
           <FadeIn>
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 mb-12">
+            <div className={`grid grid-cols-1 ${details.length > 0 ? "md:grid-cols-[1fr_auto]" : ""} gap-10 mb-12`}>
               <div>
                 <h2 className="font-heading text-2xl text-foreground mb-4">O projekcie</h2>
-                {project.story.map((paragraph, i) => (
-                  <p key={i} className="text-muted-foreground font-body text-base leading-relaxed mb-4">{paragraph}</p>
-                ))}
+                {project.story.map((paragraph, i) =>
+                  typeof paragraph === "string" ? (
+                    <p key={i} className="text-muted-foreground font-body text-base leading-relaxed mb-4">{paragraph}</p>
+                  ) : (
+                    <blockquote key={i} className="border-l-2 border-accent pl-5 py-1 my-8">
+                      <p className="font-body text-base text-foreground/70 italic leading-relaxed">{paragraph.quote}</p>
+                    </blockquote>
+                  )
+                )}
               </div>
-              <div className="md:border-l md:border-border md:pl-8 space-y-5 md:min-w-[200px]">
-                {[
-                  { label: "Lokalizacja", value: project.location },
-                  { label: "Metraż", value: project.area },
-                  { label: "Opcja", value: project.pkg },
-                  { label: "Czas realizacji", value: project.time },
-                ].map((d) => (
-                  <div key={d.label}>
-                    <p className="text-muted-foreground font-body text-xs tracking-[0.15em] uppercase mb-1">{d.label}</p>
-                    <p className="font-heading text-base text-foreground">{d.value}</p>
-                  </div>
-                ))}
-              </div>
+              {details.length > 0 && (
+                <div className="md:border-l md:border-border md:pl-8 space-y-5 md:min-w-[200px]">
+                  {details.map((d) => (
+                    <div key={d.label}>
+                      <p className="text-muted-foreground font-body text-xs tracking-[0.15em] uppercase mb-1">{d.label}</p>
+                      <p className="font-heading text-base text-foreground">{d.value}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </FadeIn>
 
           {/* Scope */}
-          <FadeIn delay={100}>
-            <h3 className="font-heading text-lg text-foreground mb-3">Zakres prac</h3>
-            <ul className="flex flex-wrap gap-2 mb-12">
-              {project.scope.map((s) => (
-                <li key={s} className="font-body text-sm text-muted-foreground bg-secondary px-4 py-1.5 rounded-full">{s}</li>
-              ))}
-            </ul>
-          </FadeIn>
+          {project.scope && project.scope.length > 0 && (
+            <FadeIn delay={100}>
+              <h3 className="font-heading text-lg text-foreground mb-3">Zakres prac</h3>
+              <ul className="flex flex-wrap gap-2 mb-12">
+                {project.scope.map((s) => (
+                  <li key={s} className="font-body text-sm text-muted-foreground bg-secondary px-4 py-1.5 rounded-full">{s}</li>
+                ))}
+              </ul>
+            </FadeIn>
+          )}
 
           {/* Result quote */}
-          <FadeIn delay={150}>
-            <blockquote className="border-l-2 border-accent pl-5 py-1 mb-12">
-              <p className="font-body text-base text-foreground/70 italic leading-relaxed">{project.result}</p>
-            </blockquote>
-          </FadeIn>
+          {project.result && (
+            <FadeIn delay={150}>
+              <blockquote className="border-l-2 border-accent pl-5 py-1 mb-12">
+                <p className="font-body text-base text-foreground/70 italic leading-relaxed">{project.result}</p>
+              </blockquote>
+            </FadeIn>
+          )}
         </div>
       </section>
 
@@ -402,11 +491,18 @@ const ProjectPage = () => {
         <div className="max-w-[1200px] mx-auto">
           <FadeIn>
             <button onClick={() => setLightbox(selectedImg)} className="w-full group cursor-pointer mb-4">
-              <img
-                src={project.images[selectedImg]}
-                alt={`${project.title} wizualizacja ${selectedImg + 1}`}
-                className="w-full aspect-[16/9] object-cover rounded-lg transition-transform duration-500 group-hover:scale-[1.01]"
-              />
+              {/* Zdjęcie pionowe mieści się w kadrze 16:9 w całości, na rozmytym tle z tego samego zdjęcia */}
+              <div className="relative w-full aspect-[16/9] overflow-hidden rounded-lg bg-secondary">
+                {selectedPortrait && (
+                  <img src={project.images[selectedImg]} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60" />
+                )}
+                <img
+                  src={project.images[selectedImg]}
+                  alt={altFor(selectedImg)}
+                  onLoad={(e) => setSelectedPortrait(e.currentTarget.naturalHeight > e.currentTarget.naturalWidth)}
+                  className={`relative w-full h-full transition-transform duration-500 group-hover:scale-[1.01] ${selectedPortrait ? "object-contain" : "object-cover"}`}
+                />
+              </div>
             </button>
             <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-2">
               {project.images.map((img, i) => (
@@ -415,7 +511,7 @@ const ProjectPage = () => {
                   onClick={() => setSelectedImg(i)}
                   className={`flex-shrink-0 rounded-lg overflow-hidden transition-all duration-300 ${i === selectedImg ? "ring-2 ring-accent opacity-100" : "opacity-60 hover:opacity-90"}`}
                 >
-                  <img src={img} alt={`Miniatura ${i + 1}`} className="h-20 md:h-24 w-32 md:w-40 object-cover" loading="lazy" />
+                  <img src={img} alt={project.alts ? altFor(i) : `Miniatura ${i + 1}`} className="h-20 md:h-24 w-32 md:w-40 object-cover" loading="lazy" />
                 </button>
               ))}
             </div>
@@ -463,7 +559,7 @@ const ProjectPage = () => {
           </button>
           <img
             src={project.images[lightbox]}
-            alt={`${project.title} wizualizacja`}
+            alt={altFor(lightbox)}
             className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
             onClick={(e) => e.stopPropagation()}
           />

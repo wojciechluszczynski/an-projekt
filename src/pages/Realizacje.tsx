@@ -11,6 +11,8 @@ import domScenariusz1 from "@/assets/dom-scenariusz-1.png";
 import miejsceZnali1 from "@/assets/miejsce-znali-1.png";
 import tenSamDom1 from "@/assets/ten-sam-dom-1.png";
 import salaWeselna2 from "@/assets/sala-weselna-2.png";
+import ponadMiastemTaras from "@/assets/apartament-ponad-miastem-taras.webp";
+import elegancjaJadalniaDzien from "@/assets/elegancja-bez-slow-jadalnia-dzien.webp";
 
 const featured = [
   {
@@ -47,7 +49,10 @@ const featured = [
   },
 ];
 
-const allProjects = [
+// Nowe realizacje na początku listy. area i location są opcjonalne (nie każdy projekt je ma).
+const allProjects: { title: string; slug: string; type: string; area?: number; location?: string; image: string }[] = [
+  { title: "Apartament ponad miastem", slug: "apartament-ponad-miastem", type: "Apartament", area: 120, location: "Rzeszów", image: ponadMiastemTaras },
+  { title: "Elegancja, która nie potrzebuje słów", slug: "elegancja-bez-slow", type: "Apartament premium", image: elegancjaJadalniaDzien },
   { title: "Willa Harmonia", slug: "willa-harmonia", type: "Dom", area: 160, location: "Podkarpacie", image: willaHarmonia1 },
   { title: "Dom, do którego się wraca", slug: "dom-powrot", type: "Dom", area: 140, location: "Rzeszów", image: domPowrot1 },
   { title: "Apartament z klasą", slug: "apartament-klasa", type: "Apartament", area: 95, location: "Rzeszów", image: apartamentKlasa1 },
@@ -85,9 +90,9 @@ const Realizacje = () => {
   }, [navigate]);
 
   const filtered = allProjects.filter((p) => {
-    const matchesSearch = !search || p.title.toLowerCase().includes(search.toLowerCase()) || p.type.toLowerCase().includes(search.toLowerCase()) || p.location.toLowerCase().includes(search.toLowerCase());
+    const matchesSearch = !search || p.title.toLowerCase().includes(search.toLowerCase()) || p.type.toLowerCase().includes(search.toLowerCase()) || (p.location ?? "").toLowerCase().includes(search.toLowerCase());
     const filter = sizeFilters[activeFilter];
-    const matchesSize = p.area >= filter.min && p.area < filter.max;
+    const matchesSize = activeFilter === 0 || (p.area !== undefined && p.area >= filter.min && p.area < filter.max);
     return matchesSearch && matchesSize;
   });
 
@@ -162,7 +167,7 @@ const Realizacje = () => {
                     <img src={p.image} alt={`${p.title} projekt wnętrz`} className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
                   </div>
                   <h3 className="font-heading text-base text-foreground mb-0.5">{p.title}</h3>
-                  <p className="text-muted-foreground font-body text-xs">{p.type} {p.area} m² · {p.location}</p>
+                  <p className="text-muted-foreground font-body text-xs">{[p.area ? `${p.type} ${p.area} m²` : p.type, p.location].filter(Boolean).join(" · ")}</p>
                 </Link>
               </FadeIn>
             ))}
