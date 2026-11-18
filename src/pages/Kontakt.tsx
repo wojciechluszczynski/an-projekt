@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Instagram, Facebook } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import { toast } from "sonner";
+import { EMAIL_RE, submitForm } from "@/lib/submitForm";
 import annaPortrait from "@/assets/anna-nowak-portrait.png";
 
 const PinterestIcon = () => (
@@ -23,17 +24,34 @@ const Kontakt = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (form.honeypot) return;
-    if (!form.name || !form.email || !form.message || !form.consent) {
+    if (sending) return;
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim() || !form.consent) {
       toast.error("Proszę wypełnić wymagane pola i zaakceptować zgodę.");
       return;
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    if (!EMAIL_RE.test(form.email.trim())) {
       toast.error("Proszę podać prawidłowy adres email.");
       return;
     }
     setSending(true);
-    await new Promise((r) => setTimeout(r, 800));
+    const result = await submitForm({
+      kind: "contact",
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      city: form.city,
+      projectType: form.projectType,
+      area: form.area,
+      stage: form.stage,
+      message: form.message,
+      consent: form.consent,
+      website: form.honeypot,
+    });
     setSending(false);
+    if (!result.ok) {
+      toast.error(result.message);
+      return;
+    }
     setSubmitted(true);
     toast.success("Dziękuję! Odezwę się najszybciej jak to możliwe.");
   };
@@ -102,7 +120,7 @@ const Kontakt = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
-                  <input type="text" name="website" value={form.honeypot} onChange={(e) => set("honeypot", e.target.value)} className="hidden" tabIndex={-1} autoComplete="off" />
+                  <input type="text" name="website" value={form.honeypot} onChange={(e) => set("honeypot", e.target.value)} className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
                   <input type="text" placeholder="Imię i nazwisko *" value={form.name} onChange={(e) => set("name", e.target.value)} className={inputClass} maxLength={100} />
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <input type="email" placeholder="E-mail *" value={form.email} onChange={(e) => set("email", e.target.value)} className={inputClass} maxLength={255} />
