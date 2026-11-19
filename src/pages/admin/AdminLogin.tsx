@@ -10,6 +10,7 @@ const AdminLogin = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [info, setInfo] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -26,6 +27,19 @@ const AdminLogin = () => {
     }
 
     navigate('/admin/wpisy');
+  };
+
+
+  const handleReset = async () => {
+    setError('');
+    setInfo('');
+    if (!email) {
+      setError('Wpisz najpierw swój email');
+      return;
+    }
+    await supabase.auth.resetPasswordForEmail(email, { redirectTo: `${window.location.origin}/admin/haslo` });
+    // Same answer whether or not the address has an account.
+    setInfo('Jeśli to konto istnieje, wysłaliśmy na nie link do ustawienia hasła.');
   };
 
   return (
@@ -126,6 +140,7 @@ const AdminLogin = () => {
               </div>
 
               {error && <p className="font-body text-sm text-destructive">{error}</p>}
+              {info && <p className="font-body text-sm text-muted-foreground">{info}</p>}
 
               <button
                 type="submit"
@@ -133,6 +148,9 @@ const AdminLogin = () => {
                 className="w-full rounded-full bg-accent py-3 text-sm font-body text-accent-foreground transition-colors hover:bg-accent/90 disabled:opacity-50"
               >
                 {loading ? 'Logowanie...' : 'Wejdź do panelu'}
+              </button>
+              <button type="button" onClick={handleReset} className="w-full text-center font-body text-xs text-muted-foreground underline hover:text-foreground">
+                Nie pamiętam hasła
               </button>
             </form>
 

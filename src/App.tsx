@@ -2,7 +2,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -25,6 +26,7 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import AdminPosts from "./pages/admin/AdminPosts";
 import AdminPostEditor from "./pages/admin/AdminPostEditor";
 import AdminSubmissions from "./pages/admin/AdminSubmissions";
+import AdminPassword from "./pages/admin/AdminPassword";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +39,18 @@ const ScrollRestoration = () => {
   return null;
 };
 
+// A password recovery link opens the site root; send it to the screen that sets the new password.
+const RecoveryRedirect = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const { data } = supabase.auth.onAuthStateChange((event) => {
+      if (event === 'PASSWORD_RECOVERY') navigate('/admin/haslo');
+    });
+    return () => data.subscription.unsubscribe();
+  }, [navigate]);
+  return null;
+};
+
 const isAdmin = (pathname: string) => pathname.startsWith('/admin');
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -46,6 +60,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <>
       {!admin && <AnnouncementBanner />}
       <ScrollRestoration />
+      <RecoveryRedirect />
       {!admin && <Navbar />}
       {children}
       {!admin && <Footer />}
@@ -78,6 +93,7 @@ const App = () => (
           <Route path="/admin/wpisy" element={<AdminPosts />} />
           <Route path="/admin/wpisy/:id" element={<AdminPostEditor />} />
           <Route path="/admin/zgloszenia" element={<AdminSubmissions />} />
+          <Route path="/admin/haslo" element={<AdminPassword />} />
           <Route path="/:slug" element={<ProjectPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
