@@ -24,6 +24,7 @@ import EbookPreview from "./pages/EbookPreview";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminPosts from "./pages/admin/AdminPosts";
 import AdminPostEditor from "./pages/admin/AdminPostEditor";
+import AdminSubmissions from "./pages/admin/AdminSubmissions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -76,6 +77,7 @@ const App = () => (
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin/wpisy" element={<AdminPosts />} />
           <Route path="/admin/wpisy/:id" element={<AdminPostEditor />} />
+          <Route path="/admin/zgloszenia" element={<AdminSubmissions />} />
           <Route path="/:slug" element={<ProjectPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

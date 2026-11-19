@@ -80,6 +80,63 @@ export type Database = {
         }
         Relationships: []
       }
+      form_submissions: {
+        Row: {
+          area: string | null
+          city: string | null
+          consent: boolean
+          created_at: string
+          email: string
+          id: string
+          ip_hash: string | null
+          kind: string
+          message: string | null
+          name: string
+          notified_at: string | null
+          notify_error: string | null
+          phone: string | null
+          project_type: string | null
+          stage: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          area?: string | null
+          city?: string | null
+          consent?: boolean
+          created_at?: string
+          email: string
+          id?: string
+          ip_hash?: string | null
+          kind: string
+          message?: string | null
+          name: string
+          notified_at?: string | null
+          notify_error?: string | null
+          phone?: string | null
+          project_type?: string | null
+          stage?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          area?: string | null
+          city?: string | null
+          consent?: boolean
+          created_at?: string
+          email?: string
+          id?: string
+          ip_hash?: string | null
+          kind?: string
+          message?: string | null
+          name?: string
+          notified_at?: string | null
+          notify_error?: string | null
+          phone?: string | null
+          project_type?: string | null
+          stage?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
