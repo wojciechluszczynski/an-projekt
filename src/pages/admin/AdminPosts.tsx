@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
-import { Plus, Edit, Trash2, Eye, EyeOff, LogOut, Star, User, Inbox } from 'lucide-react';
+import { Plus, Edit, Trash2, Eye, EyeOff, LogOut, Star, User, Inbox, KeyRound } from 'lucide-react';
 
 interface Post {
   id: string;
@@ -119,6 +119,12 @@ const AdminPosts = () => {
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-border text-muted-foreground font-body text-sm hover:bg-secondary transition-colors"
             >
               <Inbox size={14} /> Zgłoszenia
+            </Link>
+            <Link
+              to="/admin/haslo"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-border text-muted-foreground font-body text-sm hover:bg-secondary transition-colors"
+            >
+              <KeyRound size={14} /> Hasło
             </Link>
             <button
               onClick={handleLogout}
