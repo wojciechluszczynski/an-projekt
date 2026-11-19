@@ -20,6 +20,7 @@ const ALLOWED_ORIGINS = [
   /^https:\/\/(www\.)?anprojekt\.com\.pl$/,
   /^https:\/\/an-projekt\.lovable\.app$/,
   /^https:\/\/[a-z0-9-]+\.(lovable\.app|lovableproject\.com)$/,
+  /^https:\/\/([a-z0-9-]+\.)?an-projekt\.pages\.dev$/, // Cloudflare Pages: production alias and previews
   /^http:\/\/localhost:\d+$/,
 ];
 
