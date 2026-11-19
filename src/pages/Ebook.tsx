@@ -5,6 +5,7 @@ import FadeIn from "@/components/FadeIn";
 import domPowrot1 from "@/assets/dom-powrot-1.jpeg";
 import nowyRozdzial1 from "@/assets/nowy-rozdzial-1.jpeg";
 import { toast } from "sonner";
+import { EMAIL_RE, submitForm } from "@/lib/submitForm";
 
 const ebookHighlights = [
   { icon: ListChecks, title: "Checklista 27 pytań", desc: "Interaktywna lista do odhaczenia, zanim ruszysz z remontem" },
@@ -29,24 +30,36 @@ const ebookFeatures = [
 const Ebook = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [consent, setConsent] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !name) {
+    if (honeypot) return;
+    if (sending) return;
+    if (!email.trim() || !name.trim()) {
       toast.error("Podaj imię i adres e-mail.");
       return;
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!EMAIL_RE.test(email.trim())) {
       toast.error("Podaj prawidłowy adres e-mail.");
       return;
     }
+    if (!consent) {
+      toast.error("Zaznacz zgodę na przetwarzanie danych.");
+      return;
+    }
     setSending(true);
-    await new Promise((r) => setTimeout(r, 800));
+    const result = await submitForm({ kind: "ebook", name, email, consent, website: honeypot });
     setSending(false);
+    if (!result.ok) {
+      toast.error(result.message);
+      return;
+    }
     setSubmitted(true);
-    toast.success("Ebook jest w drodze na Twój e-mail!");
+    toast.success("Dziękuję! Przewodnik możesz czytać od razu online.");
   };
 
   return (
@@ -130,7 +143,7 @@ const Ebook = () => {
                     </div>
                     <h3 className="font-heading text-xl text-foreground mb-2">Gotowe!</h3>
                     <p className="text-muted-foreground font-body text-sm mb-6">
-                      Ebook został wysłany na Twój adres e-mail. Sprawdź skrzynkę (i folder spam).
+                      Dziękuję za zapis. Przewodnik możesz od razu przeczytać online.
                     </p>
                     <div className="flex flex-col gap-3">
                       <Link
@@ -148,7 +161,7 @@ const Ebook = () => {
                   <>
                     <h3 className="font-heading text-lg text-foreground mb-2">Pobierz darmowy przewodnik</h3>
                     <p className="text-muted-foreground font-body text-sm mb-6">
-                      Podaj swoje imię i e-mail, a wyślę Ci ebooka od razu.
+                      Podaj swoje imię i e-mail, a przewodnik otworzy się od razu online.
                     </p>
                     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                       <input
@@ -167,6 +180,14 @@ const Ebook = () => {
                         className="w-full bg-background border border-border rounded-xl px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 transition-shadow"
                         maxLength={255}
                       />
+                      <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+                      <label className="flex items-start gap-3">
+                        <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-1 accent-accent" />
+                        <span className="text-muted-foreground font-body text-[11px] leading-relaxed">
+                          Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu w sprawie przewodnika, zgodnie z&nbsp;
+                          <a href="/polityka-prywatnosci" className="underline hover:text-accent">polityką prywatności</a>. *
+                        </span>
+                      </label>
                       <button
                         type="submit"
                         disabled={sending}
@@ -176,7 +197,7 @@ const Ebook = () => {
                         {sending ? "Wysyłam..." : "Pobierz ebooka za darmo"}
                       </button>
                       <p className="text-muted-foreground font-body text-[11px] text-center leading-relaxed">
-                        Żadnego spamu. Tylko ebook i ewentualnie kilka przydatnych wskazówek.
+                        Żadnego spamu. Dane zostaną użyte tylko do kontaktu w sprawie przewodnika.
                       </p>
                     </form>
                   </>
