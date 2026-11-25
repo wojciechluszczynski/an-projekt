@@ -44,13 +44,16 @@ Aplikacja dostępna pod [http://localhost:5173](http://localhost:5173).
 
 ---
 
-## Wdrożenie
+## Deploy to Cloudflare Pages
 
-Hosting: Cloudflare Pages. Zmienne budowania (publiczne, w ustawieniach projektu Pages, Production i Preview):
+The existing `an-projekt` Pages project uses Direct Upload. Build from a clean checkout of the reviewed commit. Export `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` for the new Supabase project before running these commands. Use only the public publishable or anon key.
 
-- `VITE_SUPABASE_URL`
-- `VITE_SUPABASE_PUBLISHABLE_KEY`
+```sh
+npx --yes bun@1.3.14 install --frozen-lockfile
+npx --yes bun@1.3.14 run build
+npx --yes wrangler@4.50.0 pages deploy dist --project-name an-projekt --branch migration-preview
+```
 
-`public/_redirects` daje fallback SPA (`/* /index.html 200`), `public/_headers` dodaje `noindex` na hostach `*.pages.dev`.
-Pliki powyżej 25 MiB nie mogą trafić do `public/` (limit Pages); duże wideo trzymaj w Supabase Storage.
-Migracje bazy: `supabase/migrations` są źródłem prawdy, na produkcję wykonuje je właściciel projektu.
+Use the Wrangler deployment URL for preview checks. After approval, rerun the deploy command with `--branch main` to update `an-projekt.pages.dev`. Record the commit and deployment URL. Before attaching a custom domain, verify the public routes, the form write and email delivery, and the header on the Pages hostname. The SPA fallback is in `public/_redirects`. The Pages hostname receives `X-Robots-Tag: noindex` from `public/_headers`. Check that the custom domain allows indexing at cutover.
+
+Keep files over 25 MiB in Supabase Storage. Database migrations live in `supabase/migrations`. Apply them to the intended project before deploying frontend code that depends on them.
